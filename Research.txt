@@ -1,0 +1,33 @@
+Pain   state of the practice <__________________________________test in operation_____survey
+   \____________\________________motivates__________>   problem							    /
+            													    /      \					         / rollout
+   		          											 reqs     goals <- acceptance______/			
+   					       						        /      \			       test		    / adaptation
+   							        				    solutions?  \						         /     to
+   										     	     /		    	  \		  system	        / 	 context
+   										 state of the art -> solution idea  test         /	   
+   										 	      					[hypotheses] <- empirical evaluation
+   										 			          			    \	     	 /
+   										 					        		implementation
+
+From problem to the approach:
+>analyze state of the practice
+>specify problem and goals 
+>analyze state of the art
+>state hypotheses
+>derive solution idea
+
+research       goal1         goal2
+approaches req1.1 req1.2 req2.1 reqq2.2
+
+A1			+      +       -      -
+A2			+      +       -      +
+B1			-      +       -      -
+
+Master's thesis
+Theory >= 25%
+Evalutaion >= 25%
+
+Should be unique in the sense that no similar solution exists
+Should make use of working environment and networks
+ 
