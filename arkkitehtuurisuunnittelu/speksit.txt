@@ -1,0 +1,5 @@
+Deployment pipeline for continuous deployment
+
+Experimentation in b2b context
+
+[1] H. Olsson, H. Alahyari, and J. Bosch, “Climbing the stairway to heaven – a multiple- case study exploring barriers in the transition from agile development towards continuous deployment of software,” in Software Engineering and Advanced Applications (SEAA), 2012 38th EUROMICRO Conference on, 2012, pp. 392–399.

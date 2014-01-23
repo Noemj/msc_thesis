@@ -112,3 +112,15 @@ Which results are expected?
 
 22.1.2014
 *Pipeline: version control -> ci -> validation -> deployment ?
+
+23.1.2014
+Roadmapping: 
+Challenges that we have here?
+How roadmapping should be done today?
+How the value is managed to guide the roadmap?
+
+What are the needs for experimentation in b2b in our company
+what are appropriate means for experimentation in this domain and related domains
+Proposal for solution
+Adopt the solution
+Implement & test
