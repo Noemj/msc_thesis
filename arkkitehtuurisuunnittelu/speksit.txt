@@ -2,4 +2,21 @@ Deployment pipeline for continuous deployment
 
 Experimentation in b2b context
 
+Architecture for continuous experimentation in b2b context
+
+Extending the “Development Pipeline” Towards Continuous Deployment and Continuous Experimentation in b2b context
+
 [1] H. Olsson, H. Alahyari, and J. Bosch, “Climbing the stairway to heaven – a multiple- case study exploring barriers in the transition from agile development towards continuous deployment of software,” in Software Engineering and Advanced Applications (SEAA), 2012 38th EUROMICRO Conference on, 2012, pp. 392–399.
+
+[3] Ron Kohavi, Roger Longbotham, Dan Sommerfield, Randal M.
+Henne, Controlled experiments on the web: survey and practical
+guide
+
+Erota omat tulokset ja alkuperäisten paperien tulokset
+
+Introduction - why is this problem interesting?
+Methods - how did I find the papers?
+Results - Pure analysis on the papers
+Discussion - Own speculation
+Conclusions - Short wrap-up. Contains the key points
+References
