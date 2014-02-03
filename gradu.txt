@@ -124,3 +124,8 @@ what are appropriate means for experimentation in this domain and related domain
 Proposal for solution
 Adopt the solution
 Implement & test
+
+3.2.2014
+http://www.exp-platform.com/Pages/default.aspx
+How do we validate whether a feature is succesful or not? In B2C this is usually done by observing shifts in sales, but in our product there's no such thing.
+Possibly things we can analyze are user experience, but is it enough?
