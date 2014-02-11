@@ -1,4 +1,4 @@
-Re-engineering development process to radically streamline it and allow experimentation in B2B software development
+﻿Re-engineering development process to radically streamline it and allow experimentation in B2B software development
 
 - Another objective is to manage customer specific or 
 experimentational parts of software to enable more flexible 
@@ -129,3 +129,6 @@ Implement & test
 http://www.exp-platform.com/Pages/default.aspx
 How do we validate whether a feature is succesful or not? In B2C this is usually done by observing shifts in sales, but in our product there's no such thing.
 Possibly things we can analyze are user experience, but is it enough?
+
+4.2.2014
+release vs deploy: deploying might occur multiple times a day, while a release is more of a business oriented event.
