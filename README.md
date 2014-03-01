@@ -1,4 +1,0 @@
-gradu
-=====
-
-Eli juuh.

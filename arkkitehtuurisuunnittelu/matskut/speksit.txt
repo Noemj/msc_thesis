@@ -20,3 +20,12 @@ Results - Pure analysis on the papers
 Discussion - Own speculation
 Conclusions - Short wrap-up. Contains the key points
 References
+
+
+ARCHITECTURAL challenges:
+
+http://blog.sei.cmu.edu/post.cfm/agile-architecture-for-rapid-delivery-272:
+"We also collected some examples of inhibiting factors that prevented developers from rapidly delivering software products. These included slow business decision-making processes, limitations in measuring architectural technical debt, over-dependency on architecture for knowledge, and stability-related efforts that are not entirely visible to the business."
+
+relational database and migrations as opposed to in-memory or file-based
+
