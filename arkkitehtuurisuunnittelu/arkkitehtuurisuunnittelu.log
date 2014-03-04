@@ -1,15 +1,22 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.1.27)  27 JAN 2014 10:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.5)  4 MAR 2014 16:49
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**arkkitehtuurisuunnittelu.tex
-(./arkkitehtuurisuunnittelu.tex
+**arkkitehtuurisuunnittelu
+
+(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
+elu.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 2 languages loaded.
-(./IEEEtran.cls
-Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
-istensen
--- Based on V1.7a by Michael Shell
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.cls"
+Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
@@ -17,9 +24,9 @@ istensen
 \@IEEEtrantmpcountA=\count79
 \@IEEEtrantmpcountB=\count80
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -30,45 +37,45 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \CLASSINFOnormalsizeunitybaselineskip=\dimen106
 \IEEEnormaljot=\dimen107
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 \IEEEilabelindentA=\dimen108
 \IEEEilabelindentB=\dimen109
 \IEEEilabelindent=\dimen110
@@ -89,38 +96,314 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \c@table=\count87
 \@IEEEeqnnumcols=\count88
 \@IEEEeqncolcnt=\count89
+\@IEEEsubeqnnumrollback=\count90
 \@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count90
+\c@IEEEbiography=\count91
 \@IEEEtranrubishbin=\box26
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
 )
-No file arkkitehtuurisuunnittelu.aux.
-\openout1 = `arkkitehtuurisuunnittelu.aux'.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 340.
-LaTeX Font Info:    ... okay on input line 340.
-! Misplaced alignment tab character &.
-l.356 ...ped. In more general terms, the entire R&
-                                                  D system of an organizatio...
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
 
-? 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 385.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 385.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 531.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 531.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen117
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen118
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen119
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen120
+\alignsep@=\dimen121
+\tagshift@=\dimen122
+\tagwidth@=\dimen123
+\totwidth@=\dimen124
+\lineht@=\dimen125
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip47
+\thm@postskip=\skip48
+\thm@headsep=\skip49
+\dth@everypar=\toks26
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen126
+\lightrulewidth=\dimen127
+\cmidrulewidth=\dimen128
+\belowrulesep=\dimen129
+\belowbottomsep=\dimen130
+\aboverulesep=\dimen131
+\abovetopsep=\dimen132
+\cmidrulesep=\dimen133
+\cmidrulekern=\dimen134
+\defaultaddspace=\dimen135
+\@cmidla=\count104
+\@cmidlb=\count105
+\@aboverulesep=\dimen136
+\@belowrulesep=\dimen137
+\@thisruleclass=\count106
+\@lastruleclass=\count107
+\@thisrulewidth=\dimen138
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count108
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks27
+\labelindent=\skip50
+\enit@outerparindent=\dimen139
+\enit@toks=\toks28
+\enit@inbox=\box29
+\enitdp@description=\count109
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks29
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+)
+(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
+elu.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen142
+\scratchbox=\box30
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen143
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks31
+) <rtvd.jpg, id=1, 702.37407pt x 283.81032pt>
+File: rtvd.jpg Graphic file (type jpg)
+ <use rtvd.jpg>
+Package pdftex.def Info: rtvd.jpg used on input line 97.
+(pdftex.def)             Requested size: 252.94499pt x 102.20627pt.
+
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 97--98
+ [][] 
+ []
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no é in font ptmr7t!
+LaTeX Font Info:    Try loading font information for U+msa on input line 109.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 109.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]\OT1/ptm/m/n/10 software
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+\OT1/ptm/m/n/10 re-lease
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]\OT1/ptm/m/n/10 Google
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 113--113
+[]\OT1/ptm/m/n/10 release plan-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]\OT1/ptm/m/n/10 deployment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+\OT1/ptm/m/n/10 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+[]\OT1/ptm/m/n/10 iterative
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+\OT1/ptm/m/n/10 re-lease
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+\OT1/ptm/m/n/10 plan-ning
+ []
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 115--115
+[]\OT1/ptm/m/n/10 Analysis and Man-age-
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 115--115
+\OT1/ptm/m/n/10 ment of Ar-chi-tec-tural
+ []
+
+[2 <c:/Users/Noemj/gradu/msc_thesis/arkkitehtuurisuunnittelu/rtvd.jpg>]
+[3] <developmentprocess.jpg, id=20, 376.40625pt x 268.75406pt>
+File: developmentprocess.jpg Graphic file (type jpg)
+
+<use developmentprocess.jpg>
+Package pdftex.def Info: developmentprocess.jpg used on input line 185.
+(pdftex.def)             Requested size: 252.94499pt x 180.6097pt.
+
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 185--186
+ [][] 
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+
+Underfull \hbox (badness 1478) in paragraph at lines 219--221
+[]\OT1/ptm/m/n/10 Architectural prob-lems: maven snap-shot re-lease builds
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+\OT1/ptm/m/n/10 http://kief.com/the-conflict-between-continuous-delivery-and-
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no î in font ptmr7t!
+
+(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
+elu.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -132,33 +415,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[4 <c:/Users/Noemj/gradu/msc_thesis/arkkitehtuurisuunnittelu/developmentprocess
+.jpg>]
+(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
+elu.aux)
 
-
-
-]
-(./arkkitehtuurisuunnittelu.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 916 strings out of 495031
- 15989 string characters out of 6181531
- 64783 words of memory out of 5000000
- 4187 multiletter control sequences out of 15000+600000
- 38728 words of font info for 72 fonts, out of 8000000 for 9000
- 17 hyphenation exceptions out of 8191
- 26i,6n,19p,995b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on arkkitehtuurisuunnittelu.pdf (1 page, 48834 bytes).
+ 3268 strings out of 493921
+ 47335 string characters out of 3147282
+ 110696 words of memory out of 3000000
+ 6536 multiletter control sequences out of 15000+200000
+ 35842 words of font info for 71 fonts, out of 3000000 for 9000
+ 844 hyphenation exceptions out of 8191
+ 27i,9n,24p,1274b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
+/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on arkkitehtuurisuunnittelu.pdf (4 pages, 238772 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
