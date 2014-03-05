@@ -144,7 +144,7 @@ Lindgren et al. investigate the importance of software architecture in release p
 
 Lindgren et al. define relevant areas that address software architecture in release planning as identifying possible architectural constraints, maintaining the architecture of evolving systems and identifying if proposed needs introduce architectural conflicts. 
 
-The major findings of the articles are that product management generally has low architectural awareness, there is no method for how to balance investments in quality improvements vs. feature growth and that in companies with a software architecture present architectural decisions are made with less "gut-feeling".
+The major findings of the articles are that product management generally has low architectural awareness, there is no method for how to balance investments in quality improvements vs. feature growth and that in companies with a software architecture present architectural decisions are made with less "gut-feeling". The presence of a software architect when release planning decisions are made improves the chances that important quality issues are taken into consideration.
 
 \subsection{C. Iterative release planning}
 
@@ -166,7 +166,7 @@ The last principle states "Evolve your production line along with the applicatio
 
 \section{Discussion} %Own speculation
 
-In continuous deployment it is preferred not to do huge refactorings due to the fact that this leaves the software in a state where it cannot be released /cdbook
+In continuous deployment it is preferred not to do huge refactorings due to the fact that this leaves the software in a state where it cannot be released \cite{cdbook}
 
 In continuous deployment the architecture is developed incrementally, and this poses many similarities to iterative release planning.
 
@@ -182,7 +182,7 @@ The requirement "Each build stage should deliver working software" by Humble et 
 
 As continuous deployment keeps the software in a state where it can be deployed at all times, incomplete features often pose architectural challenges in keeping the build stable. Shipping semicompleted functionality along with the rest of the application is a good practice, because the entire application is tested and integrated at any time \cite{cdbook}. To implement the application in such manner that features can be included even if they are incomplete requires an architecture that supports it. A common tradition in an agile process is to use branching in version control to develop features, but with the possibility to build the application with incomplete features allows releases even during the development of major features. 
 
-Martin Fowler even argues against long feature branches, stating that developing in feature branches without merging with the mainline daily is not continuous integration but continuous building \cite{mf}. Fowler even quotes Dan Bodart with "Feature Branching is a poor man's modular architecture". In continuous integration an important principle is that commits are made to the mainline daily - this is especially important in continuous deployment as well. Building a modular architecture with loose coupling makes it easier to program in small improvements.
+Martin Fowler even argues against long feature branches, stating that developing in feature branches without merging with the mainline daily is not continuous integration but continuous building \cite{mf}. Fowler quotes Dan Bodart stating "Feature Branching is a poor man's modular architecture". In continuous integration an important principle is that commits are made to the mainline daily - this is especially important in continuous deployment as well. Building a modular architecture with loose coupling makes it easier to program in small improvements.
 
 An architectural aspect regarding continuous deployment is also the architecture of the whole development process. A picture of the typical development process in continuous deployment is shown in Fig. 2. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
 
@@ -194,7 +194,6 @@ An architectural aspect regarding continuous deployment is also the architecture
 \end{figure}
 
 \section{Future research}
-
 
 asd
 
