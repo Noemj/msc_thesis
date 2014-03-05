@@ -132,11 +132,29 @@ This section investigates the architectural issues and features in release manag
 
 \subsection{A. Software release management}
 
-Software release management defines the process of managing software releases throughout development stages to release. Compared to continuous deployment, release managements purpose is to build a bridge between development process and deployment process \cite{van1997software}, but it doesn't define how often releases should be made. Hoek et al. provide a set of requirements in their article Software Release Management \cite{van1997software}, which can be used to define architectural qualities in software systems required for releases. While the article mainly touches releases of systems of systems, the research can also be applied to releases of any systems with internal or external dependencies.
+Software release management defines the process of managing software releases throughout development stages to release. As in continuous deployment, release managements purpose is to build a bridge between development process and deployment process \cite{van1997software}, but it in contrast doesn't define how often releases should be made. Hoek et al. provide a set of requirements in their article Software Release Management \cite{van1997software}, which can be used to define architectural qualities in software systems required for releases. While the article mainly touches releases of systems of systems, the research can also be applied to releases of any systems with internal or external dependencies.
+
+
+\begin{center}
+\begin{table}[h]
+\caption{Requirements in software release management process}
+    \begin{tabular}{ | p{2cm} | p{5.5cm} |}
+    \hline
+    \multicolumn{2}{|c|}{Requirements} \\
+    \hline
+    1 & Dependencies should be explicit and easily recorded \\ \hline
+    2 & A system should be available through multiple channels \\ \hline
+    3 & The release process should involve minimal effort on the part of the developer \\ \hline
+    4 & The scope of the release should be controllable \\ \hline
+    5 & A history of retrievals should be kept \\ \hline
+    6 & Sufficient descriptive information should be available \\ \hline
+    \end{tabular}
+    \end{table}
+\end{center}
 
 A requirement states that "Dependencies should be explicit and easily recorded". Hoek et al. define the requirement such that it should be possible for a developer to document dependencies as part of the release process, even if the dependencies cross organizational boundaries. Another requirement is that "A system should be available through multiple channels". This means that once a release is made, it is made available to all environments where it is used. A requirement also states that "Sufficient descriptive information should be available". This makes it possible for an user to determine the current version of system in use.
 
-Hoek et al. introduce a prototype software release management tool, Software Release Manager (SRM), which is used to satisfy previous requirements. SRM is composed through a four-part architecture: a logically centralized but physically distributed release database, interfaces for inserting and retrieving components from the database and a retrieve database that records information about the components users have retrieved. 
+Hoek et al. introduce a prototype software release management tool, Software Release Manager (SRM), which is used to satisfy previous requirements. SRM is composed through a four-part architecture: a logically centralized but physically distributed release database, interfaces for inserting and retrieving components from the database and a retrieve database that records information about the components users have retrieved. The types of artifacts stored in the release database are the released components, metadata describing each component, dependency information for the component and web pages for each component. 
 
 \subsection{B. Release planning}
 
@@ -172,8 +190,8 @@ In continuous deployment the architecture is developed incrementally, and this p
 
 The goal of the development process is to maximize business value. Using the cost model \cite{brown2011analysis} by Brown et al., it is clear that architectural dependencies multiply the rework cost very quickly. Brown et al. also extracted metrics from purely the architecture of an application, further elaborating the importance an architecture has on the projects success.
 
-As software release management is primarily concerned in .. \cite{van1997software} 
-
+As software release management is primarily concerned in building a bridge between the development process and deployment process \cite{van1997software}, it shares a common goal with continuous deployment. The requirements given by Hoek et al. pose many similarities to the continuous deployment practices, and some of them can be addresses with architectural decisions. Concidering the requirement "A system should be available through multiple channels"..
+ 
 In release planning it is known that early design decisions play an important role in the development process \cite{lindgren2008importance}. As an example in a system with a high performance requirement, requests shouldn't traverse through several tiers. In a continuous deployment process, enough analysis on non-functional requirements has to be made up front to make an informed decision on what architecture to choose for the system \cite{cdbook}. Often an architecture also involves trade-offs between non-functional requirements, and analysis methods such as the Architectural Tradeoff Analysis Method (ATAM) \cite{kazman1998architecture} can be used to decide a suitable architecture. The team can then build a set of automated tests to ensure the non-functional requirements are met, and that empirical evidence to refactor and rearchitect a project is provided \cite{cdbook}.
 
 "one good sign of a good application architecture is that it allows the application to be run without much trouble on a development machine" \cite{cdbook}
