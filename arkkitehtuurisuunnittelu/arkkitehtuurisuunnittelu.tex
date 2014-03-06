@@ -91,7 +91,7 @@ The research on these topics can then be applied to continuous deployment, and a
 
 Continuous deployment process is concerned with all aspects of deployment, such as configuration management, release management, continuous integration and automated testing. As it has evolved from continuous improvement efforts within the Agile community, but also from prior knowledge on releasing software, it is only natural to investigate these subjects to gain understanding on continuous deployment.
 
-This paper is organized as follows. Chapter 2 explains reasons behind choosing the used papers, and the used methods in finding the papers. Chapter 3 explores architectural challenges and methods in release management, release planning and iterative release planning. Chapter 3 also investigates the deployment production line and the known architectural constraints within. Chapter 4 then attempts to apply these findings to continuous deployment, and produces an analysis of the importance of architecture in continuous deployment. Chapter 5 concludes the paper with the key points.  
+This paper is organized as follows. Chapter 2 explains reasons behind choosing the used papers, and the used methods in finding the papers. Chapter 3 explores architectural challenges and methods in release management, release planning and iterative release planning. Chapter 3 also investigates the deployment production line and the known architectural constraints within. Chapter 4 then attempts to apply these findings to continuous deployment, and produces an analysis of the importance of architecture in continuous deployment. Future research is also briefly introduced in this chapter. Chapter 5 concludes the paper with the key points.  
 
 \begin{figure}[!t]
 	\centering
@@ -167,7 +167,7 @@ The major findings of the articles are that product management generally has low
 
 Iterative release planning essentially attemps to plan releases for the current iteration. Brown et al. investigate dependencies between capabilities, including both functional and non-functional requirements, and architectural elements \cite{brown2011analysis}. Brown et al. state that understanding the dependencies between capabilities ensures that a useful feature set is released to the end user. The purpose in investigating the dependencies between capabilities and architectural elements is to implement the architecture in a staged manner. Analysing the dependencies of architectural elements provides information on the refactoring costs that might incur if the architecture is developed incrementally.
 
-Brown et al. state that the visibility of architectural quality can be improved by providing quantifiable quality models of the architecture module structure during system development. This derives from the assumption that using measurable criteria to quantify architecture quality provides guidance for iterative release planning.
+Brown et al. state that the visibility of architectural quality can be improved by providing quantifiable quality models of the architecture module structure during system development. This derives from the assumption that using measurable criteria to quantify architecture quality provides guidance for iterative release planning. Brown et al. state that metrics associated with dependency provides data for change propagation, especially in dependencies between architectural elements. The propagation cost can then be used to provide insight into degrading architectural quality to understand when to invest in improving architecture.
 
 Brown et al. calculate end-user value and total implementation cost of each release as $Tc_n = Ic_n + Rc_n$, where $Tc_n$ is the cost of release $n$, $Ic_n$ is the cost of implementation and is a sum of all architectural elements implemented in release $n$, where each architectural elements are given an individual cost. $Rc_n$ is the rework cost for release $n$, and it is calculated by computing the rework cost associated with each new architectural element implemented in $n$, and multiplying for each existing element with dependencies to that element times the implementation cost of the referencing element, times the propagation cost of release $n-1$. The cost of each element is then added up to form $Rc_n$.
 
@@ -183,7 +183,7 @@ The last principle states "Evolve your production line along with the applicatio
 
 \section{Discussion} %Own speculation
 
-In continuous deployment the software is developed in small, functional releases which are continuously integrated. The architecture and requirements are validated continuously, and an unsuitable architecture is possible to be caught during early prototyping. This eases the burden of the importance of early design decisions mentioned by Lindgren et al. \cite{bass2003software}, and it doesn't take until release to realize that the software doesn't meet it's non-functional requirements.
+In continuous deployment the software is developed in small, functional releases which are continuously integrated. The architecture and requirements are validated continuously, and an unsuitable architecture is possible to be caught during early prototyping. This eases the burden of the importance of early design decisions mentioned by Lindgren et al. \cite{bass2003software}, and it doesn't take until release to realize that the software doesn't meet it's non-functional requirements. Often it's the architectural issues that are the hardest to undo, change and refactor \cite{kruchten2010software}.
 
 The goal of the development process is to maximize business value. Using the cost model \cite{brown2011analysis} by Brown et al., it is clear that architectural dependencies multiply the rework cost very quickly. Brown et al. also extracted metrics from purely the architecture of an application, further elaborating the importance an architecture has on the projects success.
 
@@ -191,11 +191,9 @@ As software release management is primarily concerned in building a bridge betwe
  
 In release planning it is known that early design decisions play an important role in the development process \cite{lindgren2008importance}. As an example in a system with a high performance requirement, requests shouldn't traverse through several tiers. In a continuous deployment process, enough analysis on non-functional requirements has to be made up front to make an informed decision on what architecture to choose for the system \cite{cdbook}. Often an architecture also involves trade-offs between non-functional requirements, and analysis methods such as the Architectural Tradeoff Analysis Method (ATAM) \cite{kazman1998architecture} can be used to decide a suitable architecture. The team can then build a set of automated tests to ensure the non-functional requirements are met, and that empirical evidence to refactor and rearchitect a project is provided \cite{cdbook}.
 
-"one good sign of a good application architecture is that it allows the application to be run without much trouble on a development machine" \cite{cdbook}
-
 The requirement "Each build stage should deliver working software" by Humble et al. \cite{humble2006deployment} creates an architectural requirement, in which each component should be possible to be upgraded individually. The same principles apply to individual services that form a service-oriented architecture \cite{cdbook}. A component-based architecture with loose coupling makes it easier for teams to develop and collaborate, especially in cases where the team sizes are large and codebases big. A component-based architecture is also effectively flexible, as components can be added and removed with often only having to modify related components. A decision to build the software in components should be made early on, as the time it takes to rearchitecture a large application into discrete components increases as the application grows. 
 
-As continuous deployment keeps the software in a state where it can be deployed at all times, incomplete features often pose architectural challenges in keeping the build stable. Shipping semicompleted functionality along with the rest of the application is a good practice, because the entire application is tested and integrated at any time \cite{cdbook}. To implement the application in such manner that features can be included even if they are incomplete requires an architecture that supports it. A common tradition in an agile process is to use branching in version control to develop features, but with the possibility to build the application with incomplete features allows releases even during the development of major features. 
+As continuous deployment keeps the software in a state where it can be deployed at all times, incomplete features often pose architectural challenges in keeping the build stable. Shipping semicompleted functionality along with the rest of the application is a good practice, because the entire application is tested and integrated at any time \cite{cdbook}. To implement the application in such manner that features can be included even if they are incomplete requires an architecture that supports it. A common tradition in an agile process is to use branching in version control to develop features, but long lived feature branches are not inline with continuous integrations goal to integrate code to mainline daily. Instead, merging daily with the mainline allows the possibility to build the application with incomplete features allows releases even during the development of major features, and the features will be integrated more often that "integration hell" is prevented.
 
 Martin Fowler even argues against long feature branches, stating that developing in feature branches without merging with the mainline daily is not continuous integration but continuous building \cite{mf}. Fowler quotes Dan Bodart stating "Feature Branching is a poor man's modular architecture". In continuous integration an important principle is that commits are made to the mainline daily - this is especially important in continuous deployment as well. Building a modular architecture with loose coupling makes it easier to program in small improvements.
 
@@ -210,20 +208,24 @@ An architectural aspect regarding continuous deployment is also the architecture
 
 \section{Future research}
 
+Interesting research question, posed by Lindgren at al., is when and how are architectural issues addressed during release planning. Lindgren et al. are investigating the balance between feature growth and investments in architectural quality \cite{lindgren2008importance}. An important question is also who participates in making important architectural questions, and it has been mention by multiple sources \cite{lindgren2008importance, kruchten2010software}.
 
-When and how are architectural issues addressed during release planning? \cite{lindgren2008importance}
+Kruchten presents an issue regarding identifying and resolving architectural issues, stating that the methods to identify architecturally significant requirements, to perform incremental architectural design and to validate architectural features are not well known.
+
+Brown et al. state that the relative weighting and relationship between architectural elements and it's dependencies is still a subject of future research \cite{brown2011analysis}. This affects continuous deployment in the sense that as the impacts of architectural dependencies are better understood, different architectural styles can be analyzed by using dependencies between architectural elements as a quantifiable metric. 
+
+%When and how are architectural issues addressed during release planning? \cite{lindgren2008importance}
 
 %How the previous stuff actually matters to continuous deployment
 
 \section{Conclusion} %Short wrap-up. Contains the key points
 % no \IEEEPARstart
 
-In a continuous deployment process, enough analysis on non-functional requirements has to be made up front to make an informed decision on what architecture to choose for the system.
+Continuous deployment is a process where the software is developed in an incremential manner, and as the whole software is validated continuously, architectural requirements are also validated from an early stage. This makes it possible to validate requirements, and to issue rearchitecturing from an early stage. On the other hand, enough analysis on non-functional requirements has to be made up front to make an informed decision on what architecture to choose for the system.
 
-A component-based architecture, such as a service-oriented architecture, generally makes the developing and building easier.
+Architectural challenges posed by continuous deployment deal with keeping the software in a state where it is releasable at all times. As running long-lived feature branches are not essentially a part of a continuous deployment process, the architecture must allow incomplete features to be kept in the mainline. Architectural styles such as loosely coupled modular architecture make this easier.
 
-
-
+The deployment pipeline provides architectural challenges in the sense that the application must be deployable and configurable to different environments. The deployment architecture must also automatically validate the stability of the build via a set of staged testing, and provide feedback to the development team in case the deploy has to be rolled back.
 
 %In the case of service-oriented architectures and componentized applications,
 %all the services or components forming the application need to be promoted together.
