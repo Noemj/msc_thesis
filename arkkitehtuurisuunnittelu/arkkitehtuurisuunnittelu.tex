@@ -90,7 +90,7 @@ As research on software architecture in continuous deployment is next to nonexis
 
 Continuous deployment process is concerned with all aspects of deployment, such as configuration management, release management, continuous integration and automated testing. As it has evolved from continuous improvement efforts within the Agile community, but also from prior knowledge on releasing software, it is only natural to investigate these subjects to gain understanding on continuous deployment.
 
-This paper is organized as follows. Chapter 2 explains reasons behind choosing the used papers, and the used methods in finding the papers. Chapter 3 explores architectural challenges and methods in release management, release planning and iterative release planning. Chapter 3 also investigates the deployment production line and the known architectural constraints within. Chapter 4 then attempts to apply these findings to continuous deployment, and produces an analysis of the importance of architecture in continuous deployment. Future research is also briefly introduced in this chapter. Chapter 5 concludes the paper with the key points.  
+This paper is organized as follows. Chapter II explains reasons behind choosing the used papers, and the used methods in finding the papers. Chapter III explores architectural challenges and methods in release management, release planning and iterative release planning. Chapter III also investigates the deployment production line and the known architectural constraints within. Chapter IV then attempts to apply these findings to continuous deployment, and produces an analysis of the importance of architecture in continuous deployment. Future research is briefly introduced in chapter V, and Chapter VI concludes the paper with the key points.  
 
 \begin{figure}[!t]
 	\centering
@@ -129,7 +129,7 @@ Release planning primarily plans releases that often occur months out at the sta
 
 This section investigates the architectural issues and features in release management, release planning and iterative release planning, along with some known architectural issues and features in continuous deployment. The knowledge from previous research on release planning proves useful considering continuous deployment, as it is effectively continuously managing to maintain the software in a releasable state.
 
-\subsection{A. Software release management}
+\subsection{Software release management}
 
 Software release management defines the process of managing software releases throughout development stages to release. As in continuous deployment, release managements purpose is to build a bridge between development process and deployment process \cite{van1997software}, but it in contrast doesn't define how often releases should be made. Hoek et al. provide a set of requirements in their article Software Release Management \cite{van1997software}, which can be used to define architectural qualities in software systems required for releases. While the article mainly touches releases of systems of systems, the research can also be applied to releases of any systems with internal or external dependencies.
 
@@ -154,7 +154,7 @@ Requirement 1 in Table II states that "Dependencies should be explicit and easil
 
 Hoek et al. introduce a prototype software release management tool, Software Release Manager (SRM), which is used to satisfy previous requirements. SRM is composed through a four-part architecture: a logically centralized but physically distributed release database, interfaces for inserting and retrieving components from the database and a retrieve database that records information about the components users have retrieved. The types of artifacts stored in the release database are the released components, metadata describing each component, dependency information for the component and web pages for each component. 
 
-\subsection{B. Release planning}
+\subsection{Release planning}
 
 Lindgren et al. investigate the importance of software architecture in release planning in their article entitled Importance of Software Architecture during Release Planning \cite{lindgren2008importance}. Lindgren et al. state that within the research community it is known that early design decisions, which are manifested by software architecture, "...are the most difficult to get correct and the hardest to change later in the development process, and they have the most far-reaching effects" \cite{bass2003software}.
 
@@ -162,7 +162,7 @@ Lindgren et al. define relevant areas that address software architecture in rele
 
 The major findings of the articles are that product management generally has low architectural awareness, there is no method for how to balance investments in quality improvements vs. feature growth and that in companies with a software architecture present architectural decisions are made with less "gut-feeling". The presence of a software architect when release planning decisions are made improves the chances that important quality issues are taken into consideration.
 
-\subsection{C. Iterative release planning}
+\subsection{Iterative release planning}
 
 Iterative release planning essentially attemps to plan releases for the current iteration. Brown et al. investigate dependencies between capabilities, including both functional and non-functional requirements, and architectural elements \cite{brown2011analysis}. Brown et al. state that understanding the dependencies between capabilities ensures that a useful feature set is released to the end user. The purpose in investigating the dependencies between capabilities and architectural elements is to implement the architecture in a staged manner. Analysing the dependencies of architectural elements provides information on the refactoring costs that might incur if the architecture is developed incrementally.
 
@@ -170,7 +170,7 @@ Brown et al. state that the visibility of architectural quality can be improved 
 
 Brown et al. calculate end-user value and total implementation cost of each release as $Tc_n = Ic_n + Rc_n$, where $Tc_n$ is the cost of release $n$, $Ic_n$ is the cost of implementation and is a sum of all architectural elements implemented in release $n$, where each architectural elements are given an individual cost. $Rc_n$ is the rework cost for release $n$, and it is calculated by computing the rework cost associated with each new architectural element implemented in $n$, and multiplying for each existing element with dependencies to that element times the implementation cost of the referencing element, times the propagation cost of release $n-1$. The cost of each element is then added up to form $Rc_n$.
 
-\subsection{D. Deployment production line}
+\subsection{Deployment production line}
 
 Humble et al. define four principles that should be followed when attempting to automate the deployment process \cite{humble2006deployment}. Some of these principles transform into architectural constraints. The first principle states that "Each build stage should deliver working software". As software often consists of different modules with dependencies to other modules, a change to a module could trigger builds of the related modules as well. Humble et al. argue that it is better to keep builds separate so that each discrete module could be built individually. The reason is that triggering other builds can be inefficient, and information can be lost in the process. The information loss is due to the fact that connection between the initial build and later builds is lost, or at least causes a lot of unnecessary work spent in tracing the triggering build. 
 
