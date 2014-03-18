@@ -1,39 +1,15 @@
-Abstrakti voisi kertoa tarkemmin, mitä tutkielmassa tutkitaan ja tiivistää tekstin tulokset. Nyt abstrakti vain kuvailee ongelma-aluetta.
-Myös Introduction-kappaleessa "In this paper"-osiossa voisi esitellä tarkemmin paperin tulokset - onko tarkoituksena vain esittää olemassa olevia menetelmiä, vai vetää näistä myös omia johtopäätöksiä? Myös mahdollisia tuloksia voisi mainita jo esittelyvaiheessa. Seuraavassa kappaleessa mainitaan "This paper is largely based on the papers listed in the references although some parts reflect the author’s experiences working as a software developer", joten luultavasti omiakin johtopäätöksia on tehty.
+Artikkeli käsittelee arkkitehtoniseen päätöksentekoon liittyviä ongelmia ja ratkaisutapoja ohjelmistoarkkitehtuurissa. Tutkimus on toteutettu kirjallisuuskatsauksena, ja tarkastelussa ovat architecture pattern- ja design decisions-toimintaperiaatteet. Tutkimus on tehty etsimällä tyypillisiä arkkitehtonisia ongelmia, ja vertailemalla tarkasteltavien toimintaperiaitteiden näihin tarjoamia ratkaisuja. Aluksi esitellään laatuattribuutit ja tyypilliset arkkitehtoniset ongelmat, jonka jälkeen esitellään toimintaperiaatteet. Architecture pattern-periaatetta sovelletaan esittelyn jälkeen aiemmin esiteltyihin ongelmiin, mutta design decisions-periaatteen liittäminen ongelmiin puuttuu.
 
+Kirjoittaja on perehtynyt aihealueeseen hyvin, ja artikkeli on yleisesti rakennettu ymmärrettävään muotoon. Myös kieliasu on miellyttävää luettavaa. Tehtäväalue on rajattu varsin hyvin vain kahden toimintaperiaatteen tutkimiseen, mutta tutkimuksen tavoitteet eivät tule kirkkaasti selville.
 
+Abstrakti voisi kertoa tarkemmin, mitä artikkelissa tutkitaan ja tiivistää tekstin tulokset. Nyt abstrakti vain kuvailee ongelma-aluetta.
+Myös johdantokappaleessa "In this paper"-osiossa voisi esitellä tarkemmin paperin tavoitteet ja saadut tulokset - onko tarkoituksena vain esittää olemassa olevia menetelmiä, vai vetää näistä myös omia johtopäätöksiä? Myös mahdollisia tuloksia voisi mainita jo esittelyvaiheessa. Seuraavassa kappaleessa mainitaan "This paper is largely based on the papers listed in the references although some parts reflect the author’s experiences working as a software developer", joten omiakin johtopäätöksia on tehty.
 
+Tutkimuksessa omia tuloksia ei ole erikseen strukturoitu omaan kappaleeseen, ja omia johtopäätöksia on osittain limittäin Results-kappaleessa. Nyt lukija ei välttämättä tiedä ovatko johtopäätökset kirjoittajan omia. Omat tulokset ovat myös varsin vähäiset, sillä 4. kappale on varsin suppea. Viitteiden käyttö on kuitenkin toimivaa, ja yleisesti lukija ymmärtää tuloksen alkuperän. Tämä olisi kuitenkin vielä helpompaa, mikäli kolmas kappale pyhitettäisiin täysin papereiden läpikäynnille. Omat johtopäätökset olisi hyvä kirjoittaa nyt suppeahkoon 4. kappaleeseen. Tällöin lukijan ei tarvitse arvailla väitösten alkuperää. 
 
+Mahdollisena lisäyksenä artikkeliin sopisi design decisions-periaatteen, ja varsinkin Archium-mallin liittäminen arkkitehtonisiin ongelmiin. Artikkelin otsikko "Design Decisions in Software Architecture" viittaisi siihen, että erityisesti päätöksentekoon liittyviä ongelmia ja ratkaisutapoja analysoidaan. Neljäs kappale soveltuu omaan pohdintaan varsin hyvin, ja sen nykyisen sisällön voisi pitää johdantona analyysille.
 
+Lisäksi vielä muutama huomio tekstistä:
 
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Tulosten validiteetti, väitteiden uskottavuus
-Miten tutkimus tehty
-Ovatko johtopäätökset uskottavia ja seuraavat datasta, vai esitetäänkö tuloksia tai sekoitetaanko tuloksiin omia mielipiteitä tai näkökantoja
-Ohjelmistotuotannossa lopullisia totuuksia kovin harvassa, ja väitteiden todistaminen harvoin mahdollista
-
-Rakentava asenne
-
-■ Ei tarvitse kirjoittaa toisen paperia, mutta kommenttien 
-
-perusteella paperia pitäisi kyetä parantamaan
-
-■ ”pitäisi kirjoittaa paremmin” on usein liian ylimalkainen
-
-■ ”termien sovellusarkkitehtuuri ja ohjelmistoarkkitehtuuri käyttö 
-
-epäjohdonmukaista, onko tarpeen käyttää molempia termejä?”
-
-■ Pikkuvirheet kannattaa usein koota loppuun
-
-■ Kirjoitusvirheet, etenkin sellaiset joita ei oikolukuohjelma huomaa, 
-
-kuten englannissa form vs. from tai ones vs. once
-
-■ Oletuksena on, että kirjoittaja tarkistaa tekstin oikolukuohjelmalla eikä 
-
-jätä kielenhuoltoa arvioijille
+Kolmannen kappaleen E-osion toisesta lausesta puuttuu piste.
+Kolmannen kappaleen C-osiosta puuttuu piste.

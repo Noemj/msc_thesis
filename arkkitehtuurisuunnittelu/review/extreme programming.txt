@@ -1,0 +1,35 @@
+Artikkeli käsittelee arkkitehtuurisunnittelun käytänteitä ja menetelmiä Extreme Programming-metodologiassa. Tutkimus on toteutettu kirjallisuuskatsauksena, ja tutkimuksessa keskitytään kolmeen arkkitehtuurisuunnittelumenetelmään. Täten tehtäväalue on määritelty sopivan kokoiseksi. Lukija saa jo abstraktista hyvän kuvan tutkielman sisällöstä, mutta johdantokappaleessa tutkielman tavoitetta ja tuloksia voisi vielä tarkentaa. Esimerkiksi tutkitut arkkitehtuurisuunnittelumenetelmät olisi hyvä mainita mahdollisesti jo abstraktissa, ja löydetyt tulokset mainita ohimennen abstraktissa tai johdannossa.
+
+Kirjoittaja on perehtynyt aihealueeseen hyvin, ja Extreme Programming sekä arkkitehtuurisuunnittelumallit esitellään alussa kattavasti. Kieliasu on hyvä, mutta toisinaan sanat rivittyvät huonosti. Tätä voisi parantaa lisäämällä LaTeX-pohjaan suomalaisten sanojen tavutusta.
+
+Artikkeli on rakennettu erittäin hyvään muotoon, ja oma pohdinta on eroteltu neljänteen kappaleeseen. Viitteitä on kuitenkin käytetty varsin varovaisesti, ja lukija saattaa toisinaan epäillä tekstin luotettavuutta tai joutua kaivamaan viitettä kauan. Esimerkiksi kolmannen kappaleen Arvot-osio ei sisällä yhtään viitettä, ja arvoista erityisesti innostunut lukija joutuu hakemaan lähdettä itse. 
+
+Artikkeli oma pohdinta on varsin osuvaa, ja erityisesti jatkuvan arkkitehtonisen refaktoroinnin pohdinta rekkaefekteineen on uskottavaa. Kuitenkin oman pohdintaankin voisi lisätä lisää viitteitä, ja yrittää sitoa pohdintaa tarkemmin olemassa olevaan tutkimukseen. Nyt oma kontribuutio näkyy tehtyinä johtopäätöksinä, mutta niitä ei yritetäkään sitoa jo olemassa olevaan tutkimukseen. Omat johtopäätökset eivät seuraa datasta, vaan ne ovat pikemminkin näkökulmia. Joidenkin johtopäätösten oikeaksi todistaminen ei kuitenkaan aina ole edes mahdollista - esimerkiksi mikä on paras arkkitehtuurisuunnittelumalli XP:lle on erittäin subjektiivista, ja riippuu pitkälti kontekstista.
+
+Artikkeli antaa silti hyvän katsauksen Extreme Programming-metodologian ja arkkitehtuurisuunnittelun liittämiseen.
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Tulosten validiteetti, väitteiden uskottavuus
+Miten tutkimus tehty
+Ovatko johtopäätökset uskottavia ja seuraavat datasta, vai esitetäänkö tuloksia tai sekoitetaanko tuloksiin omia mielipiteitä tai näkökantoja
+Ohjelmistotuotannossa lopullisia totuuksia kovin harvassa, ja väitteiden todistaminen harvoin mahdollista
+
+Rakentava asenne
+
+■ Ei tarvitse kirjoittaa toisen paperia, mutta kommenttien perusteella paperia pitäisi kyetä parantamaan
+
+■ ”pitäisi kirjoittaa paremmin” on usein liian ylimalkainen
+
+■ ”termien sovellusarkkitehtuuri ja ohjelmistoarkkitehtuuri käyttö epäjohdonmukaista, onko tarpeen käyttää molempia termejä?”
+
+■ Pikkuvirheet kannattaa usein koota loppuun
+
+■ Kirjoitusvirheet, etenkin sellaiset joita ei oikolukuohjelma huomaa, kuten englannissa form vs. from tai ones vs. once
+
+■ Oletuksena on, että kirjoittaja tarkistaa tekstin oikolukuohjelmalla eikä jätä kielenhuoltoa arvioijille
