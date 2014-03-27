@@ -77,15 +77,21 @@ According to multiple authors,
 \section{Introduction} %why is this problem interesting?
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
 
+An important part of continuous deployment is the deployment pipeline. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
+
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
 
 It should also be made clear that continuous delivery differs from continous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
 
 Adopting a continuous deployment process doesn't necessarily mean that more value is delivered to a customer. Avinash Kaushik states in his Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong. A way to tackle this issue is to adopt a process of continuous experimentation, where the entire R&D system responds and acts based on instant customer feedback, and where actual deployment of software functionality is seen as a way of experimenting and testing what the customer needs \cite{olsson2012climbing}.
-
-%Mitä continous experimentation tekee?
+ 
+In continuous experimentation the organisation runs controlled experiments to guide the R&D process. %Mitä continous experimentation tekee?
 
 Continuous experimentation requires operational changes to the deployment pipeline. 
+
+In this paper we're investigating
+
+This paper is organized as follows.
 
 \begin{figure}[!t]
 	\centering
@@ -95,14 +101,38 @@ Continuous experimentation requires operational changes to the deployment pipeli
 \end{figure}
 
 
-\section{Methods} %how did I find the papers?
+\section{Methods} %how did I find the papers? %TODO: UPDATE THIS
+Searches were performed using the keywords shown in Table I. The searches were performed during February and March 2014 using IEEE Xplore (http://ieeexplore.ieee.org/‎) and Google Scholar (http://scholar.google.com/) search engines. Final papers were downloaded from the publishers web sites, if available. Plenty of research concerning software release management, release planning and iterative release planning were found, but the focus on architectural qualities appeared sparsely.  
 
+\begin{center}
+\begin{table}
+    \caption{Keywords used for searching research materials.}
+    \begin{tabular}{ | p{2cm} | p{2cm} | p{3.5cm} |}
+    \hline
+    Search string & Search engine & Article \\ \hline
+    software release management & Google Scholar & Software Release Management \\ \hline
+	release planning architecture & IEEE Xplore & Importance of Software Architecture during Release Planning \\ \hline
+	deployment production line & IEEE Xplore & The deployment production line \\ \hline
+	iterative release planning architecture & IEEE Xplore & Analysis and Management of Architectural Dependencies in Iterative Release Planning \\ \hline
+    \end{tabular}
+    \end{table}
+\end{center}
+
+As searches regarding architecture in continuous delivery and deployment returned no results, a decision was made to instead focus on research related to architectural features and issues in releases, and then attempting to apply those findings to continuous deployment. Articles regarding release management, release planning, iterative release planning and deployment pipeline were chosen for this purpose.
 
 \section{Results} %Pure analysis on the papers
 
+Lean startup
+
+Stairway to heaven Olsson
+
+Stairway to heaven Bosch
+
 \section{Discussion} %Own speculation
 
+What kind of elements need to be added to the deployment pipeline based on these papers?
 
+\section{Future research} %Self-explanatory
 \section{Conclusion} %Short wrap-up. Contains the key points
 
 
