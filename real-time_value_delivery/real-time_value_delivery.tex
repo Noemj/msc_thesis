@@ -77,7 +77,7 @@ According to multiple authors,
 \section{Introduction} %why is this problem interesting?
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
 
-An important part of continuous deployment is the deployment pipeline. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
+An important part of continuous deployment is the deployment pipeline. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. The deployment pipeline is therefore an automated implementation of the application's build, deploy, test and release process \cite{cdbook}. Common components of the deployment pipeline are a version control system and an automated test suite.
 
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
 
@@ -85,9 +85,7 @@ It should also be made clear that continuous delivery differs from continous dep
 
 Adopting a continuous deployment process doesn't necessarily mean that more value is delivered to a customer. Avinash Kaushik states in his Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong. A way to tackle this issue is to adopt a process of continuous experimentation, where the entire R&D system responds and acts based on instant customer feedback, and where actual deployment of software functionality is seen as a way of experimenting and testing what the customer needs \cite{olsson2012climbing}.
  
-In continuous experimentation the organisation runs controlled experiments to guide the R&D process. %Mitä continous experimentation tekee?
-
-Continuous delivery attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea.
+Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R&D process. %Mitä continous experimentation tekee?
 
 Continuous experimentation requires operational changes to the deployment pipeline. 
 
@@ -137,9 +135,12 @@ Building products as innovative \cite{bosch2012building}
 
 "A deployment pipeline is an automated implementation of your application's build, deploy, test and release process" \cite{cdbook}
 
+When deployments aren’t fully automated, errors will occur every time they are performed \cite{cdbook}.
+
 \subsection{Experimentation}
 -Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied \cite{bosch2012building}.
 
+Seven pitfalls \cite{crook2009seven}
 
 
 %Split this to themes instead of papers
