@@ -141,6 +141,11 @@ When deployments aren’t fully automated, errors will occur every time they are
 
 \subsection{Experimentation}
 
+Implementing an experiment on a website involves two components. The first component is the randomization algorithm, which is a function that maps users to variants. The second
+component is the assignment method, which uses the output of the randomization algorithm to determine the experience that each user will see on the website. During the experiment, observations must be collected, and data needs to be aggregated and analyzed \cite{kohavi2007practical}
+
+most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment \cite{kohavi2007practical}
+
 Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive. \cite{kohavi2007practical}
 
 "In practice, however, experimentation in online software is often limited tooptimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc andnot systematically applied." \cite{bosch2012building}
