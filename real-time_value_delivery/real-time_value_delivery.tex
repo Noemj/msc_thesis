@@ -2,6 +2,7 @@
 
 \usepackage{cite}
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
+\usepackage{float}
 
 
 % correct bad hyphenation here
@@ -84,6 +85,13 @@ In an agile process software release is done in periodic intervals \cite{cockbur
 
 It should also be made clear that continuous delivery differs from continous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=3.5in]{rtvd.jpg}
+	\caption{Continuous integration, delivery and deployment}
+	\label{fig1}
+\end{figure}
+
 Adopting a continuous deployment process doesn't necessarily mean that more value is delivered to a customer. Avinash Kaushik states in his Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong. A way to tackle this issue is to adopt a process of continuous experimentation, where the entire R\&D system responds and acts based on instant customer feedback, and where actual deployment of software functionality is seen as a way of experimenting and testing what the customer needs \cite{olsson2012climbing}.
  
 Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. %Mitä continous experimentation tekee?
@@ -94,21 +102,12 @@ As the experiments are run in a regular fashion, it is only natural to attempt t
 In this paper we're investigating %Main research question: How to integrate conducting experiments to the development process?
 
 This paper is organized as follows.
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=3.5in]{rtvd.jpg}
-	\caption{Continuous integration, delivery and deployment}
-	\label{fig1}
-\end{figure}
 
 \section{Methods} %how did I find the papers? %TODO: UPDATE THIS
-
-
 %Kerro tarkemmin kuin vaan mitä hakuja tehtiin
 Searches were performed using the keywords shown in Table I. The searches were performed during February and March 2014 using IEEE Xplore (http://ieeexplore.ieee.org/‎) and Google Scholar (http://scholar.google.com/) search engines. Final papers were downloaded from the publishers web sites, if available. Plenty of research concerning software release management, release planning and iterative release planning were found, but the focus on architectural qualities appeared sparsely.  
 \begin{center}
-\begin{table}
-    \caption{Keywords used for searching research materials.}
+\begin{table}[htb]
     \begin{tabular}{ | p{2cm} | p{2cm} | p{3.5cm} |}
     \hline
     Search string & Search engine & Article \\ \hline
@@ -117,6 +116,7 @@ Searches were performed using the keywords shown in Table I. The searches were p
 	deployment production line & IEEE Xplore & The deployment production line \\ \hline
 	iterative release planning architecture & IEEE Xplore & Analysis and Management of Architectural Dependencies in Iterative Release Planning \\ \hline
     \end{tabular}
+    \caption{Keywords used for searching research materials.}
     \end{table}
 \end{center}
 As searches regarding architecture in continuous delivery and deployment returned no results, a decision was made to instead focus on research related to architectural features and issues in releases, and then attempting to apply those findings to continuous deployment. Articles regarding release management, release planning, iterative release planning and deployment pipeline were chosen for this purpose.
@@ -140,7 +140,7 @@ Deployment production line \cite{humble2006deployment}
 The primary purpose of continuous deployment is to improve the process of software delivary. This is done by automating the whole deployment process, since unless deployments are automated, errors will occur every time they're performed \cite{cdbook}. The components of a deployment pipeline typically are a version control system and an automated test suite consisting of unit tests, integration tests and acceptance tests. 
 
 Humble and Farley define the deployment pipeline as a set of stages, which cover the path from a committed change to a build \cite{cdbook}. Refer to Fig. \ref{fig2} for a graphical representation of a basic deployment pipeline. The commit stage compiles the build and runs code analysis, while acceptance stage runs an automated test suite that asserts the build works at both functional and nonfunctional level. From there on, builds to different environments can be deployed either automatically or by a push of a button.
-\begin{figure}[!t]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=3.5in]{pipeline.jpg}
 	\caption{A basic deployment pipeline \cite{cdbook}.}
@@ -165,7 +165,7 @@ The last principle states "Evolve your production line along with the applicatio
 
 "A deployment pipeline is an automated implementation of your application's build, deploy, test and release process" \cite{cdbook}.
 
-\begin{figure}[!t]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=3.5in]{developmentprocess.jpg}
 	\caption{Components of the development process \cite{cdbook}.}
@@ -181,7 +181,7 @@ In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Mea
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}.
 
 Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. %TODO: loppuun tää
-\begin{figure}[!t]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=3.5in]{bosch.jpg}
 	\caption{Scopes for experimentation\cite{bosch2012building}.}
@@ -191,8 +191,7 @@ Crook et al. investigated the common pitfalls encountered when running controlle
 
 Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 \begin{center}
-\begin{table}
-    \caption{Pitfall to avoid when running controlled experiments on the web \cite{crook2009seven}.}
+\begin{table}[htb]
     \begin{tabular}{ | p{1cm} | p{6cm} |}
     \hline
 	Pitfall 1 & Picking an OEC for which it is easy to beat the control by doing something clearly “wrong” from a business perspective \\ \hline
@@ -203,6 +202,7 @@ Aside from picking a correct OEC, common pitfalls deal with the correct use of s
 	Pitfall 6 & Failing to validate each step of the analysis pipeline and the OEC components \\ \hline
 	Pitfall 7 & Forgetting to control for all differences, and assuming that humans can keep the variants in sync \\ \hline
     \end{tabular}
+    \caption{Pitfalls to avoid when running controlled experiments on the web \cite{crook2009seven}.}
     \end{table}
 \end{center}
 
