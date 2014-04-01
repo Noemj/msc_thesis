@@ -195,7 +195,7 @@ By building the logging component as a service that can be integrated to an exis
 
 The implementation of continuous experimentation is highly dependant on the company and product in question. In a SaaS product, where users access the providers services, adding data collection instruments and tracking user actions is relatively simple. This also applies to websites. However, in embedded systems or unfrequently deployed larger applications the approach is different, and multiple environments might be needed for testing. In some cases, following the process of continuous experimentation might not even be viable at all. Another issue lies at the user base. Larger the user base is, the more comprehensive and reliable is the statistical data. 
 
-Compared to the build-measure-learn cycle of Lean startup \cite{ries2011lean}, the cycle in continuous experimentation can be defined as hypothesis-metric-experiment-analyse. Refer to Fig. \ref{fig5} for a visual representation. The pipeline therefore begins with choosing a hypothesis and metrics required to validate the hypothesis. The execute phase includes implementing the minimum viable product, attaching it to the logging component and deploying it to the desired environment. The data is then analyzed and the hypothesis validated. Finally, the product can be updated or removed based on the results of the data. Based on the infrastructure of the company in question, different stakeholders can be responsible for each stage.
+Compared to the build-measure-learn cycle of Lean startup \cite{ries2011lean}, the cycle in continuous experimentation can be defined as hypothesis-metric-experiment-analyse. Refer to Fig. \ref{fig5} for a visual representation. The pipeline therefore begins with choosing a hypothesis and metrics required to validate the hypothesis. The execute phase includes implementing the minimum viable product, attaching it to the logging component and deploying it to the desired environment. The data is then analyzed and the hypothesis validated. Finally, the product can be updated or removed based on the results of the data, and the business strategy changed accordingly. Based on the infrastructure of the company in question, different stakeholders can be responsible for each stage.
 
 \begin{figure}[H]
 	\centering
@@ -226,9 +226,9 @@ The deployment pipeline is an automated implementation of an application's build
 
 Experimentation consists of a hypothesis, metrics required to validate the hypothesis, implementation of a minimum viable product with tools for collecting the previously chosen metrics, and finally analysis of the raw data to draw conclusions and validate the hypothesis. This can also be called the hypothesis-metrics-execute-analyse loop.
 
-Pipeline for continuous experimentation includes each of the previously stated step
+Pipeline for continuous experimentation requires components for collecting raw data, implementing minimum viable products and analyzing the data. We introduced an example pipeline including the required components, but acknowledged that the actual implementation heavily depends on the context.
 
-Research questions
+%investigating the pipelines for continuous deployment and continuous experimentation, and the main research questions are how to create a pipeline for continuous experimentation, which components are required for such a pipeline and whether this pipeline should be integrated to the deployment pipeline. 
 
 \bibliography{IEEEabrv,references}{}
 \bibliographystyle{IEEEtran}
