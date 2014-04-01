@@ -24,9 +24,7 @@ Email: olli.rissanen@helsinki.fi}}
 
 
 \begin{abstract}
-Currently more and more software companies are moving to lean practices, which often include shorter delivery cycles and thus shorter feedback loops. However, to achieve continuous customer feedback and to eliminate work that doesn't generate value, even shorter cycles are required. In continuous deployment the software functionality is deployed continuously at customer environment. This process includes both automated builds and automated testing, but also automated deployment. This adds more elements to the development pipeline, which often in a lean team consists of a version control system and a continuous integration server. Automating the whole process minimizes the time required for implementing new features in software, and allows for faster customer feedback. However, adopting continuous deployment doesn't necessarily mean that more value is created for the customer. 
-
-Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea.
+Currently more and more software companies are moving to lean practices, which often include shorter delivery cycles and thus shorter feedback loops. However, to achieve continuous customer feedback and to eliminate work that doesn't generate value, even shorter cycles are required. In continuous deployment the software functionality is deployed continuously at customer environment. This process includes both automated builds and automated testing, but also automated deployment. This adds more elements to the development pipeline, which often in a lean team consists of a version control system and a continuous integration server. Automating the whole process minimizes the time required for implementing new features in software, and allows for faster customer feedback. However, adopting continuous deployment doesn't necessarily mean that more value is created for the customer. While ontinuous deployment attempts to deliver an idea to users as fast as possible, continuous experimentation instead attempts to validate that it is, in fact, a good idea. In a state of continuous experimentation, the entire R\&D process is guided by controlled experiments and feedback. In it's core continuous experimentation consists of a design-execute-analyse loop, where hypotheses are selected based on business goals and strategies, experiments are executed with partial implementations and data collection tools and finally the results are analyzed to validate a hypothesis. In this paper we're conducting a literature review on the pipelines for continuous deployment and continuous experimentation. The main research questions are how to create a pipeline for continuous experimentation, which components are required for such a pipeline and whether this pipeline should be integrated to the deployment pipeline. 
 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
@@ -79,7 +77,7 @@ Continuous deployment attempts to deliver an idea to users as fast as possible. 
 \section{Introduction} %why is this problem interesting?
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
 
-An important part of continuous deployment is the deployment pipeline. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. The deployment pipeline is therefore an automated implementation of the application's build, deploy, test and release process \cite{cdbook}. Common components of the deployment pipeline are a version control system and an automated test suite.
+An important part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
 
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
 
@@ -94,46 +92,24 @@ It should also be made clear that continuous delivery differs from continous dep
 
 Adopting a continuous deployment process doesn't necessarily mean that more value is delivered to a customer. Avinash Kaushik states in his Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong. A way to tackle this issue is to adopt a process of continuous experimentation, where the entire R\&D system responds and acts based on instant customer feedback, and where actual deployment of software functionality is seen as a way of experimenting and testing what the customer needs \cite{olsson2012climbing}.
  
-Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. %Mitä continous experimentation tekee?
-As the experiments are run in a regular fashion, it is only natural to attempt to integrate experiments to the deployment pipeline, and to change the development process in such fashion that functionality is developed based on some actual data. The operational changes required for a deployment pipeline to support continuous experimentation include %what?
+Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuos experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
 
-%Continuous experimentation requires operational changes to the deployment pipeline. 
+As the experiments are run in a regular fashion, it is only natural to attempt to integrate experiments to the deployment pipeline, and to change the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
-In this paper we're investigating %Main research question: How to integrate conducting experiments to the development process?
+In this paper we're investigating the pipelines for continuous deployment and continuous experimentation, and the main research questions are how to create a pipeline for continuous experimentation, which components are required for such a pipeline and whether this pipeline should be integrated to the deployment pipeline. 
 
-This paper is organized as follows.
+This paper is organized as follows. Chapter II explains the research approach and the selection of cited papers. Chapter III explores the deployment pipeline, experimentation in software engineering and components required for a pipeline for continuous experimentation based on existing research on the subjects. Chapter IV then attempts to apply these findings to create a draft of a pipeline for continuous experimentation. Future research is introduced briefly in Chapter V. Finally, Chapter VI concludes the paper with key points.
 
-\section{Methods} %how did I find the papers? %TODO: UPDATE THIS
-%Kerro tarkemmin kuin vaan mitä hakuja tehtiin
-Searches were performed using the keywords shown in Table I. The searches were performed during February and March 2014 using IEEE Xplore (http://ieeexplore.ieee.org/‎) and Google Scholar (http://scholar.google.com/) search engines. Final papers were downloaded from the publishers web sites, if available. Plenty of research concerning software release management, release planning and iterative release planning were found, but the focus on architectural qualities appeared sparsely.  
-\begin{center}
-\begin{table}[htb]
-    \begin{tabular}{ | p{2cm} | p{2cm} | p{3.5cm} |}
-    \hline
-    Search string & Search engine & Article \\ \hline
-    software release management & Google Scholar & Software Release Management \\ \hline
-	release planning architecture & IEEE Xplore & Importance of Software Architecture during Release Planning \\ \hline
-	deployment production line & IEEE Xplore & The deployment production line \\ \hline
-	iterative release planning architecture & IEEE Xplore & Analysis and Management of Architectural Dependencies in Iterative Release Planning \\ \hline
-    \end{tabular}
-    \caption{Keywords used for searching research materials.}
-    \end{table}
-\end{center}
-As searches regarding architecture in continuous delivery and deployment returned no results, a decision was made to instead focus on research related to architectural features and issues in releases, and then attempting to apply those findings to continuous deployment. Articles regarding release management, release planning, iterative release planning and deployment pipeline were chosen for this purpose.
+\section{Methods} %how did I find the papers? %TODO: UPDATE THIS %Kerro tarkemmin kuin vaan mitä hakuja tehtiin
+Articles were found by tracking the citations from the article Climbing the "Stairway to Heaven" -- A Multiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software \cite{olsson2012climbing}, and by reading through the publishings of Experimentation Platform \cite{ep}. Articles on continuous delivery and deployment are easily available, but continuous experimentation is still a relatively new concept. Also the term continuous experimentation is often replaced with innovation experiment system, for example.
+
+What resulted from the citations of "Stairway to Heaven" article was mostly theoretical research on experiments, lean methodologies, continuous delivery and data analysis. Applied studies on continuous experimentation were found from the Microsoft Experimentation Platform, but they mostly consisted of A/B testing on web sites. Practical implementations of continuous experimentations were not found in the scientific papers apart from a few short cases \cite{bosch2012building}. However, enough information on restrictions and components were found such that a rough draft can be made.
+
+The research supporting continuous experimentation, such as statistical analysis, mapping backlogs to roadmaps and using experiments to validate hypotheses were found in vast amounts. Practical implementations of continuous delivery and deployment are also readily available.
 
 \section{Results} %Pure analysis on the papers
 
-A deployment pipeline for continuous deployment consists of the phases a build has to pass in order for it to be deployed. A pipeline for continuous experimentation, on the other hand, consists of the steps required to design, execute and analyse an experiment. The cycle of continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. In continuous experimentation, the main process is to deploy new functionality, measure usage and other performance metrics and subsequently to use the collected data to drive development \cite{bosch2012building}.
-
-Lean startup \cite{ries2011lean} %MVP
-
-Stairway to heaven Olsson \cite{olsson2012climbing}
-
-Building products as innovative \cite{bosch2012building}
-
-Practical guide \cite{kohavi2007practical}
-
-Deployment production line \cite{humble2006deployment}
+A deployment pipeline for continuous deployment consists of the phases a build has to pass in order for it to be deployed. A pipeline for continuous experimentation, on the other hand, consists of the steps required to design, execute and analyse an experiment. The cycle of continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. In continuous experimentation, the main process is to form a new hypothesis, decide on quantitative metrics, deploy new functionality, measure the previously decided metrics and subsequently use the collected data to drive development \cite{bosch2012building}.
 
 \subsection{Pipeline for continuous deployment}	
 
@@ -155,17 +131,9 @@ Another principle, which is the main element of continuous deployment, is to "Au
 
 The last principle states "Evolve your production line along with the application it assembles". Humble et al. state that attempting to build a full production line before writing any code doesn't deliver any value, so the production line should be built and modified as the application evolves. 
 
-%Humble et al. define four principles that guide in implementing the deployment pipeline \cite{humble2006deployment}. The first principle states that "Each build stage should deliver working software". 
+A picture of the typical development process in continuous deployment is shown in Fig. \ref{fig3}. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
 
-%The second principle states "Deploy the same artifacts in every environment - manage your runtime configuration separately".
-
-%The third principle states "Automate testing and deployment - use several independent testing stages".
-
-%The fourth principle states "Evolve your production line along with the application it assembles".
-
-"A deployment pipeline is an automated implementation of your application's build, deploy, test and release process" \cite{cdbook}.
-
-\begin{figure}[H]
+\begin{figure}[!t]
 	\centering
 	\includegraphics[width=3.5in]{developmentprocess.jpg}
 	\caption{Components of the development process \cite{cdbook}.}
@@ -205,41 +173,48 @@ Aside from picking a correct OEC, common pitfalls deal with the correct use of s
     \caption{Pitfalls to avoid when running controlled experiments on the web \cite{crook2009seven}.}
     \end{table}
 \end{center}
-
-Experimentation doesn't necessarily require development of software.
-
+%Experimentation doesn't necessarily require development of software.
 %Implementing an experiment on a website involves two components. The first component is the randomization algorithm, which is a function that maps users to variants. The second
 %component is the assignment method, which uses the output of the randomization algorithm to determine the experience that each user will see on the website. During the experiment, observations must be collected, and data needs to be aggregated and analyzed \cite{kohavi2007practical}
 
-\subsection{Pipeline for continous experimentation}
-
-A system with continuous experimentation must be able to release minimum viable products with integrated data collection instruments in a rapid manner. 
+\subsection{Components in continous experimentation}
 
 Kohavi et al. investigate the practical implementations of controlled experiments on the web \cite{kohavi2007practical}, and state that the implementation of an experiment involves two components. The first component is a randomization algorithm, which is used to map users to different variants of the product in question. The second component is an assignment method which, based on the output of the randomization algorithm, determines the contents that each user are shown. The observations then need to be collected, aggregated and analyzed to validate a hypothesis. Kohavi et al. also state that most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment.
 
-The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. 
+The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection are easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
+To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections. The data should also be annotated to an identifier, such that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.  
+
+To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance. 
 %The components of a pipeline for continuous experimentation should include a 
-
-
 %Split this to themes instead of papers
 
 \section{Discussion} %Own speculation
 
-The quantitative measure must be correct (pitfall)
+A system with continuous experimentation must be able to release minimum viable products with integrated data collection instruments in a rapid manner. The process of continuous experimentation requires tools for designing, executing and analyzing experiments. Designing experiments should be tied to strategic goals, and high emphasis should be directed towards deciding the correct quantitative measurements. Executing experiments requires a set of tools used for collecting the data for previously selected metrics. In case of A/B tests logic that divides users to treatment and control is required. For analyzing the data, analytical tools and database to store both the raw data and results are required. Finally, a database for storing information on experiments, such as the raw data, is required.
 
-What kind of elements need to be added to the deployment pipeline based on these papers?
+Compared to the build-measure-learn cycle of Lean startup \cite{ries2011lean}, the cycle in continuous experimentation is hypothesis-metric-experiment-analyse. 
 
-The pipeline for continuous deployment
+The deployment pipeline introduced in Chaper II makes it possible to effectively deploy new features to the customer environment. It would seem unnecessary to attempt to add more components to the deployment pipeline, and instead consider it as a prequisite that enables effective continuous experimentation. Due to the ability to near instantly deploy new features, minimum viable products can be both deployed and ejected quickly. Emphasis should instead be paid to implementing the back-end system in such manner that experimentations and minimum viable products can be quickly, possibly even automatically, created. 
 
-The pipeline for continuous experimentation
+By building the logging component as a service that can be integrated to an existing application in the sense suggested by Kohavi et al. \cite{kohavi2007practical}, the
 
-Based on the features required by .., a set of restrictions can be ..
+%Based on the studies by Kohavi et al., in 
+%The quantitative measure must be correct (pitfall)
+%What kind of elements need to be added to the deployment pipeline based on these papers?
+%The pipeline for continuous deployment
+%The pipeline for continuous experimentation
+%Based on the features required by .., a set of restrictions can be ..
 
-Restrictions
-#1 Running an experiment should be optional, and deploying without experimenting must be made possible
+%Restrictions
+%\#1 Running an experiment should be optional, and deploying without experimenting must be made possible
 
 \section{Future research} %Self-explanatory
+Olsson et al. are planning to research the transition from continuous deployment to an experiment system in their future research. The research is continuing from their earlier research on transitioning from traditional methodologies to agile methodologies, and further to continuous deployment. \cite{olsson2012climbing}
+
+Jan Bosch intends to apply the Innovation Experiment Systems to practice, similar to the authors previous case study on an industrial case, Intuit \cite{bosch2012building}.
+
+The author of this paper will also study the transition from continuous deployment to continuous experimentation on an industrial case study.
 \section{Conclusion} %Short wrap-up. Contains the key points
 
 
