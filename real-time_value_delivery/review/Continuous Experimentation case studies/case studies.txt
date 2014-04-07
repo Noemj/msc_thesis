@@ -1,0 +1,15 @@
+The paper conducts a literature review on continuous experimentation in two case companies, Microsoft and Etsy. The scope of the article is therefore well restricted to consider only two companies. The article is structured reasonably, with the author first explaining the purpose of continuous experimentation, then a platform to execute the practice and finally the case studies. 
+
+While the article presents the cases thoroughly, the speculation by the author is lacking a bit. For example stating that tools for running controlled experiments are easy to use requires a bit more elaboration, and especially some scientific indication. Some discussion about the results, other than picking the correct OEC, could be added - the two cases could be compared, and general results listed.
+
+Overall, the article is presented in and understandable way, and the linquistic form is good. With some added discussion and contribution by the author, the quality of this paper improves a lot.
+
+Some improvements:
+
+-Citation [7] isn't very informative.
+-A citation to EXP platform should be added to where it is first introduced.
+-There are many claims without references, such as "Common architecture of an experimentation platform consists from three main components, which are the randomization algorithm, assignment method and the data path". 
+-Occasionally cites are used after a dot.
+-What's the research question?
+-This should probably be elaborated: "Sometimes running experiments in the web can lead to some very puzzling outcomes."
+

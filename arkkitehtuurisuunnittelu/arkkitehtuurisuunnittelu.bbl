@@ -81,4 +81,10 @@ R.~Kazman, M.~Klein, M.~Barbacci, T.~Longstaff, H.~Lipson, and J.~Carriere,
   International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   1998, pp. 68--78.
 
+\bibitem{mf}
+\BIBentryALTinterwordspacing
+M.~Fowler. (2014) Featurebranch. [Online]. Available:
+  \url{http://martinfowler.com/bliki/FeatureBranch.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
