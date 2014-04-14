@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.5)  7 APR 2014 13:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.5)  14 APR 2014 12:57
 entering extended mode
 **arkkitehtuurisuunnittelu
 
-(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
-elu.tex
+("c:\Users\Noemj\gradu\msc_thesis\Seminar - Architecture Design\arkkitehtuurisu
+unnittelu.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -255,8 +255,8 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen140
 \Gin@req@width=\dimen141
 )
-(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
-elu.aux)
+("c:\Users\Noemj\gradu\msc_thesis\Seminar - Architecture Design\arkkitehtuurisu
+unnittelu.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
@@ -340,7 +340,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--117
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2 <c:/Users/Noemj/gradu/msc_thesis/arkkitehtuurisuunnittelu/rtvd.jpg>]
+[2 <c:/Users/Noemj/gradu/msc_thesis/Seminar - Architecture Design/rtvd.jpg>]
 [3] [4] <developmentprocess.jpg, id=23, 376.40625pt x 268.75406pt>
 File: developmentprocess.jpg Graphic file (type jpg)
 
@@ -353,8 +353,8 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 203--204
  []
 
 
-(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
-elu.bbl)
+("c:\Users\Noemj\gradu\msc_thesis\Seminar - Architecture Design\arkkitehtuurisu
+unnittelu.bbl")
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -366,27 +366,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5 <c:/Users/Noemj/gradu/msc_thesis/arkkitehtuurisuunnittelu/developmentprocess
-.jpg>]
-(c:\Users\Noemj\gradu\msc_thesis\arkkitehtuurisuunnittelu\arkkitehtuurisuunnitt
-elu.aux) ) 
+[5 <c:/Users/Noemj/gradu/msc_thesis/Seminar - Architecture Design/developmentpr
+ocess.jpg>]
+("c:\Users\Noemj\gradu\msc_thesis\Seminar - Architecture Design\arkkitehtuurisu
+unnittelu.aux") ) 
 Here is how much of TeX's memory you used:
  3292 strings out of 493921
- 47558 string characters out of 3147282
- 112669 words of memory out of 3000000
+ 47603 string characters out of 3147282
+ 113669 words of memory out of 3000000
  6552 multiletter control sequences out of 15000+200000
  40666 words of font info for 85 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 27i,10n,24p,1369b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on arkkitehtuurisuunnittelu.pdf (5 pages, 244310 bytes).
+ 27i,10n,24p,1501b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
+tmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on arkkitehtuurisuunnittelu.pdf (5 pages, 244898 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
