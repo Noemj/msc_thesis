@@ -22,10 +22,8 @@ Email: olli.rissanen@helsinki.fi}}
 % make the title area
 \maketitle
 
-
 \begin{abstract}
 Currently more and more software companies are moving to lean practices, which often include shorter delivery cycles and thus shorter feedback loops. However, to achieve continuous customer feedback and to eliminate work that doesn't generate value, even shorter cycles are required. In continuous deployment the software functionality is deployed continuously at customer environment. This process includes both automated builds and automated testing, but also automated deployment. This adds more elements to the development pipeline, which often in a lean team consists of a version control system and a continuous integration server. Automating the whole process minimizes the time required for implementing new features in software, and allows for faster customer feedback. However, adopting continuous deployment doesn't necessarily mean that more value is created for the customer. While continuous deployment attempts to deliver an idea to users as fast as possible, continuous experimentation instead attempts to validate that it is, in fact, a good idea. In a state of continuous experimentation, the entire R\&D process is guided by controlled experiments and feedback. In it's core continuous experimentation consists of a design-execute-analyse loop, where hypotheses are selected based on business goals and strategies, experiments are executed with partial implementations and data collection tools and finally the results are analyzed to validate the hypothesis. In this paper we're conducting a literature review on the pipelines for continuous deployment and continuous experimentation. The main research questions are how to create a pipeline for continuous experimentation, which components are required for such a pipeline and whether this pipeline should be integrated to the deployment pipeline. 
-
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -33,11 +31,9 @@ Currently more and more software companies are moving to lean practices, which o
 % then you can use LaTeX's standard command \boldmath at the very start
 % of the abstract to achieve this. Many IEEE journals/conferences frown on
 % math in the abstract anyway.
-
-% no keywords
-
-
-
+\begin{IEEEkeywords}
+Continuous deployment, Continuous experimentation, Deployment pipeline
+\end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
 % page as needed:
