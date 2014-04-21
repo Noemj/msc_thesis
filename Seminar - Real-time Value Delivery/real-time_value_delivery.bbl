@@ -81,4 +81,10 @@ T.~Crook, B.~Frasca, R.~Kohavi, and R.~Longbotham, ``Seven pitfalls to avoid
   15th ACM SIGKDD international conference on Knowledge discovery and data
   mining}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2009, pp. 1105--1114.
 
+\bibitem{fagerholm2014building}
+F.~Fagerholm, A.~S. Guinea, H.~M{\"a}enp{\"a}{\"a}, and J.~M{\"u}nch,
+  ``Building blocks for continuous experimentation,'' in \emph{Proceedings of
+  the 1st International Workshop on Rapid Continuous Software Engineering
+  (RCoSE 2014), Hyderabad, India}, 2014.
+
 \end{thebibliography}

@@ -180,15 +180,40 @@ Fig. \ref{fig4} introduces different stages and scopes for experimentation. For 
 \subsection{Continuous experimentation}
 Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuos experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
 
-As the experiments are run in a regular fashion, it is only natural to attempt to integrate experiments to the deployment pipeline, and to change the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
+As the experiments are run in a regular fashion, it integratign experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
 \subsection{State of the art}
 
 \subsection{State of the practice}
+%Introduce steeri
+Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
+
+These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
+
+The development isn't at all distributed, and no external party affects the development process. 
+
+\cite{olsson2012climbing}
+
 -current state at steeri
     -short summary
 
+
+Be sure to specify as much of the industrial context as possible. In particular,
+clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
+
 \section{Hypothesis}
+
+Case study structure: 
+
+1. Case study design: objectives are defined and 
+the case study is planned. 
+2. Preparation for data collection: procedures and 
+protocols for data collection are defined. 
+3. Collecting evidence: execution with data 
+collection on the studied case. 
+4. Analysis of collected data 
+5. Reporting 
+
 Proposal for solution
 \section{Methodology}
 Adopt the solution
