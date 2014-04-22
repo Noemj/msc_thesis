@@ -1,0 +1,9 @@
+in a case study results should be based at least on some measured data. what should be measured in this case? qualitative? interviews? GQM?
+
+old data is available, such as efforts for projects. can it be used if no new methods are implemented?
+
+Objective—what to achieve? Exploratory / improving? conclusions have to be made from qualitative or quantitative measurements.
+The case—what is studied?
+Research questions—what to know?
+Methods-how to collect data?
+Selection strategy—where to seek data?
