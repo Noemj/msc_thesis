@@ -200,16 +200,61 @@ The development isn't at all distributed, and no external party affects the deve
 Be sure to specify as much of the industrial context as possible. In particular,
 clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
 
-
 \section{Needs, problems and challenges}
 
-\subsection{Problems}
--Collecting feedback in a B2B environment
+\subsection{Problems} %Should address an underlying research question
+Larger context, narrow context
+Subproblems
+
+-Collecting feedback in B2B domain
+  In B2B domain the connection with end users might not be established properly, and the feedback can only be received from the other companys key members. However, the feedback from end users is especially important. 
+
+-Collecting feedback without a SaaS product
+  In a SaaS platform it is easier to plug in measurement tools to the software, as the environment is that of the company responsible for the service. Without a SaaS environment, the data has to be collected and stored in customer environment. 
+
 -The time between the idea and implementation is too long
+  Currently the ideas are not tested at all, but the effects are planned in a waterfall style and implemented thoroughly before a release. Making partial implementations could however allow the use of quantitative or qualitative data to measure whether an idea is worth implementing at all.
+
 -Time dimension. If an impact is done right now, when will the effects be visible?
+  Adding the correct measurement metrics to a feature also make the impact more visible.
+
 -Conventions for production deployment. The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
+  Forming the development pipeline to include both experiments and automated deployment makes the entirety clear from the idea to the release.
+
 -How do we validate whether a feature is succesful or not? In B2C this is usually done by observing shifts in sales, but in our product there's no such thing.
--Possibly things we can analyze are user experience, but is it enough?
+  The measurement metric has to be chosen such that a decision can be made to judge if the feature is succesful or not.
+
+-Possible thing we can analyze is user experience, but is it enough?
+
+\subsection{goals}
+Requirements should be testable
+
+-Continuously collect feedback from customers.
+    Subgoal: Define the type of feedback to be collected
+    Subgoal: Define a mechanism for feedback collection
+	Req: figure out how to collect feedback
+	Req: figure who is responsible for analyzing feedback
+	Req: 
+-Reduce the length of the delivery cycle.
+	Subgoal:
+	Subgoal:
+	Req: shorten the time it takes 
+-Be able to measure the effectiveness of a feature.
+	Subgoal:
+	Subgoal:
+    Req: collect data whenever a feature is deployed to measure the performance	
+
+\subsection{solutions}
+
+\subsection{solution idea}
+
+\subsection{Challenges respecting to continuous delivery}
+-Technical implementation
+-Education on the subject
+-Active participation of employees
+
+\subsection{Challenges respecting to continuous experimentation}
+-Participation of every key member
 
 \section{Research method}
 
