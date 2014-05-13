@@ -180,12 +180,12 @@ Fig. \ref{fig4} introduces different stages and scopes for experimentation. For 
 \subsection{Continuous experimentation}
 Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuos experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
 
-As the experiments are run in a regular fashion, it integratign experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
+As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
 \subsection{State of the art}
 
 \subsection{State of the practice}	
-%Introduce steeri
+%an overview of the entire process, then refining the parts that are relevant for the problems 
 Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
 
 These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
@@ -205,11 +205,12 @@ clearly deﬁne the entities, attributes, and measures that are capturing the co
 \subsection{Problems} %Should address an underlying research question
 Larger context, narrow context
 Subproblems
+More concrete (Who is having a problem?)
 
--Collecting feedback in B2B domain
-  In B2B domain the connection with end users might not be established properly, and the feedback can only be received from the other companys key members. However, the feedback from end users is especially important. 
+-Collecting feedback in B2B domain | Who should collect the feedback?
+  In B2B domain the connection with end users might not be established properly, and the feedback can only be received from the other company's key members. However, the feedback from end users is especially important. 
 
--Collecting feedback without a SaaS product
+-Collecting feedback without a SaaS product | What is the impact?
   In a SaaS platform it is easier to plug in measurement tools to the software, as the environment is that of the company responsible for the service. Without a SaaS environment, the data has to be collected and stored in customer environment. 
 
 -The time between the idea and implementation is too long
@@ -224,6 +225,9 @@ Subproblems
 -How do we validate whether a feature is succesful or not? In B2C this is usually done by observing shifts in sales, but in our product there's no such thing.
   The measurement metric has to be chosen such that a decision can be made to judge if the feature is succesful or not.
 
+-Trello flow time?
+  Occasional deploying takes time. Speeding it up would eventually improve flow time.
+
 -Possible thing we can analyze is user experience, but is it enough?
 
 \subsection{goals}
@@ -232,17 +236,22 @@ Requirements should be testable
 -Continuously collect feedback from customers.
     Subgoal: Define the type of feedback to be collected
     Subgoal: Define a mechanism for feedback collection
-	Req: figure out how to collect feedback
-	Req: figure who is responsible for analyzing feedback
-	Req: 
+    Subgoal: figure out how to collect feedback
+    Subgoal: figure who is responsible for analyzing feedback
+	Req: Feedback can be continuously collected from customers
+	Req: The person responsible for collecting feedback can be identified 
 -Reduce the length of the delivery cycle.
-	Subgoal:
-	Subgoal:
-	Req: shorten the time it takes 
+	Subgoal: Identify the components in the delivery cycle
+	Subgoal: Identify what takes too long
+	Req: The delivery cycle is completely perceived
+	Req: The length of the delivery from idea to deployment is shortened
 -Be able to measure the effectiveness of a feature.
-	Subgoal:
-	Subgoal:
-    Req: collect data whenever a feature is deployed to measure the performance	
+	Subgoal: Implement measurement tools
+	Subgoal: Implement data analysis tools
+	Subgoal: collect data whenever a feature is deployed to measure the performance	
+    Req: Data can be collected from an implemented feature 
+    Req: Collected data can be analyzed to form an answer
+
 
 \subsection{solutions}
 
