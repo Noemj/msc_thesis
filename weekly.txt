@@ -1,0 +1,20 @@
+7.5.2014
+Päätetään toteutetaanko implementaatioita.
+Sovittiin, että Juholta ja Henniltä saa State of practice-matskua.
+Sovittiin, että autan Juhoa keräämään State of practice-matskua.
+Juhalla ja Hennillä on paljon dataa esim. Trellosta.
+
+
+19.5.2014
+
+tutkimuskyssärit kuntoon
+
+malli:
+
+>analyze state of the practice
+>specify problem and goals 
+>analyze state of the art
+>state hypotheses
+>derive solution idea
+
+mihin väliin case study sijoittuu?
