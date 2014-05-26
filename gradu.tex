@@ -136,6 +136,12 @@ he were allowed to hit four balls each time and then choose the shot that worked
 % Detail how this solution should be implemented
 
 \section{Introduction}
+
+Structure:
+
+#1
+Background information - case study context - results - limitations - summary, future work
+
 -GOAL OF THE THESIS
 -motivation
 -research question
@@ -147,11 +153,15 @@ he were allowed to hit four balls each time and then choose the shot that worked
 >state hypotheses
 >derive solution idea
 
-\section{Related work}
+\section{Background and related work}
 -continuous delivery
 -continuous experimentation
 -state of the art practices
     -short summary
+
+\subsection{Case study}
+
+\subsection{Qualitative research}
 
 \subsection{Continuous delivery}
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
@@ -275,6 +285,7 @@ clearly deﬁne the entities, attributes, and measures that are capturing the co
 
 TODO:
 Research problem: "High-level slogan"
+How to adopt CD and CE in the case company?
 
 Research questions:
 
@@ -351,22 +362,71 @@ Requirements should be testable
 \subsection{Challenges respecting to continuous experimentation}
 -Participation of every key member
 
-\section{Research method}
+\section{Case study implementation: Research method}
 
-Exploratory case study: Finding out what is happening, seeking new insights and generating ideas and hypotheses for new research.
+\subsection{Objective - what to achieve?}
 
-Case study structure: 
+The study is an exploratory case study, which attempts to figure out how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main problems and key success factors with regards to these approaches. This includes analyzing the current development process, seeking the current problems faced in the development process and understanding the requirements of continuous deployment and continuous experimentation. 
 
-1. Case study design: objectives are defined and 
-the case study is planned. 
-2. Preparation for data collection: procedures and 
-protocols for data collection are defined. 
-3. Collecting evidence: execution with data 
-collection on the studied case. 
-4. Analysis of collected data 
-5. Reporting 
+Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
 
-Proposal for solution
+\subsection{The case—what is studied?}
+Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
+
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. The Dialog team focuses on developing a marketing automation, which .... The CDM team focuses on building a Master Data Management (cite) solution, which ..... 
+
+The units of analysis are individual members at different positions in the organisation, the teams which are composed of these people and the development process of the teams. Timeframe?
+
+The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management. 
+
+Continuous deployment has been
+
+Continuous experimentation 
+
+In the beginning of the study, feedback was only collected in the form of bug reports from the customers. The bugs were then prioritized according to the importance, and added into the Trello workflow. 
+
+Under analysis is also the company's ways to interact with the customer.
+
+\subsection{Theory - frame of reference}
+
+Based on the existing research in Continuous Experimentation and Continuous Deployment:
+
+Crook et al: Seven pitfalls to avoid when running controlled experiments on the web
+Eric Ries: The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses
+Kohavi et al: Practical guide to controlled experiments on the web: listen to your customers not to the hippo
+Fagerholm et al: Building Blocks for Continuous Experimentation
+Jan Bosch: Building products as innovation experiment systems
+Olsson et al: Climbing the" Stairway to Heaven"--A Mulitiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software
+Humble et al: The deployment production line
+Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
+Microsoft EXP platform
+
+The researcher is a part of the development team of the company, but the viewpoint ...
+
+\subsection{Research questions - what to know?}
+##Research questions—what to know? these fulfill the objective##
+
+How to collect feedback in a B2B domain?
+	subquestion: Who should use the collected feedback?
+	subquestion: Who is responsible for collecting the feedback?
+
+How to collect feedback without a SaaS product?
+
+
+How to shorten the time between the idea and implementation?
+If an impact is done right now, when will the effects be visible?
+The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
+How do we validate whether a feature is succesful or not? 
+
+\subsection{Methods - how to collect data?}
+The primary source of information in this research is the interviews performed within the Development & Integration team and its management. Trello, documents
+
+\subsection{Selection strategy - where to seek data?}
+
+Interview data will be primarily sought from the developers of the development teams and the managers of the team.
+
+
+
 
 
 \section{Hypothesis}

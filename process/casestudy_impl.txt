@@ -1,36 +1,57 @@
 ##Objective—what to achieve?##
 
-Exploratory case study to figure out how continuous deployment and continuous experimentation can be integrated to the development procees of the company in question. This includes analyzing the current development process, seeking the current problems faced in the development process and  
+
+
+
+The study is an exploratory case study, which attempts to figure out how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main problems and key success factors with regards to these approaches. This includes analyzing the current development process, seeking the current problems faced in the development process and understanding the requirements of continuous deployment and continuous experimentation. 
 
 ##The case—what is studied?##
 
-The company in question is Steeri Oy, and the target of the case study is the development process of two teams, Dialog and Development & Integration. 
+Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference". 
+
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. The Dialog team focuses on developing a marketing automation, which .... The CDM team focuses on building a Master Data Management (cite) solution, which ..... 
+
+The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management.  
+
+Under analysis is also the company's ways to interact with the customer.
 
 ##Theory—frame of reference##
 
--viewpoint
--background of the researcher
+Based on the existing research in Continuous Experimentation and Continuous Deployment:
 
-Based on the existing research in Continuous Experimentation and Continuous Deployment \cite{}.
--earlier studies affect the design
+Crook et al: Seven pitfalls to avoid when running controlled experiments on the web
+Eric Ries: The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses
+Kohavi et al: Practical guide to controlled experiments on the web: listen to your customers not to the hippo
+Fagerholm et al: Building Blocks for Continuous Experimentation
+Jan Bosch: Building products as innovation experiment systems
+Olsson et al: Climbing the" Stairway to Heaven"--A Mulitiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software
+Humble et al: The deployment production line
+Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
+Microsoft EXP platform
 
+The researcher is a part of the development team of the company, but the viewpoint ...
 
 ##Research questions—what to know? these fulfill the objective##
 
 How to collect feedback in a B2B domain?
+	subquestion: Who should use the collected feedback?
+	subquestion: Who is responsible for collecting the feedback?
+
 How to collect feedback without a SaaS product?
-The time between the idea and implementation is too long
+
+
+How to shorten the time between the idea and implementation?
 If an impact is done right now, when will the effects be visible?
 The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
 How do we validate whether a feature is succesful or not? 
 
 ##Methods—how to collect data?##
 
-The data is collected from interviews and Trello.
+The data is collected from interviews, documents and Trello.
 
 ##Selection strategy—where to seek data?##
 
-Data will be primarily sought from 
+Interview data will be primarily sought from the developers of the development teams and the managers of the team.
 
 
 
