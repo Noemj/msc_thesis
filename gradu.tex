@@ -157,14 +157,12 @@ Related work - experimental setup - results - summary
 >derive solution idea
 
 \section{Background and related work}
--continuous delivery
--continuous experimentation
--state of the art practices
-    -short summary
 
 \subsection{Case study}
+Case study is a way to collect data through observation and to test theories in an unmodified setting \cite{Experimental Models for Validating Technology}. An opposite type of research would be a formal experiment, with a narrow focus and control on variables. Case studies are particularly important for industrial evaluation of software engineering methods and tools \cite{Case Studies for Method and Tool Evaluation}. Generalizing the results of a case study is often a subject of internal validity \cite{TODO}.  
 
 \subsection{Qualitative research}
+Qualitative research attempts to answer to questions Why and How instead of What, Where and When as compared to quantitative research. The most common way to collect qualitative data is via an interview, which can be structured, unstructured or semi-structured \cite{Qualitative Methods in Empirical Studies of Software Engineering}. 
 
 \subsection{Continuous delivery}
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
@@ -225,7 +223,7 @@ Team backlog is a view to all stories assigned to one selected team. It is a too
 Completed stories related to one team can be found from the report (link in team detail page)
 Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
 
-Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) before moving to 
+Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
 
 \subsection{Using Trello}
 
@@ -376,10 +374,15 @@ Existing documented applications of continuous experimentation are primarily exe
 \subsection{The case—what is studied?}
 Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
 
-The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. The Dialog team focuses on developing a marketing automation, which .... The CDM team focuses on building a Master Data Management (cite) solution, which ..... 
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. 
+
+The Dialog team focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
+
+The CDM team focuses on building a Master Data Management (cite) solution, which integrates the customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
 
 The units of analysis are individual members at different positions in the organisation, the teams which are composed of these people and the development process of the teams. Timeframe?
 
+TODO: organisation: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management. 
 
 Continuous deployment and continuous experimentation haven't been previously used by the case company.  
@@ -407,6 +410,8 @@ The researcher is a part of the development team of the company, but the viewpoi
 \subsection{Research questions - what to know?}
 ##Research questions—what to know? these fulfill the objective##
 
+What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?
+
 How to collect feedback in a B2B domain?
 	subquestion: Who should use the collected feedback?
 	subquestion: Who is responsible for collecting the feedback?
@@ -418,6 +423,16 @@ How to collect feedback without a SaaS product?
 How to shorten the time between the idea and implementation?
 	subquestion: What are the roles?
 
+How should continuous experimentation guide the development process?
+	subquestion: Where do the development ideas come from? Customer, team, management?
+
+How should continuous delivery be integrated in the development process?
+	subquestion: How to keep the product in a stage where it can be released at all times?
+
+What tools are necessary for continuous deployment?
+
+What tools are necessary for continuous experimentation?
+
 If an impact is done right now, when will the effects be visible?
 The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
 How do we validate whether a feature is succesful or not? 
@@ -427,15 +442,11 @@ The primary source of information in this research is the interviews performed w
 
 \subsection{Selection strategy - where to seek data?}
 
-Interview data will be primarily sought from the developers of the development teams and the managers of the team.
-
-
-
-
+Interview data will be primarily sought from the developers of the development teams and the managers of the team. Process data will be sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. 
 
 \section{Hypothesis}
 \section{Methodology}
-Adopt the solution
+Adopt the solutison
 Implement & test
 
 \section{Results}
