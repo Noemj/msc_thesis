@@ -91,6 +91,7 @@ artefacts, viewpoints, etc.?
 for the research question? 
 10. Is the integrity of individuals/organizations taken into 
 account? 
+
 Preparation for Data Collection 
 11. Is a protocol for data collection and analysis derived 
 (what, why, how)? 
@@ -103,6 +104,7 @@ to fulfil the objective of the study?
 15. Is the study design approved by a review board, and has 
 informed consent obtained from individuals and 
 organizations? 
+
 Collecting Evidence 
 16. Are data collected according to the protocol? 
 17. Is the observed phenomenon correctly implemented 
@@ -127,8 +129,7 @@ cause distinguished from other factors?
 recommendations for practice/further research? 
 27. Are threats to validity addressed in a systematic way? 
  
- 
- 
+
 Reporting 
 28. Are the case and its context adequately reported? 
 29. Are the research questions and corresponding answers 

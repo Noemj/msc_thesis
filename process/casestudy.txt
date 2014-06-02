@@ -92,7 +92,7 @@ Methodological triangulation—combining different types of data collection meth
 e.g. qualitative and quantitative methods.
 Theory triangulation—using alternative theories or viewpoints.
 
-“Has research questions set out from the beginning of the study
+Has research questions set out from the beginning of the study
 Data is collected in a planned and consistent manner
 Inferences are made from the data to answer the research question
 Explores a phenomenon, or produces an explanation, description, or causal analysis of it
@@ -129,25 +129,6 @@ collection on the studied case.
 4. Analysis of collected data 
 5. Reporting 
 
-What is the object of study? 
-2. Is a clear purpose/objective/research question 
-/hypothesis/proposition defined upfront? 
-3. Is the theoretical basis - relation to existing literature 
-and other cases - defined? 
-4. Are the authors’ intentions with the research made 
-clear? 
-5. Is the case adequately defined (size, domain, 
-process…)? 
-6. Is a cause-effect relation under study? If yes, is the 
-cause distinguished from other factors? 
-7. Will data be collected from multiple sources? Using 
-multiple methods? 
-8. Is there a rationale behind the selection of roles, 
-artefacts, viewpoints, etc.? 
-9. Are the case study settings relevant to validly address 
-for the research question? 
-10. Is the integrity of individuals/organizations taken into 
-account? 
 Preparation for Data Collection 
 11. Is a protocol for data collection and analysis derived 
 (what, why, how)? 
