@@ -159,41 +159,10 @@ Related work - experimental setup - results - summary
 \section{Background and related work}
 
 \subsection{Case study}
-Case study is a way to collect data through observation and to test theories in an unmodified setting \cite{Experimental Models for Validating Technology}. An opposite type of research would be a formal experiment, with a narrow focus and control on variables. Case studies are particularly important for industrial evaluation of software engineering methods and tools \cite{Case Studies for Method and Tool Evaluation}. Generalizing the results of a case study is often a subject of internal validity \cite{TODO}.  
+Case study is a way to collect data through observation and to test theories in an unmodified setting \cite{zelkowitz1998experimental}. An opposite type of research would be a formal experiment, with a narrow focus and control on variables. Case studies are particularly important for industrial evaluation of software engineering methods and tools \cite{kitchenham1995case}. Generalizing the results of a case study is often a subject of internal validity \cite{TODO}. 
 
 \subsection{Qualitative research}
 Qualitative research attempts to answer to questions Why and How instead of What, Where and When as compared to quantitative research. The most common way to collect qualitative data is via an interview, which can be structured, unstructured or semi-structured \cite{Qualitative Methods in Empirical Studies of Software Engineering}. 
-
-\subsection{Continuous delivery}
-Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
-
-An important part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
-
-In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
-
-It should also be made clear that continuous delivery differs from continous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
-
-\subsection{Experimentation}
-An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be listened to. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. I
-
-In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
-
-Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
-
-Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=3.5in]{bosch.jpg}
-	\caption{Scopes for experimentation\cite{bosch2012building}.}
-	\label{fig4}
-\end{figure}
-
-\subsection{Continuous experimentation}
-Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuos experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
-
-As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
-
-\subsection{State of the art}
 
 \section{State of the practice}	
 %an overview of the entire process, then refining the parts that are relevant for the problems 
@@ -280,6 +249,144 @@ Thnergefwdqa
 Be sure to specify as much of the industrial context as possible. In particular,
 clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
 
+\section{State of the art}
+
+\subsection{Continuous delivery}
+Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. %Explain pipeline here
+
+An important part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
+
+In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
+
+It should also be made clear that continuous delivery differs from continous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
+
+\subsection{Experimentation}
+An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be listened to. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. I
+
+In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
+
+Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
+
+Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=3.5in]{bosch.jpg}
+	\caption{Scopes for experimentation\cite{bosch2012building}.}
+	\label{fig4}
+\end{figure}
+
+\subsection{Continuous experimentation}
+Continuous deployment attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuos experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
+
+As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
+
+\section{Case study implementation: Research method}
+
+\subsection{Objective - what to achieve?}
+
+The study is an exploratory case study, which attempts to figure out how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main problems and key success factors with regards to these approaches. This includes analyzing the current development process, seeking the current problems and strenghts faced in the development process and understanding the requirements of continuous deployment and continuous experimentation. 
+
+Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
+
+\subsection{The case — what is studied?}
+Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
+
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. 
+
+The Dialog team focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
+
+The CDM team focuses on building a Master Data Management (cite) solution, which integrates the customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
+
+The unit of analysis is the development process of the team. This includes the interaction with customers, and the tools used in the current development process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. 
+
+TODO: organisation: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
+The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management. 
+
+Continuous deployment and continuous experimentation haven't been previously used by the case company.  
+
+In the beginning of the study, feedback was only collected in the form of bug reports from the customers. The bugs were then prioritized according to the importance, and added into the Trello workflow. 
+
+Under analysis is also the company's ways to interact with the customer.
+
+\subsection{Theory - frame of reference}
+
+TODO: open this chapter
+
+Based on the existing research in Continuous Experimentation and Continuous Deployment:
+
+Crook et al: Seven pitfalls to avoid when running controlled experiments on the web
+
+Eric Ries: The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses
+
+Kohavi et al: Practical guide to controlled experiments on the web: listen to your customers not to the hippo
+
+Fagerholm et al: Building Blocks for Continuous Experimentation
+
+Jan Bosch: Building products as innovation experiment systems
+
+Olsson et al: Climbing the" Stairway to Heaven"--A Multiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software
+
+Humble et al: The deployment production line
+
+Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
+
+Microsoft EXP platform
+
+The researcher is a part of the development team of the company, but the viewpoint ...
+
+\subsection{Research questions - what to know?}
+##Research questions—what to know? these fulfill the objective##
+
+What are the problems in the current development process?
+
+What are the strenghts in the current development process?
+
+How is the current interaction with the customer?
+	
+	subquestion: What are the current roles and stakeholders?
+
+What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?
+
+How to collect feedback in a B2B domain?
+
+	subquestion: Who should use the collected feedback?
+
+	subquestion: Who is responsible for collecting the feedback?
+
+How to collect feedback without a SaaS product?
+
+    subquestion: Where should the data be stored?
+
+    subquestion: How should the data be accessed?
+
+How to shorten the time between the idea and implementation?
+	subquestion: What are the roles?
+
+How should continuous experimentation guide the development process?
+	subquestion: Where do the development ideas come from? Customer, team, management?
+
+How should continuous delivery be integrated in the development process?
+	subquestion: How to keep the product in a stage where it can be released at all times?
+
+What tools are necessary for continuous deployment?
+
+What tools are necessary for continuous experimentation?
+
+If an impact is done right now, when will the effects be visible?
+
+The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
+How do we validate whether a feature is succesful or not? 
+
+\subsection{Methods - how to collect data?}
+The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current interaction with customers, (3) problems and strengths in the current development process, (4) future ways with continuous deployment and continuous delivery. 
+
+Data regarding the development process is also collected from the internal documents.
+Trello, documents
+
+\subsection{Selection strategy - where to seek data?}
+
+Interview data will be primarily sought from the developers of the development teams and the managers of the team. Process data will be sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. 
+
 \section{Needs, problems and challenges}
 
 \subsection{Problems} %Should address an underlying research question
@@ -363,86 +470,6 @@ Requirements should be testable
 \subsection{Challenges respecting to continuous experimentation}
 -Participation of every key member
 
-\section{Case study implementation: Research method}
-
-\subsection{Objective - what to achieve?}
-
-The study is an exploratory case study, which attempts to figure out how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main problems and key success factors with regards to these approaches. This includes analyzing the current development process, seeking the current problems faced in the development process and understanding the requirements of continuous deployment and continuous experimentation. 
-
-Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
-
-\subsection{The case—what is studied?}
-Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
-
-The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. 
-
-The Dialog team focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
-
-The CDM team focuses on building a Master Data Management (cite) solution, which integrates the customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
-
-The units of analysis are individual members at different positions in the organisation, the teams which are composed of these people and the development process of the teams. Timeframe?
-
-TODO: organisation: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
-The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management. 
-
-Continuous deployment and continuous experimentation haven't been previously used by the case company.  
-
-In the beginning of the study, feedback was only collected in the form of bug reports from the customers. The bugs were then prioritized according to the importance, and added into the Trello workflow. 
-
-Under analysis is also the company's ways to interact with the customer.
-
-\subsection{Theory - frame of reference}
-
-Based on the existing research in Continuous Experimentation and Continuous Deployment:
-
-Crook et al: Seven pitfalls to avoid when running controlled experiments on the web
-Eric Ries: The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses
-Kohavi et al: Practical guide to controlled experiments on the web: listen to your customers not to the hippo
-Fagerholm et al: Building Blocks for Continuous Experimentation
-Jan Bosch: Building products as innovation experiment systems
-Olsson et al: Climbing the" Stairway to Heaven"--A Mulitiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software
-Humble et al: The deployment production line
-Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
-Microsoft EXP platform
-
-The researcher is a part of the development team of the company, but the viewpoint ...
-
-\subsection{Research questions - what to know?}
-##Research questions—what to know? these fulfill the objective##
-
-What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?
-
-How to collect feedback in a B2B domain?
-	subquestion: Who should use the collected feedback?
-	subquestion: Who is responsible for collecting the feedback?
-
-How to collect feedback without a SaaS product?
-    subquestion: Where should the data be stored?
-    subquestion: How should the data be accessed?
-
-How to shorten the time between the idea and implementation?
-	subquestion: What are the roles?
-
-How should continuous experimentation guide the development process?
-	subquestion: Where do the development ideas come from? Customer, team, management?
-
-How should continuous delivery be integrated in the development process?
-	subquestion: How to keep the product in a stage where it can be released at all times?
-
-What tools are necessary for continuous deployment?
-
-What tools are necessary for continuous experimentation?
-
-If an impact is done right now, when will the effects be visible?
-The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
-How do we validate whether a feature is succesful or not? 
-
-\subsection{Methods - how to collect data?}
-The primary source of information in this research is the interviews performed within the Development & Integration team and its management. Trello, documents
-
-\subsection{Selection strategy - where to seek data?}
-
-Interview data will be primarily sought from the developers of the development teams and the managers of the team. Process data will be sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. 
 
 \section{Hypothesis}
 \section{Methodology}
