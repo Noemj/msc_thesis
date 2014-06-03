@@ -136,6 +136,7 @@ he were allowed to hit four balls each time and then choose the shot that worked
 % Detail how this solution should be implemented
 
 \section{Introduction}
+IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
 
 Structure: parts
 
@@ -298,15 +299,15 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 \subsection{Challenges regarding continuous experimentation}
 -Participation of every key member
 
-\section{Case study implementation: Research method}
+\section{Research study}
 
-\subsection{Objective - what to achieve?}
+\subsection{Objective} %what to achieve?
 
 The study is an exploratory case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strenghts. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation. 
 
 Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
 
-\subsection{The case — what is studied?}
+\subsection{The case} %what is studied?
 Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
 
 The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. 
@@ -314,6 +315,8 @@ The company in question is Steeri Oy, which is a medium-sized company specializi
 The Dialog team focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
 
 The CDM team focuses on building a Master Data Management (cite) solution, which integrates the customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
+
+The development process of the team is elaborated in detail in the chapter "State of the practice". 
 
 The unit of analysis is the development process of the team. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. 
 
@@ -327,7 +330,7 @@ In the beginning of the study, feedback was only collected in the form of bug re
 
 Under analysis is also the company's ways to interact with the customer.
 
-\subsection{Theory - frame of reference}
+\subsection{Theory} %frame of reference
 
 This case study builds on existing research on both continuous deployment and continuous experimentation. The chapter State of the Art 
 
@@ -355,7 +358,7 @@ Microsoft EXP platform
 
 The researcher is a part of the development team of the company, but the viewpoint ...
 
-\subsection{Research questions - what to know?}
+\subsection{Research questions} %what to know?
 ##Research questions—what to know? these fulfill the objective##
 
 What are the problems in the current development process?
@@ -365,6 +368,10 @@ What are the strenghts in the current development process?
 How is the current interaction with the customer?
 	
 	subquestion: What are the current roles and stakeholders?
+
+How should continuous experimentation guide the development process?
+	
+	subquestion: Where do the development ideas come from? Customer, team, management?
 
 What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?
 
@@ -383,9 +390,6 @@ How to collect feedback without a SaaS product?
 How to shorten the time between the idea and implementation?
 	subquestion: What are the roles?
 
-How should continuous experimentation guide the development process?
-	subquestion: Where do the development ideas come from? Customer, team, management?
-
 How should continuous delivery be integrated in the development process?
 	subquestion: How to keep the product in a stage where it can be released at all times?
 
@@ -398,7 +402,7 @@ If an impact is done right now, when will the effects be visible?
 The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
 How do we validate whether a feature is succesful or not? 
 
-\subsection{Methods - how to collect data?}
+\subsection{Methods} %how to collect data?
 TODO: what, how, why?
 
 The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current interaction with customers, (3) problems and strengths in the current development process, (4) future ways with continuous deployment and continuous delivery. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
