@@ -135,37 +135,37 @@ he were allowed to hit four balls each time and then choose the shot that worked
 % Recommend the best solution to be implemented 
 % Detail how this solution should be implemented
 
-\section{Introduction}
+\section{Introduction} %Motivation
+Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
+
+Continuous delivery
+
+Continuous experimentation
+
+Goal of the thesis
+
+Research questions
+
+Approach
+
 IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
 
-Structure: parts
-
-Background
-
-Literature review 
-
-Case study
-
-
-
-Structure:
-
-#1
-Background information - case study context - results - limitations - summary, future work
-#2
-Related work - experimental setup - results - summary
-
-
--GOAL OF THE THESIS
--motivation
--research question
--approach
-
->analyze state of the practice
->specify problem and goals 
->analyze state of the art
->state hypotheses
->derive solution idea
+This thesis is organized as follows. Chapter II ..
+%Structure:
+%
+%#1
+%Background information - case study context - results - limitations - summary, future work
+%#2
+%Related work - experimental setup - results - summary
+%-GOAL OF THE THESIS
+%-motivation
+%-research question
+%-approach
+%>analyze state of the practice
+%>specify problem and goals 
+%>analyze state of the art
+%>state hypotheses
+%>derive solution idea
 
 \section{Background and related work}
 
@@ -405,7 +405,7 @@ How do we validate whether a feature is succesful or not?
 \subsection{Methods} %how to collect data?
 TODO: what, how, why?
 
-The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current interaction with customers, (3) problems and strengths in the current development process, (4) future ways with continuous deployment and continuous delivery. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
+The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) Software product, (6) future ways with continuous deployment and continuous delivery. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
 
 Data regarding the development process is also collected from the internal documents.
 Trello, documents
@@ -413,6 +413,115 @@ Trello, documents
 \subsection{Selection strategy - where to seek data?}
 
 Interview data will be primarily sought from the developers of the development teams and the managers of the team. Process data will be sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. 
+
+\subsection{Interview questions}
+
+\subsubsection{Background}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    1 & Name of the interviewee & Background & - \\ \hline
+    2 & Team of the interviewee & Background & - \\ \hline
+    3 & Position of the interviewee & Background & - \\ \hline
+    4 & Years of experience in the industry & Background & - \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Current development process}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    a & What is the current development model in your team? & General & d \\ \hline
+    a & How has the development model evolved during your stay in the company? & General & d \\ \hline
+    a & Where do the development ideas come from? & Continuous experimentation & d \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Current deployment process}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    a & What is the current deployment process like? & Continuous deployment & Deployment process \\ \hline
+    a & Who decides when to deploy? & Continuous deployment & Deployment process \\ \hline
+    a & Who decides what to deploy? & Continuous deployment & Deployment process \\ \hline
+    a & How often are the products deployed? & Continuous deployment & Deployment process \\ \hline
+    a & How are the deployment dates chosen? & Continuous deployment & Deployment process \\ \hline
+    a & Which parts of the deployment process are manual? & Continuous deployment & Technical \\ \hline
+    a & Which parts of the deployment process are hard to measure automatically? & Continuous deployment & Technical \\ \hline
+    a & Is the customer involved in the deployment process? & Continuous deployment & Customer involvement \\ \hline
+    a & Does the customer have to do something when a version is deployed? & Continuous deployment & Customer involvement \\ \hline
+    a & What are the strenghts in the current deployment process? & Continuous deployment & d \\ \hline
+    a & What are the problems in the current deployment process? & Continuous deployment & d \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Current interaction with the customer}
+
+\begin{center}
+%\centerline{
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    a & Who is responsible for interacting with the customer? & General & d \\ \hline
+    a & From your point of view, what are the challenges with the customer interaction? & General & d \\ \hline
+    a & From your point of view, how could the interaction with the customer be improved? & General & d \\ \hline
+    a & Is the development team aware of the customers present requirements? & Continuous experimentation &  \\ \hline
+	a & How is feedback collected from the customer? & Continuous experimentation & Data collection \\ \hline
+	a & From your point of view, how could the feedback collection be improved? & Continuous experimentation & Data collection \\ \hline
+	a & How is the customer feedback used? & Continuous experimentation & Data usage \\ \hline	
+	a & From your point of view, how could the feedback usage be improved? & Continuous experimentation & Data usage \\ \hline
+    a & Is it common for customers requirements to change? & Continuous experimentation &  \\ \hline
+    \hline
+    \end{tabular}
+%    }
+\end{center}
+
+\subsubsection{Software product}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    a & What is the software product you're working with? & General &  \\ \hline
+    a & How many end-users does the product have? & General &  \\ \hline
+    a & What technical challenges would real-time deployment have? & Continuous deployment & Technical \\ \hline
+    a & What technical challenges would plugged-in data collection instruments have? & Continuous experimentation & Data collection \\ \hline
+    a & If data were to be collected in customer environment, what challenges would be faced storing it? & Continuous experimentation & Data storage \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Problems and strenghts in the current development process}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+	a & What are the strenghts in the current development process? & General & d \\ \hline
+    a & What are the problems in the current development process? & General & d \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Future ways with continuous delivery and continous deployment}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    ID & Question & Reason & Notes \\ \hline
+    a & b & c & d \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
 
 \section{Needs, problems and challenges}
 

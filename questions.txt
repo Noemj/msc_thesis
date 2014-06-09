@@ -1,21 +1,12 @@
-in a case study results should be based at least on some measured data. what should be measured in this case? qualitative? 
--old data is available, such as efforts for projects. can it be used if no new methods are implemented?
+9.6.2014
+A normal template for a study would be to measure the current situation, implement changes and then measure the situation afterwards. 
+In my study how do we sort of validate that something is actually important without actually implementing anything?
 
-Objective—what to achieve? 
--Exploratory / improving? conclusions have to be made from qualitative or quantitative measurements.
-
-The case—what is studied? 
--current practice / new practice? without implementation? 
--the solution should probably be described but not implemented?
-
-Research questions—what to know?
--again, without implementation just speculations?
-
-Methods-how to collect data?
--qualitative? interviews?
-
-Selection strategy—where to seek data?
--employees?
+What's your opinion on the current interview questions?
+What's your opinion on the current research questions?
+Along with the interview, I could implement a survey to measure the pains in the current process. Is that a good idea?
 
 
--look for existing case studies (check paper links, se journals)
+The interview questions seem to mainly address issues related to the development process. How to address the technical side and technical research questions? Should these be dropped? In my opinion the literature review attempts to answer the technical questions. Should the interview questions dig deeper in the technical side?
+
+
