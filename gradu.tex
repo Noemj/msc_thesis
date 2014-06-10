@@ -136,19 +136,21 @@ he were allowed to hit four balls each time and then choose the shot that worked
 % Detail how this solution should be implemented
 
 \section{Introduction} %Motivation
-Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
+Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. 
 
-Continuous delivery
-
-Continuous experimentation
-
-Goal of the thesis
-
-Research questions
-
-Approach
+TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
 
 IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
+
+A way to shorten the delivery cycles and to automate the delivery process is continuous deployment. It is an extension to continuous integration, where the delivery process is often entirely automated, and software functionality is deployed frequently to customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. 
+
+Continuous deployment attempts to deliver an idea to users as fast as possible by aut. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuous experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
+
+In this thesis we %goal
+
+The main research questions are %research questions
+
+The research approach is %approach
 
 This thesis is organized as follows. Chapter II ..
 %Structure:
@@ -405,7 +407,7 @@ How do we validate whether a feature is succesful or not?
 \subsection{Methods} %how to collect data?
 TODO: what, how, why?
 
-The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) Software product, (6) future ways with continuous deployment and continuous delivery. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
+The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) Software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
 
 Data regarding the development process is also collected from the internal documents.
 Trello, documents
@@ -439,6 +441,7 @@ Interview data will be primarily sought from the developers of the development t
     a & What is the current development model in your team? & General & d \\ \hline
     a & How has the development model evolved during your stay in the company? & General & d \\ \hline
     a & Where do the development ideas come from? & Continuous experimentation & d \\ \hline
+    a & Are the current development ideas based on evidence or guesswork? & Continuous experimentation & d \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -512,13 +515,16 @@ Interview data will be primarily sought from the developers of the development t
     \end{tabular}
 \end{center}
 
-\subsubsection{Future ways with continuous delivery and continous deployment}
+\subsubsection{Future ways with continuous deployment and continous experimentation}
 
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
     ID & Question & Reason & Notes \\ \hline
-    a & b & c & d \\ \hline
+    a & Could your product be instrumented with a data collection service? If not, why? & Continuous experimentation & d \\ \hline
+    a & In your product, could experiments be quickly deployed to the customer environment? & Continuous experimentation & d \\ \hline
+    a & In your product, could the development process be guided by A/B testing? & Continuous experimentation & d \\ \hline
+    a & Does your team have a data analyst? & Continuous experimentation & d \\ \hline
     \hline
     \end{tabular}
 \end{center}
