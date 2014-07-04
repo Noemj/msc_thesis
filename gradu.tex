@@ -147,7 +147,7 @@ CMMI 5th stage
 
 A way to shorten the delivery cycles and to automate the delivery process is continuous deployment. It is an extension to continuous integration, where the delivery process is often entirely automated, and software functionality is deployed frequently to customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. Continuous deployment therefore attempts to deliver an idea to users as fast as possible by automating the deployment process.
 
-Bosch et al. introduce an innovation experiment system, where the development process consists of frequently deploying new versions, using customers and customer usaged data in the development process and finally by focusing on innovation and testing ideas with customers to drive customer satisfaction and revenue growth \cite{bosch2012building}. 
+Bosch et al. introduce an innovation experiment system, where the development process consists of frequently deploying new versions, using customers and customer usaged data in the development process and finally by focusing on innovation and testing ideas with customers to drive customer satisfaction and revenue growth \cite{bosch2012building}. "First, it frequently deploys new versions focusing on continuously evolving the embedded software in short cycles of 2-4 weeks" \cite{eklund2012architecture}.
 
 Continuous experimentation attempts to validate that an idea is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup \cite{ries2011lean}. The process in continuous experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to attempt to validate the hypothesis.
 
@@ -166,11 +166,11 @@ In this thesis we conduct a case study to analyse the adoption of continuous dep
 
 The main research questions are as follows.
 \begin{itemize}
-\item  \textbf{What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
-\item  \textbf{What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
-\item  \textbf{Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
-\item  \textbf{How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
-\item  \textbf{How should continuous experimentation be implemented in the development process?}
+\item  \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
+\item  \textbf{RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
+\item  \textbf{RQ 3: Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
+\item  \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+\item  \textbf{RQ 5: How should continuous experimentation be implemented as a development process?}
 \end{itemize}
 
 The research approach is %approach
@@ -353,6 +353,15 @@ A picture of the typical development process in continuous deployment is shown i
 -systematic!
 -for a method: what, how, when, who
 
+\cite{eklund2012architecture}
+Applied the continuous experimentation research to embedded software.
+"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
+"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
+"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
+"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
+TODO: picture here
+
+
 An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be listened to. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. 
 
 In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
@@ -384,7 +393,7 @@ To collect, aggregate and analyze the observations, raw data has to be recorded.
 To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance. 
 
 \subsubsection{Roles in continuous experimentation}
-Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.  
+Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
 
@@ -472,29 +481,37 @@ The researcher is a part of the development team of the company, but the viewpoi
 
 \subsection{Research questions} %what to know? ##Research questions—what to know? these fulfill the objective##
 %Literature review
-\noindent \textbf{What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
+\noindent \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
 
 \noindent Continuous experimentation process with multiple different roles is quite heavyweight, and not quickly adoptable. The purpose of this research question is to attempt to investigate whether only the core process of continuous experimentation can be adopted and used in practice. A way to do this is for example to avoid creating new roles only for the purpose of continuous experimentation. This way it is quick for companies to test whether the process suits their needs. This research question is answered based on literature review. \newline
 
-%Literature review / Interview
-\noindent \textbf{What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
 
-\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. \newline
+%Literature review / Interview
+\noindent \textbf{RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
+
+\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. TODO: question: contractual issues? The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. \newline
+
+Question: selecting the correct OEC in b2b is harder. for example revenue. 
+question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
 
 %Interview results have to be compared to literature review results
-\noindent \textbf{Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
+\noindent \textbf{RQ 3: Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
 
 \noindent To rationalize the decision to adopt continuous experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
 
 %collect ideas from literature review and interview
-\noindent \textbf{How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+\noindent \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
 
 \noindent As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question is answered by collecting ideas from the literature review and interview results. \newline
+-Legal issues
+-Technical issues
 
 %collect ideas from literature review and interview
-\noindent \textbf{How should continuous experimentation be implemented in the development process?}
+\noindent \textbf{RQ 5: How should continuous experimentation be implemented as a development process?}
 
-\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by collectin ideas from the literature review and interview results. \newline
+\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by collecting ideas from the literature review and interview results. \newline
+-Where do the feature ideas come from?
+-What roles are required?
 
 %How is the current interaction with the customer?
 %	subquestion: What are the current roles and stakeholders?
@@ -558,7 +575,7 @@ Interview data will be primarily sought from the developers of the development t
     a & Describe a normal week with your team & General & \\ \hline
     %a & What is the current development model in your team? & General & d \\ \hline
     a & How has the development model evolved during your stay in the company? & General & d \\ \hline
-    %a & Where do the development ideas come from? & Continuous experimentation & d \\ \hline
+    a & Where do the development ideas come from? Are they mostly requirements from customers? & Continuous experimentation & d \\ \hline
     %a & Are the current development ideas based on evidence or guesswork? & Continuous experimentation & d \\ \hline
     \hline
     \end{tabular}
@@ -597,12 +614,14 @@ Interview data will be primarily sought from the developers of the development t
     ID & Question & Reason & Notes \\ \hline
     a & Who is responsible for interacting with the customer? & General & d \\ \hline
     a & From your point of view, what are the challenges with the customer interaction? & General & d \\ \hline
+    a & From your point of view, what are the strengths with the customer interaction? & General & d \\ \hline
     a & From your point of view, how could the interaction with the customer be improved? & General & d \\ \hline
 	a & Is it common for customers requirements to change? & General &  \\ \hline
     a & Is the development team aware of the customers present requirements? & General &  \\ \hline
 
-	a & How is feedback collected from the customer? & Continuous experimentation & Data collection \\ \hline
-	a & From your point of view, how could the feedback collection be improved? & Continuous experimentation & Data collection \\ \hline
+	a & How is feedback collected from the customer? & Continuous experimentation & RQ 4: Data collection \\ \hline
+	a & What are the B2B specific challenges in feedback collection? & Continuous experimentation & RQ 4: Data collection \\ \hline
+	a & From your point of view, how could the feedback collection be improved? & Continuous experimentation & RQ 4: Data collection \\ \hline
 	a & How is the customer feedback used? & Continuous experimentation & Data usage \\ \hline	
 	a & From your point of view, how could the feedback usage be improved? & Continuous experimentation & Data usage \\ \hline
 
@@ -618,12 +637,12 @@ Interview data will be primarily sought from the developers of the development t
     \hline
     ID & Question & Reason & Notes \\ \hline
     a & How many end-users does the product have? & General &  \\ \hline
-    a & How is usage data collected? & Continuous experimentation & Data collection \\ \hline
-    a & How could usage data collection be improved? & Continuous experimentation & Data collection \\ \hline
+    a & How is usage data collected? & Continuous experimentation & RQ 4: Data collection \\ \hline
+    a & How could usage data collection be improved? & Continuous experimentation & RQ 4: Data collection \\ \hline
 
-    a & What technical challenges would real-time deployment have? & Continuous deployment & Technical \\ \hline
-    a & What technical challenges would plugged-in data collection instruments have? & Continuous experimentation & Data collection \\ \hline
-    a & If data were to be collected in customer environment, what challenges would be faced storing it? & Continuous experimentation & Data storage \\ \hline
+    a & What technical challenges would real-time deployment have? & Continuous deployment & RQ 2 \\ \hline
+    a & What technical challenges would plugged-in data collection instruments have? & Continuous experimentation & RQ 4: Data collection \\ \hline
+    a & If data were to be collected in customer environment, what challenges would be faced storing it? & Continuous experimentation & RQ 4: Data storage \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -634,8 +653,8 @@ Interview data will be primarily sought from the developers of the development t
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
     ID & Question & Reason & Notes \\ \hline
-	a & What are the strenghts in the current development process? & General & d \\ \hline
-    a & What are the problems in the current development process? & General & d \\ \hline
+	a & What are the strenghts in the current development process? & General & RQ 3 \\ \hline
+    a & What are the problems in the current development process? & General & RQ 3 \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -646,7 +665,7 @@ Interview data will be primarily sought from the developers of the development t
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
     ID & Question & Reason & Notes \\ \hline
-    a & Could your product be instrumented with a data collection service? If not, why? & Continuous experimentation & d \\ \hline
+    a & Could your product be instrumented with a data collection service? If not, why? & Continuous experimentation & RQ 4: Data collection \\ \hline
     a & In your product, could experiments be quickly deployed to the customer environment? & Continuous experimentation & d \\ \hline
     a & In your product, could the development process be guided by A/B testing? & Continuous experimentation & d \\ \hline
     a & Does your team have a data analyst? & Continuous experimentation & d \\ \hline
@@ -667,6 +686,8 @@ Research questions:
 Larger context, narrow context
 Subproblems
 More concrete (Who is having a problem?)
+
+-Continuous experimentation is a model, not a process: what, when, who, how
 
 -Collecting feedback in B2B domain
   In B2B domain the connection with end users might not be established properly, and the feedback can only be received from the other company's key members. However, the feedback from end users is especially important. 
@@ -737,6 +758,14 @@ Adopt the solutison
 Implement & test
 
 \section{Results}
+
+The simplest experiment cycle:
+1.oec
+2.
+3.impl
+4.analysis
+5.steer
+
 \section{Analysis}
 \section{Conclusion}
 
