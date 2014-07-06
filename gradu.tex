@@ -70,12 +70,13 @@
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
-\abstract{Currently more and more software companies are moving to lean practices, which often include shorter delivery cycles and thus shorter feedback loops. However, to achieve continuous customer feedback and to eliminate work that doesn't generate value, even shorter cycles are required. In continuous deployment the software functionality is deployed continuously at customer environment. This process includes both automated builds and automated testing, but also automated deployment. Automating the whole process minimizes the time required for implementing new features in software, and allows for faster customer feedback. However, adopting continuous deployment doesn't necessarily mean that more value is created for the customer. While continuous deployment attempts to deliver an idea to users as fast as possible, continuous experimentation instead attempts to validate that it is, in fact, a good idea. In a state of continuous experimentation, the entire R\&D process is guided by controlled experiments and feedback. In it's core continuous experimentation consists of a design-execute-analyse loop, where hypotheses are selected based on business goals and strategies, experiments are executed with partial implementations and data collection tools and finally the results are analyzed to validate the hypothesis. In this paper we're ..}
+\abstract{Currently more and more software companies are moving to lean practices, which often include shorter delivery cycles and thus shorter feedback loops. However, to achieve continuous customer feedback and to eliminate work that doesn't generate value, even shorter cycles are required. In continuous deployment the software functionality is deployed continuously at customer environment. This process includes both automated builds and automated testing, but also automated deployment. Automating the whole process minimizes the time required for implementing new features in software, and allows for faster customer feedback. However, adopting continuous deployment doesn't necessarily mean that more value is created for the customer. While continuous deployment attempts to deliver an idea to users as fast as possible, continuous experimentation instead attempts to validate that it is, in fact, a good idea. In a state of continuous experimentation, the entire R\&D process is guided by controlled experiments and feedback. In it's core continuous experimentation consists of a design-execute-analyse loop, where hypotheses are selected based on business goals and strategies, experiments are executed with partial implementations and data collection tools and finally the results are analyzed to validate the hypothesis. In this paper we're .. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{TODO: add rest}}
 
 % The following can be used to specify keywords and classification of the paper:
 
 \keywords{Continuous delivery, Continuous experimentation, Development pipeline}
 
+%\classification{General and reference → Experimentation}
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
 % uncomment the following; contents of \classification will be printed under the abstract with a title
@@ -163,6 +164,8 @@ Continuous experimentation attempts to validate that an idea is, in fact, a good
 \end{figure}
 
 In this thesis we conduct a case study to analyse the adoption of continuous deployment and continuous experimentation in B2B domain. The case study consists of a literature review on applications of these practices, an interview of key members in the case company and analysis of the results. 
+
+The purpose of this thesis is to
 
 The main research questions are as follows.
 \begin{itemize}
@@ -590,7 +593,8 @@ Interview data will be primarily sought from the developers of the development t
     a & What is the current deployment process like? & Continuous deployment & Deployment process \\ \hline
     a & Who decides when to deploy? & Continuous deployment & Deployment process \\ \hline
     a & Who decides what to deploy? & Continuous deployment & Deployment process \\ \hline
-    a & How often are the products deployed? & Continuous deployment & Deployment process \\ \hline
+    a & How often is new version released ? & Continuous deployment & Deployment process \\ \hline
+    a & How often are the new versions deployed to customer?? & Continuous deployment & Deployment process \\ \hline
     a & How are the deployment dates chosen? & Continuous deployment & Deployment process \\ \hline
 
     a & Which parts of the deployment process are manual? & Continuous deployment & Technical \\ \hline
@@ -752,12 +756,40 @@ Requirements should be testable
 
 
 
-\section{Hypothesis}
-\section{Methodology}
-Adopt the solutison
-Implement & test
+\section{Analysis}
 
-\section{Results}
+ (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation.
+
+
+\subsection{Current development process}
+
+\subsection{Current deployment process}
+
+\subsection{Current interaction with the customer}
+
+\subsection{Problems and strenghts in the current development process}
+
+\subsection{Software product}
+
+\subsection{Future ways with continuous deployment and continuous experimentation}
+
+\section{Research results}
+
+\item  \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
+Based on the literature review
+
+The interview
+
+\item  \textbf{RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
+
+The literature review revealed
+
+\item  \textbf{RQ 3: Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
+
+
+\item  \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+\item  \textbf{RQ 5: How should continuous experimentation be implemented as a development process?}
+
 
 The simplest experiment cycle:
 1.oec
@@ -766,8 +798,7 @@ The simplest experiment cycle:
 4.analysis
 5.steer
 
-\section{Analysis}
-\section{Conclusion}
+\section{Conclusions}
 
 
 % --- References ---
