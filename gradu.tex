@@ -156,11 +156,10 @@ Continuous experimentation attempts to validate that an idea is, in fact, a good
 %Iteration of ideas in a controlled way
 %Fail fast
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{stairway.png}
 	\caption{Organization evolution path \cite{http://www.janbosch.com/Jan_Bosch/Software_Engineering.html}}
-	\label{fig1}
 \end{figure}
 
 In this thesis we conduct a case study to analyse the adoption of continuous deployment and continuous experimentation in B2B domain. The case study consists of a literature review on applications of these practices, an interview of key members in the case company and analysis of the results. 
@@ -308,7 +307,7 @@ TODO: prelude:
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. 
 
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
-\begin{figure}[!t]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{rtvd.jpg}
 	\caption{Continuous integration, delivery and deployment}
@@ -324,7 +323,7 @@ Humble and Farley define the deployment pipeline as a set of stages, which cover
 Humble et al. define four principles that should be followed when attempting to automate the deployment process \cite{humble2006deployment}. The first principle states that "Each build stage should deliver working software". As software often consists of different modules with dependencies to other modules, a change to a module could trigger builds of the related modules as well. Humble et al. argue that it is better to keep builds separate so that each discrete module could be built individually. The reason is that triggering other builds can be inefficient, and information can be lost in the process. The information loss is due to the fact that connection between the initial build and later builds is lost, or at least causes a lot of unnecessary work spent in tracing the triggering build. 
 
 The second principle states that "Deploy the same artifacts in every environment". This creates a constraint that the configuration files must be kept separate, as different environments often have different configurations. Humble et al. state that a common anti-pattern is to aim for 'ultimate configurability', and instead the simplest configuration system that handles the cases should be implemented.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{pipeline.jpg}
 	\caption{A basic deployment pipeline \cite{cdbook}.}
@@ -336,7 +335,7 @@ The last principle states "Evolve your production line along with the applicatio
 
 A picture of the typical development process in continuous deployment is shown in Fig. \ref{fig3}. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
 
-\begin{figure}[!t]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{developmentprocess.jpg}
 	\caption{Components of the development process \cite{cdbook}.}
@@ -376,7 +375,7 @@ Jan Bosch has widely studied continuous experimentation, or innovation experimen
 
 \subsubsection{Experimentation stages and scopes}
 Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
-\begin{figure}[!htbp]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{scopes.jpg}
 	\caption{Scopes for experimentation\cite{bosch2012building}.}
@@ -399,7 +398,7 @@ Fagerholm et al. define five different roles in continuous experimentation: Busi
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{infra.jpg}
 	\caption{Continuous experimentation infrastructure \cite{fagerholm2014building}.}
