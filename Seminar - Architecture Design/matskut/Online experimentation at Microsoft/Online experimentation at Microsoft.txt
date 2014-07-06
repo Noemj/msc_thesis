@@ -1,0 +1,15 @@
+-Every feature built by a software team is built because someone believes it will have value, yet many of the benefits fail to materialize. Avinash Kaushik, author of Web Analytics: An Hour a Day, wrote in his Experimentation and Testing primer (Kaushik, 2006) that “80% of the time you/we are wrong about what a customer wants.” 
+
+-In Do It Wrong Quickly (Moran, Do It Wrong Quickly: How the Web Changes the Old Marketing Rules , 2007, p. 240), the author writes that Netflix considers 90% of what they try to be wrong.
+
+-A failure of an experiment is not a mistake: learn from it. Badly executed experiments are mistakes
+
+-It is well known that finding an error in requirements is 10 to 100 times cheaper than changing features in a finished product (Boehm, 1981)(McConnell, 2004). Use experimentation with software prototypes to verify requirements in the least costly phase of the software development lifecycle. Think of how much effort can be saved by building an inexpensive prototype and discovering that you do not want to build the production feature at all! Such insights are common in organizations that experiment. The ability to fail fast and try multiple ideas is the main benefit of a customer-driven organization that experiments frequently. We suggest that development teams launch prototype features regularly, and extend them, making them more robust, and then fully deploy them only if they prove themselves useful. This is a challenging proposition for organizations whose development culture has been to “do it right the first time”.
+
+-Sir Ken Robinson made this point eloquently when he said: “If you're not prepared to be wrong, you will not come up with anything original” (Robinson, 2006).
+
+-Websites and services can iterate faster because shipping is much easier. In addition, getting implicit feedback from users through online controlled experiments is something that could not be done easily with shrink-wrapped products, but can easily be done in online settings. It is the combination of the two that can make a big difference in the development culture. Instead of doing careful planning and execution, one can try many things and evaluate their value with real customers in near-real-time.
+
+-Controlled experiments are a tool that has its limitations, which we discussed in Controlled experiments on the web: survey and practical guide (Kohavi, Longbotham, Sommerfield, & Henne, 2009). A recent article by Davenport (How to Design Smart Business Experiments, 2009) points out that controlled experiments are best suited for strategy execution, not strategy formulation; they are not suited for assessing a major change in business models, a large merger or acquisition
+
+-It doesn't matter how beautiful your theory is, it doesn't matter how smart you are. If it doesn't agree with experiment[s], it's wrong. -- Richard Feynman

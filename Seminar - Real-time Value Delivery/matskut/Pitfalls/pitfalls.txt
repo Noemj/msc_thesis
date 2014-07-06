@@ -1,0 +1,15 @@
+OEC: To run a controlled experiment, one needs to decide on the OEC, or the Overall Evaluation Criterion, the key metric that is going to be compared. For web sites, our recommendation is to tie that metric to a long-term goal, such as using customer lifetime value. For example, a retail site might want to optimize not just short-term revenues, but also for long-term indicators of loyalty and increasing wallet share: increase in repeat visits and purchases, signing up for e-mails, and purchasing from multiple departments.
+
+Pitfall 1: Picking an OEC for which it is easy to beat the control by doing something clearly “wrong” from a business perspective.
+
+Pitfall 2: Incorrectly computing confidence intervals for percent change and for OECs that involve a nonlinear combination of metrics
+
+Pitfall 3: Using standard statistical formulas for computations of variance and power
+
+Pitfall 4: Combining metrics over periods where the proportions assigned to Control and Treatment vary, or over subpopulations sampled at different rates
+
+Pitfall 5: Neglecting to filter robots
+
+Pitfall 6: Failing to validate each step of the analysis pipeline and the OEC components
+
+Pitfall 7: Forgetting to control for all differences, and assuming that humans can keep the variants in sync

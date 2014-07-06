@@ -1,0 +1,144 @@
+-Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied
+
+-Collecting customer or performance data early in the innovation process requires changes to the R&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest.
+
+-With SaaS products the collection of customer feedback as well as usage and other performance metrics is simple
+
+-Deployment phases
+	*Pre-deployment: active feedback collection
+	*Non-commercial deployment: Additional techniques for collecting feedback can be employed, e.g. alternative implementation. 
+	*employing innovation experiment systems require extensive instrumentation of the product in order to be able to collect information about theusage and performance of the product.
+	*Commercial deployment: A/B testing, ethnographic studies - following customers in their daily life and study the use of the product or feature.
+	
+
+"-The aforementioned factors have lead to the evolution of a new software development model that is different from development approaches for traditional
+software. 
+*First, it is focused on continuously evolving the software by frequently deploying new versions. 
+*Second, customers and customer usage data play a central role throughout the development process. 
+*Third, development is focused on innovation and testing as many ideas as possible with customers to drive customer
+satisfaction and, consequently, revenue growth."
+
+"Stepping back, we can recognize that
+R&D in this context is best described as an “innovation experiment system” approach
+where the development organization constantly develops new hypothesis (ideas) and
+tests these with groups of customers."
+
+"In the management literature, apply experimentation to business is a well-
+established concept" [Davenport, T.H.: How to Design Smart Business Experiments]
+
+PROBLEM:
+"In practice, however, experimentation in online software is often limited to
+optimizing narrow aspects of the front-end of the website through A/B testing and in
+connected, software-intensive systems experimentation, if applied at all, is ad-hoc and
+not systematically applied."
+
+SOLUTION:
+"In this paper, we take a broader perspective and address the scope ranging from
+optimization to new features and products. Consequently, the contribution of this
+paper is as follows. First, we present a first systematization of this innovation
+experiment system approach to software development for connected systems. Second,
+we illustrate the model using an industrial case study, Intuit."
+
+REQUIREMENTS
+"Common for SaaS software and software in connected embedded systems is that
+allows for an approach where instead of freezing the requirements before starting
+product development, the requirements constantly evolve and also affect already
+deployed systems that are actively used by customers. Consequently, requirements
+evolve in real-time based on data collected from systems in actual use with customers
+instead of being frozen early based on the opinions of product management about the
+likely customer needs 12, 18 or 24 months from now"
+
+
+FOUNDS
+"Customers are becoming increasingly accustomed to
+frequent, trouble-free updates that provide relevant additional value and consequently
+this is increasingly an expectation."
+
+"A final aspect is the avoidance of versioning of software. Traditionally, for many
+companies, every customer would ultimately have a unique configuration of the
+product with different versions of components making up the system. This adds a
+whole new layer of complexity to the already costly process of deploying new
+versions. In an IES environment, there is only one version: the currently deployed
+one. All other versions have been retired and play no role."
+
+DATA COLLECTION
+"A perhaps less obvious but very important advantage of connected products is that the
+cost of collecting active and passive information from and about the customer is much
+lower. Active customer feedback is concerned with surveys and other mechanisms
+where the customer is aware that he or she is providing feedback. Passive feedback
+and usage data is collected while the customer is using the system. Examples include
+the amount of time a user spends using a feature, the relative frequency of feature
+selections, the path that the user takes through the product functionality, etc. The low
+cost and ease of data collection leads to the next major difference between IES-based
+and traditional software.
+In connected, embedded systems, in addition to usage data, several kinds of other
+performance data can be collected. For example, connected cars can collect fuel
+consumption data whereas telecom equipment can collect real-time bandwidth data.
+In many systems, this data is already collected for operational management purposes,
+but hardly used in evolution of already deployed systems."
+
+DATA COLLECTION + ARCHITECTURE
+"To collect customer or performance data early in the innovation process, the organization needs to find mechanisms to test
+more ideas and concepts with customers and in the installed base in real-time and
+obviously at a much lower cost than earlier. This requires new behaviors at the
+business level, i.e. involving customers in feature and product concept validation
+without an, initially clear, business model. Also, it requires changes to the R&D
+processes as customers need to be involved much earlier and deeper in the R &D
+process."
+
+"Finally, this requires changes to the architecture of the products and
+platforms to facilitate testing versions of screens, components, subsystems and entire
+products in order to determine customer preference and interest. The mechanisms
+used for achieving custome er involvement and the efficient execution of experime ents
+on the deployed product base depends heavily on the type of experiments, system,
+stage and purpose."
+
+DECISION MAKING
+"Everyone involved with a software product has many ideas about how to make it
+better. Conventionally, these ideas were collected and prioritized during the
+roadmapping and requirement management process as part of the yearly release cycle.
+The selection of the ideas to include was based on opinions by leaders in the
+organization with significant weight put on the opinions of those higher in the
+organizational hierarchy and often turned into a rather politicized process. These
+opinions formed the basis of dozens or hundreds of person years of R&D effort and
+the confirmation of the correctness of these opinions would only take place after the
+finalized product has been deployed, if at all.
+
+A connected or SaaS product provides the invaluable ability to run experiments
+with the installed base and customer population. Rather than committing many person
+years of effort, an idea can be translated into a hypothesis, the hypothesis can be
+tested by investing a few weeks of R&D effort and deploying the solution to some
+segment of the customer population. Data comparing the base product and the product
+extended with experimental software can be collected and if the hypothesis holds, i.e.
+there is a positive correlation to the business goals, more R&D effort can be invested
+to fully develop the concept that tested successfully. This approach allows for a much
+more effective investment of R&D resources as one has confirmation that the
+resources are spent on value for customers."
+
+ABOUT INNOVATION
+"Innovation is lifeblood of any organization, but notoriously hard to get right in many
+companies. Innovation in large organization is often characterized by an enormous
+imbalance between the number of ideas that, informally or formally, exist in the
+organization and the number of concepts that are in fact tested with customers. The
+ratio, depending on the attention the organization puts towards idea generation by its
+employees, can range from one in a hundred to one in thousands. With that strict a
+selection process and the high cost associated with testing, the importance of selecting
+the most promising ideas, turning these into concepts and then designing a (prototype)
+product to test the concept with customers becomes such that it receives significant
+attention by senior management and many other functions and layers in the
+organization.
+The selection process is, unavoidably, driven by the earlier experiences and beliefs
+of the people in the selection process. In most organizations, it is the opinions of the
+more senior persons in the organization that tend to weigh the heaviest. The challenge
+with this approach is twofold. First, opinions are a very poor substitute for real
+customer data and the innovation literature has many examples of successful
+innovations that were resisted for years inside the organization before made
+successful by a small “skunk works” team working under the radar. Second, even if
+the organization is sufficiently open minded to explore more innovative ideas and
+concepts, there is a natural risk avoidance that causes organizations to settle on the
+safe bets."
+
+"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow]
+have been used for the last decade or more, but often fail to provide timely feedback during the 
+development process as these are backward looking and focus on the entire product."
+
