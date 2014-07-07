@@ -159,7 +159,7 @@ Continuous experimentation attempts to validate that an idea is, in fact, a good
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{stairway.png}
-	\caption{Organization evolution path \cite{http://www.janbosch.com/Jan_Bosch/Software_Engineering.html}}
+	\caption{Organization evolution path \cite{olsson2012climbing}.}
 \end{figure}
 
 In this thesis we conduct a case study to analyse the adoption of continuous deployment and continuous experimentation in B2B domain. The case study consists of a literature review on applications of these practices, an interview of key members in the case company and analysis of the results. 
@@ -194,100 +194,15 @@ This thesis is organized as follows. Chapter II ..
 %>state hypotheses
 %>derive solution idea
 
-\section{Background and related work}
+\section{Case study as a research method}
 
 \subsection{Case study}
-Case study is a way to collect data through observation and to test theories in an unmodified setting \cite{zelkowitz1998experimental}. An opposite type of research would be a formal experiment, with a narrow focus and control on variables. Case studies are particularly important for industrial evaluation of software engineering methods and tools \cite{kitchenham1995case}. Generalizing the results of a case study is often a subject of internal validity \cite{TODO}. 
+Case study is a way to collect data through observation and to test theories in an unmodified setting \cite{zelkowitz1998experimental}. An opposite type of research would be a formal experiment, with a narrow focus and control on variables. Case studies are particularly important for industrial evaluation of software engineering methods and tools \cite{kitchenham1995case}. Generalizing the results of a case study is often a subject of internal validity \cite{kitchenham2002preliminary}. 
 
 \subsection{Qualitative research}
-Qualitative research attempts to answer to questions Why and How instead of What, Where and When as compared to quantitative research. The most common way to collect qualitative data is via an interview, which can be structured, unstructured or semi-structured \cite{Qualitative Methods in Empirical Studies of Software Engineering}. 
+Qualitative research attempts to answer to questions Why and How instead of What, Where and When as compared to quantitative research. The most common way to collect qualitative data is via an interview, which can be structured, unstructured or semi-structured \cite{seaman1999qualitative}. 
 
-\section{State of the practice}	
-%an overview of the entire process, then refining the parts that are relevant for the problems 
-Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
-
-These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
-
-The development isn't at all distributed, and no external party affects the development process. 
-
-\subsection{iSteer Contact backlog tool}
-
-\subsubsection{Overview}
-
-\subsubsection{Customer backlog}
-Work items are first added to customer backlogs in iSteer Contact. In this phase they might be just initial skeletons and do not need to contain all needed information. The work items are added by product or business owners or project managers. At this phase the created backlog items are not yet visible in team backlogs in iSteer Contact. The idea is to list them in the customer backlog as early as possible and start refining the requirements collaboratively both offline and online with the help of tools such as Chatter. Chatter can be used to discuss a single story or the complete backlog.
-
-When the backlog item is ready for the development team to start working on it, it should contain at least the following information:
-A descriptive name
-Specifications that explain both the technical side and the business side
-Agilefant link four hour reporting
-
-The backlog item is added to team backlog by selecting the “show in team backlog” -option.
-
-\subsubsection{Team backlog}
-Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team.
-
-Completed stories related to one team can be found from the report (link in team detail page)
-Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
-
-Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
-
-\subsection{Using Trello}
-
-\subsubsection{Overview}
-Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
-
-\subsubsection{Sprint Backlog}
-The Backlog Owner (Juha) moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
-
-\subsubsection{In progress}
-The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
-·       All tasks are complete
-·       Changes are pushed to a feature-specific branch
-·       Unit tests are written and pass in the CI server
-·       Feature is well-written and does not need refactoring
-·       Pull request is created and a link is added to the comment field
-·       Feature has been documented as needed
-If the feature needs refactoring a task list must be created and the card moved back to In Progress column.
-
-\subsubsection{Review}
-Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
-·       Pull request is reviewed and by at least two (2) persons
-·       Pull request is merged to the development branch
-·       Feature is deployed to a development environment
-·       Source code quality has to be good enough!
-After you have reviewed the pull request leave yourself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column.
-If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
-If only small fixes are needed, they should be implemented within the Github pull request workflow.
-The second person who has reviewed and accepted the pull request is responsible for deploying the feature to a development environment.
-
-\subsubsection{Ready}
-Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if:
-·       Feature has been verified by the Product Owner in the development environment
-Product owner is responsible for moving the feature to the Verified column.
-If the verification for the feature fails the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
-
-\subsubsection{Verified}
-Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
-\subsubsection{Done}
-
-This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
-\subsubsection{Prioritized lists}
-
-The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
-
-\subsection{After Trello}
-Thnergefwdqa
-
-\cite{olsson2012climbing}
-
--current state at steeri
-    -short summary
-
-Be sure to specify as much of the industrial context as possible. In particular,
-clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
-
-\section{State of the art}
+\section{Continous delivery and continuous experimentation}
 
 Agile software development emerged from the iterative software development methods in the 1980's \cite{}. The general principles were
 Many agile models, such as Scrum \cite{}, Extreme Programming \cite{} and Feature Driven Development \cite{} defined their own ..
@@ -310,7 +225,7 @@ In an agile process software release is done in periodic intervals \cite{cockbur
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{rtvd.jpg}
-	\caption{Continuous integration, delivery and deployment}
+	\caption{Continuous integration, delivery and deployment.}
 	\label{fig1}
 \end{figure}
 Continuous delivery differs from continuous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
@@ -419,6 +334,91 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 -Environment
 -Deployment
 
+\section{Current development process of the case company}	
+%an overview of the entire process, then refining the parts that are relevant for the problems 
+Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
+
+These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
+
+The development isn't at all distributed, and no external party affects the development process. 
+
+\subsection{iSteer Contact backlog tool}
+
+\subsubsection{Overview}
+
+\subsubsection{Customer backlog}
+Work items are first added to customer backlogs in iSteer Contact. In this phase they might be just initial skeletons and do not need to contain all needed information. The work items are added by product or business owners or project managers. At this phase the created backlog items are not yet visible in team backlogs in iSteer Contact. The idea is to list them in the customer backlog as early as possible and start refining the requirements collaboratively both offline and online with the help of tools such as Chatter. Chatter can be used to discuss a single story or the complete backlog.
+
+When the backlog item is ready for the development team to start working on it, it should contain at least the following information:
+A descriptive name
+Specifications that explain both the technical side and the business side
+Agilefant link four hour reporting
+
+The backlog item is added to team backlog by selecting the “show in team backlog” -option.
+
+\subsubsection{Team backlog}
+Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team.
+
+Completed stories related to one team can be found from the report (link in team detail page)
+Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
+
+Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
+
+\subsection{Using Trello}
+
+Overview
+Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
+
+Sprint Backlog
+The Backlog Owner (Juha) moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
+
+In progress
+The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
+·       All tasks are complete
+·       Changes are pushed to a feature-specific branch
+·       Unit tests are written and pass in the CI server
+·       Feature is well-written and does not need refactoring
+·       Pull request is created and a link is added to the comment field
+·       Feature has been documented as needed
+If the feature needs refactoring a task list must be created and the card moved back to In Progress column.
+
+Review
+Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
+·       Pull request is reviewed and by at least two (2) persons
+·       Pull request is merged to the development branch
+·       Feature is deployed to a development environment
+·       Source code quality has to be good enough!
+After you have reviewed the pull request leave yourself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column.
+If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
+If only small fixes are needed, they should be implemented within the Github pull request workflow.
+The second person who has reviewed and accepted the pull request is responsible for deploying the feature to a development environment.
+
+Ready
+Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if:
+·       Feature has been verified by the Product Owner in the development environment
+Product owner is responsible for moving the feature to the Verified column.
+If the verification for the feature fails the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
+
+Verified
+Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
+Done
+
+This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
+Prioritized lists
+
+The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
+
+\subsection{After Trello}
+Thnergefwdqa
+
+\cite{olsson2012climbing}
+
+-current state at steeri
+    -short summary
+
+Be sure to specify as much of the industrial context as possible. In particular,
+clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
+
 \section{Research study}
 
 \subsection{Objective} %what to achieve?
@@ -500,6 +500,8 @@ question: in B2C people develop their own product, but in B2B the feature ideas 
 
 \noindent To rationalize the decision to adopt continuous experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
 
+One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not.
+
 %collect ideas from literature review and interview
 \noindent \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
 
@@ -535,6 +537,8 @@ question: in B2C people develop their own product, but in B2B the feature ideas 
 %How do we validate whether a feature is succesful or not? 
 \subsection{Methods} %how to collect data? TODO: what, how, why?
 The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. TODO: business people? The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process.
+
+The interview has a standardized set of open-ended questions TODO: validate. Leading questions are avoided on purpose, and different probing techniques such as "What?"-questions are used.    
 
 Data regarding the development process is also collected from the internal documents.
 Trello, documents
@@ -574,7 +578,7 @@ Interview data will be primarily sought from the developers of the development t
     ID & Question & Reason & Notes \\ \hline
     a & Describe your personal daily work routine & General & \\ \hline
     a & Describe a normal week with your team & General & \\ \hline
-    %a & What is the current development model in your team? & General & d \\ \hline
+    a & What is the current development model in your team? & General & d \\ \hline
     a & How has the development model evolved during your stay in the company? & General & d \\ \hline
     a & Where do the development ideas come from? Are they mostly requirements from customers? & Continuous experimentation & d \\ \hline
     %a & Are the current development ideas based on evidence or guesswork? & Continuous experimentation & d \\ \hline
@@ -675,89 +679,11 @@ Interview data will be primarily sought from the developers of the development t
     \end{tabular}
 \end{center}
 
-\section{Needs, problems and challenges}
-
-\subsection{Problems} %Should address an underlying research question
-
-TODO:
-Research problem: "High-level slogan"
-How to adopt CD and CE in the case company?
-
-Research questions:
-
-Larger context, narrow context
-Subproblems
-More concrete (Who is having a problem?)
-
--Continuous experimentation is a model, not a process: what, when, who, how
-
--Collecting feedback in B2B domain
-  In B2B domain the connection with end users might not be established properly, and the feedback can only be received from the other company's key members. However, the feedback from end users is especially important. 
-
-  Without the data from end users, no usage data is collected all. 
-
-  Pilot approach: Prioritize bugs based on the amount of occurrences
-
--Collecting feedback without a SaaS product
-  In a SaaS platform it is easier to plug in measurement tools to the software, as the environment is that of the company responsible for the service. Without a SaaS environment, the data has to be collected and stored in customer environment. 
-
-  Thus, the collection of the data takes unnecessary effort, and the whole usage data is totally missing. The product development decisions aren't therefore based on data, and are potentially less effective than decisions based on measurable, quantitative data.
-
--The time between the idea and implementation is too long
-  Currently the ideas are not tested at all, but the effects are planned in a waterfall style and implemented thoroughly before a release. Making partial implementations could however allow the use of quantitative or qualitative data to measure whether an idea is worth implementing at all.
-
-  Management can also better convince other internal stakeholders that a feature might be of importance
-
--Time dimension. If an impact is done right now, when will the effects be visible?
-  Adding the correct measurement metrics to a feature also make the impact more visible.
-
--Conventions for production deployment. The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
-  Forming the development pipeline to include both experiments and automated deployment makes the entirety clear from the idea to the release.
-
--How do we validate whether a feature is succesful or not? In B2C this is usually done by observing shifts in sales, but in our product there's no such thing.
-  The measurement metric has to be chosen such that a decision can be made to judge if the feature is succesful or not.
-
--How to use the collected data to improve decision making?
-  TODO
-
--Trello flow time?
-  Occasional deploying takes time. Speeding it up would eventually improve flow time.
-
--Possible thing we can analyze is user experience, but is it enough?
-
-\subsection{goals}
-Requirements should be testable
-
--Continuously collect feedback from customers.
-    Subgoal: Define the type of feedback to be collected
-    Subgoal: Define a mechanism for feedback collection
-    Subgoal: figure out how to collect feedback
-    Subgoal: figure who is responsible for analyzing feedback
-	Req: Feedback can be continuously collected from customers
-	Req: The person responsible for collecting feedback can be identified 
--Reduce the length of the delivery cycle.
-	Subgoal: Identify the components in the delivery cycle
-	Subgoal: Identify what takes too long
-	Req: The delivery cycle is completely perceived
-	Req: The length of the delivery from idea to deployment is shortened
--Be able to measure the effectiveness of a feature.
-	Subgoal: Implement measurement tools
-	Subgoal: Implement data analysis tools
-	Subgoal: collect data whenever a feature is deployed to measure the performance	
-    Req: Data can be collected from an implemented feature 
-    Req: Collected data can be analyzed to form an answer
-
-\subsection{solutions}
-
-\subsection{solution idea}
-
-
-
+\section{Research results}
 
 \section{Analysis}
 
  (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation.
-
 
 \subsection{Current development process}
 
@@ -770,8 +696,6 @@ Requirements should be testable
 \subsection{Software product}
 
 \subsection{Future ways with continuous deployment and continuous experimentation}
-
-\section{Research results}
 
 \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
 Based on the literature review
@@ -798,7 +722,6 @@ The simplest experiment cycle:
 
 \section{Conclusions}
 
-
 % --- References ---
 %
 % bibtex is used to generate the bibliography. The babplain style
@@ -808,6 +731,7 @@ The simplest experiment cycle:
 % \bibliographystyle{babalpha-lf}
 %
 % instead.
+
 
 \bibliographystyle{babplain-lf}
 \bibliography{gradu}
