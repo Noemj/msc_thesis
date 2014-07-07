@@ -18,3 +18,4 @@ malli:
 >derive solution idea
 
 mihin väliin case study sijoittuu?
+
