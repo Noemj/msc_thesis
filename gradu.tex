@@ -241,6 +241,8 @@ Another principle, which is the main element of continuous deployment, is to "Au
 
 The last principle states "Evolve your production line along with the application it assembles". Humble et al. state that attempting to build a full production line before writing any code doesn't deliver any value, so the production line should be built and modified as the application evolves. 
 
+\subsubsection{Impact on development model}
+
 A picture of the typical development process in continuous deployment is shown in Fig. \ref{fig3}. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
 
 \begin{figure}[h]
@@ -249,8 +251,6 @@ A picture of the typical development process in continuous deployment is shown i
 	\caption{Components of the development process \cite{cdbook}.}
 	\label{fig3}
 \end{figure}
-
-\subsubsection{Effects to development model}
 
 \subsection{Continuous experimentation}
 
@@ -552,14 +552,30 @@ The primary source of information in this research are semi-structured interview
 The interview has a standardized set of open-ended questions TODO: validate. Leading questions are avoided on purpose, and different probing techniques such as "What?"-questions are used.    
 Interviews were performed in the native language of the interviewee if possible, otherwise in English.
 
-Coding
-Interview results are added to spreadsheet, with the participants grouped based on their teams. TODO: find analysis methods
 
 
 Data regarding the development process is also collected from the internal documents.
 Trello, documents
 
-TODO: Analysis is done
+
+
+TODO: Analysis is done \cite{runeson2009guidelines}
+Coding
+Interview results are added to spreadsheet, with the participants grouped based on their teams. TODO: find analysis methods
+
+"The basic objective of the analysis is to derive conclusions from the data, keeping a clear chain of evidence." \cite{runeson2009guidelines}
+"There are two different parts of data analysis of qualitative data, hypothesis generating techniques and hypothesis confirmation techniques (Seaman 1999), which can be used for exploratory and explanatory case studies, respectively." \cite{runeson2009guidelines}
+
+
+"This means that analysis of qualitative data is conducted in a series of steps (based on (Robson 2002), p. 459). First the data is coded, which means that parts of the text can be given a code representing a certain theme, area, construct, etc." \cite{runeson2009guidelines}
+
+"When this has been done, the researcher can go through the material to identify a first set of hypotheses." \cite{runeson2009guidelines}
+
+"The identified hypotheses can then be used when further data collection is conducted in the field, i.e. resulting in an iterative approach where data collection and analysis is conducted in parallel as described above. During the iterative process a small set of generalizations can be formulated, eventually resulting in a formalized body of knowledge, which is the final result of the research attempt. "\cite{runeson2009guidelines}
+
+
+"One example of a useful technique for analysis is tabulation, where the coded data is arranged in tables, which makes it possible to get an overview of the data. The data can, for example be organized in a table where the rows represent codes of interest and the columns represent interview subjects." \cite{runeson2009guidelines} TODO: Tabulationia käytetään.
+
  -roles (devs, business, PO's)
  -
 
