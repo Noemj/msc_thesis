@@ -210,25 +210,27 @@ This thesis is organized as follows. Chapter II ..
 %>derive solution idea
 
 \section{Continous delivery and continuous experimentation}
+%Agile
+Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change.
 
-Agile software development emerged from the iterative software development methods in the 1980's \cite{}. The general principles were
+%Agile implementations
+Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further defined their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing all code.
 
-Many agile models, such as Scrum \cite{}, Extreme Programming \cite{} and Feature Driven Development \cite{} defined their own ..
+%Lean manufacturing & LSD
+Lean manufacturing, derived from the Toyota Production System \cite{ono1988toyota}, is a streamlined production philosophy that aims to identify the expenditure of resources not used in creating value for the end customer, and eliminate these activities. Lean software development \cite{poppendieck2003lean} has been developed based on the same idea. The purpose of lean software development is to eliminating waste, or anything that doesn't bring value to the customer, and to pursuit perfection through smoothing the development flow. The principles in lean software development are eliminate waste, amplify learning, decide as late as possible, deliver as fast as possible, engage everyone, build quality in and see the whole. 
 
-Lean manufacturing \cite{}, derived from the Toyota Production System \cite{}, is a practice that aims to eliminate anything that doesn't create value for the end customer. 
+%Lean startup
+Lean startup \cite{ries2011lean} is a business and product development method with focus on business-hypothesis-driven experimentation and iterative product releases. A primary purpose of lean startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. This is achieveved by using a Build-Measure-Learn-loop, which is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
 
-Lean startup  
-
-TODO: prelude:
--Agile software development
--Lean manufacturing & development
--Lean startup
+TODO:
 -Stairway to heaven
 -Innovation experiment system
 
-\subsection{Continuous delivery}
+\subsection{Continuous deployment}
+%what is it
 Continuous deployment is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. The purpose of continuous deployment is that as the deployment process is completely automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. 
 
+%release cycles
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous deployment, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous deployment are shorter, but that the development is done in a way that makes the software always ready for release.
 \begin{figure}[h]
 	\centering
@@ -236,10 +238,15 @@ In an agile process software release is done in periodic intervals \cite{cockbur
 	\caption{Continuous integration, delivery and deployment.}
 	\label{fig1}
 \end{figure}
+%delivery vs deployment
 Continuous delivery differs from continuous deployment. Refer to Fig. \ref{fig1} for a visual representation of differences in continuous integration, delivery and deployment. Both include automated deployment to a staging environment. Continuous deployment includes deployment to a production environment, while in continuous delivery the deployment to a production environment is done manually. The purpose of continuous delivery is to prove that every build is proven deployable \cite{cdbook}. While it necessarily doesn't mean that teams release often, keeping the software in a state where a release can be made instantly is often seen beneficial.
 
+%Barriers in CI->CD transition: stairway
+Holmström Olsson et al. have researched the transition phase from continuous integration to continuous delivery, and have identified barriers that companies need to overcome to achieve the transition \cite{olsson2012climbing}. One of such barrier is the custom configuration at customer sites. Maintaining customized solutions and local configurations alonside the standard configurations creates issues. The second barrier is the internal verification loop, that has to be shortened not only to develop features faster but also to deploy fast. Finally, the lack of transparency and getting an overview of the status of development projects is seen as a barrier.
+Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer. Olsson et al. also note that finding a pro-active lead customer is also essential to explore and form aa new engagement model.
+
 \subsubsection{Deployment pipeline}
-An important part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
+An essential part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
 
 Humble and Farley define the deployment pipeline as a set of stages, which cover the path from a committed change to a build \cite{cdbook}. Refer to Fig. \ref{fig2} for a graphical representation of a basic deployment pipeline. The commit stage compiles the build and runs code analysis, while acceptance stage runs an automated test suite that asserts the build works at both functional and nonfunctional level. From there on, builds to different environments can be deployed either automatically or by a push of a button.
 
@@ -281,9 +288,9 @@ TODO: picture here
 Continuous experimentation is a term created by Dane McKinley, a Principal Engineer at Etsy \cite{mcfunley}. McKinley defines the key aspects of continuous experimentation as making small, measurable changes, staying honest and preventing the developers from breaking things. With staying honest, McKinley implies that the product releases are tracked and measured, so that it's possible to tell whether things went worse or better. McKinley also states that design and product process must change to accomodate experimentation, and that experimenting should be done with minimal version of the idea. When experimentations are implemented and measured, counterintuitive results will be found, and planning to be wrong should be considered \cite{mcfunley}. 
 %Prefer incremental redesigns. 
 
-While continuous experimentation is a term loosely defined by McKinley, it poses resemblance to multiple development models, such as the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. The Build-Measure-Loop of Lean Startup is similar in the sense that controlled experiments drive the development. 
+While continuous experimentation is a term loosely defined by McKinley, it poses resemblance to multiple development models, such as the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Loop of Lean Startup is similar in the sense that controlled experiments drive the development.
 
-Holmström Olsson et al. identify the method of driving development by the real-time customer usage of software \cite{olsson2012climbing}. Defined as "R&D as an 'experiment system'", once a company reaches this stage the entire R&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product".
+Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R&D as an 'experiment system'", the entire R&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous deployment to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatical data collection components and capability to effectively use the collected data.
 
 -Connect CE, IES, Microsoft stuff, Lean startup stuff
 
