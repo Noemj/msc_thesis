@@ -138,13 +138,19 @@ he were allowed to hit four balls each time and then choose the shot that worked
 % Detail how this solution should be implemented
 
 \section{Introduction} %Motivation
+Currently more and more software companies are moving to lean practices, which include short delivery cycles and thus shorter feedback loops. 
+
+The requirement of developing value fast have lead to the evolution of a new software development model \cite{bosch2012building}. The modeĺ is based on three principles: evolving  the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction.
+
+
+
 Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. 
 
 TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
 
 IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
 
-CMMI 5th stage
+CMMI 5th stage 
 
 A way to shorten the delivery cycles and to automate the delivery process is continuous deployment. It is an extension to continuous integration, where the delivery process is often entirely automated, and software functionality is deployed frequently to customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. Continuous deployment therefore attempts to deliver an idea to users as fast as possible by automating the deployment process.
 
@@ -207,7 +213,7 @@ This thesis is organized as follows. Chapter II ..
 %>state hypotheses
 %>derive solution idea
 
-\section{Continous delivery and continuous experimentation}
+\section{Continuous delivery and continuous experimentation}
 %Agile
 Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change.
 
@@ -335,6 +341,9 @@ Kohavi et al. investigate the practical implementations of controlled experiment
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
 \subsubsubsection{Data collection}
+"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
+
+
 To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, such that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.  
 
 \subsubsubsection{Data analysis}
@@ -362,6 +371,27 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 -Active participation of employees
 
 \subsection{Challenges regarding continuous experimentation}
+"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
+
+"Collecting customer or performance data early in the innovation process requires changes to the R&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}
+
+"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}
+
+"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
+
+"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
+
+"Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive." \cite{kohavi2007practical}
+
+-Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
+
+Pitfalls:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.5in]{pitfalls.jpg}
+	\caption{Pitfalls to avoid when running controlled experiments \cite{crook2009seven}.}
+\end{figure}
+
 -Roles
 -Environment
 -Deployment
