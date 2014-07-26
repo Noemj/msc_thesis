@@ -295,6 +295,8 @@ A picture of the typical development process in continuous deployment is shown i
 
 "With continuous flow, Sales and Marketing were not quite sure when anything would be released." "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 
+
+
 -Technical implementation
 -Education on the subject
 -Active participation of employees
@@ -556,34 +558,44 @@ clearly deﬁne the entities, attributes, and measures that are capturing the co
 
 \subsection{Objective} %what to achieve?
 
-The study is an exploratory case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process of the company in question. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strenghts. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation. 
+The purpose of this study is to seek was to improve the product development process of two products within the case company, using practices known as continuous delivery and continuous experimentation. The interesting aspect of this study is that the case company does all of its business in B2B domain. 
 
-Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
-
-An interview is used to analyze and identify the pain points continuous deployment and continuous experimentation encounter in the B2B domain. After the interview, results are analyzed and addressed... TODO: continue
-
-\subsection{Case} %what is studied?
-Kitchenham et al. (Kitchenham et al., 2002) state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research. The two former will be discussed here, and the latter in the section "Frame of reference".
 
 What does the company want to achieve
 What are the biggest problems
+
+
+The study is an exploratory case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strenghts. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation. 
+
+Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with an application that is not used as SaaS. As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
+
+An interview is used to analyze and identify the pain points the company currently has in its development process. Then continuous deployment and continuous experimentation processes are viewed from the viewpoint of the case company, and possible pains identified. As a result, necessary restrictions and requirements encountered in the B2B domain are obtained. 
+
+\subsection{Case descriptions} %what is studied?
+Kitchenham et al. state that the experimental context needs the three elements: background information, discussion of research hypotheses, and information about related research \cite{kitchenham2002preliminary}. The two former will be discussed here, and the latter in the section "Frame of reference".
+
 -configuration management: no employer designed and no formal education
 
-The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the unit under the study is the Development & Integration team, which is split into two sub-teams: Dialog and CDM. 
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the units under the study are two teams responsible for developing two different software products. The first team is the Development & Integration, which is further split into two sub-teams: Dialog and CDM. Both of the subteams develop a different product. The team is managed by a Concepting & Management team, which consists of the Product Owners of both software products, quality assurance and commerzialisation experts. 
 
-\begin{description}
-  \item[Dialog.] The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
-
- \item[CDM.] The CDM subteam focuses on building a Master Data Management (cite) solution, which integrates the customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
-\end{description}
+The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The subteams of the first team under study have a common team leader, but different product owners and middle management. TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 
 The development process of the team is elaborated in detail in the chapter "State of the practice". 
 
+\subsubsection{Dialog}
+The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
+
+The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
+
+\subsubsection{CDM} 
+The CDM subteam focuses on building a Master Data Management \cite{loshin2010master} solution, which integrates multiple customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. 
+
+The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
+
+
+
+
 The unit of analysis is the development process of the team. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. The purpose of the interview is to identify the pain points in the development process regarding continuous deployment and continuous experimentation. 
-
-TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
-
-The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The sub-teams under study have a common team leader, but different product owners and middle management. 
 
 Continuous deployment and continuous experimentation haven't been previously used by the case company. 
 
@@ -904,6 +916,8 @@ The simplest experiment cycle:
 3.impl
 4.analysis
 5.steer
+
+\section{Future research}
 
 \section{Conclusions}
 
