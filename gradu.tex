@@ -580,7 +580,22 @@ The company in question is Steeri Oy, which is a medium-sized company specializi
 
 The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The subteams of the first team under study have a common team leader, but different product owners and middle management. TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 
-The development process of the team is elaborated in detail in the chapter "State of the practice". In the following sections the general characteristicts of the two products and the development processes used in the development are identified and compared.
+The development process of the team is elaborated in detail in the chapter "State of the practice". In the following sections the general characteristicts of the two products and development processes used are identified and compared. The general characteristics are as follows. 
+
+\begin{itemize}
+  \item Team composition
+  \item Origin of development ideas
+  \item Programming languages
+  \item Development tools
+  \item Unit testing
+  \item Version releasing
+  \item Acceptance testing
+  \item Feedback collection
+  \item Usage data collection
+  \item Feedback and usage data usage
+\end{itemize}
+
+The first four characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
 
 \subsubsection{Dialog}
 The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
@@ -591,7 +606,7 @@ The Dialog subteam focuses on developing a multiple-channel online marketing aut
 -jenkins deployed
 -which env decides
 -testing (written by coder, tested by uat?)
--management 
+-management
 
 The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
 
@@ -599,9 +614,6 @@ The software is configured and integrated to the customer environment as project
 The CDM subteam focuses on building a Master Data Management \cite{loshin2010master} solution, which integrates multiple customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. 
 
 The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
-
-
-
 
 The unit of analysis is the development process of the two teams. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. The purpose of the interview is to identify the pain points in the development process regarding continuous deployment and continuous experimentation. 
 
@@ -613,7 +625,7 @@ Under analysis is also the company's ways to interact with the customer.
 
 \subsection{Context} %frame of reference
 
-The context of the study is defined by the following properties.
+The general context of the study is defined by the following properties.
 
 \begin{description}
   \item[Company size.] Steeri has approximately 80 employees at the writing of this thesis. The employees are located in two cities in Finland, and many of the employees are assigned to projects at other organizations.

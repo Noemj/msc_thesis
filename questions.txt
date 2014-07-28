@@ -1,4 +1,4 @@
-15.7
+28.7
 
-Is it ok to combine continuous experimentation and innovative experiment systems? CE is pretty loosely defined 
- 
+Is it ok to use the interview results in defining the problems in the very beginning of the thesis for example? When defining the context, interview questions can be used to answer to general charasteristics such as testing practices and customer interaction practices.
+
