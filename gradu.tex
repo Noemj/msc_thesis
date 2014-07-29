@@ -32,6 +32,7 @@
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
 \usepackage{verbatim}
+\usepackage{multicol}
 
 % Automatically set the PDF metadata fields
 \makeatletter
@@ -580,8 +581,18 @@ The company in question is Steeri Oy, which is a medium-sized company specializi
 
 The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The subteams of the first team under study have a common team leader, but different product owners and middle management. TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 
+The unit of analysis is the development process of the two teams. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. The purpose of the interview is to identify the pain points in the development process regarding continuous deployment and continuous experimentation. 
+
+Continuous deployment and continuous experimentation haven't been previously used by the case company. 
+
+In the beginning of the study, feedback was only collected in the form of bug reports from the customers. The bugs were then prioritized according to the importance, and added into the Trello workflow. 
+
+Under analysis is also the company's ways to interact with the customer.
+
+
 The development process of the team is elaborated in detail in the chapter "State of the practice". In the following sections the general characteristicts of the two products and development processes used are identified and compared. The general characteristics are as follows. 
 
+\begin{multicols}{2}
 \begin{itemize}
   \item Team composition
   \item Origin of development ideas
@@ -594,11 +605,25 @@ The development process of the team is elaborated in detail in the chapter "Stat
   \item Usage data collection
   \item Feedback and usage data usage
 \end{itemize}
+\end{multicols}
 
 The first four characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
 
 \subsubsection{Dialog}
 The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
+
+\begin{description}
+  \item[Team composition.] The team consists of 4 software developers.
+  \item[Origin of development ideas.] 
+  \item[Programming languages.] 
+  \item[Development tools.]
+  \item[Unit testing.]
+  \item[Version releasing.]
+  \item[Acceptance testing.]
+  \item[Feedback collection.]
+  \item[Usage data collection.]
+  \item[Feedback and usage data usage.]
+\end{description}
 
 -java, javascript front?
 -frontend
@@ -615,13 +640,18 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
 
 The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
 
-The unit of analysis is the development process of the two teams. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the process. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. The purpose of the interview is to identify the pain points in the development process regarding continuous deployment and continuous experimentation. 
-
-Continuous deployment and continuous experimentation haven't been previously used by the case company. 
-
-In the beginning of the study, feedback was only collected in the form of bug reports from the customers. The bugs were then prioritized according to the importance, and added into the Trello workflow. 
-
-Under analysis is also the company's ways to interact with the customer.
+\begin{description}
+  \item[Team composition.] The team consists of 3 software developers.
+  \item[Origin of development ideas.] 
+  \item[Programming languages.] 
+  \item[Development tools.]
+  \item[Unit testing.]
+  \item[Version releasing.]
+  \item[Acceptance testing.]
+  \item[Feedback collection.]
+  \item[Usage data collection.]
+  \item[Feedback and usage data usage.]
+\end{description}
 
 \subsection{Context} %frame of reference
 
