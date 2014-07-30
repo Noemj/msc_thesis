@@ -1,20 +1,17 @@
 15.7 aamu 70648 merkkiä 26 sivua
 15.7 ilta 76249 merkkiä 28 sivua
-
 19.7 aamu 77728 merkkiä 28 sivua
-19.7 päivä 79806 merkkiä 30 sivua
-
+19.7 ilta 79806 merkkiä 30 sivua
 20.7 ilta 83091 merkkiä 31 sivua
-
 24.7 ilta 86875 merkkiä 32 sivua
 26.7 aamu 87898 merkkiä 33 sivua
-
 29.7 aamu 90311 merkkiä 34 sivua
+30.7 aamu 92022 merkkiä 35 sivua
 
 
 
 
-haastikset
+Haastattelut
 
 Dialog
 
@@ -35,4 +32,4 @@ Kimmo
 Jussi L x
 Juho    x
 Ändi
-Ville
+Ville   x
