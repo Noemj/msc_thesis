@@ -594,11 +594,12 @@ The development process of the team is elaborated in detail in the chapter "Stat
 \begin{multicols}{2}
 \begin{itemize}
   \item Team composition
-  \item Origin of development ideas
+  \item Development practice
+  \item Business model TODO: validate if this is confidental
   \item Programming languages
   \item Development tools
-  \item Unit testing
   \item Version releasing
+  \item Unit testing
   \item Acceptance testing
   \item Feedback collection
   \item Usage data collection
@@ -606,22 +607,23 @@ The development process of the team is elaborated in detail in the chapter "Stat
 \end{itemize}
 \end{multicols}
 
-The first four characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
+The first three characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
 
 \subsubsection{Dialog}
 The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
 
 \begin{description}
-  \item[Team composition.] The team consists of 4 software developers.
-  \item[Origin of development ideas.] 
-  \item[Programming languages.] 
-  \item[Development tools.]
-  \item[Unit testing.]
-  \item[Version releasing.]
-  \item[Acceptance testing.]
-  \item[Feedback collection.]
-  \item[Usage data collection.]
-  \item[Feedback and usage data usage.]
+  \item[Team composition.] The team consists of 3 software developers.
+  \item[Development practice.] The team used to do Scrum, but due to the small size of the team the meetings were seen as overhead. The team decided to abandon Scrum for a Lean approach, based on a kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
+  \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
+  \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
+  \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects, and Bugzilla is used as the bugtracker. 
+  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
+  \item[Unit testing.] Unit testing is done by the developers whenever a feature is written. 
+  \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team whenever a version is deployed to the customer environment. 
+  \item[Feedback collection.] 
+  \item[Usage data collection.] Usage data isn't collected at all.
+  \item[Feedback and usage data usage.] 
 \end{description}
 
 -java, javascript front?
@@ -640,13 +642,14 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
 The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
 
 \begin{description}
-  \item[Team composition.] The team consists of 3 software developers.
-  \item[Origin of development ideas.] 
-  \item[Programming languages.] 
-  \item[Development tools.]
-  \item[Unit testing.]
+  \item[Team composition.] The team consists of 4 software developers.
+  \item[Development practice.]
+  \item[Business model.] 
+  \item[Programming languages.] The product is written in Java.
+  \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects. 
   \item[Version releasing.]
-  \item[Acceptance testing.]
+  \item[Unit testing.] Unit tests are required for new features, and are written by the developers during of after the feature implementation.
+  \item[Acceptance testing.] 
   \item[Feedback collection.]
   \item[Usage data collection.]
   \item[Feedback and usage data usage.]
