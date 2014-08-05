@@ -217,7 +217,7 @@ This thesis is organized as follows. Chapter II ..
 %>state hypotheses
 %>derive solution idea
 
-\section{Continuous delivery and continuous experimentation}
+\section{Background}
 %Agile
 Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change.
 
@@ -233,6 +233,8 @@ Lean startup \cite{ries2011lean} is a business and product development method wi
 TODO:
 -Stairway to heaven
 -Innovation experiment system
+
+\subsection{Development pipeline}
 
 \subsection{Continuous deployment}
 
@@ -483,6 +485,10 @@ These two teams develop in an agile manner, but the continuous integration proce
 
 The development isn't at all distributed, and no external party affects the development process. 
 
+\subsection{History}
+
+The team used to do Scrum, but due to the small size of the team the meetings were seen as overhead. The team decided to abandon Scrum for a Lean approach, based on a kanban board. 
+
 \subsection{iSteer Contact backlog tool}
 
 \subsubsection{Overview}
@@ -617,16 +623,16 @@ The Dialog subteam focuses on developing a multiple-channel online marketing aut
 
 \begin{description}
   \item[Team composition.] The team consists of 3 software developers.
-  \item[Development practice.] The team used to do Scrum, but due to the small size of the team the meetings were seen as overhead. The team decided to abandon Scrum for a Lean approach, based on a kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
+  \item[Development practice.] Development is based around a prioritized kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects, and Bugzilla is used as the bugtracker. 
   \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
   \item[Unit testing.] Unit testing is done by the developers whenever a feature is written. 
   \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team whenever a version is deployed to the customer environment. 
-  \item[Feedback collection.] 
+  \item[Feedback collection.] Feedback is collected from customers in retrospective meetings after the projects. Feedback is also received directly from customers via e-mail and meetings, but isn't collectively gathered in other ways. Feedback isn't automatically collected in any way.
   \item[Usage data collection.] Usage data isn't collected at all.
-  \item[Feedback and usage data usage.] 
+  \item[Feedback and usage data usage.] The feedback is used to improve the software product. 
 \end{description}
 
 -java, javascript front?
@@ -646,7 +652,7 @@ The product is deployed manually to a customer, and certain custom specific conf
 
 \begin{description}
   \item[Team composition.] The team consists of 4 software developers.
-  \item[Development practice.]
+  \item[Development practice.] 
   \item[Business model.] 
   \item[Programming languages.] The product is written in Java.
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects. 

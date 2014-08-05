@@ -207,7 +207,11 @@
 \put(58,  784){\makebox(100, 8)[l]{\abst@small\@faculty}}
 \put(289, 784){\makebox(100, 8)[l]{\abst@small\@department}}
 \put(58,  761){\makebox(100, 8)[l]{\abst@small\@author}}
-\put(58,  727){\makebox(200, 8)[l]{\abst@small\@title}}
+\put(54,  740){
+    \parbox[t]{402pt}{
+        \abst@small\setlength{\parindent}{2em}\noindent\@title     
+    }
+}
 \put(58,  704){\makebox(100, 8)[l]{\abst@small\@subject}}
 \put(58,  681){\makebox(100, 8)[l]{\abst@small\@level}}
 \put(212, 681){\makebox(100, 8)[l]{\abst@small\@date}}
