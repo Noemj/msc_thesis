@@ -8,6 +8,7 @@
 29.7 aamu 90311 merkkiä 34 sivua
 30.7 aamu 92022 merkkiä 35 sivua
 5.8. aamu 93896 merkkiä 36 sivua
+7.8  ilta 94596 merkkiä 37 sivua
 
 
 
@@ -25,12 +26,13 @@ CDM
 Olli K  x
 Rein    x
 Irena   x
-Juha
+Juha    x
 
 Management
 
-Kimmo
+Kimmo   x
 Jussi L x
 Juho    x
 Ändi    x
 Ville   x
+Calle   

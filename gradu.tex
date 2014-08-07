@@ -601,6 +601,9 @@ The development process of the team is elaborated in detail in the chapter "Stat
 
 \begin{multicols}{2}
 \begin{itemize}
+  \item Product description
+  \item Product environment
+  \item Product architecture
   \item Team composition
   \item Development practice
   \item Business model TODO: validate if this is confidental
@@ -618,9 +621,12 @@ The development process of the team is elaborated in detail in the chapter "Stat
 The first three characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
 
 \subsubsection{Dialog}
-The Dialog subteam focuses on developing a multiple-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
+The Dialog subteam focuses on developing a multi-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
 
 \begin{description}
+  \item[Product description.] Dialog is a multi-channel online marketing automation tool. The purpose of the product is to allow effective marketing on channels such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in the CRM can then be effectively used for marketing purposes. The product is primarily used through a comprehensive user interface by marketing professionals of customer companies. 
+  \item[Product environment.] The product can be run on either servers provided by the case company or on the customers internal servers. Most of the customers use the product on the case companys own servers. Each customer using a provided server has an individual server and configurations, due to different integrations to the customers own systems. Customers running the product on their own servers form a minority.
+  \item[Product architecture.] The product consists of a single maven-packaged project. Along with the actual product, several additional third-party or custom components are required. Such components are for example Typo3, which is an open source web content management framework, and a custom component used for SMS integration. Most of the components reside in the version control system, and the main product additionally resides in the CI system. Custom integrations to customers data sources, often based on a third party ESB tool, are individual components as well.
   \item[Team composition.] The team consists of 3 software developers.
   \item[Development practice.] Development is based around a prioritized kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
@@ -645,11 +651,12 @@ The Dialog subteam focuses on developing a multiple-channel online marketing aut
 The software is configured and integrated to the customer environment as project work. This deployment doesn't require additional code as per customer, but only different configuration files. 
 
 \subsubsection{CDM} 
-The CDM subteam focuses on building a Master Data Management \cite{loshin2010master} solution, which integrates multiple customers data sources such as CRM, ERP and billing system to create a single point of reference. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. 
-
-The product is deployed manually to a customer, and certain custom specific configurations and rules have to be implemented in the code. 
+The CDM subteam focuses on building a Master Data Management \cite{loshin2010master} solution, which integrates multiple customers data sources such as CRM, ERP and billing system to create a single point of reference. 
 
 \begin{description}
+  \item[Product description.] CDM is a Master Data Management \cite{loshin2010master} solution, which is used to integrate multiple customer data sources to create a simple point of reference. These data sources can include for example CRM, ERP and a billing system. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product has an user interface that can be used for testing, but the product is primarily a background application without users. 
+  \item[Product environment.] The product is installed to a customer environment, and certain custom specific configurations and rules have to be implemented for each customer. Such configurations are for example the integrations to customers systems and external identification services used. 
+  \item[Product architecture.] The product consists of several maven-packaged projects, which in the build stage are added as a dependency under a single main project. The whole product can thus be packaged into a single web archive file.
   \item[Team composition.] The team consists of 4 software developers.
   \item[Development practice.] 
   \item[Business model.] 
@@ -814,15 +821,15 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Background}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |} 
+    \begin{tabular}{ | l | l |} 
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    1 & Name of the interviewee & Background & - \\ \hline
-    2 & Team of the interviewee & Background & - \\ \hline
+    ID & Question \\ \hline
+    1 & Name of the interviewee \\ \hline
+    2 & Team of the interviewee \\ \hline
     3 & Position of the interviewee & Background & - \\ \hline
-    4 & Years in the company & Background & - \\ \hline
-    5 & Years of experience in the industry & Background & - \\ \hline
-    6 & What is the software product you're working with? & Background &  \\ \hline
+    4 & Years in the company \\ \hline
+    5 & Years of experience in the industry \\ \hline
+    6 & What is the software product you're working with? \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -830,15 +837,15 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Current development process}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    a & Describe your personal daily work routine & General & \\ \hline
-    a & Describe a normal week with your team & General & \\ \hline
-    a & What is the current development model in your team? & General & d \\ \hline
-    a & How has the development model evolved during your stay in the company? & General & d \\ \hline
-    a & Where do the development ideas come from? Are they mostly requirements from customers? & Continuous experimentation & d \\ \hline
-    %a & Are the current development ideas based on evidence or guesswork? & Continuous experimentation & d \\ \hline
+    ID & Question \\ \hline
+    7 & Describe your personal daily work routine. \\ \hline
+    8 & Describe a normal week with your team. \\ \hline
+    9 & What is the current development model in your team? \\ \hline
+    10 & How has the development model evolved during your stay in the company? \\ \hline
+    11 & Where do the development ideas come from? Are they mostly requirements from customers? \\ \hline
+    12 & Are the current development ideas based on evidence or guesswork? \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -846,24 +853,21 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Current deployment process}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    a & What is the current deployment process like? & Continuous deployment & Deployment process \\ \hline
-    a & How is it decided when to deploy? & Continuous deployment & Deployment process \\ \hline %TODO: how is it decided?
-    a & How is it decided what to deploy? & Continuous deployment & Deployment process \\ \hline %TODO: how is it decided?
-    a & How often is new version released ? & Continuous deployment & Deployment process \\ \hline
-    a & How often are the new versions deployed to customer?? & Continuous deployment & Deployment process \\ \hline
-    a & How are the deployment dates chosen? & Continuous deployment & Deployment process \\ \hline
-
-    a & Which parts of the deployment process are manual? & Continuous deployment & Technical \\ \hline
-    a & Which parts of the deployment process are hard to measure automatically? & Continuous deployment & Technical \\ \hline
-
-    a & Is the customer involved in the deployment process? & Continuous deployment & Customer involvement \\ \hline
-    a & Does the customer have to do something when a version is deployed? & Continuous deployment & Customer involvement \\ \hline
-
-    a & What are the strenghts in the current deployment process? & Continuous deployment & d \\ \hline
-    a & What are the problems in the current deployment process? & Continuous deployment & d \\ \hline
+    ID & Question \\ \hline
+    a & What is the current deployment process like? \\ \hline
+    a & How is it decided when to deploy? \\ \hline
+    a & How is it decided what to deploy? \\ \hline
+    a & How often is new version released? \\ \hline
+    a & How often are the new versions deployed to customer? \\ \hline
+    a & How are the deployment dates chosen? \\ \hline
+    a & Which parts of the deployment process are manual? \\ \hline
+    a & Which parts of the deployment process are hard to measure automatically? \\ \hline
+    a & Is the customer involved in the deployment process? \\ \hline
+    a & Does the customer have to do something when a version is deployed? \\ \hline
+    a & What are the strenghts in the current deployment process? \\ \hline
+    a & What are the problems in the current deployment process? \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -872,21 +876,20 @@ Interview results are added to spreadsheet, with the participants grouped based 
 
 \begin{center}
 %\centerline{
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    a & Describe the customer interaction process & General & d \\ \hline
-    a & From your point of view, what are the challenges with the customer interaction? & General & d \\ \hline
-    a & From your point of view, what are the strengths with the customer interaction? & General & d \\ \hline
-    a & From your point of view, how could the interaction with the customer be improved? & General & d \\ \hline
-	a & Is it common for customers requirements to change? & General &  \\ \hline
-    a & Is the development team aware of the customers present requirements? & General &  \\ \hline
-
-	a & How is feedback collected from the customer? & Continuous experimentation & RQ 4: Data collection \\ \hline
-	a & What are the B2B specific challenges in feedback collection? & Continuous experimentation & RQ 4: Data collection \\ \hline
-	a & From your point of view, how could the feedback collection be improved? & Continuous experimentation & RQ 4: Data collection \\ \hline
-	a & How is the customer feedback used? & Continuous experimentation & Data usage \\ \hline	
-	a & From your point of view, how could the feedback usage be improved? & Continuous experimentation & Data usage \\ \hline
+    ID & Question \\ \hline
+    a & Describe the customer interaction process. \\ \hline
+    a & From your point of view, what are the challenges with the customer interaction? \\ \hline
+    a & From your point of view, what are the strengths with the customer interaction? \\ \hline
+    a & From your point of view, how could the interaction with the customer be improved? \\ \hline
+	a & Is it common for customers requirements to change? \\ \hline
+    a & Is the development team aware of the customers present requirements? \\ \hline
+	a & How is feedback collected from the customer? \\ \hline
+	a & What are the B2B specific challenges in feedback collection? \\ \hline
+	a & From your point of view, how could the feedback collection be improved? \\ \hline
+	a & How is the customer feedback used?  \\ \hline
+	a & From your point of view, how could the feedback usage be improved? \\ \hline
 
     \hline
     \end{tabular}
@@ -896,16 +899,15 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Software product}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    a & How many end-users does the product have? & General &  \\ \hline
-    a & How is usage data collected? & Continuous experimentation & RQ 4: Data collection \\ \hline
-    a & How could usage data collection be improved? & Continuous experimentation & RQ 4: Data collection \\ \hline
-
-    a & What challenges would real-time deployment have? & Continuous deployment & RQ 2 \\ \hline
-    a & What challenges would plugged-in data collection instruments have? & Continuous experimentation & RQ 4: Data collection \\ \hline
-    a & If data were to be collected in customer environment, what challenges would be faced storing it? & Continuous experimentation & RQ 4: Data storage \\ \hline
+    ID & Question \\ \hline
+    a & How many end-users does the product have? \\ \hline
+    a & How is usage data collected? \\ \hline
+    a & How could usage data collection be improved? \\ \hline
+    a & What challenges would real-time deployment have? \\ \hline
+    a & What challenges would plugged-in data collection instruments have? \\ \hline
+    a & If data were to be collected in customer environment, what challenges would be faced storing it? \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -913,11 +915,11 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Problems and strenghts in the current development process}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-	a & What are the strenghts in the current development process? & General & RQ 3 \\ \hline
-    a & What are the problems in the current development process? & General & RQ 3 \\ \hline
+    ID & Question  \\ \hline
+	a & What are the strenghts in the current development process? \\ \hline
+    a & What are the problems in the current development process? \\ \hline
     \hlineo
     \end{tabular}
 \end{center}
@@ -925,18 +927,20 @@ Interview results are added to spreadsheet, with the participants grouped based 
 \subsubsection{Future ways with continuous deployment and continuous experimentation}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | l | l |}
     \hline
-    ID & Question & Reason & Notes \\ \hline
-    a & Could your product be instrumented with a data collection service? If not, why? & Continuous experimentation & RQ 4: Data collection \\ \hline
-    a & In your product, could experiments be quickly deployed to the customer environment? & Continuous experimentation & d \\ \hline
-    a & In your product, could the development process be guided by A/B testing? & Continuous experimentation & d \\ \hline
-    a & Does your team have a data analyst? & Continuous experimentation & d \\ \hline
+    ID & Question \\ \hline
+    a & Could your product be instrumented with a data collection service? If not, why? \\ \hline
+    a & In your product, could experiments be quickly deployed to the customer environment? \\ \hline
+    a & In your product, could the development process be guided by A/B testing? \\ \hline
+    a & Does your team have a data analyst? \\ \hline
     \hline
     \end{tabular}
 \end{center}
 
 \section{Research results}
+
+%Sprinteistä jatkuvaan prosessimalliin on oikeastaan vaatimus.
 
 \section{Analysis}
 Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
