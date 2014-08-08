@@ -2,3 +2,5 @@
 
 Is it ok to use the interview results in defining the problems in the very beginning of the thesis for example? When defining the context, interview questions can be used to answer to general charasteristics such as testing practices and customer interaction practices.
 
+is systematic literature review possible with the amount of research on the subjects?
+ 
