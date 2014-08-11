@@ -33,6 +33,7 @@
 \usepackage[pdftex,hidelinks]{hyperref}
 \usepackage{verbatim}
 \usepackage{multicol}
+\usepackage[titletoc]{appendix}
 
 % Automatically set the PDF metadata fields
 \makeatletter
@@ -199,9 +200,9 @@ To analyze the software development process transition towards shorter feedback 
 
 The broader research objective is explored here. 
 
-\noindent \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
+\noindent \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation?}
 
-\noindent Continuous experimentation process with multiple different roles is quite heavyweight, and not quickly adoptable. The purpose of this research question is to attempt to investigate whether only the core process of continuous experimentation can be adopted and used in practice. A way to do this is for example to avoid creating new roles only for the purpose of continuous experimentation. This way it is quick for companies to test whether the process suits their needs. This research question is answered based on literature review. \newline
+\noindent Continuous experimentation process with multiple different roles is quite heavyweight, and not quickly adoptable. How can the process be simplified without losing the benefits? The purpose of this research question is to attempt to investigate whether only the core process of continuous experimentation can be adopted and used in practice. A way to do this is for example to avoid creating new roles only for the purpose of continuous experimentation. This way it is quick for companies to test whether the process suits their needs. This research question is answered based on literature review. \newline
 
 %Literature review / Interview
 \noindent \textbf{RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
@@ -259,7 +260,7 @@ This thesis is organized as follows. Chapter II ..
 Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change.
 
 %Agile implementations
-Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further defined their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing all code.
+Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further defined their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing all code.
 
 %Lean manufacturing & LSD
 Lean manufacturing, derived from the Toyota Production System \cite{ono1988toyota}, is a streamlined production philosophy that aims to identify the expenditure of resources not used in creating value for the end customer, and eliminate these activities. Lean software development \cite{poppendieck2003lean} has been developed based on the same idea. The purpose of lean software development is to eliminating waste, or anything that doesn't bring value to the customer, and to pursuit perfection through smoothing the development flow. The principles in lean software development are eliminate waste, amplify learning, decide as late as possible, deliver as fast as possible, engage everyone, build quality in and see the whole. 
@@ -358,7 +359,7 @@ While continuous experimentation is only loosely defined by McKinley, it poses r
 In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Evolution path
-Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R&D as an 'experiment system'", the entire R&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous deployment to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatical data collection components and capability to effectively use the collected data.
+Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R\&D as an 'experiment system'", the entire R\&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous deployment to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatical data collection components and capability to effectively use the collected data.
 
 -Connect CE, IES, Microsoft stuff, Lean startup stuff
 
@@ -406,13 +407,12 @@ Kohavi et al. investigate the practical implementations of controlled experiment
 
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
-\subsubsubsection{Data collection}
+\subsubsection{Data collection}
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
-
 
 To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, such that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.  
 
-\subsubsubsection{Data analysis}
+\subsubsection{Data analysis}
 To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance. 
 
 \subsubsection{Roles in continuous experimentation}
@@ -434,7 +434,7 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 \subsection{Challenges regarding continuous experimentation}
 "Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
 
-"Collecting customer or performance data early in the innovation process requires changes to the R&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}
+"Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}
 
 "A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}
 
@@ -447,11 +447,21 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 -Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
 
 Pitfalls:
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=3.5in]{pitfalls.jpg}
-	\caption{Pitfalls to avoid when running controlled experiments \cite{crook2009seven}.}
-\end{figure}
+\begin{center}
+\begin{table}[htb]
+    \begin{tabular}{ | p{2cm} | p{10cm} |}
+    \hline
+	Pitfall 1 & Picking an OEC for which it is easy to beat the control by doing something clearly “wrong” from a business perspective \\ \hline
+	Pitfall 2 & Incorrectly computing confidence intervals for percent change and for OECs that involve a nonlinear combination of metrics \\ \hline
+	Pitfall 3 & Using standard statistical formulas for computations of variance and power \\ \hline
+	Pitfall 4 & Combining metrics over periods where the proportions assigned to Control and Treatment vary, or over subpopulations sampled at different rates \\ \hline
+	Pitfall 5 & Neglecting to filter robots \\ \hline
+	Pitfall 6 & Failing to validate each step of the analysis pipeline and the OEC components \\ \hline
+	Pitfall 7 & Forgetting to control for all differences, and assuming that humans can keep the variants in sync \\ \hline
+    \end{tabular}
+    \caption{Pitfalls to avoid when running controlled experiments on the web \cite{crook2009seven}.}
+    \end{table}
+\end{center}
 
 -Roles
 -Environment
@@ -512,92 +522,15 @@ Another guideline is selectivity. King states that every code cannot be interpre
 Finally, an account of the interpreted data has to be presented. As with interpretation, King provides three common approaches to presentation \cite{king2004using}. First of the approaches is a set of individual case studies, followed by discussion of differences and similarities between cases. This approach gives a lot of perspective of individuals, but can be confusing if the amount of participants is large. The second approach is an account structured around the main themes identified, drawing illustrative examples from each transcript as required. King states that this is the approach that most readily provides a clear thematic discussion, but the dangers is in drifting towards generalizations and losing sights of individual experiences. The third approach is a thematic presentation of the findings, using a different individual case-study to illustrate each of the main themes. The main problem here lies in selecting the cases which represent the themes in the data as a whole. King also adds that no matter which approach is used, direct quotes from participants is essential.  
 %Template TODO: http://www.hud.ac.uk/hhs/research/template-analysis/what-is-template-analysis/ 
 
-\section{Development process of the case company}
-%an overview of the entire process, then refining the parts that are relevant for the problems 
-Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
-
-%These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
-
-The development isn't at all distributed, and no external party affects the development process. 
-
-\subsection{Evolution of the development process}
-The development process of the case company has evolved from traditional, waterfall-style development through an agile phase to the current Lean approach based on a kanban board. In the very first phases, when the company was young, tasks were simply put into excel. Eventually, Agilefant backlog product management tool was introduced and tasks were moved into it. Scrum and agile practices were also adapted at the same time. Agilefant allowed sprint management, but caused too much overhead according to the developers. However, during the time Agilefant was used as the product and sprint backlogs, a part of Dialog development was offshored. Agilefant allowed easy tracking and managing the offshore development efforts.
-
-After Agilefant was determined to cause too much overhead, Scrum whiteboard was used for a while. The physical whiteboard however caused issues with offshore participants. After the Development and Integration team was split further into two sub-teams focusing on each project, Scrum meetings were also seen as overhead. This was caused by only half of the team being interested and attached to tasks considering a single product. After it was decided that the team is split into two sub-teams, practicing Scrum was again seen as an overhead due to the low amount of participants. Eventually the whiteboard was replaced with an online kanban board, Trello. By the same time the Scrum meetings were abandoned for a more streamlined process, that is able to respond to changing requirements faster. 
-
-\subsection{Current development process}
-
-\subsubsection{Overview}
-
-\subsubsection{Customer backlog}
-Work items are first added to customer backlogs in iSteer Contact. In this phase they might be just initial skeletons and do not need to contain all needed information. The work items are added by product or business owners or project managers. At this phase the created backlog items are not yet visible in team backlogs in iSteer Contact. The idea is to list them in the customer backlog as early as possible and start refining the requirements collaboratively both offline and online with the help of tools such as Chatter. Chatter can be used to discuss a single story or the complete backlog.
-
-When the backlog item is ready for the development team to start working on it, it should contain at least the following information:
-A descriptive name
-Specifications that explain both the technical side and the business side
-Agilefant link four hour reporting
-
-The backlog item is added to team backlog by selecting the “show in team backlog” -option.
-
-\subsubsection{Team backlog}
-Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team.
-
-Completed stories related to one team can be found from the report (link in team detail page)
-Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
-
-Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
-
-\subsubsection{Using Trello}
-
-Overview
-Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
-
-Sprint Backlog
-The Backlog Owner moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
-
-In progress
-The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
-·       All tasks are complete
-·       Changes are pushed to a feature-specific branch
-·       Unit tests are written and pass in the CI server
-·       Feature is well-written and does not need refactoring
-·       Pull request is created and a link is added to the comment field
-·       Feature has been documented as needed
-If the feature needs refactoring a task list must be created and the card moved back to In Progress column.
-
-Review
-Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
-·       Pull request is reviewed and by at least two (2) persons
-·       Pull request is merged to the development branch
-·       Feature is deployed to a development environment
-·       Source code quality has to be good enough!
-After you have reviewed the pull request leave yourself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column.
-If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
-If only small fixes are needed, they should be implemented within the Github pull request workflow.
-The second person who has reviewed and accepted the pull request is responsible for deploying the feature to a development environment.
-
-Ready
-Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if:
-·       Feature has been verified by the Product Owner in the development environment
-Product owner is responsible for moving the feature to the Verified column.
-If the verification for the feature fails the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
-
-Verified
-Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
-Done
-
-This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
-Prioritized lists
-
-The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
-
-\subsubsection{After Trello}
-TODO
-
--current state at steeri
-    -short summary
-
 \section{Research design}
+
+Research design depicts the strategic decisions that guide how research is carried out \cite{denzin2000discipline}. This includes the studied phenomena, method selection, data-gathering and analysis. 
+
+Positivism and postpositivism, constructivism and critical stances are different perspectives towards the research that a researcher can take. Positivism contents that an objective reality, which can be studied, captured and understood, exists. Postpositivism argues that reality can never be fully apprehended, but only approximated. Postpositivism therefore relies on multiple methods to capture as much of reality as possible. Constructivism assumes that multiple realities exist,     
+
+This thesis is based on the __ view TODO: finish
+
+The logical starting point of this thesis was __
 
 \subsection{Objective} %what to achieve?
 
@@ -614,6 +547,23 @@ Existing documented applications of continuous experimentation are primarily exe
 
 An interview is used to analyze and identify the pain points the company currently has in its development process. Then continuous deployment and continuous experimentation processes are viewed from the viewpoint of the case company, and possible pains identified. As a result, necessary restrictions and requirements encountered in the B2B domain are obtained. 
 
+The research questions and research methods are summarize in Table 2.
+
+\begin{center}
+\begin{table}[htb]
+    \begin{tabular}{ | l | p{5cm} | l | p{3cm} |}
+    \hline
+    Knowledge gap & Research question & The focus of analysis & Data \\ \hline
+    a & RQ 1: What is the Minimum Viable Process of continuous experimentation? & asd & Literature \\ \hline %How can the process be simplified without losing the benefits?
+    a & RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C? & asd & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 3: Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process? & asd & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & asd & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 5: How should continuous experimentation be implemented as a development process in the B2B domain? & asd & 13 interviews, documentations of the development process, literature \\ \hline
+    \end{tabular}
+    \caption{Research questions and research methods.}
+    \end{table}
+\end{center}
+
 \subsection{Case descriptions} %what is studied?
 %Be sure to specify as much of the industrial context as possible. In particular,
 %clearly deﬁne the entities, attributes, and measures that are capturing the contextual information.
@@ -622,7 +572,7 @@ Kitchenham et al. state that the experimental context needs the three elements: 
 
 -configuration management: no employer designed and no formal education
 
-The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the units under the study are two teams responsible for developing two different software products. The first team is the Development & Integration, which is further split into two sub-teams: Dialog and CDM. Both of the subteams develop a different product. The team is managed by a Concepting & Management team, which consists of the Product Owners of both software products, quality assurance and commercialisation experts. 
+The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the units under the study are two teams responsible for developing two different software products. The first team is the Development \& Integration, which is further split into two sub-teams: Dialog and CDM. Both of the subteams develop a different product. The team is managed by a Concepting \& Management team, which consists of the Product Owners of both software products, quality assurance and commercialisation experts. 
 
 The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The subteams of the first team under study have a common team leader, but different product owners and middle management. TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 
@@ -714,7 +664,7 @@ The general context of the study is defined by the following properties.
 \begin{description}
   \item[Company size.] Steeri has approximately 80 employees at the writing of this thesis. The employees are located in two cities in Finland, and many of the employees are assigned to projects at other organizations.
   \item[Business area.] The company in question focuses in managing, analysing and improving the usage of customer data. This includes various CRM-systems, such as Oracle Siebel, but the company also has its own marketing automation and master data management products. The company also does data analytics within the Business Intelligence team.
-  \item[Teams under study.] As Steeri covers a wide business area, the scope for the thesis is narrowed down to two teams. The other team focuses on product development of a marketing automation product and a master data management product, while the other team consists of managers and Q&A dealing with the same products.
+  \item[Teams under study.] As Steeri covers a wide business area, the scope for the thesis is narrowed down to two teams. The other team focuses on product development of a marketing automation product and a master data management product, while the other team consists of managers and Q\&A dealing with the same products.
   \item[Team setup.] The development team consists of a team leader and developers, while the management team consists of two product owners, commersialization manager and a requirement engineer. 
   \item[Development practices.] Currently the team in question uses continuous integration, with feature branches merged into mainline as soon as the feature is finished. This could differentiate from a couple of hours up to multiple days.
   \item[Development model.] The development model is essentially a Lean model, the core being a prioritized Kanban board.  
@@ -747,41 +697,6 @@ Microsoft EXP platform
 
 The researcher is a part of the development team of the company, but the viewpoint ...
 
-\subsection{Research questions} %what to know? ##Research questions—what to know? these fulfill the objective##
-%Literature review
-\noindent \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation? How can the process be simplified without losing the benefits?}
-
-\noindent Continuous experimentation process with multiple different roles is quite heavyweight, and not quickly adoptable. The purpose of this research question is to attempt to investigate whether only the core process of continuous experimentation can be adopted and used in practice. A way to do this is for example to avoid creating new roles only for the purpose of continuous experimentation. This way it is quick for companies to test whether the process suits their needs. This research question is answered based on literature review. \newline
-
-%Literature review / Interview
-\noindent \textbf{RQ 2: What are the differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
-
-\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. TODO: question: contractual issues? The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. \newline
-
-Question: selecting the correct OEC in b2b is harder. for example revenue. 
-question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
-
-%Interview results have to be compared to literature review results
-\noindent \textbf{RQ 3: Why would continuous experimentation benefit the case company? What are the problems and strengths of the current development process?}
-
-\noindent To rationalize the decision to adopt continuous experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
-
-One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not.
-
-%collect ideas from literature review and interview
-\noindent \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
-
-\noindent As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question is answered by collecting ideas from the literature review and interview results. \newline
--Legal issues
--Technical issues
-
-%collect ideas from literature review and interview
-\noindent \textbf{RQ 5: How should continuous experimentation be implemented as a development process in the B2B domain?}
-
-\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by collecting ideas from the literature review and interview results. \newline
--Where do the feature ideas come from?
--What roles are required?
-
 %How is the current interaction with the customer?
 %	subquestion: What are the current roles and stakeholders?
 %How should continuous experimentation guide the development process?
@@ -803,7 +718,7 @@ One idea is also to aid marketing by selling the MVPs to customers. This way we 
 %How do we validate whether a feature is succesful or not? 
 
 \subsection{Methods} %how to collect data? TODO: what, how, why?
-The primary source of information in this research are semi-structured interviews performed within the Development & Integration team and its management. TODO: business people? The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process. 	
+The primary source of information in this research are semi-structured interviews performed within the Development \& Integration team and its management. TODO: business people? The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation will be implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process. 	
 
 %miksi tutkimuskysymyksiin voidaan vastata haastattelututkimuksella?
 The interview was chosen as a data collection method because of the nature of the research questions. Since the study focuses on applying two development methods to the development process of a team, individual perceptions of members are required. As the case study doesn't include a technical implementation, quantitative measurements to properly measure the effects before and after implementation isn't an option. The research questions cannot be properly supported with quantitative data. There is also a uncertainty about how much information the interviewees are able to provide, and thus the questions are mostly open-ended. The nature of interviewees opinions on the research questions are also not known in advance, and quantifying it isn't simple. 
@@ -853,133 +768,95 @@ Interview results are added to spreadsheet, with the participants grouped based 
 
 \subsection{Limitations}
 
-\subsection{Interview questions}
+\section{Development process of the case company}
+%an overview of the entire process, then refining the parts that are relevant for the problems 
+Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
 
-\subsubsection{Background}
+%These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
 
-\begin{center}
-    \begin{tabular}{ | l | l |} 
-    \hline
-    ID & Question \\ \hline
-    1 & Name of the interviewee \\ \hline
-    2 & Team of the interviewee \\ \hline
-    3 & Position of the interviewee & Background & - \\ \hline
-    4 & Years in the company \\ \hline
-    5 & Years of experience in the industry \\ \hline
-    6 & What is the software product you're working with? \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
+The development isn't at all distributed, and no external party affects the development process. 
 
-\subsubsection{Current development process}
+\subsection{Evolution of the development process}
+The development process of the case company has evolved from traditional, waterfall-style development through an agile phase to the current Lean approach based on a kanban board. In the very first phases, when the company was young, tasks were simply put into excel. Eventually, Agilefant backlog product management tool was introduced and tasks were moved into it. Scrum and agile practices were also adapted at the same time. Agilefant allowed sprint management, but caused too much overhead according to the developers. However, during the time Agilefant was used as the product and sprint backlogs, a part of Dialog development was offshored. Agilefant allowed easy tracking and managing the offshore development efforts.
 
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question \\ \hline
-    7 & Describe your personal daily work routine. \\ \hline
-    8 & Describe a normal week with your team. \\ \hline
-    9 & What is the current development model in your team? \\ \hline
-    10 & How has the development model evolved during your stay in the company? \\ \hline
-    11 & Where do the development ideas come from? Are they mostly requirements from customers? \\ \hline
-    12 & Are the current development ideas based on evidence or guesswork? \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
+After Agilefant was determined to cause too much overhead, Scrum whiteboard was used for a while. The physical whiteboard however caused issues with offshore participants. After the Development and Integration team was split further into two sub-teams focusing on each project, Scrum meetings were also seen as overhead. This was caused by only half of the team being interested and attached to tasks considering a single product. After it was decided that the team is split into two sub-teams, practicing Scrum was again seen as an overhead due to the low amount of participants. Eventually the whiteboard was replaced with an online kanban board, Trello. By the same time the Scrum meetings were abandoned for a more streamlined process, that is able to respond to changing requirements faster. 
 
-\subsubsection{Current deployment process}
+\subsection{Current development process}
 
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question \\ \hline
-    a & What is the current deployment process like? \\ \hline
-    a & How is it decided when to deploy? \\ \hline
-    a & How is it decided what to deploy? \\ \hline
-    a & How often is new version released? \\ \hline
-    a & How often are the new versions deployed to customer? \\ \hline
-    a & How are the deployment dates chosen? \\ \hline
-    a & Which parts of the deployment process are manual? \\ \hline
-    a & Which parts of the deployment process are hard to measure automatically? \\ \hline
-    a & Is the customer involved in the deployment process? \\ \hline
-    a & Does the customer have to do something when a version is deployed? \\ \hline
-    a & What are the strenghts in the current deployment process? \\ \hline
-    a & What are the problems in the current deployment process? \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
+\subsubsection{Overview}
 
-\subsubsection{Current interaction with the customer}
+\subsubsection{Customer backlog}
+Work items are first added to customer backlogs in iSteer Contact. In this phase they might be just initial skeletons and do not need to contain all needed information. The work items are added by product or business owners or project managers. At this phase the created backlog items are not yet visible in team backlogs in iSteer Contact. The idea is to list them in the customer backlog as early as possible and start refining the requirements collaboratively both offline and online with the help of tools such as Chatter. Chatter can be used to discuss a single story or the complete backlog.
 
-\begin{center}
-%\centerline{
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question \\ \hline
-    a & Describe the customer interaction process. \\ \hline
-    a & From your point of view, what are the challenges with the customer interaction? \\ \hline
-    a & From your point of view, what are the strengths with the customer interaction? \\ \hline
-    a & From your point of view, how could the interaction with the customer be improved? \\ \hline
-	a & Is it common for customers requirements to change? \\ \hline
-    a & Is the development team aware of the customers present requirements? \\ \hline
-	a & How is feedback collected from the customer? \\ \hline
-	a & What are the B2B specific challenges in feedback collection? \\ \hline
-	a & From your point of view, how could the feedback collection be improved? \\ \hline
-	a & How is the customer feedback used?  \\ \hline
-	a & From your point of view, how could the feedback usage be improved? \\ \hline
+When the backlog item is ready for the development team to start working on it, it should contain at least the following information:
+A descriptive name
+Specifications that explain both the technical side and the business side
+Agilefant link four hour reporting
 
-    \hline
-    \end{tabular}
-%    }
-\end{center}
+The backlog item is added to team backlog by selecting the “show in team backlog” -option.
 
-\subsubsection{Software product}
+\subsubsection{Team backlog}
+Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team.
 
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question \\ \hline
-    a & How many end-users does the product have? \\ \hline
-    a & How is usage data collected? \\ \hline
-    a & How could usage data collection be improved? \\ \hline
-    a & What challenges would real-time deployment have? \\ \hline
-    a & What challenges would plugged-in data collection instruments have? \\ \hline
-    a & If data were to be collected in customer environment, what challenges would be faced storing it? \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
+Completed stories related to one team can be found from the report (link in team detail page)
+Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
 
-\subsubsection{Problems and strenghts in the current development process}
+Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
 
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question  \\ \hline
-	a & What are the strenghts in the current development process? \\ \hline
-    a & What are the problems in the current development process? \\ \hline
-    \hlineo
-    \end{tabular}
-\end{center}
+\subsubsection{Using Trello}
 
-\subsubsection{Future ways with continuous deployment and continuous experimentation}
+Overview
+Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
 
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-    ID & Question \\ \hline
-    a & Could your product be instrumented with a data collection service? If not, why? \\ \hline
-    a & In your product, could experiments be quickly deployed to the customer environment? \\ \hline
-    a & In your product, could the development process be guided by A/B testing? \\ \hline
-    a & Does your team have a data analyst? \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
+Sprint Backlog
+The Backlog Owner moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
 
-\section{Research results}
+In progress
+The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
+·       All tasks are complete
+·       Changes are pushed to a feature-specific branch
+·       Unit tests are written and pass in the CI server
+·       Feature is well-written and does not need refactoring
+·       Pull request is created and a link is added to the comment field
+·       Feature has been documented as needed
+If the feature needs refactoring a task list must be created and the card moved back to In Progress column.
+
+Review
+Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
+·       Pull request is reviewed and by at least two (2) persons
+·       Pull request is merged to the development branch
+·       Feature is deployed to a development environment
+·       Source code quality has to be good enough!
+After you have reviewed the pull request leave yourself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column.
+If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
+If only small fixes are needed, they should be implemented within the Github pull request workflow.
+The second person who has reviewed and accepted the pull request is responsible for deploying the feature to a development environment.
+
+Ready
+Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if:
+·       Feature has been verified by the Product Owner in the development environment
+Product owner is responsible for moving the feature to the Verified column.
+If the verification for the feature fails the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
+
+Verified
+Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
+Done
+
+This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
+Prioritized lists
+
+The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
+
+\subsubsection{After Trello}
+TODO
+
+-current state at steeri
+    -short summary
+
 
 %Sprinteistä jatkuvaan prosessimalliin on oikeastaan vaatimus.
 
-\section{Analysis}
+\section{Findings}
 This section summarises key findings of the case study and literature review. It is structured according to the research questions, %allowing the progress from a higher-level perspective to mroe detailed views
 
 %\subsection{Perceived problems}
@@ -996,6 +873,8 @@ Break up the development process into smaller pieces, and then derive requiremen
 
 \subsection{Implementing continuous experimentation as a development process}
 
+\subsection{Cross-case analysis}
+
 The simplest experiment cycle:
 1.oec
 2.
@@ -1006,7 +885,6 @@ The simplest experiment cycle:
 \section{Discussion}
 This thesis was motivated by
 
-
 \subsection{Contribution}
 This thesis contributes to..
 
@@ -1014,7 +892,7 @@ The contributions to .. are
 
 \subsection{Further research}
 
-\section{Conclusions}
+%\section{Conclusions}
 
 \newpage
 
@@ -1028,18 +906,78 @@ The contributions to .. are
 %
 % instead.
 
-
 \bibliographystyle{babplain-lf}
 \bibliography{gradu}
-
 
 % --- Appendices ---
 
 % uncomment the following
 
-% \newpage
-% \appendix
-% 
-% \section{Example appendix}
+\appendix
+ 
+\section{Interview questions}
+
+\begin{center}
+    \begin{tabular}{ | l | p{10cm} |} 
+    \hline
+    ID & Question \\ \hline
+    1 & Name of the interviewee \\ \hline
+    2 & Team of the interviewee \\ \hline
+    3 & Position of the interviewee \\ \hline
+    4 & Years in the company \\ \hline
+    5 & Years of experience in the industry \\ \hline
+    6 & What is the software product you're working with? \\ \hline
+    7 & Describe your personal daily work routine. \\ \hline
+    8 & Describe a normal week with your team. \\ \hline
+    9 & What is the current development model in your team? \\ \hline
+    10 & How has the development model evolved during your stay in the company? \\ \hline
+    11 & Where do the development ideas come from? Are they mostly requirements from customers? \\ \hline
+    12 & Are the current development ideas based on evidence or guesswork? \\ \hline
+    13 & What is the current deployment process like? \\ \hline
+    14 & How is it decided when to deploy? \\ \hline
+    15 & How is it decided what to deploy? \\ \hline
+    16 & How often is new version released? \\ \hline
+    17 & How often are the new versions deployed to customer? \\ \hline
+    18 & How are the deployment dates chosen? \\ \hline
+    19 & Which parts of the deployment process are manual? \\ \hline
+    20 & Which parts of the deployment process are hard to measure automatically? \\ \hline
+    21 & Is the customer involved in the deployment process? \\ \hline
+    22 & Does the customer have to do something when a version is deployed? \\ \hline
+    23 & What are the strenghts in the current deployment process? \\ \hline
+    24 & What are the problems in the current deployment process? \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ | l | p{10cm} |} 
+    \hline
+    ID & Question \\ \hline
+    25 & Describe the customer interaction process. \\ \hline
+    26 & From your point of view, what are the challenges with the customer interaction? \\ \hline
+    27 & From your point of view, what are the strengths with the customer interaction? \\ \hline
+    28 & From your point of view, how could the interaction with the customer be improved? \\ \hline
+	29 & Is it common for customers requirements to change? \\ \hline
+    30 & Is the development team aware of the customers present requirements? \\ \hline
+	31 & How is feedback collected from the customer? \\ \hline
+	32 & What are the B2B specific challenges in feedback collection? \\ \hline
+	33 & From your point of view, how could the feedback collection be improved? \\ \hline
+	34 & How is the customer feedback used?  \\ \hline
+	35 & From your point of view, how could the feedback usage be improved? \\ \hline
+    36 & How many end-users does the product have? \\ \hline
+    37 & How is usage data collected? \\ \hline
+    38 & How could usage data collection be improved? \\ \hline
+    39 & What challenges would real-time deployment have? \\ \hline
+    40 & What challenges would plugged-in data collection instruments have? \\ \hline
+    41 & If data were to be collected in customer environment, what challenges would be faced storing it? \\ \hline
+	42 & What are the strenghts in the current development process? \\ \hline
+    43 & What are the problems in the current development process? \\ \hline
+    44 & Could your product be instrumented with a data collection service? If not, why? \\ \hline
+    45 & In your product, could experiments be quickly deployed to the customer environment? \\ \hline
+    46 & In your product, could the development process be guided by A/B testing? \\ \hline
+    47 & Does your team have a data analyst? \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
 
 \end{document}
