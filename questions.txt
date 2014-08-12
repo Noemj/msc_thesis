@@ -4,3 +4,4 @@ Is it ok to use the interview results in defining the problems in the very begin
 
 is systematic literature review possible with the amount of research on the subjects?
  
+should i have results from the literature review sections (chapters 2-3) in the Results or Findings section? "In the literature review, main goals are to identify existing requirements and success factors in these approaches."
