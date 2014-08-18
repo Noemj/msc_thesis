@@ -233,7 +233,7 @@ As compared to the B2C domain where the product is often deployed in cloud with 
 -Technical issues
 
 %collect ideas from literature review and interview
-\noindent \textbf{RQ 5: How should continuous experimentation be implemented as a development process in the B2B domain?}
+\noindent \textbf{RQ 5: How can continuous experimentation be systematically organised in the B2B domain?}
 
 \noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by collecting ideas from the literature review and interview results. \newline
 -Where do the feature ideas come from?
@@ -371,6 +371,8 @@ In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Mea
 %Evolution path
 Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R\&D as an 'experiment system'", the entire R\&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous deployment to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatical data collection components and capability to effectively use the collected data.
 
+TODO: Maybe something about continuous innovation? Brown, 1997, The art of continuous change: Linking complexity theory and time-paced evolution in relentlessly shifting organizations
+
 -Connect CE, IES, Microsoft stuff, Lean startup stuff
 
 %In the context of this thesis, Continuous Experimentation refers to a development model following these principles: TODO: improve this
@@ -381,6 +383,8 @@ Holmström Olsson et al. have researched the typical evolution path of companies
 %\item  \textbf{Turning hypotheses into facts}
 %\item  \textbf{Steering development process}
 %\end{itemize}
+
+"A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}.
 
 A model of continuous experimentation has been created by Fagerholm et al. \cite{fagerholm2014building}. 
 
@@ -427,6 +431,10 @@ To analyze the raw data, it must first be converted into metrics which can then 
 
 \subsubsection{Roles in continuous experimentation}
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
+
+
+TODO: adobe:
+Pipeline team: designer, developer, researcher, product manager \cite{adobe}
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
 
@@ -476,6 +484,80 @@ Pitfalls:
 -Roles
 -Environment
 -Deployment
+
+\subsection{(TODO:move\&rename)Why is this interesting?}
+%However, based on the state-of-the practice section (describing 
+%what is currently done in industry) you should motivate that the 
+%problem you are addressing is a significant problem in industry 
+%(you can include this justification at the end of the section).
+%Why is this interesting?
+
+"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. TODO check this
+
+"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
+
+\subsection{(TODO:move\&rename)Existing case studies}
+%At the end of the state-of-the-art section you should describe the differences
+%between existing related research approaches (and especially existing 
+%case studies) and compare them with your own goal in order to motivate your
+%study.
+
+%Previous works have presented case studies that exhibit di↵erent
+%aspects concerning continuous experimentation. Steiber [23] report
+%on a study of the model of continuous experimentation followedby Google, analysing a success story of this approach. Adams [1]
+%present a case study on the implementation of Adobe’s Pipeline, a
+%process that is based on the continuous experimentation approach.
+
+Case study: stairway to heaven \cite{olsson2012climbing}
+  -multiple-case study exploring companies moving towards continuous deployment 
+  -evolution phases, no continous experimentation transition defined
+  -Continuous delivery transition with a highly distributed team
+  -R\&D as an experiment system
+
+Case study: building blocks \cite{fagerholm2014building}
+  -initial continuous experimentation model
+  -startup company 
+  -analysis of a continuous experimentation model in the case company
+
+Case study \cite{steiber2013corporate}
+  -continuous innovation "an experimental iterative process that operates successively to solve problems in markets characterized by turbulence, uncertainty and complex interactions"
+  -continuous innovation, "the ability to renew the organization and to develop new products and business models, is central for most companies"
+  -specifies in organizational characteristics
+  -innovational culture aspects
+  -Steiber [23] report on a study of the model of continuous experimentation followed by Google, analysing a success story of this approach.
+
+
+Case study \cite{adams2013creating, adobe}
+  - Adams [1] present a case study on the implementation of Adobe’s Pipeline, a process that is based on the continuous experimentation approach.
+  - Innovation pipeline:
+  1 collect user problems
+  2 ID problems worth solving
+  3 prototype possible solutions
+  4 live user testing + public releases
+  5 refine, pivot or kill the idea
+  6 build products that understand the user
+
+  Pipeline team: designer, developer, researcher, product manager
+
+  General principles: 
+  the idea will change
+  we're only right when the market tells us so
+  create fast. improve constantly
+  find the simplest thing that could possibly work
+  define "success" before we build
+  fail forward
+     -accept failure as part of our process not the end of it 
+     -fail often, but make mistakes on a small scale
+     -always learn from what went wrong
+     -don't fall in love. remain open to the pivot
+     -don't let them ruin good with perfect
+
+(Case: online experimentation at microsoft \cite{kohavi2009online})
+
+
+Motivation: %Compare to my own goals
+  -clearly defined in the B2B context
+  -
 
 \section{Case study as a research method}
 
@@ -566,7 +648,7 @@ The research questions and research methods are summarize in Table 2.
     a & RQ 2: What are the differences of continuous delivery and continuous experimentation n B2B as compared to B2C? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     a & RQ 3: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     a & RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 5: How should continuous experimentation be implemented as a development process in the B2B domain? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 5: How can continuous experimentation be systematically organised in the B2B domain & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
     \end{table}
