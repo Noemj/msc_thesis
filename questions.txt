@@ -1,7 +1,6 @@
-28.7
+18.8
 
-Is it ok to use the interview results in defining the problems in the very beginning of the thesis for example? When defining the context, interview questions can be used to answer to general charasteristics such as testing practices and customer interaction practices.
+In the building blocks article, your research approach is design science research. However, in my thesis I'm not attempting to apply a practice but to instead identify the issues and best practices in applying the practice. 
 
-is systematic literature review possible with the amount of research on the subjects?
- 
-should i have results from the literature review sections (chapters 2-3) in the Results or Findings section? "In the literature review, main goals are to identify existing requirements and success factors in these approaches."
+I could either a) analytically formulate my own development model or b) use a pre-defined development model or c) not use any development model at all, and instead just focus on the issues and best practices in continuous delivery and experimentation in general.
+
