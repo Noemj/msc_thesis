@@ -203,18 +203,22 @@ To analyze the software development process transition towards shorter feedback 
 \subsection{Research questions}
 
 The broader research objective is explored here. 
-
-\noindent \textbf{RQ 1: What is the Minimum Viable Process of continuous experimentation?}
-
-\noindent While a definitive process of continuous experimentation hasn't been defined, a process with multiple different roles is quite heavyweight and not quickly adoptable. The purpose of this research question is to identify the core practices and requirements of continuous experimentation. How can the process be kept as simple as possible without losing the benefits? The goal is that companies are able to quickly test whether the process suits their needs. This requires that the process is defined in such level of abstraction that it can be adopted in practice with relative ease. This research question is answered based on literature review. To answer this research question, a deep understanding of the process has to be established. \newline
-
 %Literature review / Interview
-\noindent \textbf{RQ 2: What are the differences of continuous delivery and continuous experimentation in B2B as compared to B2C?}
+\noindent \textbf{RQ 1: What are the differences of continuous delivery and continuous experimentation in B2B as compared to B2C?}
 
 \noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. TODO: question: contractual issues? The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. \newline
 
 Question: selecting the correct OEC in b2b is harder. for example revenue. 
 question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
+
+%collect ideas from literature review and interview
+\noindent \textbf{RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+
+\noindent Research question 4 is answered by analysing the usage data and customer feedback collection of the case company. This is carried out by interviewing the key persons responsible for customer interaction and developers responsible for usage data collection.  
+
+As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question is answered by collecting ideas from the literature review and interview results. \newline
+-Legal issues
+-Technical issues
 
 %Interview results have to be compared to literature review results
 \noindent \textbf{RQ 3: How does continuous experimentation benefit the case company?} %What are the problems and strengths of the current development process?
@@ -223,14 +227,9 @@ question: in B2C people develop their own product, but in B2B the feature ideas 
 
 One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not.
 
-%collect ideas from literature review and interview
-\noindent \textbf{RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+\noindent \textbf{RQ 4: What is the Minimum Viable Process of continuous experimentation?}
 
-\noindent Research question 4 is answered by analysing the usage data and customer feedback collection of the case company. This is carried out by interviewing the key persons responsible for customer interaction and developers responsible for usage data collection.  
-
-As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question is answered by collecting ideas from the literature review and interview results. \newline
--Legal issues
--Technical issues
+\noindent While a definitive process of continuous experimentation hasn't been defined, a process with multiple different roles is quite heavyweight and not quickly adoptable. The purpose of this research question is to identify the core practices and requirements of continuous experimentation. How can the process be kept as simple as possible without losing the benefits? The goal is that companies are able to quickly test whether the process suits their needs. This requires that the process is defined in such level of abstraction that it can be adopted in practice with relative ease. This research question is answered based on literature review. To answer this research question, a deep understanding of the process has to be established. \newline
 
 %collect ideas from literature review and interview
 \noindent \textbf{RQ 5: How can continuous experimentation be systematically organised in the B2B domain?}
@@ -649,10 +648,11 @@ The research questions and research methods are summarize in Table 2.
     \begin{tabular}{ | l | p{5cm} | l | p{3cm} |}
     \hline
     Knowledge gap & Research question & The focus of analysis & Data \\ \hline
-    a & RQ 1: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
-    a & RQ 2: What are the differences of continuous delivery and continuous experimentation n B2B as compared to B2C? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    
+    a & RQ 1: What are the differences of continuous delivery and continuous experimentation n B2B as compared to B2C? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
     a & RQ 3: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 4: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 4: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
     a & RQ 5: How can continuous experimentation be systematically organised in the B2B domain & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
@@ -971,6 +971,8 @@ The simplest experiment cycle:
 
 \section{Discussion}
 This thesis was motivated by
+
+\subsection{TODO:rename Applying Fagerholm et al. model}
 
 \subsection{Contribution}
 This thesis contributes to..
