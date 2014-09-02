@@ -898,7 +898,7 @@ During the interviews, it was soon detected that the interviewees are able to gi
 \subsubsection{Data analysis} %http://en.wikipedia.org/wiki/Thematic_analysis#Phases_of_Thematic_Analysis
 In this case study the data analysis is performed with tabulation \cite{runeson2009guidelines}, where coded data is arranged into tables to get an overview of the data. The data is organized by ..TODO.
 
-The data is analysed based on template analysis, which is a way of thematically analysing qualitative data \cite{king1998template}. *-
+The data is analysed based on template analysis, which is a way of thematically analysing qualitative data \cite{king1998template}.
 
 %minkä/miksi olen valinnut tietyn tavan analysoida ja koostaa vastauksista tulokset/johtopäätöksiä
 Template analysis was chosen as an analysis approach because it organises and analyses the data according to themes. It is also particularly effective when comparing the perspectives of different participant groups \cite{king2004using}. Since the thesis focuses on multiple themes and the interview on multiple groups, template analysis was seen as a suitable approach.   
@@ -942,21 +942,54 @@ Interview results are added to spreadsheet, with the participants grouped based 
 % Suggest solutions to these major problems 
 % Recommend the best solution to be implemented 
 % Detail how this solution should be implemented 
-This section summarises key findings of the case study and literature review. It is structured according to the research questions, %allowing the progress from a higher-level perspective to mroe detailed views
+This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed views. 
 
 %\subsection{Perceived problems}
 %What kind of problems were found?
 
-\subsection{Simplifying the continuous experimentation process}
-Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
+\subsection{Differences in continuous delivery and continuous experimentation in B2B as compared to B2C}
 
-\subsection{Differences in continuous experimentation and continuous delivery in B2B as compared to B2C?}
+Delivery B2C:
+
+Delivery B2B:
+specific customer environment, connection might require VPN
+-vpn user limit might be full
+multiple customer environments with different configurations per customer
+-should the product be always deployed to every customer?
+customer often specifies the deployment date
+every customer doesnt like changing UI
+-however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
+customers need to understand the idea
+database needs to be versioned
+the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
+UAT is often the norm and is required before anything is moved to production
+customer might be using the software when the version is updated
+
+Experimentation A/B testing B2B:
+
+Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
+
+CDM: 
+No users, except for other systems
+Measurable metrics
+-performance
+Idea: A/B test different databases and measure performance
+No user interface
+
+Dialog:
+User amount is very low, so there's no room for quantitative analysis
+Customers are very concerned about UI modifications
+UI is quite complicated, needs detailed use guide
+
+
+\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous experimentations benefit to case company}
 What kind of OEC can be picked?
 Which attributes can be improved?
 
-\subsection{Collecting usage data and customer feedback in B2B domain}
+\subsection{Minimum Viable Process of continuous experimentation}
+Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
 
 \subsection{Implementing continuous experimentation as a development process}
 
@@ -972,7 +1005,15 @@ The simplest experiment cycle:
 \section{Discussion}
 This thesis was motivated by
 
-\subsection{TODO:rename Applying Fagerholm et al. model}
+\subsection{TODO:rename Applying Fagerholm et al. model to the case company}
+Interesting interview questions regarding this issue:
+
+daily work routine
+weekly work routine
+current development model
+where to the development ideas come from
+current deployment process
+
 
 \subsection{Contribution}
 This thesis contributes to..
