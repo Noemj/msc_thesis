@@ -949,8 +949,12 @@ This section summarises key findings of the case study. It is structured accordi
 
 \subsection{Differences in continuous delivery and continuous experimentation in B2B as compared to B2C}
 
+
+===============
 Delivery B2C:
 
+
+===============
 Delivery B2B:
 specific customer environment, connection might require VPN
 -vpn user limit might be full
@@ -965,7 +969,12 @@ the software might be connected to 3rd party applications or some other APIs, an
 UAT is often the norm and is required before anything is moved to production
 customer might be using the software when the version is updated
 
-Experimentation A/B testing B2B:
+
+===============
+A/B testing B2C:
+
+===============
+A/B testing B2B:
 
 Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
 
@@ -980,6 +989,35 @@ Dialog:
 User amount is very low, so there's no room for quantitative analysis
 Customers are very concerned about UI modifications
 UI is quite complicated, needs detailed use guide
+"In B2B we need more volume from customers, and a whole different skillset"
+
+
+===============
+Experimenting B2B:
+
+To collect data from customers, proper agreements might need to be made.
+Too few users for statistical importance
+Customers have to be informed for major changes
+UI changes have to be informed to the customers, and release notes are a must
+
+CDM:
+Customers don't want downtime
+Features have been primarily created for customer needs, and new features might be hard to validate with customers
+measurable metrics
+-performance
+-query amount
+
+
+Dialog:
+Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
+Measurable metrics don't include clicks or sales events.
+-one possibility is to measure the duration it takes to complete a routine task, but it is very hard
+-customer satisfaction, how happy the customer is and how easy the product is to use
+Some customers might use the product only a few months a year
+While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
+
+===============
+Experimenting B2C: 
 
 
 \subsection{Collecting usage data and customer feedback in B2B domain}
