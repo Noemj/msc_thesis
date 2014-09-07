@@ -202,39 +202,40 @@ To analyze the software development process transition towards shorter feedback 
 
 \subsection{Research questions}
 
-The broader research objective is explored here. 
+The broader research objective is explored here. \newline
 %Literature review / Interview
 \noindent \textbf{RQ 1: What are the differences of continuous delivery and continuous experimentation in B2B as compared to B2C?}
 
-\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. TODO: question: contractual issues? The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. \newline
-
+\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. 
+Question: contractual issues? 
 Question: selecting the correct OEC in b2b is harder. for example revenue. 
 question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
+\newline
 
 %collect ideas from literature review and interview
-\noindent \textbf{RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
+%\noindent \textbf{RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low?}
 
-\noindent Research question 4 is answered by analysing the usage data and customer feedback collection of the case company. This is carried out by interviewing the key persons responsible for customer interaction and developers responsible for usage data collection.  
+%\noindent Research question 4 is answered by analysing the usage data and customer feedback collection of the case company. This is carried out by interviewing the key persons responsible for customer interaction and developers responsible for usage data collection.  
 
-As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question is answered by collecting ideas from the literature review and interview results. \newline
--Legal issues
--Technical issues
+%As compared to the B2C domain where the product is often deployed in cloud with a lot of users, B2B applications might only have a handful of users. This question %is answered by collecting ideas from the literature review and interview results. \newline
+%-Legal issues
+%-Technical issues
 
 %Interview results have to be compared to literature review results
-\noindent \textbf{RQ 3: How does continuous experimentation benefit the case company?} %What are the problems and strengths of the current development process?
+\noindent \textbf{RQ 2: How do continuous delivery and continuous experimentation benefit the case company?} %What are the problems and strengths of the current development process?
 
-\noindent To rationalize the decision to adopt continuous experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
+\noindent To rationalize the decision to adopt continuous delivery and experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
 
-One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not.
+One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not. \newline
 
-\noindent \textbf{RQ 4: What is the Minimum Viable Process of continuous experimentation?}
+%\noindent \textbf{RQ 3: What is the Minimum Viable Process of continuous experimentation?}
 
-\noindent While a definitive process of continuous experimentation hasn't been defined, a process with multiple different roles is quite heavyweight and not quickly adoptable. The purpose of this research question is to identify the core practices and requirements of continuous experimentation. How can the process be kept as simple as possible without losing the benefits? The goal is that companies are able to quickly test whether the process suits their needs. This requires that the process is defined in such level of abstraction that it can be adopted in practice with relative ease. This research question is answered based on literature review. To answer this research question, a deep understanding of the process has to be established. \newline
+%\noindent While a definitive process of continuous experimentation hasn't been defined, a process with multiple different roles is quite heavyweight and not quickly adoptable. The purpose of this research question is to identify the core practices and requirements of continuous experimentation. How can the process be kept as simple as possible without losing the benefits? The goal is that companies are able to quickly test whether the process suits their needs. This requires that the process is defined in such level of abstraction that it can be adopted in practice with relative ease. This research question is answered based on literature %review. To answer this research question, a deep understanding of the process has to be established. \newline
 
 %collect ideas from literature review and interview
-\noindent \textbf{RQ 5: How can continuous experimentation be systematically organised in the B2B domain?}
+\noindent \textbf{RQ 3: How can continuous experimentation be systematically organised in the B2B domain?}
 
-\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by collecting ideas from the literature review and interview results. \newline
+\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by applying Fagerholm et al. model \cite{fagerholm2014building} to the case company.  \newline
 -Where do the feature ideas come from?
 -What roles are required?
 
@@ -648,12 +649,11 @@ The research questions and research methods are summarize in Table 2.
     \begin{tabular}{ | l | p{5cm} | l | p{3cm} |}
     \hline
     Knowledge gap & Research question & The focus of analysis & Data \\ \hline
-    
     a & RQ 1: What are the differences of continuous delivery and continuous experimentation n B2B as compared to B2C? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 3: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 4: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
-    a & RQ 5: How can continuous experimentation be systematically organised in the B2B domain & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    %a & RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 2: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    %a & RQ 3: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
+    a & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
     \end{table}
@@ -688,6 +688,7 @@ The development process of the team is elaborated in detail in the chapter "Stat
   \item Product description
   \item Product environment
   \item Product architecture
+  \item Users of the software component
   \item Team composition
   \item Development practice
   \item Business model TODO: validate if this is confidental
@@ -711,6 +712,7 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Product description.] Dialog is a multi-channel online marketing automation tool. The purpose of the product is to allow effective marketing on channels such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in the CRM can then be effectively used for marketing purposes. The product is primarily used through a comprehensive user interface by marketing professionals of customer companies. 
   \item[Product environment.] The product can be run on either servers provided by the case company or on the customers internal servers. Most of the customers use the product on the case companys own servers. Each customer using a provided server has an individual server and configurations, due to different integrations to the customers own systems. Customers running the product on their own servers form a minority.
   \item[Product architecture.] The product consists of a single maven-packaged project. Along with the actual product, several additional third-party or custom components are required. Such components are for example Typo3, which is an open source web content management framework, and a custom component used for SMS integration. Most of the components reside in the version control system, and the main product additionally resides in the CI system. Custom integrations to customers data sources, often based on a third party ESB tool, are individual components as well.
+  \item[Users of the software component.] Dialog is used by marketing professionals to automatize repetitive tasks. The user amount varies, but it is generally less than five human users per customer company.
   \item[Team composition.] The team consists of 3 software developers. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] Development is based around a prioritized kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
@@ -741,6 +743,7 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
   \item[Product description.] CDM is a Master Data Management \cite{loshin2010master} solution, which is used to integrate multiple customer data sources to create a simple point of reference. These data sources can include for example CRM, ERP and a billing system. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product has an user interface that can be used for testing, but the product is primarily a background application without users. 
   \item[Product environment.] The product is installed to a customer environment, and certain custom specific configurations and rules have to be implemented for each customer. Such configurations are for example the integrations to customers systems and external identification services used. 
   \item[Product architecture.] The product consists of several maven-packaged projects, which in the build stage are added as a dependency under a single main project. The whole product can thus be packaged into a single web archive file.
+  \item[Users of the software component.] CDM is an integrated application, which is primarily only used by other applications. Therefore humans are only using CDM for debugging purposes.
   \item[Team composition.] The team consists of 4 software developers and a team leader. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] 
   \item[Business model.] 
@@ -991,7 +994,6 @@ Customers are very concerned about UI modifications
 UI is quite complicated, needs detailed use guide
 "In B2B we need more volume from customers, and a whole different skillset"
 
-
 ===============
 Experimenting B2B:
 
@@ -1020,7 +1022,20 @@ While theres not much statistical data, users can be tracked and they perform th
 Experimenting B2C: 
 
 
-\subsection{Collecting usage data and customer feedback in B2B domain}
+===============
+Feedback collection currently:
+
+Customer feedback is mainly received, not collected
+Product owners in constant touch with the customers
+E-mails
+In our products (CDM), the feedback loop is short and feedback is received when something has been done. 
+Retro after project
+
+===============
+Feedback collection B2C:
+
+
+%\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous experimentations benefit to case company}
 What kind of OEC can be picked?
