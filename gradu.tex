@@ -984,6 +984,7 @@ In the case company, both of the products often run on the customers environment
 
 Specific customer environment, connection might require VPN
 -vpn user limit might be full
+%siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
 
 multiple customer environments with different configurations per customer
 -should the product be always deployed to every customer?
@@ -993,21 +994,24 @@ multiple customer environments with different configurations per customer
 %Downtime
 
 In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
+  %IT-puolelle täytyy ehkä ilmoitella mitä tapahtuu, tai pyytää heitä tekemään asioita mihin meillä ei ole oikeuksia. Saattaa olla palomuurikonffeja joita pitää säätää, tai toimittaa meille jotain sertifikaatteja. 
 
 database needs to be versioned
 
 the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
-
-    %IT-puolelle täytyy ehkä ilmoitella mitä tapahtuu, tai pyytää heitä tekemään asioita mihin meillä ei ole oikeuksia. Saattaa olla palomuurikonffeja joita pitää säätää, tai toimittaa meille jotain sertifikaatteja. 
-
-        %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
-
-
-
-
-%siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
-
 %Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
+
+  
+
+
+
+
+
+
+
+
+
+
 
 %(CDM) -Downtime -ei ihmiskäyttäjiä, olisi ihan tehtävissä. UAT:kin on, jengi varaa resurssit testaamiseen, en tiedä onko kykyä tehdä kaksi versiota ja deployata ne tuotantoon. jos asiakkaan testaajien pitää kerran viikossa mennä UAT:hen testaamaan uutta versiota, söisi se niiltä paljon resursseja. Ei uusi versio kuitenkaan huono tilanne ole, ei heidän välttämättä tarvitsisi sitä testata. UAT on käytännössä pakollinen ennen tuotantoa, Sanomilla on sitä testattu ja se on CDM:n kanssa varsin haastavaa kun pitäisi tietää mitä tulisi eksakstisti takaisin. pitää pelata ulkositen palvelijoiden (VTJ) pelisäännöillä kun ei voida tietää mitä palautuu. yhdellä datasetillä testaaminen on vähän turhaa, kun yhden datasetin toimiminen ei kerro meille käytännössä mitään.	Ei tietoa teknisistä haasteista.
 
@@ -1018,8 +1022,8 @@ the software might be connected to 3rd party applications or some other APIs, an
 Some customers of the case company hate new releases, since new releases occasionally contain new bugs. 
 
 Customers need to understand what continuous delivery is all about.
+%Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
 
-A customer might be doing a critical task with the software component, and therefore automatic version changes shouldn't cause downtime. 
 
 Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
 -however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
@@ -1027,27 +1031,25 @@ Some customers don't want UI changes, since they have been trained to perform ce
 UAT is often the norm and is required before anything is moved to production
 
 The customer validates the functionality of the software. 
+%Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
+%Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
 
-Customers need to understand the idea of continuous delivery
 
 customer often specifies the deployment date
 
 customer might be using the software when the version is updated
 
 
-%Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
 
-%Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
-
+If we made the versions more often with smaller changes, this could reduce the rebellion against version updates. 
 %Käytännössä se että sovitaan asiakkaan kanssa että vaihdetaan versio, ja tällöin laukastausiin automaattinen tuotantoonsiirto, olisi toimiva ratkaisu. Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
 
+The deployment time has to be negotiated with the customer
 %pitää katsoa asiakkaan kanssa milloin heille käy versionpäivitys. 	Kun deployataan, palvelin täytyy pysäyttää ja laittaa varapalvelin pystyyn. 
 
-    	%Changelogin teko per asiakas.
 
-    	%Enemmänkin ohjelman luonne ja asiakkaan haluaminen olisi ongelma.
-
-    	%Jos asiakkaalla on jokin Dialogin lähetysprosessi kesken, esim. Laakkoselta tulee paljon paljon päivittäin klo 10 tai 9 päivityksiä. Jos tehdään päivityksiä automaattiesti, mitä silloin tapahtuu? Jos YIT haluaa lähettää huomenna kello kymmeneltä sähköpostilähetyksen, mitä tapahtuisi?  Periaatteessa pitäisi aina tietää asiakkaan tarve. Eräs asiakas ei halua että UI muuttuu, sillä heillä tulee todella paljno käyttäjiä. Joku joka käyttää tuotetta kerran puolessa kuukaudessa ihmettelee, jos homma on yhtäkkiä erinäköinen. Pikkumuutokset varmasti palvelevat kaikkea. Asiakkaita saattaa ärsyttää, jos tuote muuttuu kokoajan liikaa. Se voidaan kokea epämukavaksi. Pitäisi olla perus pysyvyys, vaikka kuinka menisi parempaan suuntaan. 	Haaste olisi käyttäjien informoiminen. Käyttöliittymän pitäisi olla niin helppo. Nyt käyttöliittymä on vaikea, ja nytkin on vaikea osata käyttää, että kun he ovat juuri oppineet jonkin asian. Kun reaaliaikaisesti muutamme sitä yhtäkkiä, palaute on hirveätä. Jos se olisi helppoa, niin se ei olisi niin iso ongelma. Asenneongelma joka kuvattiin aiemmin. 
+A customer might be doing a critical task with the software component, and therefore automatic version changes shouldn't cause downtime. 
+%Jos asiakkaalla on jokin Dialogin lähetysprosessi kesken, esim. Laakkoselta tulee paljon paljon päivittäin klo 10 tai 9 päivityksiä. Jos tehdään päivityksiä automaattiesti, mitä silloin tapahtuu? Jos YIT haluaa lähettää huomenna kello kymmeneltä sähköpostilähetyksen, mitä tapahtuisi?  Periaatteessa pitäisi aina tietää asiakkaan tarve. Eräs asiakas ei halua että UI muuttuu, sillä heillä tulee todella paljno käyttäjiä. Joku joka käyttää tuotetta kerran puolessa kuukaudessa ihmettelee, jos homma on yhtäkkiä erinäköinen. Pikkumuutokset varmasti palvelevat kaikkea. Asiakkaita saattaa ärsyttää, jos tuote muuttuu kokoajan liikaa. Se voidaan kokea epämukavaksi. Pitäisi olla perus pysyvyys, vaikka kuinka menisi parempaan suuntaan. 	Haaste olisi käyttäjien informoiminen. Käyttöliittymän pitäisi olla niin helppo. Nyt käyttöliittymä on vaikea, ja nytkin on vaikea osata käyttää, että kun he ovat juuri oppineet jonkin asian. Kun reaaliaikaisesti muutamme sitä yhtäkkiä, palaute on hirveätä. Jos se olisi helppoa, niin se ei olisi niin iso ongelma. Asenneongelma joka kuvattiin aiemmin. 
 
 %(DIALOG)
 
@@ -1066,17 +1068,61 @@ Mindsets:
 "Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
 
 
-
 \subsection{Continuous experimentation: B2B challenges}
-
 
 \subsubsection{Technical challenges}
 
+%CDM
+
+CDM
+
+No user interface, only used via API calls. 
+
+  %  Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. Logitusta voisi kehittää säätämällä logitusasetuksia. Toisinaan virheviestit hautautuvat logiin. Häläreitä virhetilanteista voisi automatisoida, jotkut systeemit on monitoroinnin alla. 	Virheidenkeräystä voisi hyödyntää paremmin.	ei ole sellaista joka vaikuttaisi suoraan loppukäyttäjälle. ainahan voisi optimoida sen mukaan miten järjestelmät käyttävät cdm:ää, muttei suoranaisesti sellaista mikä liittyisi cdm:ään.		nopeus, käyttöliittymän selkeys. ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä.
+
+ %   yritysten palvelimet, joihin on oma pääsy ja vapaudet asentaa ohjelmistoja. jos ne keräävä dataa palvelimelle ja ne haetaan itse, ei se ole haaste. vpn:t ja muut voivat olla haaste automatisoida. ei selvyyttä tarvitaanko asiakkaalta suostumus.	Asiakkaan kanssa täytyisi sopia käytöstä ja sallitusta datasta. Ei saa hidastaa systeemiä. 	en usko. pitää keskustella asiakkaan kanssa. jos me hostataan itse, niin ei mitään väliä. jos sovellus pyörii asiakkaan infrassa, pitää se käydä läpi asiakkaan kanssa erikseen.	sometimes if its a lot of data there could be memory issues. if you do data collection and analysing in the same collection it might be too much work to do in one machine. 	en usko. levy ei maksa juuri mitään, varmaan onnistuisi.	Asiat saisi sovittua asiakkaan kanssa, sillä ne saisi perusteltua.
+
+
+%    Dialog
+
+
+Dialog
+
+Measurable metrics?
+
+
+%    Tallentamisessa pitää olla sovittu asiakkaan kanssa se että sitä kerätään. Voidaan kerätä Dialogin kantaan, pitäisi sopia luku. Osille asiakkaista ei ole suoraa pääsyä verkkoon paitsi monimutkainen VPN-säätö: tänne ei välttämättä pääsisi kovinkaan helpolla. Isoimmilla firmoilla varsinkin on säädöksiä datan käyttöön ja tietoturvaan. ei ongelmia.  Jos se kerätään Dialogin sisällä, kannattaa se tallentaa Dialogin tietokantaan. Vaihtoehtona lähetys lokaaliin urliin, ja se on vähän turhan hankalaa. Helpompaa voisi olla laittaa käyttäjäryhmiin joku taulu, johon kerätään tietoa.  Pitäisi selvittää onko tuo mahdollista ja kuinka tarkkoja asiakkaat ovat mitä dataa kerätään. On myös väliä onko palvelin heillä vai meillä, eivätkä kaikki välttämättä anna meidän kerätä dataa. käyttäjät tuskin olisivat pahoillaan. Heitä motivoi se, että me yritämme parantaa heidän tekemistä. B2B puolella luultavasti asiakkaat antavat träkätä toimintoja, koska asiakas on ostanut jo tuotteen.
+
+
+%    Ohjelmallinen tapa - mitä klikkaillaan, kauanko ollaan sivulla, mitä asioita käytetään paljon. Pyrittäisiin parantamaan näiden asioiden saavutettavuutta joita käytetään paljon. Voisiko ei-käytetyt asiat olla sellaisilla sijainneilla missä voisi olla käytettäviä asioita, onko asiat asetettu oikein sivuille? Klikkailujen kerääminen ei ole erityisen vaikeaa. Lupa tähän täytyy saada. Teknisesti se ei ole vaikeaa. Johtopäätöksien vetäminen datasta ei ole yksiselitteistä, mutta jo tällä voidaan arvioida onko etusivulla asioita joita ei käytetä tai onko syvällä ohjelmistossa asioita joita käytetään todella paljon. Näitä voisi parantaa. Haastatteluissa voisi saada näistä tärkeämpää tietoa.  laittaa joku plugin joka katsoo mitä on klikattu, ja seurata täten eniten käytettyjä flowta.  Loggausta voisi suunnitella sen kannalta, että logiin tulisi parhaat merkinnät käytettävyyden kohdalta. Jos tietää miten asiakas käyttää tuotetta, voisi loggausta käyttää sen perusteella mitä asiakas tekee.  On ollut puhetta että asennettaisiin analytiikkaohjelma, josta saisi käytettävyysdataa. Olisi hyvä mitata miten asiakkaat käyttävät tuotetta. On tullut usein tullut vastaan tukipyyntöjä joissa joku toinen mieltää ohjelman eri lailla ja käyttää aivan eri reittejä kuin itse. Analytiikka voisi auttaa tähän. Sitä kautta nähtäisiin että asiakas käyttää tuotetta aivan eri lailla kuin itse olemme ajatelleet. Dialogia vaikea käyttää siinä mielessä, että samoja toiminnallisuuksia voi tehdä monta eri väylää pitkin ja tuote on todella laaja. Se ei ole itsellekään ihan hanskassa.  Voisi kerätä dataa: Mitkä ovat yleisimmät toiminnallisuudet? Joskus menty koulutuksissa katsomaan miten asiakas käyttää itse tuotetta, ja tämän perusteella on tehty muutoksia. Voisi kerätä recordaamalla tai katsomalla. Pitäisi vielä tarkemmin käyttöliittymällisissä projekteissa keskittyä löytämään tärkeimmät asiat joita käytetään eniten ja missä on riippuvuutta bisnekseen, ja tehdä niistä mahdollisimman jouhevat. 
+
 \subsubsection{Customer challenges}
+
+Features have been primarily created for customer needs, and new features might be hard to validate with customers
+
+Customers don't want downtime
+
+Customers have to be informed for major changes
+-UI changes have to be informed to the customers, and release notes are a must
+
+Too few users for statistical importance
+
+To collect data from customers, proper agreements might need to be made.
 
 In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
 
+(CDM)
+measurable metrics
+-performance
+-query amount
 
+Dialog:
+Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
+Measurable metrics don't include clicks or sales events.
+-one possibility is to measure the duration it takes to complete a routine task, but it is very hard
+-customer satisfaction, how happy the customer is and how easy the product is to use
+Some customers might use the product only a few months a year
+While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
 
 \subsubsection{A/B testing}
 
@@ -1099,49 +1145,6 @@ UI is quite complicated, needs detailed use guide
 "In B2B we need more volume from customers, and a whole different skillset"
 
 
-
-
-===============
-Experimenting B2B:
-
-To collect data from customers, proper agreements might need to be made.
-Too few users for statistical importance
-Customers have to be informed for major changes
-UI changes have to be informed to the customers, and release notes are a must
-
-CDM:
-Customers don't want downtime
-Features have been primarily created for customer needs, and new features might be hard to validate with customers
-measurable metrics
--performance
--query amount
-
-
-Dialog:
-Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
-Measurable metrics don't include clicks or sales events.
--one possibility is to measure the duration it takes to complete a routine task, but it is very hard
--customer satisfaction, how happy the customer is and how easy the product is to use
-Some customers might use the product only a few months a year
-While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
-
-===============
-Experimenting B2C: 
-
-
-===============
-Feedback collection currently:
-
-Customer feedback is mainly received, not collected
-Product owners in constant touch with the customers
-E-mails
-In our products (CDM), the feedback loop is short and feedback is received when something has been done. 
-Retro after project
-
-===============
-Feedback collection B2C:
-
-
 %\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous deliverys benefit to case company}
@@ -1152,13 +1155,12 @@ Which attributes can be improved?
 
 Data-driven decisions
 
-
-
-
 %\subsection{Minimum Viable Process of continuous experimentation}
 %Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
 
 \subsection{Implementing continuous experimentation as a development process}
+
+-Explain Fagerholm et al. model
 
 Interesting interview questions regarding this issue:
 
@@ -1169,14 +1171,13 @@ where to the development ideas come from
 current deployment process
 
 
-\subsection{Cross-case analysis}
-
-The simplest experiment cycle:
-1.oec
-2.
-3.impl
-4.analysis
-5.steer
+%\subsection{Cross-case analysis}
+%The simplest experiment cycle:
+%1.oec
+%2.
+%3.impl
+%4.analysis
+%5.steer
 
 \section{Discussion}
 This thesis was motivated by
