@@ -204,7 +204,7 @@ To analyze the software development process transition towards shorter feedback 
 
 The broader research objective is explored here. \newline
 %Literature review / Interview
-\noindent \textbf{RQ 1: What are the differences of continuous delivery and continuous experimentation in B2B as compared to B2C?}
+\noindent \textbf{RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation?}
 
 \noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. 
 Question: contractual issues? 
@@ -650,7 +650,7 @@ The research questions and research methods are summarize in Table 2.
     \begin{tabular}{ | l | p{5cm} | l | p{3cm} |}
     \hline
     Knowledge gap & Research question & The focus of analysis & Data \\ \hline
-    a & RQ 1: What are the differences of continuous delivery and continuous experimentation n B2B as compared to B2C? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     %a & RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
     a & RQ 2: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
     %a & RQ 3: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
@@ -951,7 +951,7 @@ This section summarises key findings of the case study. It is structured accordi
 %\subsection{Perceived problems}
 %What kind of problems were found?
 
-\subsection{Continuous delivery: B2B vs B2C}
+\subsection{Continuous delivery: B2B challenges}
 
 %====B2B vs B2C in general====
 %
@@ -971,16 +971,22 @@ Software development practices and product characteristics vary based on the dom
 
 In B2B the customer is a company. 
 
-The continuous delivery practice will be compared in three aspects: technical, procedural and customer. 
+The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
 
 Technical aspect includes the environmental challenges, configural challenges and other challenges related to the software product and its usage. Procedural aspect includes the challenges regarding the development process of software. Customer aspect consists of the customer interaction, 
 
-\subsubsection{Technical comparison}
+\subsubsection{Technical challenges}
 
 One of the main differences between B2B and B2C is the product environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime.
 
 %Accessing the environment
 In the case company, both of the products often run on the customers environment. 
+
+Specific customer environment, connection might require VPN
+-vpn user limit might be full
+
+multiple customer environments with different configurations per customer
+-should the product be always deployed to every customer?
 
 %Integrating the software to third-party components
 
@@ -988,6 +994,9 @@ In the case company, both of the products often run on the customers environment
 
 In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
 
+database needs to be versioned
+
+the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
 
     %IT-puolelle täytyy ehkä ilmoitella mitä tapahtuu, tai pyytää heitä tekemään asioita mihin meillä ei ole oikeuksia. Saattaa olla palomuurikonffeja joita pitää säätää, tai toimittaa meille jotain sertifikaatteja. 
 
@@ -1002,9 +1011,9 @@ In the IT-departments, customers have to be informed on actions in their servers
 
 %(CDM) -Downtime -ei ihmiskäyttäjiä, olisi ihan tehtävissä. UAT:kin on, jengi varaa resurssit testaamiseen, en tiedä onko kykyä tehdä kaksi versiota ja deployata ne tuotantoon. jos asiakkaan testaajien pitää kerran viikossa mennä UAT:hen testaamaan uutta versiota, söisi se niiltä paljon resursseja. Ei uusi versio kuitenkaan huono tilanne ole, ei heidän välttämättä tarvitsisi sitä testata. UAT on käytännössä pakollinen ennen tuotantoa, Sanomilla on sitä testattu ja se on CDM:n kanssa varsin haastavaa kun pitäisi tietää mitä tulisi eksakstisti takaisin. pitää pelata ulkositen palvelijoiden (VTJ) pelisäännöillä kun ei voida tietää mitä palautuu. yhdellä datasetillä testaaminen on vähän turhaa, kun yhden datasetin toimiminen ei kerro meille käytännössä mitään.	Ei tietoa teknisistä haasteista.
 
-\subsubsection{Procedural comparison}
+\subsubsection{Procedural challenges}
 
-\subsubsection{Customer comparison}
+\subsubsection{Customer challenges}
 
 Some customers of the case company hate new releases, since new releases occasionally contain new bugs. 
 
@@ -1013,8 +1022,18 @@ Customers need to understand what continuous delivery is all about.
 A customer might be doing a critical task with the software component, and therefore automatic version changes shouldn't cause downtime. 
 
 Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
+-however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
+
+UAT is often the norm and is required before anything is moved to production
 
 The customer validates the functionality of the software. 
+
+Customers need to understand the idea of continuous delivery
+
+customer often specifies the deployment date
+
+customer might be using the software when the version is updated
+
 
 %Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
 
@@ -1033,27 +1052,6 @@ The customer validates the functionality of the software.
 %(DIALOG)
 
 
-
-
-
-
-
-===============
-Delivery B2B:
-specific customer environment, connection might require VPN
--vpn user limit might be full
-multiple customer environments with different configurations per customer
--should the product be always deployed to every customer?
-customer often specifies the deployment date
-every customer doesnt like changing UI
--however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
-customers need to understand the idea
-database needs to be versioned
-the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
-UAT is often the norm and is required before anything is moved to production
-customer might be using the software when the version is updated
-
-
 ===============
 Delivery B2C:
 
@@ -1069,7 +1067,7 @@ Mindsets:
 
 
 
-\subsection{Continuous experimentation: B2B vs B2C}
+\subsection{Continuous experimentation: B2B challenges}
 
 
 \subsubsection{Technical challenges}
@@ -1081,9 +1079,6 @@ In the B2B domain the typical characteristics is lower user amount as compared t
 
 
 \subsubsection{A/B testing}
-
-===============
-A/B testing B2C:
 
 ===============
 A/B testing B2B:
@@ -1149,6 +1144,8 @@ Feedback collection B2C:
 
 %\subsection{Collecting usage data and customer feedback in B2B domain}
 
+\subsection{Continuous deliverys benefit to case company}
+
 \subsection{Continuous experimentations benefit to case company}
 What kind of OEC can be picked?
 Which attributes can be improved?
@@ -1163,6 +1160,15 @@ Data-driven decisions
 
 \subsection{Implementing continuous experimentation as a development process}
 
+Interesting interview questions regarding this issue:
+
+daily work routine
+weekly work routine
+current development model
+where to the development ideas come from
+current deployment process
+
+
 \subsection{Cross-case analysis}
 
 The simplest experiment cycle:
@@ -1174,16 +1180,6 @@ The simplest experiment cycle:
 
 \section{Discussion}
 This thesis was motivated by
-
-\subsection{TODO:rename Applying Fagerholm et al. model to the case company}
-Interesting interview questions regarding this issue:
-
-daily work routine
-weekly work routine
-current development model
-where to the development ideas come from
-current deployment process
-
 
 \subsection{Contribution}
 This thesis contributes to..
