@@ -946,25 +946,97 @@ Interview results are added to spreadsheet, with the participants grouped based 
 % Suggest solutions to these major problems 
 % Recommend the best solution to be implemented 
 % Detail how this solution should be implemented 
-This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed views. 
+This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed view. 
 
 %\subsection{Perceived problems}
 %What kind of problems were found?
 
-\subsection{Differences in continuous delivery and continuous experimentation in B2B as compared to B2C}
+\subsection{Continuous delivery: B2B vs B2C}
 
-===============
-Delivery B2C:
+%====B2B vs B2C in general====
+%
+%B2B
+%-There is little to no personal emotion involved in the purchasing decision.
+%-Your most effective marketing message will focus on how your product or service saves them time, money and resources.
 
-"Most customers of most products hate new releases. That's a perfectly reasonable reaction, given that most releases of most products are bad news. It's likely that the new release will contain new bugs. Even worse, the sad state of product development generally means that the new features are as likely to be ones that make the product worse, not better. So asking customers if they'd like to receive new releases more often usually leads to a consistent answer: No, thank you. On the other hand, you'll get a very different reaction if you ask customers next time you report an urgent bug, would you prefer to have it fixed immediately or to wait for a future arbitrary release milestone?" \cite{http://www.startuplessonslearned.com/2009/12/continuous-deployment-for-mission.html}
+%B2C
+%-When you are marketing to a consumer you want to focus on the benefits of the product.
+%-Their decision is more emotional. Consumers are different in that they demand a variety of distribution channels for convenience, not so with the B2B market. 
+%-Consumers don't want to work to understand your benefits, instead they will want you to clearly point out the benefits to them. 
 
-Mindsets:
+%=============================
 
-"if a change is supposedly side effect free, release it immediately. "
 
-"The second shift in mindset required is to separate the concept of a marketing release from the concept of an engineering release. Just because a feature is built, tested, integrated and deployed doesn't mean that any customers should necessarily see it."
+Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common.
 
-"Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
+In B2B the customer is a company. 
+
+The continuous delivery practice will be compared in three aspects: technical, procedural and customer. 
+
+Technical aspect includes the environmental challenges, configural challenges and other challenges related to the software product and its usage. Procedural aspect includes the challenges regarding the development process of software. Customer aspect consists of the customer interaction, 
+
+\subsubsection{Technical comparison}
+
+One of the main differences between B2B and B2C is the product environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime.
+
+%Accessing the environment
+In the case company, both of the products often run on the customers environment. 
+
+%Integrating the software to third-party components
+
+%Downtime
+
+In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
+
+
+    %IT-puolelle täytyy ehkä ilmoitella mitä tapahtuu, tai pyytää heitä tekemään asioita mihin meillä ei ole oikeuksia. Saattaa olla palomuurikonffeja joita pitää säätää, tai toimittaa meille jotain sertifikaatteja. 
+
+        %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
+
+
+
+
+%siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
+
+%Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
+
+%(CDM) -Downtime -ei ihmiskäyttäjiä, olisi ihan tehtävissä. UAT:kin on, jengi varaa resurssit testaamiseen, en tiedä onko kykyä tehdä kaksi versiota ja deployata ne tuotantoon. jos asiakkaan testaajien pitää kerran viikossa mennä UAT:hen testaamaan uutta versiota, söisi se niiltä paljon resursseja. Ei uusi versio kuitenkaan huono tilanne ole, ei heidän välttämättä tarvitsisi sitä testata. UAT on käytännössä pakollinen ennen tuotantoa, Sanomilla on sitä testattu ja se on CDM:n kanssa varsin haastavaa kun pitäisi tietää mitä tulisi eksakstisti takaisin. pitää pelata ulkositen palvelijoiden (VTJ) pelisäännöillä kun ei voida tietää mitä palautuu. yhdellä datasetillä testaaminen on vähän turhaa, kun yhden datasetin toimiminen ei kerro meille käytännössä mitään.	Ei tietoa teknisistä haasteista.
+
+\subsubsection{Procedural comparison}
+
+\subsubsection{Customer comparison}
+
+Some customers of the case company hate new releases, since new releases occasionally contain new bugs. 
+
+Customers need to understand what continuous delivery is all about.
+
+A customer might be doing a critical task with the software component, and therefore automatic version changes shouldn't cause downtime. 
+
+Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
+
+The customer validates the functionality of the software. 
+
+%Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
+
+%Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
+
+%Käytännössä se että sovitaan asiakkaan kanssa että vaihdetaan versio, ja tällöin laukastausiin automaattinen tuotantoonsiirto, olisi toimiva ratkaisu. Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
+
+%pitää katsoa asiakkaan kanssa milloin heille käy versionpäivitys. 	Kun deployataan, palvelin täytyy pysäyttää ja laittaa varapalvelin pystyyn. 
+
+    	%Changelogin teko per asiakas.
+
+    	%Enemmänkin ohjelman luonne ja asiakkaan haluaminen olisi ongelma.
+
+    	%Jos asiakkaalla on jokin Dialogin lähetysprosessi kesken, esim. Laakkoselta tulee paljon paljon päivittäin klo 10 tai 9 päivityksiä. Jos tehdään päivityksiä automaattiesti, mitä silloin tapahtuu? Jos YIT haluaa lähettää huomenna kello kymmeneltä sähköpostilähetyksen, mitä tapahtuisi?  Periaatteessa pitäisi aina tietää asiakkaan tarve. Eräs asiakas ei halua että UI muuttuu, sillä heillä tulee todella paljno käyttäjiä. Joku joka käyttää tuotetta kerran puolessa kuukaudessa ihmettelee, jos homma on yhtäkkiä erinäköinen. Pikkumuutokset varmasti palvelevat kaikkea. Asiakkaita saattaa ärsyttää, jos tuote muuttuu kokoajan liikaa. Se voidaan kokea epämukavaksi. Pitäisi olla perus pysyvyys, vaikka kuinka menisi parempaan suuntaan. 	Haaste olisi käyttäjien informoiminen. Käyttöliittymän pitäisi olla niin helppo. Nyt käyttöliittymä on vaikea, ja nytkin on vaikea osata käyttää, että kun he ovat juuri oppineet jonkin asian. Kun reaaliaikaisesti muutamme sitä yhtäkkiä, palaute on hirveätä. Jos se olisi helppoa, niin se ei olisi niin iso ongelma. Asenneongelma joka kuvattiin aiemmin. 
+
+%(DIALOG)
+
+
+
+
+
+
 
 ===============
 Delivery B2B:
@@ -981,6 +1053,34 @@ the software might be connected to 3rd party applications or some other APIs, an
 UAT is often the norm and is required before anything is moved to production
 customer might be using the software when the version is updated
 
+
+===============
+Delivery B2C:
+
+"Most customers of most products hate new releases. That's a perfectly reasonable reaction, given that most releases of most products are bad news. It's likely that the new release will contain new bugs. Even worse, the sad state of product development generally means that the new features are as likely to be ones that make the product worse, not better. So asking customers if they'd like to receive new releases more often usually leads to a consistent answer: No, thank you. On the other hand, you'll get a very different reaction if you ask customers next time you report an urgent bug, would you prefer to have it fixed immediately or to wait for a future arbitrary release milestone?" \cite{http://www.startuplessonslearned.com/2009/12/continuous-deployment-for-mission.html}
+
+Mindsets:
+
+"if a change is supposedly side effect free, release it immediately. "
+
+"The second shift in mindset required is to separate the concept of a marketing release from the concept of an engineering release. Just because a feature is built, tested, integrated and deployed doesn't mean that any customers should necessarily see it."
+
+"Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
+
+
+
+\subsection{Continuous experimentation: B2B vs B2C}
+
+
+\subsubsection{Technical challenges}
+
+\subsubsection{Customer challenges}
+
+In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
+
+
+
+\subsubsection{A/B testing}
 
 ===============
 A/B testing B2C:
@@ -1002,6 +1102,9 @@ User amount is very low, so there's no room for quantitative analysis
 Customers are very concerned about UI modifications
 UI is quite complicated, needs detailed use guide
 "In B2B we need more volume from customers, and a whole different skillset"
+
+
+
 
 ===============
 Experimenting B2B:
@@ -1050,8 +1153,13 @@ Feedback collection B2C:
 What kind of OEC can be picked?
 Which attributes can be improved?
 
-\subsection{Minimum Viable Process of continuous experimentation}
-Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
+Data-driven decisions
+
+
+
+
+%\subsection{Minimum Viable Process of continuous experimentation}
+%Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
 
 \subsection{Implementing continuous experimentation as a development process}
 
