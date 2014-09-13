@@ -951,8 +951,6 @@ This section summarises key findings of the case study. It is structured accordi
 %\subsection{Perceived problems}
 %What kind of problems were found?
 
-\subsection{Continuous delivery: B2B challenges}
-
 %====B2B vs B2C in general====
 %
 %B2B
@@ -966,6 +964,8 @@ This section summarises key findings of the case study. It is structured accordi
 
 %=============================
 
+
+\subsection{Continuous delivery: B2B challenges}
 
 Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 
@@ -999,7 +999,12 @@ TODO: explain the list here
 One of the main differences between B2B and B2C is the production environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime, to name a few. 
 
 %Third party application integration
-Both of the case companys software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. 
+Both of the case companys software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
+
+
+
+%Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus. Tällä hetkellä tekninen haaste eniten on tietokannan versiointi johon on olemassa ratkaisuja. Integraatioiden automaattinen päivittäminen vaatisi ehkä kohtuuttoman paljon resursseja suhteessa siihen mitä saavutetaan. Itse dialogin päivitysten automatisointi olisi tehtävissä helpoiten. Yleinen smoketestaus olisi tehtävissä, mutta vaatii että testit kirjoitetaan, pitäisi tehdä paljon, ja niitä pitäisi ylläpitää. Tällä hetkellä tähän ei ole resursseja.  Ei voida siirtää aina uutta versiota, koska pitää pystyä takaamaan isolla varmuudella että asiat toimivat. Käytännössä se että sovitaan asiakkaan kanssa että vaihdetaan versio, ja tällöin laukastausiin automaattinen tuotantoonsiirto, olisi toimiva ratkaisu. 
+
 
 External components have to be configured
 %Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
@@ -1013,6 +1018,10 @@ Both of the case companys products are used in multiple different customers envi
 
 %Firewall configuratiosn
 Transferring the software product to a customer-owned environment instead of own environment has multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
+
+
+
+
 
 %In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing %rights. 
 %Required certifications
@@ -1035,9 +1044,27 @@ Transferring the software product to a customer-owned environment instead of own
 
 \subsubsection{Procedural challenges}
 
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    Environmental & UAT \\ \hline
+   	Procedural & Pull requests \\ \hline
+	Procedural & Versioning \\ 
+    \hline
+    \end{tabular}
+\end{center}
+
 The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
 
 -in B2B, continuous deployment straight to production is very risky
+
+
+%jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. muutokset saattavat vaatia muiden komponenttien päivityksen, tietokanta jne. niiden koordinointi voi olla haaste. myös jos CDM on integroitu muiden asiakkaiden tuotteisiin saattaa rajapinta vaihtua. siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
+
+
+Versioning
+%en näe että sitä saataisiin ikinä toimimaan nykyisellä kokoonpanolla. cdm koostuu niin monesta projektista, että käytännössä en tiedä miten voisimme automatisoida se. riippuen mihin projektiin on tuulut muutoksia, pitää ne releaseta ja laittaa cdm:n pääprojektiin joka ottaa muuttuneet releaset mukaan. release-numerot vaihtelee per aliprojekti, voi olla joko pieni- tai iso releasemuutos ja sen mukaan kasvatetaan releasenumeroa. jos olisi vain yksi projekti niin voitaisiin se automatisoida. yhden projektin tekemisessä ei sinäänsä ole haasteita. monen projektin idea on tällä hetkellä aika huono, sillä kun buildaamme cdm:n, buildaamme aina pääprojektin. yksikään aliprojektia ei buildata koskaan, pl. käyttöliittymä. hyöty siitä että ne on itsenäisiä projekteja on aika nolla. nyt kaikissa aliprojekteissa omat versionumerot, joka on aika huono ratkaisu. jos kaikki aliprojektit olisi kiinnitetty samaan versionumeroon koko CDM:llä, voitaisiin vain päättää että nyt ollaan tehty tällaiset muutokset CDM:ään. mietitään että meillä on githubissa kamat, jos haluttaisiin autodeployaa tuotantoversio asiakkaille, saataisiinko esimerkiksi pääsy kaikkiin asiaksympäristöihin että voisimme automaattisesti siirtää eri releasen? voisiko kantamigraatiot automatisoitua? mitä jos tuotantodataa pitäisi päivittää, saataisiinko sitä päivitettyä, tuskin. 
 
 %UAT
 
@@ -1065,7 +1092,7 @@ Customers need to understand what continuous delivery is all about.
 
 Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
 -however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
-
+%Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
 
 
 The customer validates the functionality of the software. 
