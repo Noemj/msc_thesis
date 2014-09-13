@@ -235,9 +235,9 @@ One idea is also to aid marketing by selling the MVPs to customers. This way we 
 %collect ideas from literature review and interview
 \noindent \textbf{RQ 3: How can continuous experimentation be systematically organised in the B2B domain?}
 
-\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by applying Fagerholm et al. model \cite{fagerholm2014building} to two different teams and software products within the case company. \newline
--Where do the feature ideas come from?
--What roles are required?
+\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by applying Fagerholm et al. model \cite{fagerholm2014building} to two different teams and software products within the case company, and addressing the challenges found in the first research question. \newline
+%-Where do the feature ideas come from?
+%-What roles are required?
 -What kind of deviations are there in the model?
 
 \subsection{Scope and limitations}
@@ -975,57 +975,52 @@ Technical aspect includes the environmental challenges, configural challenges an
 
 \subsubsection{Technical challenges}
 
-One of the main differences between B2B and B2C is the product environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime.
-
-%Accessing the environment
-In the case company, both of the products are most of the time installed to customer environments. 
+TODO: explain the list here
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
     General & Downtime \\ \hline
-    Configuration & Database versioning \\ \hline
+    General & Environment \\ \hline
     Configuration & Third party application integration \\ \hline
+    Configuration & External components \\ \hline
     Configuration & Different configuration per customer \\ \hline
+    Configuration & Database versioning \\ \hline
     Connection & Firewall configurations \\ \hline
     Connection & Required certifications \\ \hline
     Connection & Missing user rights \\ \hline
 	Connection & VPN user limit \\ \hline
-	Environment & UAT \\
     \hline
     \end{tabular}
 \end{center}
 
+%Environment
+One of the main differences between B2B and B2C is the production environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime, to name a few. 
+
+%Third party application integration
+Both of the case companys software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. 
+
+External components have to be configured
+%Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
 
 %Database versioning
 database needs to be versioned
 
-%Third party application integration
-the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
-%Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
-
 %Different configurations per customer
-multiple customer environments with different configurations per customer
+Both of the case companys products are used in multiple different customers environments. This introduces a problem of managing different configurations per customer environment and software instance. 
 -should the product be always deployed to every customer?
 
 %Firewall configuratiosn
+Transferring the software product to a customer-owned environment instead of own environment has multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
 
-In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
-
+%In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing %rights. 
 %Required certifications
-
 %Missing rights
-
 %VPN user limit
-
-Specific customer environment, connection might require VPN
--vpn user limit might be full
 %siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
 
 
-%UAT
-UAT is often the norm and is required before anything is moved to production
 
 
 %Integrating the software to third-party components
@@ -1039,6 +1034,14 @@ UAT is often the norm and is required before anything is moved to production
 %(CDM) -Downtime -ei ihmiskäyttäjiä, olisi ihan tehtävissä. UAT:kin on, jengi varaa resurssit testaamiseen, en tiedä onko kykyä tehdä kaksi versiota ja deployata ne tuotantoon. jos asiakkaan testaajien pitää kerran viikossa mennä UAT:hen testaamaan uutta versiota, söisi se niiltä paljon resursseja. Ei uusi versio kuitenkaan huono tilanne ole, ei heidän välttämättä tarvitsisi sitä testata. UAT on käytännössä pakollinen ennen tuotantoa, Sanomilla on sitä testattu ja se on CDM:n kanssa varsin haastavaa kun pitäisi tietää mitä tulisi eksakstisti takaisin. pitää pelata ulkositen palvelijoiden (VTJ) pelisäännöillä kun ei voida tietää mitä palautuu. yhdellä datasetillä testaaminen on vähän turhaa, kun yhden datasetin toimiminen ei kerro meille käytännössä mitään.	Ei tietoa teknisistä haasteista.
 
 \subsubsection{Procedural challenges}
+
+The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
+
+-in B2B, continuous deployment straight to production is very risky
+
+%UAT
+
+UAT is often the norm and is required before anything is moved to production
 
 \subsubsection{Customer challenges}
 
