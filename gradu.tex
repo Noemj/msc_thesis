@@ -967,9 +967,7 @@ This section summarises key findings of the case study. It is structured accordi
 %=============================
 
 
-Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common.
-
-In B2B the customer is a company. 
+Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 
 The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
 
@@ -980,36 +978,61 @@ Technical aspect includes the environmental challenges, configural challenges an
 One of the main differences between B2B and B2C is the product environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime.
 
 %Accessing the environment
-In the case company, both of the products often run on the customers environment. 
+In the case company, both of the products are most of the time installed to customer environments. 
+
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    General & Downtime \\ \hline
+    Configuration & Database versioning \\ \hline
+    Configuration & Third party application integration \\ \hline
+    Configuration & Different configuration per customer \\ \hline
+    Connection & Firewall configurations \\ \hline
+    Connection & Required certifications \\ \hline
+    Connection & Missing user rights \\ \hline
+	Connection & VPN user limit \\ \hline
+	Environment & UAT \\
+    \hline
+    \end{tabular}
+\end{center}
+
+
+%Database versioning
+database needs to be versioned
+
+%Third party application integration
+the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
+%Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
+
+%Different configurations per customer
+multiple customer environments with different configurations per customer
+-should the product be always deployed to every customer?
+
+%Firewall configuratiosn
+
+In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
+
+%Required certifications
+
+%Missing rights
+
+%VPN user limit
 
 Specific customer environment, connection might require VPN
 -vpn user limit might be full
 %siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
 
-multiple customer environments with different configurations per customer
--should the product be always deployed to every customer?
+
+%UAT
+UAT is often the norm and is required before anything is moved to production
+
 
 %Integrating the software to third-party components
 
 %Downtime
 
-In the IT-departments, customers have to be informed on actions in their servers. There might be firewall configurations, required certifications and missing rights.  
   %IT-puolelle täytyy ehkä ilmoitella mitä tapahtuu, tai pyytää heitä tekemään asioita mihin meillä ei ole oikeuksia. Saattaa olla palomuurikonffeja joita pitää säätää, tai toimittaa meille jotain sertifikaatteja. 
-
-database needs to be versioned
-
-the software might be connected to 3rd party applications or some other APIs, and if the API changes then these need to be configured as well
-%Useampi asia joka pitää laittaa käyttöön, OpenAM, DJ jne. Jos yksikin unohtuu laittaa käyntiin, jotkin tuotteen palvelut eivät toimi. (Ulkoiset komponentit)	SaaS-tuotteena herokussa ei ole ongelmaa. 
-
-  
-
-
-
-
-
-
-
-
 
 
 
@@ -1018,6 +1041,18 @@ the software might be connected to 3rd party applications or some other APIs, an
 \subsubsection{Procedural challenges}
 
 \subsubsection{Customer challenges}
+
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    Training & Customers have been trained to use a certain version of the product \\ \hline
+	New release & Every customer doesn't like new releases, since new releases occasionally contain new bugs \\ \hline
+	New release & Deployment time & Downtime \\ \hline
+	New release & A customer might be doing a critical task \\
+    \hline
+    \end{tabular}
+\end{center}
 
 Some customers of the case company hate new releases, since new releases occasionally contain new bugs. 
 
@@ -1028,7 +1063,7 @@ Customers need to understand what continuous delivery is all about.
 Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
 -however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
 
-UAT is often the norm and is required before anything is moved to production
+
 
 The customer validates the functionality of the software. 
 %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
@@ -1072,6 +1107,17 @@ Mindsets:
 
 \subsubsection{Technical challenges}
 
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    Asd & asd \\ \hline
+	Asd & Asd \\
+    \hline
+    \end{tabular}
+\end{center}
+
+
 %CDM
 
 CDM
@@ -1097,6 +1143,16 @@ Measurable metrics?
 %    Ohjelmallinen tapa - mitä klikkaillaan, kauanko ollaan sivulla, mitä asioita käytetään paljon. Pyrittäisiin parantamaan näiden asioiden saavutettavuutta joita käytetään paljon. Voisiko ei-käytetyt asiat olla sellaisilla sijainneilla missä voisi olla käytettäviä asioita, onko asiat asetettu oikein sivuille? Klikkailujen kerääminen ei ole erityisen vaikeaa. Lupa tähän täytyy saada. Teknisesti se ei ole vaikeaa. Johtopäätöksien vetäminen datasta ei ole yksiselitteistä, mutta jo tällä voidaan arvioida onko etusivulla asioita joita ei käytetä tai onko syvällä ohjelmistossa asioita joita käytetään todella paljon. Näitä voisi parantaa. Haastatteluissa voisi saada näistä tärkeämpää tietoa.  laittaa joku plugin joka katsoo mitä on klikattu, ja seurata täten eniten käytettyjä flowta.  Loggausta voisi suunnitella sen kannalta, että logiin tulisi parhaat merkinnät käytettävyyden kohdalta. Jos tietää miten asiakas käyttää tuotetta, voisi loggausta käyttää sen perusteella mitä asiakas tekee.  On ollut puhetta että asennettaisiin analytiikkaohjelma, josta saisi käytettävyysdataa. Olisi hyvä mitata miten asiakkaat käyttävät tuotetta. On tullut usein tullut vastaan tukipyyntöjä joissa joku toinen mieltää ohjelman eri lailla ja käyttää aivan eri reittejä kuin itse. Analytiikka voisi auttaa tähän. Sitä kautta nähtäisiin että asiakas käyttää tuotetta aivan eri lailla kuin itse olemme ajatelleet. Dialogia vaikea käyttää siinä mielessä, että samoja toiminnallisuuksia voi tehdä monta eri väylää pitkin ja tuote on todella laaja. Se ei ole itsellekään ihan hanskassa.  Voisi kerätä dataa: Mitkä ovat yleisimmät toiminnallisuudet? Joskus menty koulutuksissa katsomaan miten asiakas käyttää itse tuotetta, ja tämän perusteella on tehty muutoksia. Voisi kerätä recordaamalla tai katsomalla. Pitäisi vielä tarkemmin käyttöliittymällisissä projekteissa keskittyä löytämään tärkeimmät asiat joita käytetään eniten ja missä on riippuvuutta bisnekseen, ja tehdä niistä mahdollisimman jouhevat. 
 
 \subsubsection{Customer challenges}
+
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    Asd & asd \\ \hline
+	Asd & Asd \\
+    \hline
+    \end{tabular}
+\end{center}
 
 Features have been primarily created for customer needs, and new features might be hard to validate with customers
 
@@ -1126,6 +1182,16 @@ While theres not much statistical data, users can be tracked and they perform th
 
 \subsubsection{A/B testing}
 
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |}
+    \hline
+    Problem area & Specific problem \\ \hline
+    Asd & asd \\ \hline
+	Asd & Asd \\
+    \hline
+    \end{tabular}
+\end{center}
+
 ===============
 A/B testing B2B:
 
@@ -1148,6 +1214,11 @@ UI is quite complicated, needs detailed use guide
 %\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous deliverys benefit to case company}
+
+%Problems in current delivery
+
+%Pitkälti käsin. Vaikka se olisi pitkälti automatisoitavissa, sitä ei ole tehty. Säästäisi paljon aikaa, toisi varmuutta. Kun kaikki tehdään käsin, sattuu toisinaan virheitä eikä ole varmuutta tehtiinkö kaikki kuten ennen ja toimiiko kuten pitää. Jos tehtäisiin automaattisesti, olisi tulos konsistentti. Usein joutuu ottamaan etäyhteyksiä remote desktopilla, ja näissä on rajoituksia. VPN:n läpi otettu yhteys katkoo muita yhteyksiä mitä käyttää silloin koneella. Parempi jos tarjottaisiin itse asiakkaalle CDM ympäristöineen.	Vaatii dokumentointia. Kaikkia asioita ei ole dokumentoitu hyvin, prosessi hajautunut. Ei ole tietoa kaikista deploymentin prosesin osista. 	käytännössä mitä tahansa mitä sovitaan, tulee aina ihan helvetin kiire. jos sovimme tuotantoonsiirron 19.9, olemme käytännössä aina enemmän tai vähemmän kusessa sitä edeltävänä päivänä. aina aloitetaan nollapisteestä mitä pitää tehdä tuotantoonsiirron yhteydessä. keksitään aina prosessi uudestaan. automatisointi on hankalaa, koska jos meidän aina pitäisi tehdä täsmälleen samat asiat, tottakai voisimme sitten automatisoida sen jollain tavalla. käytännössä jokainen tuotantoonpäivitys on vähän erilainen kuin edellinen. sis. sovelluksen päivityksen, tuotantodataa saattaa pitää korjata tai ladata lisää.	Adding changes to the database, and doing the testing every time you do the deployment.	arpomista joka kertaa. et voi olla aina varma mitä viet sinne, pitää ehkä purkaa warri ja katsoa mitä sinne on menossa. 	Haasteita mitä ei ole auennut. Releasen rakentamiseen voi mennä päivä työaikaa, kuulostaa oudolta. Versionvaihdon yhteydessä tehtävät tietokantakorjaukset - skriptit ei välttämättä saatavilla ja niitä saattaa jäädä ajamatta. Tässä epätarkkuus. Testaus on haaste, sillä ei ole testisettejä jotka ovat tarpeeksi luotettavia. Asiakkaan kanssa ei haasteita, paitsi jos tuotantoonsiirto ei onnistu.
+
 
 \subsection{Continuous experimentations benefit to case company}
 What kind of OEC can be picked?
