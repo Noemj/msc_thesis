@@ -977,7 +977,7 @@ Technical aspect includes the environmental challenges, configural challenges an
 
 TODO: explain the list here
 
-\begin{center}
+\begin{center}s
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
@@ -1055,11 +1055,16 @@ Transferring the software product to a customer-owned environment instead of own
     \end{tabular}
 \end{center}
 
-The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
+%http://www.slideshare.net/wakaleo/continuous-deliverywithmaven CD with maven
 
+%http://blogs.atlassian.com/2014/07/skeptics-guide-continuous-delivery-part-3-real-world-pipelines/ Pipeline
+
+The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
+-UAT is often the norm and is required before anything is moved to production
 -in B2B, continuous deployment straight to production is very risky
 
 
+CDM is a software component that is compiled from multiple components. Therefore the event triggering a deployment shouldn't be the merge of a pull request, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. 
 %jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. muutokset saattavat vaatia muiden komponenttien päivityksen, tietokanta jne. niiden koordinointi voi olla haaste. myös jos CDM on integroitu muiden asiakkaiden tuotteisiin saattaa rajapinta vaihtua. siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
 
 
@@ -1067,8 +1072,6 @@ Versioning
 %en näe että sitä saataisiin ikinä toimimaan nykyisellä kokoonpanolla. cdm koostuu niin monesta projektista, että käytännössä en tiedä miten voisimme automatisoida se. riippuen mihin projektiin on tuulut muutoksia, pitää ne releaseta ja laittaa cdm:n pääprojektiin joka ottaa muuttuneet releaset mukaan. release-numerot vaihtelee per aliprojekti, voi olla joko pieni- tai iso releasemuutos ja sen mukaan kasvatetaan releasenumeroa. jos olisi vain yksi projekti niin voitaisiin se automatisoida. yhden projektin tekemisessä ei sinäänsä ole haasteita. monen projektin idea on tällä hetkellä aika huono, sillä kun buildaamme cdm:n, buildaamme aina pääprojektin. yksikään aliprojektia ei buildata koskaan, pl. käyttöliittymä. hyöty siitä että ne on itsenäisiä projekteja on aika nolla. nyt kaikissa aliprojekteissa omat versionumerot, joka on aika huono ratkaisu. jos kaikki aliprojektit olisi kiinnitetty samaan versionumeroon koko CDM:llä, voitaisiin vain päättää että nyt ollaan tehty tällaiset muutokset CDM:ään. mietitään että meillä on githubissa kamat, jos haluttaisiin autodeployaa tuotantoversio asiakkaille, saataisiinko esimerkiksi pääsy kaikkiin asiaksympäristöihin että voisimme automaattisesti siirtää eri releasen? voisiko kantamigraatiot automatisoitua? mitä jos tuotantodataa pitäisi päivittää, saataisiinko sitä päivitettyä, tuskin. 
 
 %UAT
-
-UAT is often the norm and is required before anything is moved to production
 
 \subsubsection{Customer challenges}
 
@@ -1119,18 +1122,18 @@ A customer might be doing a critical task with the software component, and there
 %(DIALOG)
 
 
-===============
-Delivery B2C:
+%===============
+%Delivery B2C:
 
-"Most customers of most products hate new releases. That's a perfectly reasonable reaction, given that most releases of most products are bad news. It's likely that the new release will contain new bugs. Even worse, the sad state of product development generally means that the new features are as likely to be ones that make the product worse, not better. So asking customers if they'd like to receive new releases more often usually leads to a consistent answer: No, thank you. On the other hand, you'll get a very different reaction if you ask customers next time you report an urgent bug, would you prefer to have it fixed immediately or to wait for a future arbitrary release milestone?" \cite{http://www.startuplessonslearned.com/2009/12/continuous-deployment-for-mission.html}
+%"Most customers of most products hate new releases. That's a perfectly reasonable reaction, given that most releases of most products are bad news. It's likely that the new release will contain new bugs. Even worse, the sad state of product development generally means that the new features are as likely to be ones that make the product worse, not better. So asking customers if they'd like to receive new releases more often usually leads to a consistent answer: No, thank you. On the other hand, you'll get a very different reaction if you ask customers next time you report an urgent bug, would you prefer to have it fixed immediately or to wait for a future arbitrary release milestone?" \cite{http://www.startuplessonslearned.com/2009/12/continuous-deployment-for-mission.html}
 
-Mindsets:
+%Mindsets:
 
-"if a change is supposedly side effect free, release it immediately. "
+%"if a change is supposedly side effect free, release it immediately. "
 
-"The second shift in mindset required is to separate the concept of a marketing release from the concept of an engineering release. Just because a feature is built, tested, integrated and deployed doesn't mean that any customers should necessarily see it."
+%"The second shift in mindset required is to separate the concept of a marketing release from the concept of an engineering release. Just because a feature is built, tested, integrated and deployed doesn't mean that any customers should necessarily see it."
 
-"Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
+%"Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
 
 
 \subsection{Continuous experimentation: B2B challenges}
@@ -1141,8 +1144,10 @@ Mindsets:
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
-    Asd & asd \\ \hline
-	Asd & Asd \\
+    CDM & No user interface \\ \hline
+	CDM & Only used via API calls \\ \hline
+	CDM & Measurable metrics are only performance \\ \hline
+	Dialog & \\
     \hline
     \end{tabular}
 \end{center}
@@ -1150,9 +1155,11 @@ Mindsets:
 
 %CDM
 
-CDM
+%CDM
 
 No user interface, only used via API calls. 
+
+Hardcoded APIs integrated to other components
 
   %  Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. Logitusta voisi kehittää säätämällä logitusasetuksia. Toisinaan virheviestit hautautuvat logiin. Häläreitä virhetilanteista voisi automatisoida, jotkut systeemit on monitoroinnin alla. 	Virheidenkeräystä voisi hyödyntää paremmin.	ei ole sellaista joka vaikuttaisi suoraan loppukäyttäjälle. ainahan voisi optimoida sen mukaan miten järjestelmät käyttävät cdm:ää, muttei suoranaisesti sellaista mikä liittyisi cdm:ään.		nopeus, käyttöliittymän selkeys. ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä.
 
@@ -1162,9 +1169,13 @@ No user interface, only used via API calls.
 %    Dialog
 
 
-Dialog
+%Dialog
 
 Measurable metrics?
+
+Storing data - Dialog database?
+
+
 
 
 %    Tallentamisessa pitää olla sovittu asiakkaan kanssa se että sitä kerätään. Voidaan kerätä Dialogin kantaan, pitäisi sopia luku. Osille asiakkaista ei ole suoraa pääsyä verkkoon paitsi monimutkainen VPN-säätö: tänne ei välttämättä pääsisi kovinkaan helpolla. Isoimmilla firmoilla varsinkin on säädöksiä datan käyttöön ja tietoturvaan. ei ongelmia.  Jos se kerätään Dialogin sisällä, kannattaa se tallentaa Dialogin tietokantaan. Vaihtoehtona lähetys lokaaliin urliin, ja se on vähän turhan hankalaa. Helpompaa voisi olla laittaa käyttäjäryhmiin joku taulu, johon kerätään tietoa.  Pitäisi selvittää onko tuo mahdollista ja kuinka tarkkoja asiakkaat ovat mitä dataa kerätään. On myös väliä onko palvelin heillä vai meillä, eivätkä kaikki välttämättä anna meidän kerätä dataa. käyttäjät tuskin olisivat pahoillaan. Heitä motivoi se, että me yritämme parantaa heidän tekemistä. B2B puolella luultavasti asiakkaat antavat träkätä toimintoja, koska asiakas on ostanut jo tuotteen.
@@ -1178,8 +1189,13 @@ Measurable metrics?
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
-    Asd & asd \\ \hline
-	Asd & Asd \\
+    Origin of features & Features have been primarily created for customer needs \\ \hline
+	Downtime & Customers don't want downtime \\ \hline
+	Downtime & Customers have to be informed for major changes \\ \hline
+	Downtime & Users perform routine tasks and have been trained for them, therefore the UI shouldn't change often \\ \hline
+	Downtime & Customers don't want downtime \\ \hline
+	User amount & Too few users for statistical importance \\ \hline
+	Data collection & Proper agreements need to be made \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1197,18 +1213,18 @@ To collect data from customers, proper agreements might need to be made.
 
 In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
 
-(CDM)
-measurable metrics
--performance
--query amount
+%(CDM)
+%measurable metrics
+%-performance
+%-query amount
 
-Dialog:
-Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
-Measurable metrics don't include clicks or sales events.
--one possibility is to measure the duration it takes to complete a routine task, but it is very hard
--customer satisfaction, how happy the customer is and how easy the product is to use
-Some customers might use the product only a few months a year
-While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
+%Dialog:
+%Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
+%Measurable metrics don't include clicks or sales events.
+%-one possibility is to measure the duration it takes to complete a routine task, but it is very hard
+%-customer satisfaction, how happy the customer is and how easy the product is to use
+%Some customers might use the product only a few months a year
+%While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
 
 \subsubsection{A/B testing}
 
@@ -1216,60 +1232,91 @@ While theres not much statistical data, users can be tracked and they perform th
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
-    Asd & asd \\ \hline
+    User amount & Low user volume \\ \hline
+    Measurable metrics & No revenue \\ \hline
 	Asd & Asd \\
     \hline
     \end{tabular}
 \end{center}
 
-===============
-A/B testing B2B:
+%===============
+%A/B testing B2B:
 
-Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
+%Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
 
-CDM: 
-No users, except for other systems
-Measurable metrics
--performance
-Idea: A/B test different databases and measure performance
-No user interface
+%CDM: 
+%No users, except for other systems
+%Measurable metrics
+%-performance
+%Idea: A/B test different databases and measure performance
+%No user interface
 
-Dialog:
-User amount is very low, so there's no room for quantitative analysis
-Customers are very concerned about UI modifications
-UI is quite complicated, needs detailed use guide
-"In B2B we need more volume from customers, and a whole different skillset"
+%Dialog:
+%User amount is very low, so there's no room for quantitative analysis
+%Customers are very concerned about UI modifications
+%UI is quite complicated, needs detailed use guide
+%"In B2B we need more volume from customers, and a whole different skillset"
 
 
 %\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous deliverys benefit to case company}
 
+current problems 
+
+benefits of continuous delivery
+
+discussion
+
 %Problems in current delivery
 
 %Pitkälti käsin. Vaikka se olisi pitkälti automatisoitavissa, sitä ei ole tehty. Säästäisi paljon aikaa, toisi varmuutta. Kun kaikki tehdään käsin, sattuu toisinaan virheitä eikä ole varmuutta tehtiinkö kaikki kuten ennen ja toimiiko kuten pitää. Jos tehtäisiin automaattisesti, olisi tulos konsistentti. Usein joutuu ottamaan etäyhteyksiä remote desktopilla, ja näissä on rajoituksia. VPN:n läpi otettu yhteys katkoo muita yhteyksiä mitä käyttää silloin koneella. Parempi jos tarjottaisiin itse asiakkaalle CDM ympäristöineen.	Vaatii dokumentointia. Kaikkia asioita ei ole dokumentoitu hyvin, prosessi hajautunut. Ei ole tietoa kaikista deploymentin prosesin osista. 	käytännössä mitä tahansa mitä sovitaan, tulee aina ihan helvetin kiire. jos sovimme tuotantoonsiirron 19.9, olemme käytännössä aina enemmän tai vähemmän kusessa sitä edeltävänä päivänä. aina aloitetaan nollapisteestä mitä pitää tehdä tuotantoonsiirron yhteydessä. keksitään aina prosessi uudestaan. automatisointi on hankalaa, koska jos meidän aina pitäisi tehdä täsmälleen samat asiat, tottakai voisimme sitten automatisoida sen jollain tavalla. käytännössä jokainen tuotantoonpäivitys on vähän erilainen kuin edellinen. sis. sovelluksen päivityksen, tuotantodataa saattaa pitää korjata tai ladata lisää.	Adding changes to the database, and doing the testing every time you do the deployment.	arpomista joka kertaa. et voi olla aina varma mitä viet sinne, pitää ehkä purkaa warri ja katsoa mitä sinne on menossa. 	Haasteita mitä ei ole auennut. Releasen rakentamiseen voi mennä päivä työaikaa, kuulostaa oudolta. Versionvaihdon yhteydessä tehtävät tietokantakorjaukset - skriptit ei välttämättä saatavilla ja niitä saattaa jäädä ajamatta. Tässä epätarkkuus. Testaus on haaste, sillä ei ole testisettejä jotka ovat tarpeeksi luotettavia. Asiakkaan kanssa ei haasteita, paitsi jos tuotantoonsiirto ei onnistu.
 
-
 \subsection{Continuous experimentations benefit to case company}
-What kind of OEC can be picked?
-Which attributes can be improved?
 
-Data-driven decisions
+current problems in roadmapping, choosing features, product development
+
+benefits of continuous experimentation
+
+discussion
+
+
+%What kind of OEC can be picked?
+%Which attributes can be improved?
+
+%Data-driven decisions
 
 %\subsection{Minimum Viable Process of continuous experimentation}
 %Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
 
 \subsection{Implementing continuous experimentation as a development process}
 
--Explain Fagerholm et al. model
+Explain Fagerholm et al. model
+-Build-Measure-Learn
+-Hypotheses used to implement MVP or MVF
+-Experiment executed with data from MVP or MVF
+-Analysis, results used to support decisiong making
 
-Interesting interview questions regarding this issue:
+(back-end system consists of an experiment database.. ) 
+-Customer environment?
 
-daily work routine
-weekly work routine
-current development model
-where to the development ideas come from
-current deployment process
+"A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
+
+"The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
+
+"Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
+
+-Apply in context
+
+-List deviations
+
+%Interesting interview questions regarding this issue:
+
+%daily work routine
+%weekly work routine
+%current development model
+%where to the development ideas come from
+%current deployment process
 
 
 %\subsection{Cross-case analysis}
