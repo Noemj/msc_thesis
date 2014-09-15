@@ -285,14 +285,14 @@ TODO:
 
 \subsection{Continuous deployment}
 
-To be able to react to customers changing requests and manage multiple customer environments, the software product has to be deployed frequently and with different configurations. As the case company is working in an agile manner, requests change and adjust often. To improve the software product, the case company is looking for an deployment approach that grants the following benefits.
+To be able to react to customers changing requests and manage multiple customer environments, the software product has to be deployed frequently and with different configurations. As the case company is working in an agile manner, requests change and adjust often. To improve the software product, the case company has a need for a deployment approach that has the following benefits.
 
 \begin{itemize}
-\item  Fast feedback on changes
-\item  Automation of repetitive actions
-\item  Validating that deployed code has passed automatised tests 
-\item  Traceable. large history records and changelogs
-\item  Configurable per customer environment
+\item Fast feedback on changes
+\item Automation of repetitive actions
+\item Validating that deployed code has passed automatised tests 
+\item Traceable. large history records and changelogs
+\item Configurable per customer environment
 \end{itemize}
 
 Fast feedback is used to validate the functionality of the software and to ensure that quality requirements are met. Automation of repetitive actions ensures that the actions are performed exactly as instructed, without room for manual error. Reducing the amount of manual work also improves efficiency. With traceable history records, troubleshooting process can be shortened. With changelogs, the customer can be kept informed of the changes in new versions. A design practice filling the aforementioned benefits is called Continuous deployment.
@@ -314,7 +314,7 @@ Continuous delivery differs from continuous deployment. Refer to Fig. \ref{fig1}
 %Barriers in CI->CD transition: stairway
 Holmström Olsson et al. have researched the transition phase from continuous integration to continuous delivery, and have identified barriers that companies need to overcome to achieve the transition \cite{olsson2012climbing}. One of such barrier is the custom configuration at customer sites. Maintaining customized solutions and local configurations alonside the standard configurations creates issues. The second barrier is the internal verification loop, that has to be shortened not only to develop features faster but also to deploy fast. Finally, the lack of transparency and getting an overview of the status of development projects is seen as a barrier.
 
-Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer. Olsson et al. also note that finding a pro-active lead customer is also essential to explore and form aa new engagement model.
+Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer. Olsson et al. also note that finding a pro-active lead customer is also essential to explore and form a new engagement model.
 
 \subsubsection{Deployment pipeline}
 An essential part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass such before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
@@ -967,6 +967,19 @@ This section summarises key findings of the case study. It is structured accordi
 
 \subsection{Continuous delivery: B2B challenges}
 
+%When to use CD: http://www.continuousagile.com/unblock/cd_costs_benefits.html
+%You provide an online service: Web, SaaS, PaaS, online gaming, online big data, or mobile apps with Web service back ends. If you provide online services, you need to move to continuous delivery, or your competitors will race ahead of you.
+
+%Your release times are getting longer and longer. As your app gets more complicated, you may find that it takes longer to test and release. This is a sign that you should move to automated testing, continuous integration, and continuous delivery.
+
+%You are developing a new product and using lean startup techniques to test and evolve it.
+
+%You have a big project with a lot of contributors. Batch management will often fail in this case. Continuous delivery techniques will help you accept contributions from a large and diverse group of contributors, inside and outside of your core organization.
+
+%You need to release frequent security patches. Bad guys out there want to manipulate our systems to show ads, run compute-intensive algorithms, steal passwords and financial information, and view commercial and government secrets. With Chinese hackers going against the NSA, it's literally spy versus spy. We are caught in the crossfire, forced to issue frequent updates. You can think of continuous delivery as extending your security patch process to your software development activities.
+
+
+
 Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 
 The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
@@ -1087,25 +1100,34 @@ Versioning
     \end{tabular}
 \end{center}
 
-Some customers of the case company hate new releases, since new releases occasionally contain new bugs. 
+Customer reluctance towards new features is common, since new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. Thus if the UI changes often, the customers initially take more time to perform the tasks. 
 
 Customers need to understand what continuous delivery is all about.
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
 
 
-Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
--however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
+
+
+%Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
+%-however, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer hate towards new versions
 %Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
 
-
-The customer validates the functionality of the software. 
+The customer validates the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. 
 %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
 %Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
+
+customer might be using the software when the version is updated
+
+%TODO: tärkee
+To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.   
 
 
 customer often specifies the deployment date
 
-customer might be using the software when the version is updated
+
+
+
+
 
 
 
@@ -1234,6 +1256,7 @@ In the B2B domain the typical characteristics is lower user amount as compared t
     Problem area & Specific problem \\ \hline
     User amount & Low user volume \\ \hline
     Measurable metrics & No revenue \\ \hline
+	CDM & No users, only integrated systems \\ \hline
 	Asd & Asd \\
     \hline
     \end{tabular}
@@ -1244,41 +1267,128 @@ In the B2B domain the typical characteristics is lower user amount as compared t
 
 %Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
 
-%CDM: 
-%No users, except for other systems
-%Measurable metrics
-%-performance
-%Idea: A/B test different databases and measure performance
-%No user interface
+CDM: 
+No users, except for other systems
+Measurable metrics
+-performance
 
-%Dialog:
-%User amount is very low, so there's no room for quantitative analysis
-%Customers are very concerned about UI modifications
-%UI is quite complicated, needs detailed use guide
-%"In B2B we need more volume from customers, and a whole different skillset"
+Idea: A/B test different databases and measure performance
+No user interface
 
+Dialog:
+User amount is very low, so there's no room for quantitative analysis
+Customers are very concerned about UI modifications
+UI is quite complicated, needs detailed use guide
+"In B2B we need more volume from customers, and a whole different skillset"
 
-%\subsection{Collecting usage data and customer feedback in B2B domain}
 
 \subsection{Continuous deliverys benefit to case company}
 
 current problems 
 
+-Not much reliability in new versions
+-It takes long time to build a new version
+-Manual process often introduces human errors
+-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
+-The version is usually done in a hurry, which adds more errors
+
+-Some wrong binaries might be compiled under the new version, have to manually check these
+
+-No problems with the customer, unless the deployment has errors
+
+-Manual changelog
+
+-Not sure what to test with automatised tests in Dialog
+
+
+%Benefits: http://www.continuousagile.com/unblock/cd_costs_benefits.html
 benefits of continuous delivery
+
+Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
+%Speed: You get faster delivery of the most important improvements and fixes. You can release some changes in hours or days. When you fix problems faster, your system will have fewer bugs. You can accelerate delivery of a few great improvements, learn fast, and beat the competition.
+
+Quality
+%Quality: I am often asked: "Does continuous delivery require me to release more quickly, with lower quality? Will I be releasing more bugs, and features with less refined usability?" Actually, continuous delivery gives you extra capacity that you can use to improve either speed or quality. You can choose to release faster, or you can choose to hold features longer before releasing and "unveiling" them, to move them to higher quality and usability. At Assembla, we found that our feature delivery got slower when we improved the usability of our software. Continuous delivery also results in systems with fewer bugs at any given time, because bugs are discovered and fixed faster.
+
+Capacity
+%Capacity and Scale: You can include a bigger, more scalable development team in a continuous process. Batch processes like iteration planning, release planning, and release testing become exponentially harder to organize as you involve an increasing number of people. With continuous delivery, we solve this problem by skipping batch processes. With the code contribution workflows listed here, you can manage code and not people, and accept the code that is ready. Code is easier to manage. You can organize thousands of people and hundreds of systems with continuous delivery. Also, you can work with an entire world of talent, because you can manage distributed teams effectively.
+
+Cost
+%Cost: You spend less money and time on meetings and management. If you eliminate batch processes you don't need as many big, expensive meetings.
+
+
+Focus 
+%Focus: Team members have more time to think. Developers can completely finish and release a task before they move to the next task. They do not need to switch their brains and their configurations between tasks. Product managers and QA people also get this benefit.
+
+
+Clarity
+%Clarity: Your team should experience less stress. With continuous delivery, you fix small problems quickly. Bigger changes take only as long as the work requires, because they are not delayed by stops and starts. You have fewer high-pressure spikes of release work. You can think about one thing at a time. All of these factors lower stress so that you can have a better life and work more effectively.
+
 
 discussion
 
-%Problems in current delivery
+%CD costs http://www.continuousagile.com/unblock/cd_costs_benefits.html
 
-%Pitkälti käsin. Vaikka se olisi pitkälti automatisoitavissa, sitä ei ole tehty. Säästäisi paljon aikaa, toisi varmuutta. Kun kaikki tehdään käsin, sattuu toisinaan virheitä eikä ole varmuutta tehtiinkö kaikki kuten ennen ja toimiiko kuten pitää. Jos tehtäisiin automaattisesti, olisi tulos konsistentti. Usein joutuu ottamaan etäyhteyksiä remote desktopilla, ja näissä on rajoituksia. VPN:n läpi otettu yhteys katkoo muita yhteyksiä mitä käyttää silloin koneella. Parempi jos tarjottaisiin itse asiakkaalle CDM ympäristöineen.	Vaatii dokumentointia. Kaikkia asioita ei ole dokumentoitu hyvin, prosessi hajautunut. Ei ole tietoa kaikista deploymentin prosesin osista. 	käytännössä mitä tahansa mitä sovitaan, tulee aina ihan helvetin kiire. jos sovimme tuotantoonsiirron 19.9, olemme käytännössä aina enemmän tai vähemmän kusessa sitä edeltävänä päivänä. aina aloitetaan nollapisteestä mitä pitää tehdä tuotantoonsiirron yhteydessä. keksitään aina prosessi uudestaan. automatisointi on hankalaa, koska jos meidän aina pitäisi tehdä täsmälleen samat asiat, tottakai voisimme sitten automatisoida sen jollain tavalla. käytännössä jokainen tuotantoonpäivitys on vähän erilainen kuin edellinen. sis. sovelluksen päivityksen, tuotantodataa saattaa pitää korjata tai ladata lisää.	Adding changes to the database, and doing the testing every time you do the deployment.	arpomista joka kertaa. et voi olla aina varma mitä viet sinne, pitää ehkä purkaa warri ja katsoa mitä sinne on menossa. 	Haasteita mitä ei ole auennut. Releasen rakentamiseen voi mennä päivä työaikaa, kuulostaa oudolta. Versionvaihdon yhteydessä tehtävät tietokantakorjaukset - skriptit ei välttämättä saatavilla ja niitä saattaa jäädä ajamatta. Tässä epätarkkuus. Testaus on haaste, sillä ei ole testisettejä jotka ovat tarpeeksi luotettavia. Asiakkaan kanssa ei haasteita, paitsi jos tuotantoonsiirto ei onnistu.
+Costs
+-automate testing
+%Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
+
+-testing costs could be pushed at least partially to users
+%In an experimental product, you can push some of the costs of testing onto users. We'll talk about this option when we cover testing and product management.
+
+-developer training: social commitment and understaind of the version control system
+%Continuous delivery also involves developer training costs. Developers need to understand the details of their version control system. They need a full social commitment to automated testing. They must take more responsibility for delivering release-ready code and features.
+
+-understanding how major changes can be inserted and hidden unless they're ready
+%Incremental releases are complicated. Developers must figure out how to insert major changes invisibly, and hide them with switches until they are ready to be released. This staged migration adds some complexity that is not present if you just rip out the old stuff and then test the new stuff. However, you will gain confidence by seeing changes working in production systems before you "unveil" them to your users. This can more than compensate for the increased complexity
+%It is faster. You unblock your team so that developers can work at full speed. They don't have to wait for a product manager, product owner, or marketing person to tell them that users, marketing and documentation are ready for a release. Instead, they release everything that is ready, and hide it from the general public. The PM or marketing person can come along later, see that the new feature works, and start the "unveil" process.
+%It provides the correct incentives. The developer is responsible for the release, because he or she is the one who can fix it. A developer can be called back from Friday night beers to fix a problem. Therefore, developers have a compelling reason to make a good decision about what to release. They should not throw buggy code over the all to a QA person. They need to be forced to focus on quality by removing the QA training wheels. They will be motivated to build good tests, and good scripts for testing and deployment.
+
+%Developers (programmers) will decide what is ready to release. This is a strong finding. We see it in all successful continuous delivery organizations. The developer of a feature decides when it is ready, and runs the scripts to put it into the production version.
+
+"If something changes, communication with the customer is hard. The customer says that even if the version included very good changes, if something changes it gets alot of negative feedback".
+
+-There are customers that don't understand the benefit of continuous delivery.
+
+"Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
 
 \subsection{Continuous experimentations benefit to case company}
 
 current problems in roadmapping, choosing features, product development
 
+"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
+
+"Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked"
+
+"Currently we do basically no product development, and all development is customer-oriented"
+
+"pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
+
+"Devaajat tekevät parannusehdotuksia, myös product ownerit keksivät featureideoita. Uskovat, että asiakas haluaa tämän. Mahdollisesti myös poistettavia ideoita."
+
+"Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla."
+
+"Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. A"
+
+" Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse."
+
+
 benefits of continuous experimentation
 
+\begin{itemize}
+\item  Data driven decisions
+\item  Link product development and business aspect
+\item  React to customers present needs
+\item  Turn hypotheses into facts
+\item  Steer development process
+\end{itemize}
+
 discussion
+
+
+%Origin of development ideas:
+
+%Nykyään pyritään siihen että kaikki mitä tehdään on asiakkaalle varten tehtyjä. Omaa tuotekehitystä ei voida oikein laskuttaa keneltäkään. Tarkoitus on tehdä featureita vaan jos asiakas on niitä pyytänyt. Jos uusi projekti alkaa, kehitetään sille uusia vaatimuksia. Usein niitä kuitenkin tulee pitkin projektia sillä asiakkaan mieli muuttuu. Uusia featureita ja muutoksia jo tehtyihin featureihin. Devaajalla ei aivan selvää mistä uudet featuret tulevat. Haluttaisiin enemmän näkyvyyttä siihen mistä vaatimukset tulevat, ja mitä tarkoitusta varten jotkut featuret tehtävät. Tästä ollut puhetta.	Lähinnä asiakkaiden vaatimuksia, on kuitenkin osittain ollut omaa tuotekehitystä, esim. elasticsearch. 	suurin osa yritetään tehdä asiakaslähtöisesti, ja pitäisikin tehdä. vaikka olisi miten hyvä tuotteen omistaja tai asiakasvastaava, harvoin kukaan voi tietää mitä asiakas haluaa ilman että siltä on kysytty jotain. Tällä hetkellä ei tehdä käytännössä ollenkaan sisäistä tuotekehtiystä, ja kaikki kehitys on asiakaslähtöistä.	For the last two projects they came from the product owner and directly from the customer. Maybe sometimes PO would help the customers to discuss what they need. Sometimes we want to improve the codebase and implement the tasks ourselves to do that.	business-omistajilta pitäisi tulla, ja heidän pitäisi keskustella näistä asiakkaiden kanssa. varmaan sieltä suunnalta, vähän kummastakin. talon sisältä ja talon ulkopuolelta. jos on räätälöity projekti, on se aika pitkälti asiakkaan toiveiden varassa. myös custom projektit näin. suurin osa on ollut custom-projekteja, ja vasta viime vuosina alkanut tuotteistaminen.	viime vuosien aikana menty asiakasprojektien ehdoilla. pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy. ei ole ollut resursseja tähän asiakasprojektin tiimoilta. asiakasprojekteihin myyty keskeneräisä tuotteita, joita jouduttu asiakasprojekteissa viimeistelemään. tämä on luonut painetta ja resurssitarvetta. on miettitty miten tuotetta voidaan kehittää, muttei siihen ole ollut resursseja.		Tällä hetkellä tulee suoraan asiakastarpeista. Jonkin verran on myös sellaisia joita tiedetään ettei tämä toimi hyvin ja sitä pyritään parantamaan, nämäkin usein asiakas huomannut. 	Tällä hetkellä lähes ainoastaan asiakkaiden tarpeen tehtyjä featureita. Asiakkaille saatetaan luvata feature joka halutaan. Aluksi oli jotain omia visioita. Ei tietoa miten asiakas ja PO keskutelevat. 	Devaajat tekevät parannusehdotuksia, myös product ownerit keksivät featureideoita. Uskovat, että asiakas haluaa tämän. Mahdollisesti myös poistettavia ideoita. Ei tietoa asiakkaan ja johtoportaan välisestä kommunikaatiosta - yritetään saada asiakkaalta sitoumus siihen, mitä tehdään. 	Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla. Nyt on kuitenkin muutamilla asiakkailla vähän eri termistöä ja juttuja. Jotkut asiakkaat käyttävät Dialogista force-integraatio, jotkut käyttävät perusdialogia joissa on esim siebel-integraatio. Helsingin energialla on taas eri crm. 	Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. Aikatauluja tekemiseen ei päästä itse sovittamaan niin hyvin. Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse.
 
 
 %What kind of OEC can be picked?
@@ -1313,6 +1423,10 @@ Explain Fagerholm et al. model
 %Interesting interview questions regarding this issue:
 
 %daily work routine
+%Tapana tsekata aamuisin pull requestit. Tämän jälkeen paneudutaan trellotaskiin. Taskin toteutus, testaus, verifiointi. Pääasiassa kokopäiväisesti koodaushommaa. Lähes joka päivä työ keskeytyy muiden koodareiden kanssa keskusteluun, suunnitteluun, mielipiteisiin. Myös satunnainen suunnittelupalaveri. Päivittäinen scrum.	Pitkälti trellotaskeja, pullrequesteja 3-4krt / vk.	"Sähköpostit, suurin osa päivästä menee sähköposteihin, asiakaspalavereihin, firman sisäisiin palavereihin, asiakasprojektien työtehtävien jakamiseen tiimin kesken, sekä CDM & Dialog-subtiimien. Firman prosessien kehitys. Jos olen asiakasvastuussa projektissa, keskustellaan asiakkaan kanssa mitä he haluavat ja missä järjestyksessä mikäkin juttu tehdään. Sitten speksaan sen abstraktilla tasolla ja laitan Trelloon. Jos on asiakasprojekti josta joku muu on vastuussa, antavat he minulle heidän tekemän määritellyn hommasta joka pitää tehäd, tarkrkastan sen ja lisään Trelloon. Trellon seuraaminen, ylläpitäminen.
+ %"	Choose a task from Trello, or ask a colleque for which task is most convenient. Then I start to work with the task till its done or a more important task arrives. If there are problems I ask for help from my teammates. Sometimes we have meetings.	tulipalojen sammuttelua, jos saa keskittyä yhteen projektiin niin paljon selkeämpää. tällöin sama kun muilla devaajilla. pääasiassa asiakasprojekteja. riippuen projektista joskus oltu asiakkaan luona tekemässä. se olisi parempi kommunikoinnin kannalta. jos teen tuotekehitystä niin sitten trellon kautta. kun on ollut projektissa alusta alkaen mukana, tietää mitä tehdä. 	Kalenterivaraukset, valmistelut edellisenä iltana seuraavaan päivään, palaverivalmistelut, projektivastuiden tilanne. Projekteihin liittyviä tehtäviä, testauksia. Vakiopalavereita. Projektistatuksia.		mailien tarkastelua, Trellosta joko uusi taski tai keskenjäänyt taski. Satunnaisia taukoja. Kaikennäköisiä kyselyitä tulee kokoajan Skypessä ja henkilökohtaisesti. Tikettejä tulee jonkin verran. Suunnittelupalavereita toisinaan. 	Otan taskin Trellosta ja teen sen. Usein support-taskeja asiakasympäristöistä, jotka tulevat Trellon ohi. Muut eivät tiedä näistä mitään.	Ensiksi salesforce-chatter, sähköposti. Trellosta uusi taski tai jatkaa olemassaolevaa. Toisinaan palavereita, ei kuitenkaan päivittäisellä tasolla. Toisinaan myös asiakastapaamisia. Trellokortti voi liittyä bugzillan bugiin. Speksit usein usean linkin takaa. Pull requestit päivittäin.	Asiakkaiden kysymyksiin vastaaminen, asiakkaiden tukipyyntöihin vastaaminen ja näiden hoitaminen. Paljon aikaa menee templatejen hoitamiseen, eli sähköposti- ja lomakepohjat Dialogissa. Bugien kirjaaminen, verifioiminen dev-tiimin kanssa. 	Ei ole niin selvä. Kerätään kehitysajatuksia yrityksen ohjausryhmiltä, johdolta ja asiakkailta. Priorisoidaan kehitysajatuksia, keskustellaan niistä monen eri tahon kanssa. Tarkentaa niitä. Seurata niiden edistymistä. Kaikessa on monta leveliä, joissain asioissa tehdään jonkinlaista konfigurointikehitystä tai testausta. Pitkälti olen roolissa jossa saan palautetta, ja ne menevät mun ja mun mielipiteiden kautta. Sen kautta voi olla story tai jokin sellainen, jota asiakas ei ole sanonut, mutta luulen olevani fiksu ja ajattelen asiakkaa puolesta mitä he tarvitsevat. Luotetaan siihen että ymmärrän asiakkaan viestin. Dialogin osalta ongelma, haasteet, on se ettei osaajia ole paljon ja kaikki ovat vielä harjottelumoodissa. Verrattuna CRM:ään ja CDM:ään joista on pidempi kokemus itse toteutuksesta. Kaikki mitä teen on sellaista aluetta, olen kaikissa alueissa mukana ajatuksesta toteutukseen ja sen hyväksymiseen, muissa puolissa on kokemusta firmana ja tekijöinä paljon enemmän. Päivä on näiden asioiden tekemistä. Trelloa, speksien kirjoittamista, palavereita asiakkaiden kanssa sähköposteja, puheluita, työpajoja. Ehkä vielä keskustelua ja jauhamista kehittäjien kanssa, sillä kaikkea ei voi kirjoittaa spekseihin. Asioiden kuvaamiseen keskustellen menee jokin aika. En tiedä mitä Dialogin konepellin alla on.
+
+
 %weekly work routine
 %current development model
 %where to the development ideas come from
