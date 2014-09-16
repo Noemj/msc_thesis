@@ -996,6 +996,7 @@ TODO: explain the list here
     Problem area & Specific problem \\ \hline
     General & Downtime \\ \hline
     General & Environment \\ \hline
+    General & Automate testing \\ \hline
     Configuration & Third party application integration \\ \hline
     Configuration & External components \\ \hline
     Configuration & Different configuration per customer \\ \hline
@@ -1014,6 +1015,12 @@ One of the main differences between B2B and B2C is the production environment. W
 %Third party application integration
 Both of the case companys software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
 
+
+-automate testing
+%Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
+
+-testing costs could be pushed at least partially to users
+%In an experimental product, you can push some of the costs of testing onto users. We'll talk about this option when we cover testing and product management.
 
 
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus. Tällä hetkellä tekninen haaste eniten on tietokannan versiointi johon on olemassa ratkaisuja. Integraatioiden automaattinen päivittäminen vaatisi ehkä kohtuuttoman paljon resursseja suhteessa siihen mitä saavutetaan. Itse dialogin päivitysten automatisointi olisi tehtävissä helpoiten. Yleinen smoketestaus olisi tehtävissä, mutta vaatii että testit kirjoitetaan, pitäisi tehdä paljon, ja niitä pitäisi ylläpitää. Tällä hetkellä tähän ei ole resursseja.  Ei voida siirtää aina uutta versiota, koska pitää pystyä takaamaan isolla varmuudella että asiat toimivat. Käytännössä se että sovitaan asiakkaan kanssa että vaihdetaan versio, ja tällöin laukastausiin automaattinen tuotantoonsiirto, olisi toimiva ratkaisu. 
@@ -1063,14 +1070,12 @@ Transferring the software product to a customer-owned environment instead of own
     Problem area & Specific problem \\ \hline
     Environmental & UAT \\ \hline
    	Procedural & Pull requests \\ \hline
-	Procedural & Versioning \\ 
+	Procedural & Versioning \\ \hline
+	Procedural & Feature stubs \\ \hline
+	Roles & Developer responsibility \\
     \hline
     \end{tabular}
 \end{center}
-
-%http://www.slideshare.net/wakaleo/continuous-deliverywithmaven CD with maven
-
-%http://blogs.atlassian.com/2014/07/skeptics-guide-continuous-delivery-part-3-real-world-pipelines/ Pipeline
 
 The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
 -UAT is often the norm and is required before anything is moved to production
@@ -1079,6 +1084,26 @@ The basic deployment pipeline in the case company first includes a deploy to UAT
 
 CDM is a software component that is compiled from multiple components. Therefore the event triggering a deployment shouldn't be the merge of a pull request, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. 
 %jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. muutokset saattavat vaatia muiden komponenttien päivityksen, tietokanta jne. niiden koordinointi voi olla haaste. myös jos CDM on integroitu muiden asiakkaiden tuotteisiin saattaa rajapinta vaihtua. siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
+
+%CD costs http://www.continuousagile.com/unblock/cd_costs_benefits.html
+
+Costs
+
+-developer training: social commitment and understaind of the version control system
+%Continuous delivery also involves developer training costs. Developers need to understand the details of their version control system. They need a full social commitment to automated testing. They must take more responsibility for delivering release-ready code and features.
+
+-understanding how major changes can be inserted and hidden unless they're ready
+%Incremental releases are complicated. Developers must figure out how to insert major changes invisibly, and hide them with switches until they are ready to be released. This staged migration adds some complexity that is not present if you just rip out the old stuff and then test the new stuff. However, you will gain confidence by seeing changes working in production systems before you "unveil" them to your users. This can more than compensate for the increased complexity
+%It is faster. You unblock your team so that developers can work at full speed. They don't have to wait for a product manager, product owner, or marketing person to tell them that users, marketing and documentation are ready for a release. Instead, they release everything that is ready, and hide it from the general public. The PM or marketing person can come along later, see that the new feature works, and start the "unveil" process.
+%It provides the correct incentives. The developer is responsible for the release, because he or she is the one who can fix it. A developer can be called back from Friday night beers to fix a problem. Therefore, developers have a compelling reason to make a good decision about what to release. They should not throw buggy code over the all to a QA person. They need to be forced to focus on quality by removing the QA training wheels. They will be motivated to build good tests, and good scripts for testing and deployment.
+
+Developer responsibility
+%Developers gain a lot of power and a lot of responsibility from continuous delivery.
+%Developers (programmers) will decide what is ready to release. This is a strong finding. We see it in all successful continuous delivery organizations. The developer of a feature decides when it is ready, and runs the scripts to put it into the production version.
+
+%http://www.slideshare.net/wakaleo/continuous-deliverywithmaven CD with maven
+
+%http://blogs.atlassian.com/2014/07/skeptics-guide-continuous-delivery-part-3-real-world-pipelines/ Pipeline
 
 
 Versioning
@@ -1094,7 +1119,7 @@ Versioning
     Problem area & Specific problem \\ \hline
     Training & Customers have been trained to use a certain version of the product \\ \hline
 	New release & Every customer doesn't like new releases, since new releases occasionally contain new bugs \\ \hline
-	New release & Deployment time & Downtime \\ \hline
+	New release & Deployment time and downtime \\ \hline
 	New release & A customer might be doing a critical task \\
     \hline
     \end{tabular}
@@ -1104,8 +1129,6 @@ Customer reluctance towards new features is common, since new releases occasiona
 
 Customers need to understand what continuous delivery is all about.
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
-
-
 
 
 %Some customers don't want UI changes, since they have been trained to perform certain tasks with a given UI. The customer might use the product once every two weeks and then get confused if the UI varies. Therefore the UI should have a stable consistency. 
@@ -1168,11 +1191,27 @@ A customer might be doing a critical task with the software component, and there
     Problem area & Specific problem \\ \hline
     CDM & No user interface \\ \hline
 	CDM & Only used via API calls \\ \hline
-	CDM & Measurable metrics are only performance \\ \hline
+	General & Measurable metrics \\ \hline
+	Data collection & Data collection in customer environment \\ \hline
 	Dialog & \\
     \hline
     \end{tabular}
 \end{center}
+
+No user interface
+=A/B testing is harder
+=Usage behavior tracking is harder (hardcoded API calls)
+=Usage metrics could be tracked?
+=Feature alpha works
+
+"The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
+
+"joo, mutta pitäisi keksiä mitä ne jutut on. aina pitäisi miettiä mikä asiakkaan tilanne on nyt, mitä se käyttää, minkälaista järjestelmää se käyttää jonka CDM tulee korjaamaan. sitä vastaan voisi miettiä experiment-featuret. vanhassa järjestelmässä asiakas on tehnyt näin tämän jutunt, joka on mahd. ollut epämukavaa, ja siihen tehdään experimentti että kokeile tätä. experimentit pitäisi tehdä asiakaskohtaisesti kartoittamalla asiakkaan nykytilanne selvittämällä mitä sen päivittäiseen rutiiniin kuuluu, ja tämän pohjalta rakennettaisiin experiment-featureita. "
+
+
+%"Arkkitehtuuri on sellainen, että se on mahdollista. Perustuote pitäisi olla säilyvä, mutta siihen voidaan liittämään uusia juttuja ilman että tuote tai toiminnallisuus sotkeutuu. Palikoita pitäisi voida lisätä nopeasti. Jos meidän päässä kehittyisi hyvä idea, joka auttaisi asiakkaita, asiakkaat saisi puhuttua tähän mukaan UAT-demoja varten. Käyttöliittymämuutoksista pitää infota asiakkaalle. Release notet pitää siis olla. Jotkut asiakkaat eivät halua kuukausittaisia muutoksia. Eivät välttämättä käytä tuotetta kuin pari kuukautta vuodessa, ja jos tällöin tuote on muuttunut niin se ei ole hyvä asia."
+
+"Asiakkaalta pitäisi saada tähän lupa. Käyttäjät tekevät rutiininomaisia toiminnallisuuksia pitkälti - pitäisi olla vakaa, jotta käyttäjät tietävät mitä missäkin on milloinkin. Ei tavoitella klikkejä tai ostotapahtumien määrää, joten tähän ei nähdä mitään syytä. Jos haluttaisiin parantaa verkkokaupan kaupankäyntiä, voitaisiin mitata myyntiä. Dialogissa ehkä enemmän saataisiin siitä irti mitä mieltä asiakkaat ovat. Se voisi olla mittari tuleeko työtehtävät tehtyä nopeammin, mutta se on jo maikea mitata. Jos olisi valtava työtaakka, voisi katsoa miten se muuttuu kun jonkinlainen ominaisuus muuttuu. Esim. testisähköpostien lähetys on nyt yhdellä sivulla, ja tämä on paljon nopeampaa kun ei tarvitse käydä kolmella eri sivulla.  Jos asiakkaalla olisi omat mittarit, jos he ovat seuranneet työntekijöitä pitkään, ja voisimme vertailla tähän trendiin, voisimme ehkä päätellä onko tämä muutos seurausta ohjelman muutoksesta. Monet firmat valvovat tarkasti työntekijöitä ja mittaavat heitä. Ei voi oikeaan käyttödataan perustavaan eksperimentointiin, ellei asiakkaalla ole mittareita suoritustehoista. Ellei voida dialogin sisältä nähdä milloin tehtävä on aloitettu ja lopetettu. Tämä aika ei välttämättä ole kuitenkaan validia dataa, koska se on voitu tehdä tarkoituksella erittäin hitaasti.	käyttäjiä on liian vähän. jos olisi enemmän aikaa, voisi kokeilla parempia leiskoja. ei tietoa miten palaute otettaisiin vastaan. pitäisi mitata esimerkiksi kuinka nopeasti asiakas löytää jonkun actionin tekemisen. 	Jos tehdään nopeita kokeiluja, ei usein enää tiedetä mitä on asiakkaalla ajossa. Jos tulee ongelmia, ei välttämättä osata heti sanoa mistä ne johtuvat. Yleensä asiakkaan testiympäristö ei ole kauhean kovassa käytössä, ja jos sinne deployataan jotain uutta saattaa kestää kauan että asiakas reagoi siihen. Omassa testipalvelimessa kokeilulla saadan nopeammin palautetta. Asiakkaalle täytyy ilmoittaa, jos tehdään suurempi muutos. Asiakkaan pitää tietää miten järjestelmä toimii, ja jos tehdään yhtään mitään muutoksia, voi se heti aiheuttaa asiakkaalle ongelmia. Jos yhtäkkiä ilmestyy uusi kenttä, asiaks ei välttämättä tiedä mitä sillä tehdään. Muutosten teko ilman ennaltasovittua aikataulua voi olla hankalaa. Teoriassa voi olla asiakas, joka ei halua että me keräämme heiltä tietoa."
 
 
 %CDM
@@ -1262,6 +1301,11 @@ In the B2B domain the typical characteristics is lower user amount as compared t
     \end{tabular}
 \end{center}
 
+
+"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
+
+"Tilastollista dataa ei ole välttämättä paljon, mutta käyttäjiä voidaan seurata ja he tekevät samanlaisia asioita paljon, kokoajan ja toistuvasti. Tällöin tältä käyttäjältä saisi paljon dataa hänen tekemisistään. Jos tämän henkilön käyttämä aika voisiin puolittaa, voisi asiakas tehdä enemmän rahaa. Tämä ei siis välttämättä vaadi paljon ihmisiä. Joskus asiakkailla on paljon ideoita miten tuotetta pitäisi kehittää, vaikka asiakas ei välttämättä ymmärrä täysin tuotteen käyttötarkoitusta. Asiakasta pitäisi siis pystyä kuuntelemaan, mutta kaikkien asiakkaiden yhteyshenkilöiden tiedot eivät ole samantasoisia. "
+
 %===============
 %A/B testing B2B:
 
@@ -1327,25 +1371,6 @@ Clarity
 
 discussion
 
-%CD costs http://www.continuousagile.com/unblock/cd_costs_benefits.html
-
-Costs
--automate testing
-%Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
-
--testing costs could be pushed at least partially to users
-%In an experimental product, you can push some of the costs of testing onto users. We'll talk about this option when we cover testing and product management.
-
--developer training: social commitment and understaind of the version control system
-%Continuous delivery also involves developer training costs. Developers need to understand the details of their version control system. They need a full social commitment to automated testing. They must take more responsibility for delivering release-ready code and features.
-
--understanding how major changes can be inserted and hidden unless they're ready
-%Incremental releases are complicated. Developers must figure out how to insert major changes invisibly, and hide them with switches until they are ready to be released. This staged migration adds some complexity that is not present if you just rip out the old stuff and then test the new stuff. However, you will gain confidence by seeing changes working in production systems before you "unveil" them to your users. This can more than compensate for the increased complexity
-%It is faster. You unblock your team so that developers can work at full speed. They don't have to wait for a product manager, product owner, or marketing person to tell them that users, marketing and documentation are ready for a release. Instead, they release everything that is ready, and hide it from the general public. The PM or marketing person can come along later, see that the new feature works, and start the "unveil" process.
-%It provides the correct incentives. The developer is responsible for the release, because he or she is the one who can fix it. A developer can be called back from Friday night beers to fix a problem. Therefore, developers have a compelling reason to make a good decision about what to release. They should not throw buggy code over the all to a QA person. They need to be forced to focus on quality by removing the QA training wheels. They will be motivated to build good tests, and good scripts for testing and deployment.
-
-%Developers (programmers) will decide what is ready to release. This is a strong finding. We see it in all successful continuous delivery organizations. The developer of a feature decides when it is ready, and runs the scripts to put it into the production version.
-
 "If something changes, communication with the customer is hard. The customer says that even if the version included very good changes, if something changes it gets alot of negative feedback".
 
 -There are customers that don't understand the benefit of continuous delivery.
@@ -1386,9 +1411,11 @@ benefits of continuous experimentation
 discussion
 
 
+"Asiakasfirmojen suhtautuminen heidän datan keräämiseen voi olla kysymysmerkki."
+
 %Origin of development ideas:
 
-%Nykyään pyritään siihen että kaikki mitä tehdään on asiakkaalle varten tehtyjä. Omaa tuotekehitystä ei voida oikein laskuttaa keneltäkään. Tarkoitus on tehdä featureita vaan jos asiakas on niitä pyytänyt. Jos uusi projekti alkaa, kehitetään sille uusia vaatimuksia. Usein niitä kuitenkin tulee pitkin projektia sillä asiakkaan mieli muuttuu. Uusia featureita ja muutoksia jo tehtyihin featureihin. Devaajalla ei aivan selvää mistä uudet featuret tulevat. Haluttaisiin enemmän näkyvyyttä siihen mistä vaatimukset tulevat, ja mitä tarkoitusta varten jotkut featuret tehtävät. Tästä ollut puhetta.	Lähinnä asiakkaiden vaatimuksia, on kuitenkin osittain ollut omaa tuotekehitystä, esim. elasticsearch. 	suurin osa yritetään tehdä asiakaslähtöisesti, ja pitäisikin tehdä. vaikka olisi miten hyvä tuotteen omistaja tai asiakasvastaava, harvoin kukaan voi tietää mitä asiakas haluaa ilman että siltä on kysytty jotain. Tällä hetkellä ei tehdä käytännössä ollenkaan sisäistä tuotekehtiystä, ja kaikki kehitys on asiakaslähtöistä.	For the last two projects they came from the product owner and directly from the customer. Maybe sometimes PO would help the customers to discuss what they need. Sometimes we want to improve the codebase and implement the tasks ourselves to do that.	business-omistajilta pitäisi tulla, ja heidän pitäisi keskustella näistä asiakkaiden kanssa. varmaan sieltä suunnalta, vähän kummastakin. talon sisältä ja talon ulkopuolelta. jos on räätälöity projekti, on se aika pitkälti asiakkaan toiveiden varassa. myös custom projektit näin. suurin osa on ollut custom-projekteja, ja vasta viime vuosina alkanut tuotteistaminen.	viime vuosien aikana menty asiakasprojektien ehdoilla. pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy. ei ole ollut resursseja tähän asiakasprojektin tiimoilta. asiakasprojekteihin myyty keskeneräisä tuotteita, joita jouduttu asiakasprojekteissa viimeistelemään. tämä on luonut painetta ja resurssitarvetta. on miettitty miten tuotetta voidaan kehittää, muttei siihen ole ollut resursseja.		Tällä hetkellä tulee suoraan asiakastarpeista. Jonkin verran on myös sellaisia joita tiedetään ettei tämä toimi hyvin ja sitä pyritään parantamaan, nämäkin usein asiakas huomannut. 	Tällä hetkellä lähes ainoastaan asiakkaiden tarpeen tehtyjä featureita. Asiakkaille saatetaan luvata feature joka halutaan. Aluksi oli jotain omia visioita. Ei tietoa miten asiakas ja PO keskutelevat. 	Devaajat tekevät parannusehdotuksia, myös product ownerit keksivät featureideoita. Uskovat, että asiakas haluaa tämän. Mahdollisesti myös poistettavia ideoita. Ei tietoa asiakkaan ja johtoportaan välisestä kommunikaatiosta - yritetään saada asiakkaalta sitoumus siihen, mitä tehdään. 	Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla. Nyt on kuitenkin muutamilla asiakkailla vähän eri termistöä ja juttuja. Jotkut asiakkaat käyttävät Dialogista force-integraatio, jotkut käyttävät perusdialogia joissa on esim siebel-integraatio. Helsingin energialla on taas eri crm. 	Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. Aikatauluja tekemiseen ei päästä itse sovittamaan niin hyvin. Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse.
+%Uusi versio kohtuullisen helppo viedä. Kokeiluversioita olisi kohtuullisen nopea viedä. Datankeräys puutteellista. Suorituskykyä voisi mitata. Haasteena pieni katkos tuotantoympäristöön tällä hetkellä. Jos versioita halutaan kokeilla vähän aikaa, se voi olla haastavaa. Asiakkaat eivät välttämättä halua että tuotantojutut ovat pitkään poissa. Featuret tehty pitkälti asiakkaiden tarpeeseen, ja uusia ideoita olisi vaikea validoida asiakkailla. 	Asiakkaan käyttö R&D:hen ei ole välttämättä aikaa, kun projekteiden kanssa on kiirettä. Nyt resurssipula.  	joo, mutta pitäisi keksiä mitä ne jutut on. aina pitäisi miettiä mikä asiakkaan tilanne on nyt, mitä se käyttää, minkälaista järjestelmää se käyttää jonka CDM tulee korjaamaan. sitä vastaan voisi miettiä experiment-featuret. vanhassa järjestelmässä asiakas on tehnyt näin tämän jutunt, joka on mahd. ollut epämukavaa, ja siihen tehdään experimentti että kokeile tätä. experimentit pitäisi tehdä asiakaskohtaisesti kartoittamalla asiakkaan nykytilanne selvittämällä mitä se npäivittäiseen rutiiniin kuuluu, ja tämän pohjalta rakennettaisiin experiment-featureita. mitattavia metriikoita olisi suorituskyky, kyselyiden määrä (suoraan verrannollinen suorituskykyyn). 		en tiedä nyt, mutta alkuvaiheessa olisi ehkä onnistunut. esimerkiksi relaatiokanta vs. indeksi. olisi voitu tehdä päätös kokeilun pohjalta, vs. että joku sanelee mitä tehdään. tämä voisi olla vieläkin hyvä kokeilu, jos voitaisiin mitata samalla tuotteen tehokkuuta, kohdistuksen laatua ja datan laatua. dq kuitenkin mukana.	Tällä hetkellä pitäisi voida, mutta ei voi. Tietty kankeus version siirrossa. Arkkitehtuuri on sellainen, että se on mahdollista. Perustuote pitäisi olla säilyvä, mutta siihen voidaan liittämään uusia juttuja ilman että tuote tai toiminnallisuus sotkeutuu. Palikoita pitäisi voida lisätä nopeasti. Jos meidän päässä kehittyisi hyvä idea, joka auttaisi asiakkaita, asiakkaat saisi puhuttua tähän mukaan UAT-demoja varten. Käyttöliittymämuutoksista pitää infota asiakkaalle. Release notet pitää siis olla. Jotkut asiakkaat eivät halua kuukausittaisia muutoksia. Eivät välttämättä käytä tuotetta kuin pari kuukautta vuodessa, ja jos tällöin tuote on muuttunut niin se ei ole hyvä asia. 		Softan toiminnallisuus on sellainen ettei vältätmättä helposti. Asiakkaalta pitäisi saada tähän lupa. Käyttäjät tekevät rutiininomaisia toiminnallisuuksia pitkälti - pitäisi olla vakaa, jotta käyttäjät tietävät mitä missäkin on milloinkin. Ei tavoitella klikkejä tai ostotapahtumien määrää, joten tähän ei nähdä mitään syytä. Jos haluttaisiin parantaa verkkokaupan kaupankäyntiä, voitaisiin mitata myyntiä. Dialogissa ehkä enemmän saataisiin siitä irti mitä mieltä asiakkaat ovat. Se voisi olla mittari tuleeko työtehtävät tehtyä nopeammin, mutta se on jo maikea mitata. Jos olisi valtava työtaakka, voisi katsoa miten se muuttuu kun jonkinlainen ominaisuus muuttuu. Esim. testisähköpostien lähetys on nyt yhdellä sivulla, ja tämä on paljon nopeampaa kun ei tarvitse käydä kolmella eri sivulla.  Jos asiakkaalla olisi omat mittarit, jos he ovat seuranneet työntekijöitä pitkään, ja voisimme vertailla tähän trendiin, voisimme ehkä päätellä onko tämä muutos seurausta ohjelman muutoksesta. Monet firmat valvovat tarkasti työntekijöitä ja mittaavat heitä. Ei voi oikeaan käyttödataan perustavaan eksperimentointiin, ellei asiakkaalla ole mittareita suoritustehoista. Ellei voida dialogin sisältä nähdä milloin tehtävä on aloitettu ja lopetettu. Tämä aika ei välttämättä ole kuitenkaan validia dataa, koska se on voitu tehdä tarkoituksella erittäin hitaasti.	käyttäjiä on liian vähän. jos olisi enemmän aikaa, voisi kokeilla parempia leiskoja. ei tietoa miten palaute otettaisiin vastaan. pitäisi mitata esimerkiksi kuinka nopeasti asiakas löytää jonkun actionin tekemisen. 	Jos tehdään nopeita kokeiluja, ei usein enää tiedetä mitä on asiakkaalla ajossa. Jos tulee ongelmia, ei välttämättä osata heti sanoa mistä ne johtuvat. Yleensä asiakkaan testiympäristö ei ole kauhean kovassa käytössä, ja jos sinne deployataan jotain uutta saattaa kestää kauan että asiakas reagoi siihen. Omassa testipalvelimessa kokeilulla saadan nopeammin palautetta. Asiakkaalle täytyy ilmoittaa, jos tehdään suurempi muutos. Asiakkaan pitää tietää miten järjestelmä toimii, ja jos tehdään yhtään mitään muutoksia, voi se heti aiheuttaa asiakkaalle ongelmia. Jos yhtäkkiä ilmestyy uusi kenttä, asiaks ei välttämättä tiedä mitä sillä tehdään. Muutosten teko ilman ennaltasovittua aikataulua voi olla hankalaa. Teoriassa voi olla asiakas, joka ei halua että me keräämme heiltä tietoa.	 	Se olisi mahdollista, haaste on se osaammeko olla tarpeaksi nopeita ja onko meillä tarpeeksi nopeasti kehitettävä käyttöliittymä. Tämä olisi haluttava suunta. Olemme vähän tukossa tai taistelumoodissa. 
 
 
 %What kind of OEC can be picked?
@@ -1426,7 +1453,6 @@ Explain Fagerholm et al. model
 %Tapana tsekata aamuisin pull requestit. Tämän jälkeen paneudutaan trellotaskiin. Taskin toteutus, testaus, verifiointi. Pääasiassa kokopäiväisesti koodaushommaa. Lähes joka päivä työ keskeytyy muiden koodareiden kanssa keskusteluun, suunnitteluun, mielipiteisiin. Myös satunnainen suunnittelupalaveri. Päivittäinen scrum.	Pitkälti trellotaskeja, pullrequesteja 3-4krt / vk.	"Sähköpostit, suurin osa päivästä menee sähköposteihin, asiakaspalavereihin, firman sisäisiin palavereihin, asiakasprojektien työtehtävien jakamiseen tiimin kesken, sekä CDM & Dialog-subtiimien. Firman prosessien kehitys. Jos olen asiakasvastuussa projektissa, keskustellaan asiakkaan kanssa mitä he haluavat ja missä järjestyksessä mikäkin juttu tehdään. Sitten speksaan sen abstraktilla tasolla ja laitan Trelloon. Jos on asiakasprojekti josta joku muu on vastuussa, antavat he minulle heidän tekemän määritellyn hommasta joka pitää tehäd, tarkrkastan sen ja lisään Trelloon. Trellon seuraaminen, ylläpitäminen.
  %"	Choose a task from Trello, or ask a colleque for which task is most convenient. Then I start to work with the task till its done or a more important task arrives. If there are problems I ask for help from my teammates. Sometimes we have meetings.	tulipalojen sammuttelua, jos saa keskittyä yhteen projektiin niin paljon selkeämpää. tällöin sama kun muilla devaajilla. pääasiassa asiakasprojekteja. riippuen projektista joskus oltu asiakkaan luona tekemässä. se olisi parempi kommunikoinnin kannalta. jos teen tuotekehitystä niin sitten trellon kautta. kun on ollut projektissa alusta alkaen mukana, tietää mitä tehdä. 	Kalenterivaraukset, valmistelut edellisenä iltana seuraavaan päivään, palaverivalmistelut, projektivastuiden tilanne. Projekteihin liittyviä tehtäviä, testauksia. Vakiopalavereita. Projektistatuksia.		mailien tarkastelua, Trellosta joko uusi taski tai keskenjäänyt taski. Satunnaisia taukoja. Kaikennäköisiä kyselyitä tulee kokoajan Skypessä ja henkilökohtaisesti. Tikettejä tulee jonkin verran. Suunnittelupalavereita toisinaan. 	Otan taskin Trellosta ja teen sen. Usein support-taskeja asiakasympäristöistä, jotka tulevat Trellon ohi. Muut eivät tiedä näistä mitään.	Ensiksi salesforce-chatter, sähköposti. Trellosta uusi taski tai jatkaa olemassaolevaa. Toisinaan palavereita, ei kuitenkaan päivittäisellä tasolla. Toisinaan myös asiakastapaamisia. Trellokortti voi liittyä bugzillan bugiin. Speksit usein usean linkin takaa. Pull requestit päivittäin.	Asiakkaiden kysymyksiin vastaaminen, asiakkaiden tukipyyntöihin vastaaminen ja näiden hoitaminen. Paljon aikaa menee templatejen hoitamiseen, eli sähköposti- ja lomakepohjat Dialogissa. Bugien kirjaaminen, verifioiminen dev-tiimin kanssa. 	Ei ole niin selvä. Kerätään kehitysajatuksia yrityksen ohjausryhmiltä, johdolta ja asiakkailta. Priorisoidaan kehitysajatuksia, keskustellaan niistä monen eri tahon kanssa. Tarkentaa niitä. Seurata niiden edistymistä. Kaikessa on monta leveliä, joissain asioissa tehdään jonkinlaista konfigurointikehitystä tai testausta. Pitkälti olen roolissa jossa saan palautetta, ja ne menevät mun ja mun mielipiteiden kautta. Sen kautta voi olla story tai jokin sellainen, jota asiakas ei ole sanonut, mutta luulen olevani fiksu ja ajattelen asiakkaa puolesta mitä he tarvitsevat. Luotetaan siihen että ymmärrän asiakkaan viestin. Dialogin osalta ongelma, haasteet, on se ettei osaajia ole paljon ja kaikki ovat vielä harjottelumoodissa. Verrattuna CRM:ään ja CDM:ään joista on pidempi kokemus itse toteutuksesta. Kaikki mitä teen on sellaista aluetta, olen kaikissa alueissa mukana ajatuksesta toteutukseen ja sen hyväksymiseen, muissa puolissa on kokemusta firmana ja tekijöinä paljon enemmän. Päivä on näiden asioiden tekemistä. Trelloa, speksien kirjoittamista, palavereita asiakkaiden kanssa sähköposteja, puheluita, työpajoja. Ehkä vielä keskustelua ja jauhamista kehittäjien kanssa, sillä kaikkea ei voi kirjoittaa spekseihin. Asioiden kuvaamiseen keskustellen menee jokin aika. En tiedä mitä Dialogin konepellin alla on.
 
-
 %weekly work routine
 %current development model
 %where to the development ideas come from
@@ -1444,12 +1470,20 @@ Explain Fagerholm et al. model
 \section{Discussion}
 This thesis was motivated by
 
+The analysis of continuous delivery and continuous experimentation proceeded from higher-level considerations of B2B requirements to more detailed focus of applying the models in B2B context. The findings provide insights into..
+
+The findings also show that ..
+
 \subsection{Contribution}
 This thesis contributes to..
 
-The contributions to .. are 
+The contributions to .. are ..
 
 \subsection{Further research}
+
+The scope was limited to .. , and direct generalizations to .. should be avoided.
+
+
 
 %\section{Conclusions}
 
