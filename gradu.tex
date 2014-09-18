@@ -442,10 +442,6 @@ To analyze the raw data, it must first be converted into metrics which can then 
 \subsubsection{Roles in continuous experimentation}
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
 
-
-TODO: adobe:
-Pipeline team: designer, developer, researcher, product manager \cite{adobe}
-
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
 
 \begin{figure}[h]
@@ -454,6 +450,8 @@ Pipeline team: designer, developer, researcher, product manager \cite{adobe}
 	\caption{Continuous experimentation infrastructure \cite{fagerholm2014building}.}
 	\label{fig4}
 \end{figure}
+
+Another approach for the roles is introduced by Adams et al., who conducted a case study on the implementation of Adobe's Pipeline. Adobe's pipeline is process that is based on the continuous experimentation approach \cite{adams2013creating, adobe}. The innovation pipeline introduced in the study includes the following roles: designer, developer, researcher, product manager \cite{adobe}.
 
 %http://www.janbosch.com/Jan_Bosch/Innovation_Experiment_Systems.html
 \subsection{Continuous deployment and continuous experimentation collaboration}
@@ -548,36 +546,29 @@ Steiber et al. \cite{steiber2013corporate} have studied continuous innovation in
 %  -Steiber [23] report on a study of the model of continuous experimentation followed by Google, analysing a success story of this approach.
 
 
+Adams et al. conducted a case study on the implementation of Adobe's Pipeline, a process that is based on the continuous experimentation approach \cite{adams2013creating, adobe}. The innovation pipeline introduced in the study consists of the following steps:
+\begin{itemize}
+\item Collect user problems
+\item Identify problems worth solving
+\item Prototype possible solutions
+\item Live user testing + public releases
+\item Refine, pivot or kill the idea
+\item Build products that understand the user
+\end{itemize}
+The pipeline team consists of the following roles: designer, developer, researcher and product manager. The general principles found in the study are as follows:
+\begin{itemize}
+\item The idea will change
+\item We're only right when the market tells us so
+\item Create fast. improve constantly
+\item Find the simplest thing that could possibly work
+\item Define "success" before we build
+\item Fail forward
+\end{itemize}
+TODO: finish this
 
+Kohavi et al. have widely studied online experimentation at microsoft \cite{kohavi2009online}. The experiments have been mostly performed in Microsoft's web sites with A/B testing, and the efforts have been proven succesful. TODO: finish this too
 
-Case study \cite{adams2013creating, adobe}
-  - Adams [1] present a case study on the implementation of Adobe’s Pipeline, a process that is based on the continuous experimentation approach.
-  - Innovation pipeline:
-  1 collect user problems
-  2 ID problems worth solving
-  3 prototype possible solutions
-  4 live user testing + public releases
-  5 refine, pivot or kill the idea
-  6 build products that understand the user
-
-  Pipeline team: designer, developer, researcher, product manager
-
-  General principles: 
-  the idea will change
-  we're only right when the market tells us so
-  create fast. improve constantly
-  find the simplest thing that could possibly work
-  define "success" before we build
-  fail forward
-     -accept failure as part of our process not the end of it 
-     -fail often, but make mistakes on a small scale
-     -always learn from what went wrong
-     -don't fall in love. remain open to the pivot
-     -don't let them ruin good with perfect
-
-
-
-(Case: online experimentation at microsoft \cite{kohavi2009online})
+%(Case: online experimentation at microsoft )
 
 Motivation: %Compare to my own goals
   -clearly defined in the B2B context
