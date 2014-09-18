@@ -68,7 +68,7 @@
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
 
-\title{Extending the “Development Pipeline” Towards Continuous Deployment and Continuous Experimentation: A Case Study in the B2B Domain}
+\title{Moving Towards Continuous Deployment and Continuous Experimentation: A Case Study in the B2B Domain}
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
@@ -184,12 +184,6 @@ Continuous experimentation attempts to validate that an idea is, in fact, a good
 %Iteration of ideas in a controlled way
 %Fail fast
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=3.5in]{stairway.png}
-	\caption{Organization evolution path \cite{olsson2012climbing}.}
-\end{figure}
-
 %In this thesis we conduct a case study to analyse the adoption of continuous deployment and continuous experimentation in B2B domain. The case study consists of a literature review on applications of these practices, an interview of key members in the case company and analysis of the results. 
 
 The study is an exploratory deductive case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strengths. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation, and restrictions caused by the developed software product.
@@ -206,10 +200,10 @@ The broader research objective is explored here. \newline
 %Literature review / Interview
 \noindent \textbf{RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation?}
 
-\noindent In B2B domain the connection with end users might not be established properly, and the customer feedback might only be received from certain key members. Running experiments on customer environments also requires a new deployment of the software product. The purpose of this research question is to identify the differences in the software development process and the product in B2B and B2C environments, and it is answered based on both literature review and interview. 
-Question: contractual issues? 
-Question: selecting the correct OEC in b2b is harder. for example revenue. 
-question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
+\noindent Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. members. Running experiments on customer environments also requires a new deployment of the software product. The purpose of this research question is to identify the challenges in these approaches in the B2B environment. The research question is answered by conducting an interview to discover B2B specific challenges, and using the available literature on continuous delivery and continuous experimentation to draw conclusions on the environmental differences.
+%Question: contractual issues? 
+%Question: selecting the correct OEC in b2b is harder. for example revenue. 
+%question: in B2C people develop their own product, but in B2B the feature ideas might come only from customer.
 \newline
 
 %collect ideas from literature review and interview
@@ -224,9 +218,10 @@ question: in B2C people develop their own product, but in B2B the feature ideas 
 %Interview results have to be compared to literature review results
 \noindent \textbf{RQ 2: How do continuous delivery and continuous experimentation benefit the case company?} %What are the problems and strengths of the current development process?
 
-\noindent To rationalize the decision to adopt continuous delivery and experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing problems and benefits of literature review to the results of the interview. \newline
+\noindent To rationalize the decision to adopt continuous delivery and experimentation in a company, the actual benefits to the business have to be identified. This question is answered by comparing the benefits in these approaches found from the literature review to the problems identified in the interview. 
 
-One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not. \newline
+\newline
+
 
 %\noindent \textbf{RQ 3: What is the Minimum Viable Process of continuous experimentation?}
 
@@ -235,13 +230,12 @@ One idea is also to aid marketing by selling the MVPs to customers. This way we 
 %collect ideas from literature review and interview
 \noindent \textbf{RQ 3: How can continuous experimentation be systematically organised in the B2B domain?}
 
-\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by applying Fagerholm et al. model \cite{fagerholm2014building} to two different teams and software products within the case company, and addressing the challenges found in the first research question. \newline
+\noindent When the benefits and requirements are identified and the process is approved by a company, it has to be adopted in practice. This requires an answer to questions what, how, who and when. This question is answered by applying Fagerholm et al. model \cite{fagerholm2014building} to two different teams and software products within the case company, and addressing the challenges found in the first research question. Then the deviations in the model are identified, and possible solutions to these deviations provided. \newline
 %-Where do the feature ideas come from?
 %-What roles are required?
--What kind of deviations are there in the model?
 
 \subsection{Scope and limitations}
-This study focuses on the 
+This study focuses on the development process of the case company and its two software products in the B2B domain. As is always the case in case studies, direct generalizations cannot be made to other environments.
 
 The background theory is drawn from literature focusing on continuous delivery, continuous experimentation, lean startup and experiment innovation systems. 
 
@@ -277,13 +271,25 @@ Lean manufacturing, derived from the Toyota Production System \cite{ono1988toyot
 %Lean startup
 Lean startup \cite{ries2011lean} is a business and product development method with focus on business-hypothesis-driven experimentation and iterative product releases. A primary purpose of lean startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. This is achieveved by using a Build-Measure-Learn-loop, which is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
 
-TODO:
--Stairway to heaven
--Innovation experiment system
+Olsson et al. have investigated the evolution path of software companies, and have identified continuous deployment and "R\&D as an Experiment System" as final stages \cite{olsson2012climbing}. Continuous deployment is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features.
 
-\subsection{Development pipeline}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.5in]{stairway.png}
+	\caption{Organization evolution path \cite{olsson2012climbing}.}
+\end{figure}
 
-\subsection{Continuous deployment}
+In this chapter we first introduce the general principles of continuous deployment and continuous delivery. Then we introduce the software deployment pipeline and continuous deliverys effects on the development model.
+
+%The most important idea behind continuous delivery is to deliver an idea to the customer as fast as possible.  
+
+%TODO:
+%-Stairway to heaven
+%-Innovation experiment system
+
+%\subsection{Development pipeline}
+
+\subsection{Continuous delivery}
 
 To be able to react to customers changing requests and manage multiple customer environments, the software product has to be deployed frequently and with different configurations. As the case company is working in an agile manner, requests change and adjust often. To improve the software product, the case company has a need for a deployment approach that has the following benefits.
 
@@ -313,6 +319,8 @@ Continuous delivery differs from continuous deployment. Refer to Fig. \ref{fig1}
 
 %Barriers in CI->CD transition: stairway
 Holmström Olsson et al. have researched the transition phase from continuous integration to continuous delivery, and have identified barriers that companies need to overcome to achieve the transition \cite{olsson2012climbing}. One of such barrier is the custom configuration at customer sites. Maintaining customized solutions and local configurations alonside the standard configurations creates issues. The second barrier is the internal verification loop, that has to be shortened not only to develop features faster but also to deploy fast. Finally, the lack of transparency and getting an overview of the status of development projects is seen as a barrier.
+
+Olsson et al. define continuous deployment as a step in the typical evolution path for companies \cite{olsson2012climbing}. The way to deploy versions continuously allows for faster customer feedback, ability to learn from customer usage data and to focus on features that produce real value for the customer.  
 
 Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer. Olsson et al. also note that finding a pro-active lead customer is also essential to explore and form a new engagement model.
 
@@ -350,14 +358,15 @@ A picture of the typical development process in continuous deployment is shown i
 
 "With continuous flow, Sales and Marketing were not quite sure when anything would be released." "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 
--Technical implementation
--Education on the subject
+%http://www.continuousagile.com/unblock/cd_costs_benefits.html
+-Technical implementation: Automate testing
+-Education on the subject: Developer training costs
 -Active participation of employees
 
 \section{Literature: Continuous Experimentation}
 
 \subsection{Continuous experimentation}
--for a method: what, how, when, who
+%-for a method: what, how, when, who
 
 %Continuous experimentation term
 Continuous experimentation is a term created by Dane McKinley, a Principal Engineer at Etsy \cite{mcfunley}. McKinley defines the key aspects of continuous experimentation as making small, measurable changes, staying honest and preventing the developers from breaking things. With staying honest, McKinley implies that the product releases are tracked and measured, so that it's possible to tell whether things went worse or better. McKinley also states that design and product process must change to accomodate experimentation, and that experimenting should be done with minimal version of the idea. When experimentations are implemented and measured, counterintuitive results will be found, and planning to be wrong should be considered \cite{mcfunley}. 
@@ -495,9 +504,11 @@ Pitfalls:
 %(you can include this justification at the end of the section).
 %Why is this interesting?
 
-"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. TODO check this
+The importance of continuous innovation is increasingly recognized in the literature \cite{steiber2013corporate}. Companies are also increasingly transitioning their product development functions towards continuous experiment systems \cite{olsson2012climbing}. 
 
-"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
+%"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. TODO check this
+
+%"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
 
 \subsection{(TODO:move\&rename)Existing case studies}
 %At the end of the state-of-the-art section you should describe the differences
@@ -513,26 +524,31 @@ Pitfalls:
 
 Existing case studies regarding continuous experimentation have been conducted with varying aspects under concentration. Olsson et al. conducted a multiple-case study to explore companies moving towards continuous deployment and continuous experimentation \cite{olsson2012climbing}. In the transition phase from continuous integration stage to continuous deployment, the study investigates a telecommunications company with a highly distributed organization. The study considers transition from continuous delivery to continuous experimentation as a future research interest. 
 
-Case study: stairway to heaven \cite{olsson2012climbing}
-  -multiple-case study exploring companies moving towards continuous deployment 
-  -evolution phases, no continous experimentation transition defined
-  -Continuous delivery transition with a highly distributed team
-  -R\&D as an experiment system
+%Case study: stairway to heaven \cite{olsson2012climbing}
+%  -multiple-case study exploring companies moving towards continuous deployment 
+%  -evolution phases, no continous experimentation transition defined
+%  -Continuous delivery transition with a highly distributed team
+% -R\&D as an experiment system
 
-Fagerholm et al. analytically derive a continuous experimentation model and apply it in practice in a startup company \cite{fagerholm2014building}. The study introduces an initial continuous experimentation model, 
+Fagerholm et al. analytically derive a continuous experimentation model and apply it in practice in a startup company \cite{fagerholm2014building}. The study introduces an initial continuous experimentation model, examines the preconditions for setting up an experimental system and describes the building blocks required for such a system. The case company in this study is a relatively new startup company, and the company operates in the B2C domain. The study states that it is yet not clear how to determine the suitability of an experimental approach in specific situations. This is in line with the goal of this thesis: analyze the continuous experimentation approach in the B2B domain with two different software products.
 
-Case study: building blocks \cite{fagerholm2014building}
-  -analysis of a continuous experimentation model in the case company
-  -design science research that derives a model and applies it in practice
-  -initial continuous experimentation model
-  -startup company 
+%Case study: building blocks \cite{fagerholm2014building}
+ % -analysis of a continuous experimentation model in the case company
+ % -design science research that derives a model and applies it in practice
+ % -initial continuous experimentation model
+ % -startup company 
 
-Case study \cite{steiber2013corporate}
-  -continuous innovation "an experimental iterative process that operates successively to solve problems in markets characterized by turbulence, uncertainty and complex interactions"
-  -continuous innovation, "the ability to renew the organization and to develop new products and business models, is central for most companies"
-  -specifies in organizational characteristics
-  -innovational culture aspects
-  -Steiber [23] report on a study of the model of continuous experimentation followed by Google, analysing a success story of this approach.
+Steiber et al. \cite{steiber2013corporate} have studied continuous innovation in Google. The study defines continuous innovation as "an experimental iterative process that operates successively to solve problems in markets characterized by turbulence, uncertainty and complex interactions". The study explores the organizational characteristics for continuous innovation in rapidly changing industries. The study finds that the entire organisation of Google is involved in continuous innovation. The study also states that there is a need for a more comprehensive analytical framework for continuous innovation, and also a need to study how to organize continuous innovation and continuous improvements.   
+
+
+%Case study \cite{steiber2013corporate}
+%  -continuous innovation, "the ability to renew the organization and to develop new products and business models, is central for most companies"
+%  -specifies in organizational characteristics
+%  -innovational culture aspects
+%  -Steiber [23] report on a study of the model of continuous experimentation followed by Google, analysing a success story of this approach.
+
+
+
 
 Case study \cite{adams2013creating, adobe}
   - Adams [1] present a case study on the implementation of Adobe’s Pipeline, a process that is based on the continuous experimentation approach.
@@ -558,6 +574,8 @@ Case study \cite{adams2013creating, adobe}
      -always learn from what went wrong
      -don't fall in love. remain open to the pivot
      -don't let them ruin good with perfect
+
+
 
 (Case: online experimentation at microsoft \cite{kohavi2009online})
 
@@ -978,8 +996,6 @@ This section summarises key findings of the case study. It is structured accordi
 
 %You need to release frequent security patches. Bad guys out there want to manipulate our systems to show ads, run compute-intensive algorithms, steal passwords and financial information, and view commercial and government secrets. With Chinese hackers going against the NSA, it's literally spy versus spy. We are caught in the crossfire, forced to issue frequent updates. You can think of continuous delivery as extending your security patch process to your software development activities.
 
-
-
 Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 
 The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
@@ -1137,7 +1153,6 @@ Customers need to understand what continuous delivery is all about. While custom
 %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
 %Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
 
-
 %TODO: tärkee
 Customer might be using the software when the version is updated, and the deployment process shouldn't interfere with ongoing usage. Therefore the most viable solution is to initially deploy the versions to the UAT environment. To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.   
 
@@ -1148,15 +1163,12 @@ The customer validates the functionality of the software, since the customer has
 
 %Käytännössä se että sovitaan asiakkaan kanssa että vaihdetaan versio, ja tällöin laukastausiin automaattinen tuotantoonsiirto, olisi toimiva ratkaisu. Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
 
-
 %pitää katsoa asiakkaan kanssa milloin heille käy versionpäivitys. 	Kun deployataan, palvelin täytyy pysäyttää ja laittaa varapalvelin pystyyn. 
-
 
 %A customer might be doing a critical task with the software component, and therefore automatic version changes shouldn't cause downtime. 
 %Jos asiakkaalla on jokin Dialogin lähetysprosessi kesken, esim. Laakkoselta tulee paljon paljon päivittäin klo 10 tai 9 päivityksiä. Jos tehdään päivityksiä automaattiesti, mitä silloin tapahtuu? Jos YIT haluaa lähettää huomenna kello kymmeneltä sähköpostilähetyksen, mitä tapahtuisi?  Periaatteessa pitäisi aina tietää asiakkaan tarve. Eräs asiakas ei halua että UI muuttuu, sillä heillä tulee todella paljno käyttäjiä. Joku joka käyttää tuotetta kerran puolessa kuukaudessa ihmettelee, jos homma on yhtäkkiä erinäköinen. Pikkumuutokset varmasti palvelevat kaikkea. Asiakkaita saattaa ärsyttää, jos tuote muuttuu kokoajan liikaa. Se voidaan kokea epämukavaksi. Pitäisi olla perus pysyvyys, vaikka kuinka menisi parempaan suuntaan. 	Haaste olisi käyttäjien informoiminen. Käyttöliittymän pitäisi olla niin helppo. Nyt käyttöliittymä on vaikea, ja nytkin on vaikea osata käyttää, että kun he ovat juuri oppineet jonkin asian. Kun reaaliaikaisesti muutamme sitä yhtäkkiä, palaute on hirveätä. Jos se olisi helppoa, niin se ei olisi niin iso ongelma. Asenneongelma joka kuvattiin aiemmin. 
 
 %(DIALOG)
-
 
 %===============
 %Delivery B2C:
@@ -1188,6 +1200,19 @@ The customer validates the functionality of the software, since the customer has
     \hline
     \end{tabular}
 \end{center}
+
+The case company's products represent two totally different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. 
+
+As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
+
+The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, 
+-Feature alpha
+-Usage behavior tracking
+-Usage metrics
+-A/B testing / multi-variate testing 
+
+
+%CDM is a software component with no user interface, which limits possibilities for A/B testing. 
 
 No user interface
 =A/B testing is harder
@@ -1387,6 +1412,9 @@ discussion
 "Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
 
 \subsection{Continuous experimentations benefit to case company}
+
+One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not. \newline
+
 
 current problems in roadmapping, choosing features, product development
 
