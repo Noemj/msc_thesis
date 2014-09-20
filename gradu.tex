@@ -1164,7 +1164,7 @@ The customer validates the functionality of the software, since the customer has
 	CDM & Only used via API calls \\ \hline
 	General & Measurable metrics \\ \hline
 	Data collection & Data collection in customer environment \\ \hline
-	Dialog & \\
+	Data collection & Required permissions \\
     \hline
     \end{tabular}
 \end{center}
@@ -1172,58 +1172,44 @@ The customer validates the functionality of the software, since the customer has
 The case company's products represent two totally different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
 %Hardcoded APIs integrated to other components
 
-The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include for example feature alpha and usage metrics.
-%No user interface
-%=A/B testing is harder
-%=Usage behavior tracking is harder (hardcoded API calls)
-%=Usage metrics could be tracked?
-%=Feature alpha works
+  %  Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. Logitusta voisi kehittää säätämällä logitusasetuksia. Toisinaan virheviestit hautautuvat logiin. Häläreitä virhetilanteista voisi automatisoida, jotkut systeemit on monitoroinnin alla. 	Virheidenkeräystä voisi hyödyntää paremmin.	ei ole sellaista joka vaikuttaisi suoraan loppukäyttäjälle. ainahan voisi optimoida sen mukaan miten järjestelmät käyttävät cdm:ää, muttei suoranaisesti sellaista mikä liittyisi cdm:ään.		nopeus, käyttöliittymän selkeys. ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä.
 
+
+The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include for example feature alpha and usage metrics.
 
 \begin{quote}
 "The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
 \end{quote}
 
-%-Feature alpha
-%-Usage behavior tracking
-%-Usage metrics
-%-A/B testing / multi-variate testing 
+The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, generated revenue for example is not a valid measurable metric. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it harder to pick the correct measurement variables. This is what a developer has to say:
 
-The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, generated revenue for example is not a valid measurable metric. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it harder to pick the correct measurement variables.
-
-Juuso
+\begin{quote}
 "We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
+\end{quote}
 
-Juuso
+Another possibility is to include customers in the measurement process. According to a developer:
+
+\begin{quote}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
+\end{quote}
 
-asd
+Data collection directly from a customer might also require permissions and negotiations with the customer. 
 
+\begin{quote}
 "We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
+\end{quote}
 
-%Measurable metrics:
-%-The products have custom solutions for different customers, and the measurable properties might be only on one customer. Picking the measurement variable therefore is hard.
+\begin{quote}
+"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
+\end{quote}
 
-%CDM is a software component with no user interface, which limits possibilities for A/B testing. 
+\begin{quote}
+"The data would be on the customer companies servers, where we have our own access and right to install software. If the data is collected on the server where we fetch it from, it's not a challenge. The data shouldn't encumber the system. "
+\end{quote}
 
-%"Arkkitehtuuri on sellainen, että se on mahdollista. Perustuote pitäisi olla säilyvä, mutta siihen voidaan liittämään uusia juttuja ilman että tuote tai toiminnallisuus sotkeutuu. Palikoita pitäisi voida lisätä nopeasti. Jos meidän päässä kehittyisi hyvä idea, joka auttaisi asiakkaita, asiakkaat saisi puhuttua tähän mukaan UAT-demoja varten. Käyttöliittymämuutoksista pitää infota asiakkaalle. Release notet pitää siis olla. Jotkut asiakkaat eivät halua kuukausittaisia muutoksia. Eivät välttämättä käytä tuotetta kuin pari kuukautta vuodessa, ja jos tällöin tuote on muuttunut niin se ei ole hyvä asia."
-
-%"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the cust"
-%"joo, mutta pitäisi keksiä mitä ne jutut on. aina pitäisi miettiä mikä asiakkaan tilanne on nyt, mitä se käyttää, minkälaista järjestelmää se käyttää jonka CDM tulee korjaamaan. sitä vastaan voisi miettiä experiment-featuret. vanhassa järjestelmässä asiakas on tehnyt näin tämän jutunt, joka on mahd. ollut epämukavaa, ja siihen tehdään experimentti että kokeile tätä. experimentit pitäisi tehdä asiakaskohtaisesti kartoittamalla asiakkaan nykytilanne selvittämällä mitä sen päivittäiseen rutiiniin kuuluu, ja tämän pohjalta rakennettaisiin experiment-featureita. "
-
-
-%"Asiakkaalta pitäisi saada tähän lupa. Käyttäjät tekevät rutiininomaisia toiminnallisuuksia pitkälti - pitäisi olla vakaa, jotta käyttäjät tietävät mitä missäkin on milloinkin. 
-
-%Ei tavoitella klikkejä tai ostotapahtumien määrää, joten tähän ei nähdä mitään syytä. Jos haluttaisiin parantaa verkkokaupan kaupankäyntiä, voitaisiin mitata myyntiä. Dialogissa ehkä enemmän saataisiin siitä irti mitä mieltä asiakkaat ovat. Se voisi olla mittari tuleeko työtehtävät tehtyä nopeammin, mutta se on jo maikea mitata. 
-
-%Jos olisi valtava työtaakka, voisi katsoa miten se muuttuu kun jonkinlainen ominaisuus muuttuu. Esim. testisähköpostien lähetys on nyt yhdellä sivulla, ja tämä on paljon nopeampaa kun ei tarvitse käydä kolmella eri sivulla.  Jos asiakkaalla olisi omat mittarit, jos he ovat seuranneet työntekijöitä pitkään, ja voisimme vertailla tähän trendiin, voisimme ehkä päätellä onko tämä muutos seurausta ohjelman muutoksesta. Monet firmat valvovat tarkasti työntekijöitä ja mittaavat heitä. Ei voi oikeaan käyttödataan perustavaan eksperimentointiin, ellei asiakkaalla ole mittareita suoritustehoista. Ellei voida dialogin sisältä nähdä milloin tehtävä on aloitettu ja lopetettu. Tämä aika ei välttämättä ole kuitenkaan validia dataa, koska se on voitu tehdä tarkoituksella erittäin hitaasti.	
-
-
-  %  Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. Logitusta voisi kehittää säätämällä logitusasetuksia. Toisinaan virheviestit hautautuvat logiin. Häläreitä virhetilanteista voisi automatisoida, jotkut systeemit on monitoroinnin alla. 	Virheidenkeräystä voisi hyödyntää paremmin.	ei ole sellaista joka vaikuttaisi suoraan loppukäyttäjälle. ainahan voisi optimoida sen mukaan miten järjestelmät käyttävät cdm:ää, muttei suoranaisesti sellaista mikä liittyisi cdm:ään.		nopeus, käyttöliittymän selkeys. ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä.
-
- %   yritysten palvelimet, joihin on oma pääsy ja vapaudet asentaa ohjelmistoja. jos ne keräävä dataa palvelimelle ja ne haetaan itse, ei se ole haaste. vpn:t ja muut voivat olla haaste automatisoida. ei selvyyttä tarvitaanko asiakkaalta suostumus.	Asiakkaan kanssa täytyisi sopia käytöstä ja sallitusta datasta. Ei saa hidastaa systeemiä. 	en usko. pitää keskustella asiakkaan kanssa. jos me hostataan itse, niin ei mitään väliä. jos sovellus pyörii asiakkaan infrassa, pitää se käydä läpi asiakkaan kanssa erikseen.	sometimes if its a lot of data there could be memory issues. if you do data collection and analysing in the same collection it might be too much work to do in one machine. 	en usko. levy ei maksa juuri mitään, varmaan onnistuisi.	Asiat saisi sovittua asiakkaan kanssa, sillä ne saisi perusteltua.
-
-
+\begin{quote}
+"The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
+\end{quote}
 %    Tallentamisessa pitää olla sovittu asiakkaan kanssa se että sitä kerätään. Voidaan kerätä Dialogin kantaan, pitäisi sopia luku. Osille asiakkaista ei ole suoraa pääsyä verkkoon paitsi monimutkainen VPN-säätö: tänne ei välttämättä pääsisi kovinkaan helpolla. Isoimmilla firmoilla varsinkin on säädöksiä datan käyttöön ja tietoturvaan. ei ongelmia.  Jos se kerätään Dialogin sisällä, kannattaa se tallentaa Dialogin tietokantaan. Vaihtoehtona lähetys lokaaliin urliin, ja se on vähän turhan hankalaa. Helpompaa voisi olla laittaa käyttäjäryhmiin joku taulu, johon kerätään tietoa.  Pitäisi selvittää onko tuo mahdollista ja kuinka tarkkoja asiakkaat ovat mitä dataa kerätään. On myös väliä onko palvelin heillä vai meillä, eivätkä kaikki välttämättä anna meidän kerätä dataa. käyttäjät tuskin olisivat pahoillaan. Heitä motivoi se, että me yritämme parantaa heidän tekemistä. B2B puolella luultavasti asiakkaat antavat träkätä toimintoja, koska asiakas on ostanut jo tuotteen.
 
 
@@ -1256,10 +1242,6 @@ The product roadmap has advanced by being led by the customer projects, since th
 
 %"Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla."
 
-%"Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. A"
-
-%" Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse."
-
 Another issue in the customer projects is downtime. Since the customers are using the software during normal work hours, critical tasks cannot be interrupted by version changes. Currently the time slow for version deployment is negotiated with the customer, and the downtime is positioned during times that the software isn't used. A simple solution for this is to have the test environment continuous updated, while the production environment update is negotiated with the customer. However, the test environment isn't always actively used. This is what a developer has to say on the issue:
 
 \begin{quote}
@@ -1270,46 +1252,17 @@ Therefore continuously updating the test environment either has to alarm custome
 
 The customers have been trained to perform certain tasks with the software, and if the UI constantly undergoes major changes the customers might get lost. There is already some reluctancy towards now versions, since new versions possibly introduce new bugs and certain UI elements might have their places changed. Therefore customers have to be informed for major changes, so that possible new training sessions can be arranged. For minor updates, release notes and required guides are a must.
 
+%How is fb collected
 The customer feedback is currently continuously received but not actively collected. Product owners are in constant connection with the customers, and customers can send comments and requests via them. The customers can also insert tickets into a bug tracker. Most of the received feedback is about some functionaly not working or a bug. Weekly status meetings with the customer are also arranged. Feedback is received via e-mail as well. In the end of the project, a retrospective meet is hel with the customer, where the whole project is discussed.  
 
+%B2B feedback challenges
 The feedback collection in B2B has multiple challenges. The feedback doesn't come straight from the end user. Feedback relies on what the other companies representatives say, and this often includes their own opinions. Companies want the software for their own use, and they have requirements for property rights, security and others. If there are customer projects with multiple suppliers, it's hard to get feedback since maintaining communication and keeping track on up-to-date status of the project with multiple suppliers is hard.
 
 In case of Dialog, the user is not the payer. The user has to use the software even if it was bad. It is hard to get a neutral point of view. 
 
 To collect data from customers, proper agreements might need to be made.
 
-
-%Customers don't want downtime
-%-UI changes have to be informed to the customers, and release notes are a must
-
-%käyttäjiä on liian vähän. jos olisi enemmän aikaa, voisi kokeilla parempia leiskoja. ei tietoa miten palaute otettaisiin vastaan. pitäisi mitata esimerkiksi kuinka nopeasti asiakas löytää jonkun actionin tekemisen. 	Jos tehdään nopeita kokeiluja, ei usein enää tiedetä mitä on asiakkaalla ajossa. Jos tulee ongelmia, ei välttämättä osata heti sanoa mistä ne johtuvat. Yleensä asiakkaan testiympäristö ei ole kauhean kovassa käytössä, ja jos sinne deployataan jotain uutta saattaa kestää kauan että asiakas reagoi siihen. Omassa testipalvelimessa kokeilulla saadan nopeammin palautetta. Asiakkaalle täytyy ilmoittaa, jos tehdään suurempi muutos. Asiakkaan pitää tietää miten järjestelmä toimii, ja jos tehdään yhtään mitään muutoksia, voi se heti aiheuttaa asiakkaalle ongelmia. Jos yhtäkkiä ilmestyy uusi kenttä, asiaks ei välttämättä tiedä mitä sillä tehdään. Muutosten teko ilman ennaltasovittua aikataulua voi olla hankalaa. Teoriassa voi olla asiakas, joka ei halua että me keräämme heiltä tietoa."
-
-%HOW is feedback collected?
-%Product ownerit ovat jatkuvassa yhteydessä asiakkaisiin, ja asiakkaat voivat lähettää kommentteja/toiveita/pyyntöjä. Statuspalavereissa asiakkaiden kanssa saadaan palautetta. 	Sähköpostitse saadaan palautetta.	ei ole yhtä toimivaa mallia. meidän projekteissa palautetta kerätään kokoajan, pidämme feedback looppia niin lyhyenä. aina saadaan palautetta kun ollaan tehty jotain. projektitasolla lopussa pidetään erillinen retro asiakkaan kanssa, missä käydään projekti läpi. asiakaspalaute on jatkuvaa, riippuu siitä miten asiakkaan kanssa on sovittu että juttuja käydää käpi. lähinnä sitä saadaan eikä kerätä. jos teemme jonkun featuren ja laitamme sen UAT:hen, emme kerää palautetta vaan asiakas sanoo että joku on mennyt väärin tai kaikki toimii. tästä saadaan palautetta. projektihommissa retrossa kerätään palautetta. 	I dont know. After the project maybe. With Sanoma they had a meeting for feedback after the project.	retroissa projektien lopuksi, sanomissa oli tällainen.	ei hirveästi mitenkään. asiakas meilaa ja soittaa jos joku ei toimi. tikettien kautta, voidaan mitata missä ajassa pystytty ratkomaan. Dialogiin mietitty NPS:ää. Joskus ollut tyytyväisyyskyselyitä ja retroja asiakkaiden kanssa.		En osaa sanoa. Tarkoitus olisi jatkossa tehdä vakiomuotoinen kysely, joka on tietyn tuotteen tarpeisiin kehitetty. 	konsultit juttelevat asiakkaiden kanssa ja kertovat devaajille. on tullut hyviä ja huonoja toiveita. 	Asiakkaan kanssa keskustelevat ihmiset kyselevät asiakkailta miten hommat toimii. Ticketöintijärjestelmään raportoidaan ongelmia. Yleensä tieto tulee Trelloon production bugina, devaajalla ei välttämättä tietoa mistä tullut.	Tällä hetkellä face-to-face. Se mitä saadaan heiltä. Sitä ei kerätä vaan saadaan. Palautetta saadaan paljon koska ollaan paljon asiakaskontaktissa, jotkut asiakkaat mieluusti antavatkin palautetta. Siitä keskustellaan tiimin sisällä, otetaan kehitysehdotuksia. Tavoitteena kerätä jatkossa esim. palautekyselyn muodossa palautetta. 	Tällä hetkellä projektin jälkeen on retro, ollut vain yhdellä asiakkaalla. Keskusteluissa ja meilikirjeenvaihdoissa tulee joskus palautetta. Ei säännöllistä palautetta. 
-
-%TODO: feedback: totally different, customer representatives etc
-%Feedback now
-
-%Feedback challenges
-%
-%-
-%-If we want to shorten the feedback loop, we have to deliver things faster.
-%-
-%-Compared to B2C the end user amount is very low
-%-
-
-%(CDM)
-%measurable metrics
-%-performance
-%-query amount
-
-%Dialog:
-%Users perform routine tasks, and the UI should be stable such that the customers know how to do them. 
-%Measurable metrics don't include clicks or sales events.
-%-one possibility is to measure the duration it takes to complete a routine task, but it is very hard
-%-customer satisfaction, how happy the customer is and how easy the product is to use
 %Some customers might use the product only a few months a year
-%While theres not much statistical data, users can be tracked and they perform the same routine multiple times. If this time could be reduced, that would be benefitable to the customer.
 
 \subsubsection{A/B testing}
 
@@ -1325,13 +1278,22 @@ To collect data from customers, proper agreements might need to be made.
     \end{tabular}
 \end{center}
 
-
+%Ändi
+\begin{quote}
+"If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers, that want no changes at all."
+\end{quote}
 
 %"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
 
+%Ville
+\begin{quote}
 "The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, could the customer make more money. This doesn't therefore necessarily require a large user amount."
+\end{quote}
 
+%Ville
+\begin{quote}
 "Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
+\end{quote}
 %"Tilastollista dataa ei ole välttämättä paljon, mutta käyttäjiä voidaan seurata ja he tekevät samanlaisia asioita paljon, kokoajan ja toistuvasti. Tällöin tältä käyttäjältä saisi paljon dataa hänen tekemisistään. Jos tämän henkilön käyttämä aika voisiin puolittaa, voisi asiakas tehdä enemmän rahaa. Tämä ei siis välttämättä vaadi paljon ihmisiä. Joskus asiakkailla on paljon ideoita miten tuotetta pitäisi kehittää, vaikka asiakas ei välttämättä ymmärrä täysin tuotteen käyttötarkoitusta. Asiakasta pitäisi siis pystyä kuuntelemaan, mutta kaikkien asiakkaiden yhteyshenkilöiden tiedot eivät ole samantasoisia. "
 
 
