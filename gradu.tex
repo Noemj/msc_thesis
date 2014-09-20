@@ -138,34 +138,36 @@ he were allowed to hit four balls each time and then choose the shot that worked
 \section{Introduction} %Motivation
 
 \subsection{Overview}
-Currently more and more software companies are moving to lean practices, which include short delivery cycles and thus shorter feedback loops. 
+%This thesis was motivated by the general increased interest towards innovative experimental systems \cite{olsson2012climbing}, and the lack of related studies in the B2B domain.
 
-The requirement of developing value fast have lead to the evolution of a new software development model \cite{bosch2012building}. The model is based on three principles: evolving the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction.
+%Currently more and more software companies are moving to lean practices, which include short delivery cycles and thus shorter feedback loops. %Moving to open innovative systems
 
--Delivering value in real-time
-  -requires: real-time delivery
-  -requires: empirically evaluating new products and services
+To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{} have increased the ability of software companies to cope with changing customer requirements and changing market needs. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers. 
+%-this creates barriers
 
--Deep customer insights
-  -data-informed solutions
-  -a deep understanding of customers and products by gathering data continuously from the live use of the products.
+The requirement of developing value fast has lead to the evolution of a new software development model \cite{bosch2012building}. The model is based on three principles: evolving the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction. Currently more and more software companies are transitioning towrads this model, called innovative experimental systems. 
 
-Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. 
-
-TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
-
--Interesting aspects:
--Products with a history cannot be developed in a MVP manner, more like in a MVF (feature) manner.
-
-IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
-
-CMMI 5th stage 
+%-Delivering value in real-time
+%  -requires: real-time delivery
+%  -requires: empirically evaluating new products and services
+%-Deep customer insights
+%  -data-informed solutions
+%  -a deep understanding of customers and products by gathering data continuously from the live use of the products.
+%TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
+%-Interesting aspects:
+%-Products with a history cannot be developed in a MVP manner, more like in a MVF (feature) manner.
+%IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
+%CMMI 5th stage 
 
 A way to shorten the delivery cycles and to automate the delivery process is continuous deployment. It is an extension to continuous integration, where the delivery process is often entirely automated, and software functionality is deployed frequently to customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous deployment adds automated acceptance testing and deployment. Continuous deployment therefore attempts to deliver an idea to users as fast as possible by automating the deployment process.
 
-Define continuous experimentation principles here
+Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. Lean startup \cite{ries2011lean} is a method for developing products based on the lean software development principles. The key component of lean startup is the Build-Measure-Learn cycle, which guides the development process by defining a loop process where ideas are turned into products, which are then measured and the idea pivoted or persevered forwards.
 
-In the context of this thesis, Continuous Experimentation refers to a development model following these principles: TODO: improve this
+%The Build-Measure-Loop of Lean startup \cite{ries2011lean} is similar in the sense that controlled experiments drive the development. The Lean tartup methodology's experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. 
+
+Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
+
+In the context of this thesis, continuous experimentation refers to a development model following these principles: 
 \begin{itemize}
 \item  Data driven decisions
 \item  Link product development and business aspect
@@ -373,7 +375,7 @@ Continuous experimentation is a term created by Dane McKinley, a Principal Engin
 %Prefer incremental redesigns. 
 
 %Continuous experimentation intro
-While continuous experimentation is only loosely defined by McKinley, it poses resemblance to multiple development models. One of such models is the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Loop of Lean Startup is similar in the sense that controlled experiments drive the development.
+While continuous experimentation is only loosely defined by McKinley, it poses resemblance to multiple development models. One of such models is the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Loop of Lean startup is similar in the sense that controlled experiments drive the development.
 
 %Lean startup
 In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
@@ -470,7 +472,7 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 
 "Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive." \cite{kohavi2007practical}
 
-TODO: possible challenges in Lean Startup: \cite{may2012applying}
+TODO: possible challenges in Lean startup: \cite{may2012applying}
 
 -Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
 
