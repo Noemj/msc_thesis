@@ -190,7 +190,7 @@ Continuous experimentation attempts to validate that an idea is, in fact, a good
 
 The study is an exploratory deductive case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process of the case company. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strengths. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation, and restrictions caused by the developed software product.
 
-In this research, the units under the study are two teams responsible for developing two different software products. By focusing on different products, a broader view on the application of these development approaches can be gained. The other product, a marketing automation called Dialog, is used through an extensive user interface. The other product under inspection is CDM, is a Master Data Management \cite{loshin2010master} solution running as an integrated background application. The objective of this thesis can be therefore summared as follows:
+In this research, the units under the study are two teams responsible for developing two different software products. By focusing on different products, a broader view on the application of these development approaches can be gained. The other product, a marketing automation called Dialog, is used through an extensive user interface. The other product under inspection is CDM, is a Master Data Management \cite{loshin2010master} solution running as an integrated background application. The objective of this thesis can therefore be summarized as follows:
 
 \bigskip
 \noindent \textbf{Research objective}
@@ -384,18 +384,8 @@ In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Mea
 %Evolution path
 Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R\&D as an 'experiment system'", the entire R\&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous deployment to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatical data collection components and capability to effectively use the collected data.
 
-TODO: Maybe something about continuous innovation? Brown, 1997, The art of continuous change: Linking complexity theory and time-paced evolution in relentlessly shifting organizations
-
--Connect CE, IES, Microsoft stuff, Lean startup stuff
-
-%In the context of this thesis, Continuous Experimentation refers to a development model following these principles: TODO: improve this
-%\begin{itemize}
-%\item  \textbf{Data driven decisions}
-%\item  \textbf{Link product development and business aspect}
-%\item  \textbf{Reacting to customers present needs}
-%\item  \textbf{Turning hypotheses into facts}
-%\item  \textbf{Steering development process}
-%\end{itemize}
+%TODO: Maybe something about continuous innovation? Brown, 1997, The art of continuous change: Linking complexity theory and time-paced evolution in relentlessly shifting organizations
+%-Connect CE, IES, Microsoft stuff, Lean startup stuff
 
 %Experiment
 An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be listened to. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. 
@@ -405,25 +395,6 @@ Continuous deployment attempts to deliver an idea to users as fast as possible. 
 
 %innovation experiment system
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
-
-\cite{eklund2012architecture}
-Applied the continuous experimentation research to embedded software.
-"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
-"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
-"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
-"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
-TODO: picture here
-
-\subsubsection{Experimentation planning}
-
-\subsubsection{Experimentation stages and scopes}
-Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=3.5in]{scopes.jpg}
-	\caption{Scopes for experimentation \cite{bosch2012building}.}
-	\label{fig4}
-\end{figure}
 
 \subsubsection{Components in continuous experimentation}
 Kohavi et al. investigate the practical implementations of controlled experiments on the web \cite{kohavi2007practical}, and state that the implementation of an experiment involves two components. The first component is a randomization algorithm, which is used to map users to different variants of the product in question. The second component is an assignment method which, based on the output of the randomization algorithm, determines the contents that each user are shown. The observations then need to be collected, aggregated and analyzed to validate a hypothesis. Kohavi et al. also state that most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment.
@@ -439,17 +410,32 @@ A different model for general experiments, not limited to A/B testing, has also 
 	\label{fig4}
 \end{figure}
 
-The primary components of the introduced infrastructure are experiment database, analytics tools and instrumentation. The database stores raw data collected from the instrumentation and information related to the experiments, such as the logic for conducting the experiments and the experiment results. The analytics tools are used to perform data analysis on raw data from the experiment database to produce results regarding the experiment. The instrumentation is a part of the delivered software used to gather data regarding pre-defined metrics.   
+The primary components of the introduced infrastructure are experiment database, analytics tools and instrumentation. The database stores raw data collected from the instrumentation and information related to the experiments, such as the logic for conducting the experiments and the experiment results. The analytics tools are used to perform data analysis on raw data from the experiment database to produce results regarding the experiment. The instrumentation is a part of the delivered software used to gather data regarding pre-defined metrics.  
+
+\subsubsection{Experimentation stages and scopes}
+Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.5in]{scopes.jpg}
+	\caption{Scopes for experimentation \cite{bosch2012building}.}
+	\label{fig4}
+\end{figure}
+
+\subsubsection{Experimentation planning}
+Fagerholm et al. emphasize the importance of analysing the data to test business hypotheses and assumptions, which have been created from the roadmap. These proven hypotheses can therefore be used to react to customers needs. 
+persevere-pivot
 
 \subsubsection{Data collection}
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
-To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, so that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.  
+To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, so that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
+
+An important aspect of collecting data is to pick the correct metrics. One of the common pitfalls for experiments is to choose the wrong overall estimation criteria \cite{crook2009seven}. TODO: follow this up  
 
 \subsubsection{Data analysis}
 To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance. 
 
-Fagerholm et al. 
+"organisation needs a workfore to analyze qualitative + quantitative data"
 
 \subsubsection{Roles in continuous experimentation}
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
@@ -462,6 +448,21 @@ Another approach for the roles is introduced by Adams et al., who conducted a ca
 %http://www.janbosch.com/Jan_Bosch/Innovation_Experiment_Systems.html
 \subsection{Continuous deployment and continuous experimentation collaboration}
 As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
+
+\subsubsection{Continuous experimentation in embedded software}
+TODO: finish this chapter
+\cite{eklund2012architecture}
+Applied the continuous experimentation research to embedded software.
+"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
+"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
+"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
+"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.5in]{embedded.png}
+	\caption{Continuous experimentation architecture for embedded software \cite{eklund2012architecture}.}
+	\label{fig4}
+\end{figure}
 
 \subsection{Challenges regarding continuous experimentation}
 "Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
@@ -480,7 +481,7 @@ TODO: possible challenges in Lean startup: \cite{may2012applying}
 
 -Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
 
-Pitfalls:
+Crook et al. investigated the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table II. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiment's objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 \begin{center}
 \begin{table}[htb]
     \begin{tabular}{ | p{2cm} | p{10cm} |}
