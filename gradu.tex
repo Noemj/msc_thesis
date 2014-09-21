@@ -430,7 +430,7 @@ Kohavi et al. investigate the practical implementations of controlled experiment
 
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
-While Fagerholm et al. state that "A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}, have they created a model consisting of required building blocks for a continuous experimentation system, depicted in Fig. 4. 
+A different model for general experiments, not limited to A/B testing, has also been recently researched. While Fagerholm et al. state that "A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}, have they created a model consisting of required building blocks for a continuous experimentation system, depicted in Fig. 4. 
 
 \begin{figure}[h]
 	\centering
@@ -439,7 +439,7 @@ While Fagerholm et al. state that "A detailed framework for conducting systemati
 	\label{fig4}
 \end{figure}
 
-The primary components of the infrastructure are the experiment database, analytics tools and instrumentation. 
+The primary components of the introduced infrastructure are experiment database, analytics tools and instrumentation. The database stores raw data collected from the instrumentation and information related to the experiments, such as the logic for conducting the experiments and the experiment results. The analytics tools are used to perform data analysis on raw data from the experiment database to produce results regarding the experiment. The instrumentation is a part of the delivered software used to gather data regarding pre-defined metrics.   
 
 \subsubsection{Data collection}
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
