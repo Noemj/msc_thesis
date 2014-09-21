@@ -397,10 +397,6 @@ TODO: Maybe something about continuous innovation? Brown, 1997, The art of conti
 %\item  \textbf{Steering development process}
 %\end{itemize}
 
-"A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}.
-
-A model of continuous experimentation has been created by Fagerholm et al. \cite{fagerholm2014building}. 
-
 %Experiment
 An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be listened to. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. 
 
@@ -434,6 +430,17 @@ Kohavi et al. investigate the practical implementations of controlled experiment
 
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
+While Fagerholm et al. state that "A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}, have they created a model consisting of required building blocks for a continuous experimentation system, depicted in Fig. 4. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=5in]{infra.jpg}
+	\caption{Continuous experimentation infrastructure \cite{fagerholm2014building}.}
+	\label{fig4}
+\end{figure}
+
+The primary components of the infrastructure are the experiment database, analytics tools and instrumentation. 
+
 \subsubsection{Data collection}
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
@@ -447,12 +454,6 @@ Fagerholm et al. define five different roles in continuous experimentation: Busi
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=5in]{infra.jpg}
-	\caption{Continuous experimentation infrastructure \cite{fagerholm2014building}.}
-	\label{fig4}
-\end{figure}
 
 Another approach for the roles is introduced by Adams et al., who conducted a case study on the implementation of Adobe's Pipeline. Adobe's pipeline is process that is based on the continuous experimentation approach \cite{adams2013creating, adobe}. The innovation pipeline introduced in the study includes the following roles: designer, developer, researcher, product manager \cite{adobe}.
 
