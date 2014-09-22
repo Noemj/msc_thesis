@@ -770,7 +770,6 @@ The general context of the study is defined by the following properties.
   \item[Tools used.] The teams under study use Git as a version control system and GitHub code review tool, Trello as the Kanban board for task management, Jenkins as the continuous integration server and Bugzilla for issue tracking. Various other tools, such as the hour logging system, CRM system and various other ticket logging tools exist as well.  
 \end{description}
 
-
 \subsubsection{Development process}
 The development process of the case company has evolved from traditional, waterfall-style development through an agile phase to the current Lean approach based on a kanban board. In the very first phases, when the company was young, tasks were simply put into excel. Eventually, Agilefant backlog product management tool was introduced and tasks were moved into it. Scrum and agile practices were also adapted at the same time. Agilefant allowed sprint management, but caused too much overhead according to the developers. However, during the time Agilefant was used as the product and sprint backlogs, a part of Dialog development was offshored. Agilefant allowed easy tracking and managing the offshore development efforts.
 
@@ -779,60 +778,44 @@ After Agilefant was determined to cause too much overhead, Scrum whiteboard was 
 Work items are first added to customer backlogs in iSteer Contact. In this phase they might be just initial skeletons and do not need to contain all needed information. The work items are added by product or business owners or project managers. At this phase the created backlog items are not yet visible in team backlogs in iSteer Contact. The idea is to list them in the customer backlog as early as possible and start refining the requirements collaboratively both offline and online with the help of tools such as Chatter. Chatter can be used to discuss a single story or the complete backlog.
 
 When the backlog item is ready for the development team to start working on it, it should contain at least the following information:
-A descriptive name
-Specifications that explain both the technical side and the business side
-Agilefant link four hour reporting
+\begin{itemize}
+\item  A descriptive name
+\item  Specifications that explain both the technical side and the business side
+\item  Agilefant link four hour reporting
+\end{itemize}
+%The backlog item is added to team backlog by selecting the “show in team backlog” -option.
 
-The backlog item is added to team backlog by selecting the “show in team backlog” -option.
+Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team. Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team. Stories can be moved to Trello by project managers or product owners but they must be checked by team leaders who then move them forward into the sprint backlog or prioritized list columns.
 
-Team backlog is a view to all stories assigned to one selected team. It is a tool to collect and organize stories from all customer/project backlogs without cloning details into multiple places. It’s just a view of all “in team backlog” stories that are not yet completed and are assigned to the selected team.
-
-Completed stories related to one team can be found from the report (link in team detail page)
-Team backlog items (stories) are prioritized and estimated once a week (Tuesday) and new stories will be moved to Trello when accepted by the development team.
-
-Stories can be moved to Trello by project managers or product owners but they must be checked by team leader (Juha) who then moves them forward into the sprint backlog or prioritized list columns.
-
-Overview
-Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
-
-Sprint Backlog
-The Backlog Owner moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
-
-In progress
-The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
-·       All tasks are complete
-·       Changes are pushed to a feature-specific branch
-·       Unit tests are written and pass in the CI server
-·       Feature is well-written and does not need refactoring
-·       Pull request is created and a link is added to the comment field
-·       Feature has been documented as needed
+\begin{description}
+\item[Overview.] Trello is a project management application that uses Kanban to control the production chain from development to release. Kanban attempts to limit the work currently in progress by establishing an upper limit of tasks in the backlog, thus avoiding overloading of the team. Trello consists of multiple boards, each representing a project or a development team. A board consists of a list of columns, and each column consists of cards. Columns each contain a list of tasks, and cards progress from one column to the next when each task has been completed. A card is essentially a task, which is added by the Backlog Owner, and can be checked out by a developer. In Steeri, the columns used are Sprint Backlog, In Progress, Review, Ready, Verified and Done. 
+\item[Sprint backlog.] The Backlog Owner moves the cards that have the highest priority into the sprint backlog. The sprint backlog should always contain enough cards so that whenever a developer completes a task something new is available in the backlog.
+\item[In progress.] The actual development work is done in this stage. The actor here is the developer. The checklist to move a card into review stage is:
+\begin{itemize}
+	\item  All tasks are complete
+	\item  Changes are pushed to a feature-specific branch
+	\item  Unit tests are written and pass in the CI server
+	\item  Feature is well-written and does not need refactoring
+	\item  Pull request is created and a link is added to the comment field
+	\item  Feature has been documented as needed
+\end{itemize}
 If the feature needs refactoring a task list must be created and the card moved back to In Progress column.
-
-Review
-Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
-·       Pull request is reviewed and by at least two (2) persons
-·       Pull request is merged to the development branch
-·       Feature is deployed to a development environment
-·       Source code quality has to be good enough!
-After you have reviewed the pull request leave yourself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column.
-If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
+\item[Review.] Here other developers review the new code and deploy it to a development environment. Checklist for moving the card into ready stage is:
+\begin{itemize}
+	\item  Pull request is reviewed and by at least two (2) persons
+	\item  Pull request is merged to the development branch
+	\item  Feature is deployed to a development environment
+	\item  Source code quality has to be good enough!
+\end{itemize}
+After a developer has reviewed the pull request, he leaves himself as an assignee. The second person who reviews the pull request is responsible for cleaning all the assignees and moving the feature to Ready column. If there is a major problem in the pull request the feature should be moved back to Sprint Backlog and the yellow “Boomerang” tag added. Person who created the pull request is responsible for implementing the necessary remarks.
 If only small fixes are needed, they should be implemented within the Github pull request workflow.
 The second person who has reviewed and accepted the pull request is responsible for deploying the feature to a development environment.
-
-Ready
-Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if:
-·       Feature has been verified by the Product Owner in the development environment
-Product owner is responsible for moving the feature to the Verified column.
-If the verification for the feature fails the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
-
-Verified
-Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
-Done
-
-This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
-Prioritized lists
-
-The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
+\item[Ready.] Here the product owner verifies the new functionality in the development environment. The card can be moved to Verified if the feature has been verified by the Product Owner in the development environment. Product owner is responsible for moving the feature to the Verified column.
+If verification for the feature fails, the Product Owner should move the feature back to Sprint Backlog column with the highest priority. In addition the Product Owner should add a yellow “Boomerang” label with a comment describing the results in the feature.
+\item[Verified.] Here the backlog owner collects the timestamps and trello flow data. The timestamps depicts the duration it took from a card to process through the whole chain. The data is then used to analyze which columns the card spent the longest time in, and to identify the pain spots.
+\item[Done.] This column simply states that the task has been completed, and should eventually be archived. There’s currently no general validation required from the customer, as the customer projects each have a different schedule and process for builds.
+\item[Prioritized lists.] The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
+\end{description}
 
 %This case study builds on existing research on both continuous deployment and continuous experimentation. The chapter State of the Art 
 
