@@ -713,7 +713,7 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Product architecture.] The product consists of a single maven-packaged project. Along with the actual product, several additional third-party or custom components are required. Such components are for example Typo3, which is an open source web content management framework, and a custom component used for SMS integration. Most of the components reside in the version control system, and the main product additionally resides in the CI system. Custom integrations to customers data sources, often based on a third party ESB tool, are individual components as well.
   \item[Users of the software component.] Dialog is used by marketing professionals to automatize repetitive tasks. The user amount varies, but it is generally less than five human users per customer company.
   \item[Team composition.] The team consists of 3 software developers. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
-  \item[Development practice.] Development is based around a prioritized kanban board. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
+  \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects, and Bugzilla is used as the bugtracker. 
@@ -722,7 +722,7 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team whenever a version is deployed to the customer environment. 
   \item[Feedback collection.] Feedback is collected from customers in retrospective meetings after the projects. Feedback is also received directly from customers via e-mail and meetings, but isn't collectively gathered in other ways. Feedback isn't automatically collected in any way.
   \item[Usage data collection.] Usage data isn't collected at all.
-  \item[Feedback and usage data usage.] The feedback is used to improve the software product. 
+  \item[Feedback and usage data usage.] The gained feedback is discussed within the team to improve the development process or certain parts of the product. The feedback isn't systematically used,. 
 \end{description}
 
 -java, javascript front?
@@ -744,16 +744,16 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
   \item[Product architecture.] The product consists of several maven-packaged projects, which in the build stage are added as a dependency under a single main project. The whole product can thus be packaged into a single web archive file.
   \item[Users of the software component.] CDM is an integrated application, which is primarily only used by other applications. Therefore humans are only using CDM for debugging purposes.
   \item[Team composition.] The team consists of 4 software developers and a team leader. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
-  \item[Development practice.] 
-  \item[Business model.] 
+  \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
+  \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. After the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written in Java.
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects. 
-  \item[Version releasing.]
+  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
   \item[Unit testing.] Unit tests are required for new features, and are written by the developers during of after the feature implementation.
-  \item[Acceptance testing.] 
-  \item[Feedback collection.]
-  \item[Usage data collection.]
-  \item[Feedback and usage data usage.]
+  \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team and the team leader whenever a version is deployed to the customer environment. 
+  \item[Feedback collection.] Feedback is collected from customers in retrospective meetings after the projects. Feedback is also received directly from customers via e-mail and meetings, but isn't collectively gathered in other ways. Feedback isn't automatically collected in any way.
+  \item[Usage data collection.] Usage data isn't collected at all.
+  \item[Feedback and usage data usage.] The gained feedback is discussed within the team to improve the development process or certain parts of the product. The feedback isn't systematically used,. 
 \end{description}
 
 \subsection{Context} %frame of reference
@@ -770,6 +770,8 @@ The general context of the study is defined by the following properties.
   \item[Tools used.] The teams under study use Git as a version control system and GitHub code review tool, Trello as the Kanban board for task management, Jenkins as the continuous integration server and Bugzilla for issue tracking. Various other tools, such as the hour logging system, CRM system and various other ticket logging tools exist as well.  
 \end{description}
 
+
+\subsubsection{Development process}
 The development process of the case company has evolved from traditional, waterfall-style development through an agile phase to the current Lean approach based on a kanban board. In the very first phases, when the company was young, tasks were simply put into excel. Eventually, Agilefant backlog product management tool was introduced and tasks were moved into it. Scrum and agile practices were also adapted at the same time. Agilefant allowed sprint management, but caused too much overhead according to the developers. However, during the time Agilefant was used as the product and sprint backlogs, a part of Dialog development was offshored. Agilefant allowed easy tracking and managing the offshore development efforts.
 
 After Agilefant was determined to cause too much overhead, Scrum whiteboard was used for a while. The physical whiteboard however caused issues with offshore participants. After the Development and Integration team was split further into two sub-teams focusing on each project, Scrum meetings were also seen as overhead. This was caused by only half of the team being interested and attached to tasks considering a single product. After it was decided that the team is split into two sub-teams, practicing Scrum was again seen as an overhead due to the low amount of participants. Eventually the whiteboard was replaced with an online kanban board, Trello. By the same time the Scrum meetings were abandoned for a more streamlined process, that is able to respond to changing requirements faster. 
