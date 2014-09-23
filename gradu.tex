@@ -441,8 +441,6 @@ To analyze the raw data, it must first be converted into metrics which can then 
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
-
-
 Another approach for the roles is introduced by Adams et al., who conducted a case study on the implementation of Adobe's Pipeline. Adobe's pipeline is process that is based on the continuous experimentation approach \cite{adams2013creating, adobe}. The innovation pipeline introduced in the study includes the following roles: designer, developer, researcher, product manager \cite{adobe}.
 
 %http://www.janbosch.com/Jan_Bosch/Innovation_Experiment_Systems.html
@@ -450,9 +448,13 @@ Another approach for the roles is introduced by Adams et al., who conducted a ca
 As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
 \subsection{Continuous experimentation in embedded software}
-TODO: finish this chapter
-\cite{eklund2012architecture}
-Applied the continuous experimentation research to embedded software.
+%TODO: finish this chapter
+Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. The purpose of the study is to present an embedded architecture for realising an innovation experiment system. The study concentrates on what to evaluate in experiments in embedded software. 
+
+The purpose of analysing embedded software in context of this thesis is that the B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. 
+TODO: b2b is similar - versions maybe not too often
+%continuous experimentation research to embedded software.
+
 "Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
 "The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
 "The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
