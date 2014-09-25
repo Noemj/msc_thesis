@@ -1342,45 +1342,58 @@ UI is quite complicated, needs detailed use guide
 current problems 
 
 %Not much reliability in new versions
-A major problem found in the interviews was that currently the reliability in new versions is low. The manual build process involves human error factor, which can cause multiple bugs in new versions.  
+A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
+
+The manual build process involves human error factor, which can cause multiple bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor is also partially missing documents. Some steps of the deployment pipeline are documented, but there are still parts that some developers memorize. According to a developer:
+\begin{quote}
+"There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
+\end{quote}
 
 %-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
+Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. 
+
+Manual changelog
+
+The customers are unaware of the problems related to deployment issues unless the deployment has errors. 
+
+
+
+
 %-The version is usually done in a hurry, which adds more errors
 
 %-No problems with the customer, unless the deployment has errors
 
 %It takes long time to build a new version
-The duration of building a new versions is also long.
+%The duration of building a new versions is also long.
+%-Some wrong binaries might be compiled under the new version, have to manually check these
 
 
-
-
-
-
-
--Some wrong binaries might be compiled under the new version, have to manually check these
-
-
--Manual changelog
-
--Not sure what to test with automatised tests in Dialog
+%-Not sure what to test with automatised tests in Dialog
 
 
 %Benefits: http://www.continuousagile.com/unblock/cd_costs_benefits.html
 benefits of continuous delivery
 
-Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
+Adopting continuous delivery process solves many of the stated problems. It allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
 %Speed: You get faster delivery of the most important improvements and fixes. You can release some changes in hours or days. When you fix problems faster, your system will have fewer bugs. You can accelerate delivery of a few great improvements, learn fast, and beat the competition.
 
-Quality
+No manual work
+
+
+Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
+
+%Quality
 %Quality: I am often asked: "Does continuous delivery require me to release more quickly, with lower quality? Will I be releasing more bugs, and features with less refined usability?" Actually, continuous delivery gives you extra capacity that you can use to improve either speed or quality. You can choose to release faster, or you can choose to hold features longer before releasing and "unveiling" them, to move them to higher quality and usability. At Assembla, we found that our feature delivery got slower when we improved the usability of our software. Continuous delivery also results in systems with fewer bugs at any given time, because bugs are discovered and fixed faster.
 
-Capacity
+
+
+%Capacity
 %Capacity and Scale: You can include a bigger, more scalable development team in a continuous process. Batch processes like iteration planning, release planning, and release testing become exponentially harder to organize as you involve an increasing number of people. With continuous delivery, we solve this problem by skipping batch processes. With the code contribution workflows listed here, you can manage code and not people, and accept the code that is ready. Code is easier to manage. You can organize thousands of people and hundreds of systems with continuous delivery. Also, you can work with an entire world of talent, because you can manage distributed teams effectively.
 
 Cost
 %Cost: You spend less money and time on meetings and management. If you eliminate batch processes you don't need as many big, expensive meetings.
 
+De
 
 Focus 
 %Focus: Team members have more time to think. Developers can completely finish and release a task before they move to the next task. They do not need to switch their brains and their configurations between tasks. Product managers and QA people also get this benefit.
