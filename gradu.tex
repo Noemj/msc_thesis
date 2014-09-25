@@ -1338,9 +1338,6 @@ UI is quite complicated, needs detailed use guide
 
 
 \subsection{Continuous deliverys benefit to case company}
-
-current problems 
-
 %Not much reliability in new versions
 A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
 
@@ -1350,12 +1347,43 @@ The manual build process involves human error factor, which can cause multiple b
 \end{quote}
 
 %-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
-Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. 
+Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the whole configuration for build deployment, but the rest can still trigger the deployment process.  
 
 Manual changelog
 
-The customers are unaware of the problems related to deployment issues unless the deployment has errors. 
+Deploy to where - UAT?
 
+The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
+
+\begin{quote}
+"If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
+\end{quote}
+
+\begin{quote}
+"Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
+\end{quote}
+
+Continuous delivery process solves many of the stated problems. By adopting continuous delivery, the changes can be kept small and frequent so that the customer doesn't have to train the staff with sparse, big updates. Instead, the changes can be introduced more frequently with smaller updates. Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
+
+Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
+
+No manual work
+
+%
+
+
+%    Problem area & Specific problem \\ \hline
+%    General & Downtime \\ \hline
+%    General & Environment \\ \hline
+%    General & Automate testing \\ \hline
+%    Configuration & Third party application integration \\ \hline
+%    Configuration & External components \\ \hline
+%    Configuration & Different configuration per customer \\ \hline
+%    Configuration & Database versioning \\ \hline
+%    Connection & Firewall configurations \\ \hline
+%    Connection & Required certifications \\ \hline
+%    Connection & Missing user rights \\ \hline
+%	Connection & VPN user limit \\ \hline
 
 
 
@@ -1372,15 +1400,10 @@ The customers are unaware of the problems related to deployment issues unless th
 
 
 %Benefits: http://www.continuousagile.com/unblock/cd_costs_benefits.html
-benefits of continuous delivery
 
-Adopting continuous delivery process solves many of the stated problems. It allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
+
 %Speed: You get faster delivery of the most important improvements and fixes. You can release some changes in hours or days. When you fix problems faster, your system will have fewer bugs. You can accelerate delivery of a few great improvements, learn fast, and beat the competition.
 
-No manual work
-
-
-Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
 
 %Quality
 %Quality: I am often asked: "Does continuous delivery require me to release more quickly, with lower quality? Will I be releasing more bugs, and features with less refined usability?" Actually, continuous delivery gives you extra capacity that you can use to improve either speed or quality. You can choose to release faster, or you can choose to hold features longer before releasing and "unveiling" them, to move them to higher quality and usability. At Assembla, we found that our feature delivery got slower when we improved the usability of our software. Continuous delivery also results in systems with fewer bugs at any given time, because bugs are discovered and fixed faster.
@@ -1390,26 +1413,17 @@ Continuous delivery allows the improvement of speed and quality. Releases can be
 %Capacity
 %Capacity and Scale: You can include a bigger, more scalable development team in a continuous process. Batch processes like iteration planning, release planning, and release testing become exponentially harder to organize as you involve an increasing number of people. With continuous delivery, we solve this problem by skipping batch processes. With the code contribution workflows listed here, you can manage code and not people, and accept the code that is ready. Code is easier to manage. You can organize thousands of people and hundreds of systems with continuous delivery. Also, you can work with an entire world of talent, because you can manage distributed teams effectively.
 
-Cost
 %Cost: You spend less money and time on meetings and management. If you eliminate batch processes you don't need as many big, expensive meetings.
 
-De
-
-Focus 
 %Focus: Team members have more time to think. Developers can completely finish and release a task before they move to the next task. They do not need to switch their brains and their configurations between tasks. Product managers and QA people also get this benefit.
 
-
-Clarity
 %Clarity: Your team should experience less stress. With continuous delivery, you fix small problems quickly. Bigger changes take only as long as the work requires, because they are not delayed by stops and starts. You have fewer high-pressure spikes of release work. You can think about one thing at a time. All of these factors lower stress so that you can have a better life and work more effectively.
 
 
-discussion
 
-"If something changes, communication with the customer is hard. The customer says that even if the version included very good changes, if something changes it gets alot of negative feedback".
+%-There are customers that don't understand the benefit of continuous delivery.
 
--There are customers that don't understand the benefit of continuous delivery.
 
-"Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
 
 \subsection{Continuous experimentations benefit to case company}
 
