@@ -513,7 +513,7 @@ Crook et al. investigated the common pitfalls encountered when running controlle
 
 The software industry is growing due to increasing digitalisation, and it is especially important for new and old companies alike to identify the problems relevant to customers and to stay flexible. Identifying the customers problems allows the companies purely focus on creating value, while staying flexible means quickly diverting development efforts towards currently desired features. The importance of continuous innovation is increasingly recognized in the literature \cite{steiber2013corporate}. Companies are also increasingly interested in utilizing real-time customer usage of the software to shorthen feedback loops \cite{olsson2012climbing}. 
 
-The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong. A way to tackle this issue is to adopt a process of continuous experimentation.
+The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his article Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
 
 %flexibility 
 %no guesswork - systematic way
@@ -1427,20 +1427,60 @@ No manual work
 
 \subsection{Continuous experimentations benefit to case company}
 
-One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not. \newline
+%GENERAL BENEFITS
+
+Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
+
+The general benefits of continuous experimentation lie in validating the features with customers. Generally speaking, the benefits can be categorized into five areas:
+
+\begin{itemize}
+\item  Data driven decisions
+\item  Link product development and business aspect
+\item  React to customers present needs
+\item  Turn hypotheses into facts
+\item  Steer development process into right direction
+\end{itemize}
+
+Data driven decisions 
+
+%DIALOG SPECIFIC 
+
+Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users.
+
+"pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
+
+"Devaajat tekevät parannusehdotuksia, myös product ownerit keksivät featureideoita. Uskovat, että asiakas haluaa tämän. Mahdollisesti myös poistettavia ideoita."
 
 
-current problems in roadmapping, choosing features, product development
+\begin{quote}
+"The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, could the customer make more money. This doesn't therefore necessarily require a large user amount."
+\end{quote}
+
+%Ville
+\begin{quote}
+"Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
+\end{quote}
 
 "Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
 
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked"
 
+
+
+%CDM SPECIFIC 
+
+CDM is seen as a hard target for experiments due to the hard-coded interfaces and the nature of the application.
+
 "Currently we do basically no product development, and all development is customer-oriented"
 
-"pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
 
-"Devaajat tekevät parannusehdotuksia, myös product ownerit keksivät featureideoita. Uskovat, että asiakas haluaa tämän. Mahdollisesti myös poistettavia ideoita."
+
+
+One idea is also to aid marketing by selling the MVPs to customers. This way we can pivot the product with customers, they can test it in practice and then decide whether to pay for the product or not. \newline
+
+
+current problems in roadmapping, choosing features, product development
+
 
 "Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla."
 
@@ -1449,25 +1489,11 @@ current problems in roadmapping, choosing features, product development
 " Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse."
 
 
-benefits of continuous experimentation
-
-\begin{itemize}
-\item  Data driven decisions
-\item  Link product development and business aspect
-\item  React to customers present needs
-\item  Turn hypotheses into facts
-\item  Steer development process
-\end{itemize}
 
 discussion
 
 
 "Asiakasfirmojen suhtautuminen heidän datan keräämiseen voi olla kysymysmerkki."
-
-%Origin of development ideas:
-
-%Uusi versio kohtuullisen helppo viedä. Kokeiluversioita olisi kohtuullisen nopea viedä. Datankeräys puutteellista. Suorituskykyä voisi mitata. Haasteena pieni katkos tuotantoympäristöön tällä hetkellä. Jos versioita halutaan kokeilla vähän aikaa, se voi olla haastavaa. Asiakkaat eivät välttämättä halua että tuotantojutut ovat pitkään poissa. Featuret tehty pitkälti asiakkaiden tarpeeseen, ja uusia ideoita olisi vaikea validoida asiakkailla. 	Asiakkaan käyttö R&D:hen ei ole välttämättä aikaa, kun projekteiden kanssa on kiirettä. Nyt resurssipula.  	joo, mutta pitäisi keksiä mitä ne jutut on. aina pitäisi miettiä mikä asiakkaan tilanne on nyt, mitä se käyttää, minkälaista järjestelmää se käyttää jonka CDM tulee korjaamaan. sitä vastaan voisi miettiä experiment-featuret. vanhassa järjestelmässä asiakas on tehnyt näin tämän jutunt, joka on mahd. ollut epämukavaa, ja siihen tehdään experimentti että kokeile tätä. experimentit pitäisi tehdä asiakaskohtaisesti kartoittamalla asiakkaan nykytilanne selvittämällä mitä se npäivittäiseen rutiiniin kuuluu, ja tämän pohjalta rakennettaisiin experiment-featureita. mitattavia metriikoita olisi suorituskyky, kyselyiden määrä (suoraan verrannollinen suorituskykyyn). 		en tiedä nyt, mutta alkuvaiheessa olisi ehkä onnistunut. esimerkiksi relaatiokanta vs. indeksi. olisi voitu tehdä päätös kokeilun pohjalta, vs. että joku sanelee mitä tehdään. tämä voisi olla vieläkin hyvä kokeilu, jos voitaisiin mitata samalla tuotteen tehokkuuta, kohdistuksen laatua ja datan laatua. dq kuitenkin mukana.	Tällä hetkellä pitäisi voida, mutta ei voi. Tietty kankeus version siirrossa. Arkkitehtuuri on sellainen, että se on mahdollista. Perustuote pitäisi olla säilyvä, mutta siihen voidaan liittämään uusia juttuja ilman että tuote tai toiminnallisuus sotkeutuu. Palikoita pitäisi voida lisätä nopeasti. Jos meidän päässä kehittyisi hyvä idea, joka auttaisi asiakkaita, asiakkaat saisi puhuttua tähän mukaan UAT-demoja varten. Käyttöliittymämuutoksista pitää infota asiakkaalle. Release notet pitää siis olla. Jotkut asiakkaat eivät halua kuukausittaisia muutoksia. Eivät välttämättä käytä tuotetta kuin pari kuukautta vuodessa, ja jos tällöin tuote on muuttunut niin se ei ole hyvä asia. 		Softan toiminnallisuus on sellainen ettei vältätmättä helposti. Asiakkaalta pitäisi saada tähän lupa. Käyttäjät tekevät rutiininomaisia toiminnallisuuksia pitkälti - pitäisi olla vakaa, jotta käyttäjät tietävät mitä missäkin on milloinkin. Ei tavoitella klikkejä tai ostotapahtumien määrää, joten tähän ei nähdä mitään syytä. Jos haluttaisiin parantaa verkkokaupan kaupankäyntiä, voitaisiin mitata myyntiä. Dialogissa ehkä enemmän saataisiin siitä irti mitä mieltä asiakkaat ovat. Se voisi olla mittari tuleeko työtehtävät tehtyä nopeammin, mutta se on jo maikea mitata. Jos olisi valtava työtaakka, voisi katsoa miten se muuttuu kun jonkinlainen ominaisuus muuttuu. Esim. testisähköpostien lähetys on nyt yhdellä sivulla, ja tämä on paljon nopeampaa kun ei tarvitse käydä kolmella eri sivulla.  Jos asiakkaalla olisi omat mittarit, jos he ovat seuranneet työntekijöitä pitkään, ja voisimme vertailla tähän trendiin, voisimme ehkä päätellä onko tämä muutos seurausta ohjelman muutoksesta. Monet firmat valvovat tarkasti työntekijöitä ja mittaavat heitä. Ei voi oikeaan käyttödataan perustavaan eksperimentointiin, ellei asiakkaalla ole mittareita suoritustehoista. Ellei voida dialogin sisältä nähdä milloin tehtävä on aloitettu ja lopetettu. Tämä aika ei välttämättä ole kuitenkaan validia dataa, koska se on voitu tehdä tarkoituksella erittäin hitaasti.	käyttäjiä on liian vähän. jos olisi enemmän aikaa, voisi kokeilla parempia leiskoja. ei tietoa miten palaute otettaisiin vastaan. pitäisi mitata esimerkiksi kuinka nopeasti asiakas löytää jonkun actionin tekemisen. 	Jos tehdään nopeita kokeiluja, ei usein enää tiedetä mitä on asiakkaalla ajossa. Jos tulee ongelmia, ei välttämättä osata heti sanoa mistä ne johtuvat. Yleensä asiakkaan testiympäristö ei ole kauhean kovassa käytössä, ja jos sinne deployataan jotain uutta saattaa kestää kauan että asiakas reagoi siihen. Omassa testipalvelimessa kokeilulla saadan nopeammin palautetta. Asiakkaalle täytyy ilmoittaa, jos tehdään suurempi muutos. Asiakkaan pitää tietää miten järjestelmä toimii, ja jos tehdään yhtään mitään muutoksia, voi se heti aiheuttaa asiakkaalle ongelmia. Jos yhtäkkiä ilmestyy uusi kenttä, asiaks ei välttämättä tiedä mitä sillä tehdään. Muutosten teko ilman ennaltasovittua aikataulua voi olla hankalaa. Teoriassa voi olla asiakas, joka ei halua että me keräämme heiltä tietoa.	 	Se olisi mahdollista, haaste on se osaammeko olla tarpeaksi nopeita ja onko meillä tarpeeksi nopeasti kehitettävä käyttöliittymä. Tämä olisi haluttava suunta. Olemme vähän tukossa tai taistelumoodissa. 
-
 
 %What kind of OEC can be picked?
 %Which attributes can be improved?
