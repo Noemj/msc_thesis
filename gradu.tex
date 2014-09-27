@@ -716,7 +716,7 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Users of the software component.] Dialog is used by marketing professionals to automatize repetitive tasks. The user amount varies, but it is generally less than five human users per customer company.
   \item[Team composition.] The team consists of 3 software developers. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
-  \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
+  \item[Business model.] The product is still in the development phase, and is not sold as a ready package. The productization process is however ongoing, and the ideal situation is that the product can be sold as a ready package with only minor configurations per customer. The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects, and Bugzilla is used as the bugtracker. 
   \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
@@ -747,7 +747,7 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
   \item[Users of the software component.] CDM is an integrated application, which is primarily only used by other applications. Therefore humans are only using CDM for debugging purposes.
   \item[Team composition.] The team consists of 4 software developers and a team leader. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
-  \item[Business model.] The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. After the product goes live the cooperation is continued with a support contract.
+  \item[Business model.] The nature of the product requires customer integrations to customers systems, which are currently mostly done as manual work. In the ideal situation the product contains automated integration, and could be sold as a ready product with minor configuration work. Currently the product is sold as a custom project, and requires installment to the customer environment and integration to the customers systems. After the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written in Java.
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects. 
   \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
@@ -1441,11 +1441,23 @@ Instrumenting software products and then gathering and analysing the to guide de
 \item  Steer development process into right direction
 \end{itemize}
 
-Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive an answer, effectively allowing the use of hypotheses to steer development process.
+Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive answers, effectively allowing the use of hypotheses to steer development process.
 
 %DIALOG SPECIFIC 
 
-Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. 
+Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in theproduct steering group.
+
+\begin{quote}
+"Developers can make improvement suggestions, and occasionally product owners invent feature ideas. The ideas are based on a guess that the customer might find this valuable."
+\end{quote} 
+
+While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. 
+
+%product is developed towards a 
+
+TODO: prosentuaalinen määrä asiaksfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
+
+
 
 "pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
 
