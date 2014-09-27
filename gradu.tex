@@ -1464,7 +1464,6 @@ While the development is therefore mainly guided by customer needs that directly
 TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
 
 
-
 "pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
 
 
@@ -1483,7 +1482,30 @@ TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALO
 
 CDM is seen as a hard target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users removes the possibilities of front-end A/B testing, the most typical experiment. 
 
+
+%Juha
+\begin{quote}
+"CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query."
+\end{quote}
+
+
+%CDM on taustajärjestelmä, ja kaikki hakuihin liittyvät suorituskyvyt ovat meille kaikkein kriittisimpiä metriikoita. mietitään kuvitteellinen tilanne, että ollaan pisteessä jossa mietitään miten joku haku kannattaa toteuttaa. käytännössä pohdimme kannattaisiko käyttää relaatiokantaa vai dokumenttikantaa. tehdään molempii implementattio, testataan tulosjoukolla ja valitaan suorituskyvyltään parempi
+
+\begin{quote}
+"The software is composed of APIs, through which different components send and receive data. We could track the typos of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
+\end{quote}
+
+
+%"Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. "
+
+
+"ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä."
+
+
 "Currently we do basically no product development, and all development is customer-oriented"
+
+
+
 
 
 
