@@ -195,6 +195,7 @@ In this research, the units under the study are two teams responsible for develo
 \bigskip
 \noindent \textbf{Research objective}
 To analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices.
+%TODO: instead of analyze: What is the goal?
 
 \subsection{Research questions}
 
@@ -843,7 +844,6 @@ If verification for the feature fails, the Product Owner should move the feature
 %Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
 %Microsoft EXP platform
 
-The researcher is a part of the development team of the company, but the viewpoint ...
 
 %How is the current interaction with the customer?
 %	subquestion: What are the current roles and stakeholders?
@@ -889,9 +889,7 @@ Feedback and usage data collection section analyse the procedure of collecting a
 The experimentation section analysis the possibilities of conducting experiments to guide the development process in the case company. This includes technical details, such as instrumenting the software components with data collection mechanisms and external usage data collection components, and storing the data in customer environment. The section also includes more specific questions, such as possible challenges faced in A/B testing and issues in quickly deploying experiments to the customer environment.  
 
 %miksi valitsin nämä haastateltavat
-Interview data is primarily sought from the developers of the development teams and the managers of the team. As the focus of the thesis is on the development process of two different teams, all participants of the team and its management team are interviewed. 
-
-Process data is sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. Data regarding the development process is also collected from the internal documents.
+Interview data is primarily sought from the developers of the development teams and the managers of the team. As the focus of the thesis is on the development process of two different teams, all participants of the team and its management team are interviewed. Process data is sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. Data regarding the development process is also collected from the internal documents.
 
 During the interviews, it was soon detected that the interviewees are able to give accurate answers to certain contexts based on their positions. This eventually contributed to the template analysis, where the data was better organised based on roles. Developers were most aware of the product and project context, including technical details and project details. Team leaders were mostly aware of the process and project context. They were the persons who were most able to explain the development process in detail. The team leaders were also most proficient in feedback collection. The management was most aware of the company context, including the status of the organization and available resources in the company. 
 
@@ -910,19 +908,12 @@ Template analysis was chosen as an analysis approach because it makes it easy to
 
 
 
-%Template TODO: http://www.hud.ac.uk/hhs/research/template-analysis/what-is-template-analysis/ 
 
-%TODO: Analysis is done \cite{runeson2009guidelines}
-%Coding
-%Interview results are added to spreadsheet, with the participants grouped based on their teams. TODO: find analysis methods
-
-%"One example of a useful technique for analysis is tabulation, where the coded data is arranged in tables, which makes it possible to get an overview of the data. The data can, for example be organized in a table where the rows represent codes of interest and the columns represent interview subjects." \cite{runeson2009guidelines} TODO: Tabulationia käytetään.
+%"One example of a useful technique for analysis is tabulation, where the coded data is arranged in tables, which makes it possible to get an overview of the data. The data can, for example be organized in a table where the rows represent codes of interest and the columns represent interview subjects." \cite{runeson2009guidelines} 
 
 %-roles (devs, business, PO's)
 
 %If developers and business people agree, the company is heading to right direction TODO: seek quote
-
-\subsection{Limitations}
 
 %\section{Development process of the case company}
 %an overview of the entire process, then refining the parts that are relevant for the problems 
@@ -936,10 +927,7 @@ Template analysis was chosen as an analysis approach because it makes it easy to
 
 
 %\subsubsection{After Trello}
-%TODO
 
--current state at steeri
-    -short summary
 
 %Sprinteistä jatkuvaan prosessimalliin on oikeastaan vaatimus.
 
@@ -949,7 +937,7 @@ Template analysis was chosen as an analysis approach because it makes it easy to
 % Suggest solutions to these major problems 
 % Recommend the best solution to be implemented 
 % Detail how this solution should be implemented 
-This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed view. 
+This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed view. First, the identified challenges in continuous delivery and continuous experimentation are listed and explained. Then, the benefits of applying continuous delivery and continuous experimentation, taking the challenges into consideration, are analyzed. Finally a continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building} is mapped to the case company context, and deviations identified.
 
 %\subsection{Perceived problems}
 %What kind of problems were found?
@@ -1118,7 +1106,8 @@ Multiple customer environments also affect versioning of the software product.
     \hline
     Problem area & Specific problem \\ \hline
     Training & Customers have been trained to use a certain version of the product \\ \hline
-	New release & Every customer doesn't like new releases, since new releases occasionally contain new bugs \\ \hline
+    New release & Customer reluctancy towards new versions \\ \hline
+	%New release & Every customer doesn't like new releases, since new releases occasionally contain new bugs \\ \hline
 	New release & Deployment time and downtime \\ \hline
 	New release & A customer might be doing a critical task \\
     \hline
