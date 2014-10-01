@@ -374,6 +374,8 @@ A picture of the typical development process in continuous deployment is shown i
 Continuous experimentation is a term created by Dane McKinley, a Principal Engineer at Etsy \cite{mcfunley}. McKinley defines the key aspects of continuous experimentation as making small, measurable changes, staying honest and preventing the developers from breaking things. With staying honest, McKinley implies that the product releases are tracked and measured, so that it's possible to tell whether things went worse or better. McKinley also states that design and product process must change to accomodate experimentation, and that experimenting should be done with minimal version of the idea. When experimentations are implemented and measured, counterintuitive results will be found, and planning to be wrong should be considered \cite{mcfunley}. 
 %Prefer incremental redesigns. 
 
+"Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive." \cite{kohavi2007practical}
+
 %Continuous experimentation intro
 While continuous experimentation is only loosely defined by McKinley, it poses resemblance to multiple development models. One of such models is the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Loop of Lean startup is similar in the sense that controlled experiments drive the development.
 
@@ -448,16 +450,11 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 
 \subsection{Continuous experimentation in embedded software}
 %TODO: finish this chapter
-Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. The purpose of the study is to present an embedded architecture for realising an innovation experiment system. The study concentrates on what to evaluate in experiments in embedded software. 
 
-The purpose of analysing embedded software in context of this thesis is that the B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. 
-TODO: b2b is similar - versions maybe not too often
-%continuous experimentation research to embedded software.
+The purpose of analysing experimentation in embedded software in the context of this thesis is that B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. This resembles the release model found in the case company, where some customers prefer to have new versions shipped every three months. By analyzing how experiments are implemented and the data collected in embedded software, information on how long and short release cycles differ can be gained. 
 
-"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
-"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
-"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
-"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
+Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. In the study an embedded architecture for realising an innovation experiment system is presented. The study concentrates on what to evaluate in experiments in embedded software. The infrastucture for enabling the innovation experiment system is shown in Fig. IV.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{embedded.png}
@@ -465,18 +462,52 @@ TODO: b2b is similar - versions maybe not too often
 	\label{fig4}
 \end{figure}
 
+TODO: loppuun
+
+"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
+"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
+"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
+"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
+
+
+The study also lists possible experiment scenarios supported by the architecture \cite{eklund2012architecture}. Possible experiment cases with the architecture are as follows:
+
+\begin{itemize}
+\item  How long does it take to . . 
+\item  Which of . . . is most often used/accessed/. . .
+\item  Identify behaviour that is not intended, e.g. menu selection followed by "back" indicates that the user made a mistake.
+\item  Are there any features that are not used?
+\item  Be able to evaluate competing designs based on the answers above, i.e. A/B testing (AKA. split testing).
+\end{itemize}
+
+%The initial focus of the innovation experiments would be
+%on user interaction, but should be extended to other things,
+%e.g. power consumption or precision in control systems. The
+%experiments supported by the architecture could for example
+%answer the following about real world usage, i.e. these are
+%potential experiment response variables:
+%• .
+%• 
+%• 
+%• Are there any features that are not used?
+%• 
+
+
+
 \subsection{Challenges regarding continuous experimentation}
-"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
+
+It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
+
+Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
+
+
+%"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
 
 "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}
 
-"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}
+%"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
 
-"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
-
-"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
-
-"Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive." \cite{kohavi2007practical}
+%"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
 
 TODO: possible challenges in Lean startup: \cite{may2012applying}
 
@@ -1093,6 +1124,9 @@ Another procedural challenge is that continuous delivery drifts response towards
 %http://blogs.atlassian.com/2014/07/skeptics-guide-continuous-delivery-part-3-real-world-pipelines/ Pipeline
 
 Multiple customer environments also affect versioning of the software product. 
+
+"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}
+
 %en näe että sitä saataisiin ikinä toimimaan nykyisellä kokoonpanolla. cdm koostuu niin monesta projektista, että käytännössä en tiedä miten voisimme automatisoida se. riippuen mihin projektiin on tuulut muutoksia, pitää ne releaseta ja laittaa cdm:n pääprojektiin joka ottaa muuttuneet releaset mukaan. release-numerot vaihtelee per aliprojekti, voi olla joko pieni- tai iso releasemuutos ja sen mukaan kasvatetaan releasenumeroa. jos olisi vain yksi projekti niin voitaisiin se automatisoida. yhden projektin tekemisessä ei sinäänsä ole haasteita. monen projektin idea on tällä hetkellä aika huono, sillä kun buildaamme cdm:n, buildaamme aina pääprojektin. yksikään aliprojektia ei buildata koskaan, pl. käyttöliittymä. hyöty siitä että ne on itsenäisiä projekteja on aika nolla. nyt kaikissa aliprojekteissa omat versionumerot, joka on aika huono ratkaisu. jos kaikki aliprojektit olisi kiinnitetty samaan versionumeroon koko CDM:llä, voitaisiin vain päättää että nyt ollaan tehty tällaiset muutokset CDM:ään. mietitään että meillä on githubissa kamat, jos haluttaisiin autodeployaa tuotantoversio asiakkaille, saataisiinko esimerkiksi pääsy kaikkiin asiaksympäristöihin että voisimme automaattisesti siirtää eri releasen? voisiko kantamigraatiot automatisoitua? mitä jos tuotantodataa pitäisi päivittää, saataisiinko sitä päivitettyä, tuskin. 
 
 %UAT
@@ -1499,6 +1533,21 @@ The lab website concept is less applicable for connected and embedded systems \c
 %experimentation requires the production of a set of prototype systems for the explicit
 %purpose of collecting customer feedback during product development. 
 
+
+
+
+The experiment scenarios listed for embedded systems by Eklund and Bosch, in chapter .., 
+
+CDM:ää voi devata näin
+%\begin{itemize}
+%\item  How long does it take to . . 
+%\item  Which of . . . is most often used/accessed/. . .
+%\item  Identify behaviour that is not intended, e.g. menu selection followed by "back" indicates that the user made a mistake.
+%\item  Are there any features that are not used?
+%\item  Be able to evaluate competing designs based on the answers above, i.e. A/B testing (AKA. split testing).
+%\end{itemize}
+
+
 context. The
 team can be building an alternative implementation for an existing feature in the
 product, a significant new feature for an existing product  
@@ -1596,6 +1645,19 @@ The first solution is to simply use an existing data collection tool, such as We
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 "Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
+
+
+
+"The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
+\begin{enumerate}
+  \item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
+  \item The response variable(s) are selected and implemented
+  \item The software is deployed to a statistically relevant number of devices, with unmodified devices being the control
+  \item The software is run for a period of time
+  \item The data is uploaded and analysed through the infrastructure
+  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software
+\end{enumerate}
+
 
 -Apply in context
 
