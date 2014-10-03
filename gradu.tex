@@ -142,7 +142,11 @@ he were allowed to hit four balls each time and then choose the shot that worked
 
 %Currently more and more software companies are moving to lean practices, which include short delivery cycles and thus shorter feedback loops. %Moving to open innovative systems
 
-To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{cockburn2002agile} have increased the ability of software companies to cope with changing customer requirements and changing market needs \cite{dzamashvili2010impact}. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers. 
+To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{cockburn2002agile} have increased the ability of software companies to cope with changing customer requirements and changing market needs \cite{dzamashvili2010impact}. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers.
+
+The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature is succesful or not?
+%The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
+
 %-this creates barriers
 
 The requirement of developing value fast has lead to the evolution of a new software development model \cite{bosch2012building}. The model is based on three principles: evolving the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction. Currently more and more software companies are transitioning towards this model, called innovation experiment systems. 
@@ -355,7 +359,6 @@ A picture of the typical development process in continuous deployment is shown i
 	\label{fig3}
 \end{figure}
 
-
 \subsection{Challenges regarding continuous delivery}
 
 "With continuous flow, Sales and Marketing were not quite sure when anything would be released." "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
@@ -549,7 +552,7 @@ Crook et al. investigated the common pitfalls encountered when running controlle
 -Environment
 -Deployment
 
-\subsection{(TODO:move\&rename)Why is this interesting?}
+\subsection{Motivation}
 %However, based on the state-of-the practice section (describing 
 %what is currently done in industry) you should motivate that the 
 %problem you are addressing is a significant problem in industry 
@@ -561,7 +564,6 @@ The software industry is growing due to increasing digitalisation, and it is esp
 The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his article Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation. Ron Kohavi at Microsoft wrote "Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}. Additionally, Regis Hadiaris from Quicken Loans wrote that "in the five years I've been running tests, I'm only about as correct in guessing the results as a major league baseball player is in hitting the ball. That's right - I've been doing this for 5 years, and I can only "guess" the outcome of a test about 33\% of the time!" \cite{moranmultivariate}.
 
 
-
 %flexibility 
 %no guesswork - systematic way
 
@@ -569,7 +571,7 @@ The process of guiding product development with continuous experiments diminishe
 
 %"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
 
-\subsection{(TODO:move\&rename)Existing case studies}
+\subsection{Existing case studies}
 %At the end of the state-of-the-art section you should describe the differences
 %between existing related research approaches (and especially existing 
 %case studies) and compare them with your own goal in order to motivate your
@@ -680,7 +682,6 @@ During this research, the author was an employee at Steeri. Consequently, this c
 
 %Triangulation is a way to increase the reliability and validity of the findings. Triangulation means using different data collection methods or angles, and providing a wider picture of the case. Triangulation is especially important for qualitative data, but can also be used for quantitative data to compensate for measurement or modeling errors \cite{runeson2009guidelines}. Stake defines four ways to apply triangulation: Data triangulation, Observer triangulation, Methodological triangulation and Theory triangulation \cite{stake1995art}. In data triangulation, multiple data sources are used, or the data is collected at different occasions. In observer triangulation more than one observer is used in the study. In methodological triangulation different types of data collection methods are combined, such as qualitative and quantitative methods. In theory triangulation alternative theories or viewpoints are used.
 
-TODO: 
 %the research underlying this case study is based on a participant-observer research method [1][3].
 %Adler, P.A., Adler, P.: Observational Techniques. In: Denzin, N.K., Lincoln, Y. (eds.) Handbook of Qualitative Research, pp. 377–393. Sage, Thousand Oaks (1994)
 %Corbin, J., Strauss, A.: Basics of qualitative research, 3rd edn. Sage, Thousand Oaks (2008)
@@ -702,18 +703,18 @@ To analyze the software development process transition towards shorter feedback 
 
 The study is an exploratory deductive case study, which aims to explore how continuous deployment and continuous experimentation can be implemented in the case company. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches in the context of the case company. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strengths. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation. To narrow the scope of the thesis, the focus of this thesis is in the development process of two different software products. The two different products were chosen so that cross-case analysis and therefore more generalizations can be made.
 
-The research process starts by reviewing literature on both continuous delivery and continuous experimentation. In the literature review, main goals are to identify existing requirements and success factors in these approaches. Then interview is used to analyze and identify the pain points the company currently has in its development process. Then continuous deployment and continuous experimentation processes are viewed from the viewpoint of the case company, and possible pains identified. As a result, necessary restrictions and requirements encountered in the B2B domain are obtained. 
+The research process starts by reviewing literature on both continuous delivery and continuous experimentation. In the literature review, main goals are to identify existing requirements and success factors in these approaches. Then interview is used to analyze and identify the pain points the company currently has in its development process. Then continuous deployment and continuous experimentation processes are viewed from the viewpoint of the case company, comparing the previously found benefits to the pain points in the case company's development process. As a result of viewing the practices from case company's viewpoint, necessary restrictions and requirements encountered in the B2B domain are obtained. Finally, the continuous experimentation infrastructure \cite{fagerholm2014building} is applied to the case company, and deviations listed. 
 
 The research questions and research methods are summarize in Table 2.
 
 \begin{center}
 \begin{table}[htb]
-    \begin{tabular}{ | l | p{5cm} | l | p{3cm} |}
+    \begin{tabular}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} |}
     \hline
     Knowledge gap & Research question & The focus of analysis & Data \\ \hline
-    a & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 2: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, literature \\ \hline
-    a & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Conceptual analysis of continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}, and application of the model to case company. & 13 interviews, documentations of the development process, author observations \\ \hline
+    B2B specific challenges in the practices & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    Benefits of the practices after reviewing the challenges & RQ 2: How do continuous delivery and continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, literature \\ \hline
+    What deviations are there to existing models & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Conceptual analysis of continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}, and application of the model to case company. & 13 interviews, documentations of the development process, author observations \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
     \end{table}
@@ -819,7 +820,7 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
 
 \subsection{Context} %frame of reference
 
-The general context of the study is defined by the following properties.
+The previous chapter introduced the two teams and products under the scope of this thesis. The more general context of the whole company under study is defined by the following properties. 
 
 \begin{description}
   \item[Company size.] Steeri has approximately 80 employees at the writing of this thesis. The employees are located in two cities in Finland, and many of the employees are assigned to projects at other organizations.
@@ -878,43 +879,8 @@ If verification for the feature fails, the Product Owner should move the feature
 \item[Prioritized lists.] The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
 \end{description}
 
-%This case study builds on existing research on both continuous deployment and continuous experimentation. The chapter State of the Art 
-
-%TODO: open this chapter
-%Based on the existing research in Continuous Experimentation and Continuous Deployment:
-%Crook et al: Seven pitfalls to avoid when running controlled experiments on the web
-%Eric Ries: The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses
-%Kohavi et al: Practical guide to controlled experiments on the web: listen to your customers not to the hippo
-%Fagerholm et al: Building Blocks for Continuous Experimentation
-%Jan Bosch: Building products as innovation experiment systems
-%Olsson et al: Climbing the" Stairway to Heaven"--A Multiple-Case Study Exploring Barriers in the Transition from Agile Development towards Continuous Deployment of Software
-%Humble et al: The deployment production line
-%Humble et al: Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation
-%Microsoft EXP platform
-
-
-%How is the current interaction with the customer?
-%	subquestion: What are the current roles and stakeholders?
-%How should continuous experimentation guide the development process?
-%	subquestion: Where do the development ideas come from? Customer, team, management?
-%How to collect feedback in a B2B domain?
-%	subquestion: Who should use the collected feedback?
-%	subquestion: Who is responsible for collecting the feedback?
-%How to collect feedback without a SaaS product?
- %   subquestion: Where should the data be stored?
-  %  subquestion: How should the data be accessed?
-%How to shorten the time between the idea and implementation?%
-%	subquestion: What are the roles?
-%How should continuous delivery be integrated in the development process?
-%	subquestion: How to keep the product in a stage where it can be released at all times?
-%What tools are necessary for continuous deployment?
-%What tools are necessary for continuous experimentation?
-%If an impact is done right now, when will the effects be visible?
-%The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
-%How do we validate whether a feature is succesful or not? 
-
 \subsection{Methods} %how to collect data? TODO: what, how, why?
-The primary source of information in this research are semi-structured interviews performed within the Development \& Integration team and its management. TODO: business people? The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation is implemented by interviewing multiple individuals. Methodological triangulation will be implemented by collecting documentary data regarding the development process. 	
+The primary source of information in this research are semi-structured interviews \cite{runeson2009guidelines} performed within the CDM and Dialog teams. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous deployment and continuous experimentation. Data triangulation is implemented by interviewing multiple individuals. Methodological triangulation is implemented by collecting documentary data regarding the development process from internal documents. 
 
 %miksi tutkimuskysymyksiin voidaan vastata haastattelututkimuksella?
 The interview was chosen as a data collection method because of the nature of the research questions. Since the study focuses on applying two development methods to the development process of a team, individual perceptions of members are required. As the case study doesn't include a technical implementation, quantitative measurements to properly measure the effects before and after implementation isn't an option. The research questions cannot be properly supported with quantitative data. There is also a uncertainty about how much information the interviewees are able to provide, and thus the questions are mostly open-ended. The nature of interviewees opinions on the research questions are also not known in advance, and quantifying it isn't simple. 
@@ -955,8 +921,6 @@ Template analysis was chosen as an analysis approach because it makes it easy to
 % tabulation \cite{runeson2009guidelines}, where coded data is arranged into tables to get an overview of the data. The data is organized by ..TODO.
 
 
-
-
 %"One example of a useful technique for analysis is tabulation, where the coded data is arranged in tables, which makes it possible to get an overview of the data. The data can, for example be organized in a table where the rows represent codes of interest and the columns represent interview subjects." \cite{runeson2009guidelines} 
 
 %-roles (devs, business, PO's)
@@ -970,12 +934,6 @@ Template analysis was chosen as an analysis approach because it makes it easy to
 %These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
 
 %The development isn't at all distributed, and no external party affects the development process. 
-
-%\subsection{Evolution of the development process}
-
-
-%\subsubsection{After Trello}
-
 
 %Sprinteistä jatkuvaan prosessimalliin on oikeastaan vaatimus.
 
@@ -1328,49 +1286,24 @@ To collect data from customers, proper agreements might need to be made.
     \hline
     Problem area & Specific problem \\ \hline
     User amount & Low user volume \\ \hline
-    Enviornment & UAT is the norm \\ \hline
-    Measurable metrics & No revenue \\ \hline
 	CDM & No users, only integrated systems \\ \hline
 	CDM & No user interface to tune \\ \hline
-	Asd & Asd \\
+    Environment & UAT is the norm \\ \hline
+    Measurable metrics & No revenue \\ \hline
+	User education & Users have been educated to use certain features \\
     \hline
     \end{tabular}
 \end{center}
 
+Low user amount in both products, with Dialog ranging from 3-5 users per customer and CDM having zero human users, complicates statistical analysis. Kohavi et al. \cite{kohavi2009online} state that a sufficient user amount is a requirement for controlled experiments on the web: "Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many customers to increase their experiment’s sensitivity level". The lower a sample size, harder it is to draw meaningful conclusions from it. For a company operating in business with low user amounts, due to either new market or the type of the product, attention has to be paid on when statistical significance is reached. The company either has to work with a lower confidence interval, or majorly increase the conversion rate to decrease the amount of subjects needed for statistical importance. %http://blog.qwilr.com/ab-testing-stakes-high-numbers-low/
 
-Specific problem
--The customer wants a feature (A) that works just like this, and they maybe cannot be taught to use the (B) solution.
-
-%Ändi
-\begin{quote}
-"If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers, that want no changes at all."
-\end{quote}
-
-%"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
-
-UAT is the norm:
-currently everything has to be deployed to UAT prior to production. A/B straight to prod?
-
+However, a product owner views the user amount from a different point of view:
 %Ville
 \begin{quote}
 "The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, could the customer make more money. This doesn't therefore necessarily require a large user amount."
 \end{quote}
 
-%Ville
-\begin{quote}
-"Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
-\end{quote}
-%"Tilastollista dataa ei ole välttämättä paljon, mutta käyttäjiä voidaan seurata ja he tekevät samanlaisia asioita paljon, kokoajan ja toistuvasti. Tällöin tältä käyttäjältä saisi paljon dataa hänen tekemisistään. Jos tämän henkilön käyttämä aika voisiin puolittaa, voisi asiakas tehdä enemmän rahaa. Tämä ei siis välttämättä vaadi paljon ihmisiä. Joskus asiakkailla on paljon ideoita miten tuotetta pitäisi kehittää, vaikka asiakas ei välttämättä ymmärrä täysin tuotteen käyttötarkoitusta. Asiakasta pitäisi siis pystyä kuuntelemaan, mutta kaikkien asiakkaiden yhteyshenkilöiden tiedot eivät ole samantasoisia. "
 
-
-Too few users for statistical importance
-In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
-
-
-%===============
-%A/B testing B2B:
-
-%Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
 
 CDM: 
 No users, except for other systems
@@ -1385,6 +1318,60 @@ User amount is very low, so there's no room for quantitative analysis
 Customers are very concerned about UI modifications
 UI is quite complicated, needs detailed use guide
 "In B2B we need more volume from customers, and a whole different skillset"
+
+
+
+
+
+UAT is the norm:
+currently everything has to be deployed to UAT prior to production. A/B straight to prod?
+
+
+
+
+
+Measurable metrics
+
+\cite{kohavi2013online}
+Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
+"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+
+
+
+User education
+
+
+Specific problem
+-The customer wants a feature (A) that works just like this, and they maybe cannot be taught to use the (B) solution.
+
+%Ändi
+\begin{quote}
+"If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers, that want no changes at all."
+\end{quote}
+
+%"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
+
+
+
+
+
+
+%Ville
+\begin{quote}
+"Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
+\end{quote}
+%"Tilastollista dataa ei ole välttämättä paljon, mutta käyttäjiä voidaan seurata ja he tekevät samanlaisia asioita paljon, kokoajan ja toistuvasti. Tällöin tältä käyttäjältä saisi paljon dataa hänen tekemisistään. Jos tämän henkilön käyttämä aika voisiin puolittaa, voisi asiakas tehdä enemmän rahaa. Tämä ei siis välttämättä vaadi paljon ihmisiä. Joskus asiakkailla on paljon ideoita miten tuotetta pitäisi kehittää, vaikka asiakas ei välttämättä ymmärrä täysin tuotteen käyttötarkoitusta. Asiakasta pitäisi siis pystyä kuuntelemaan, mutta kaikkien asiakkaiden yhteyshenkilöiden tiedot eivät ole samantasoisia. "
+
+
+%Too few users for statistical importance
+In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
+
+
+%===============
+%A/B testing B2B:
+
+%Many customers - A/B testing could be split such that A and B both are different customers. However, different customers often have different use cases.
+
 
 
 \subsection{Continuous deliverys benefit to case company}
@@ -1692,7 +1679,6 @@ A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-t
   \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software
 \end{enumerate}
 
-
 -Apply in context
 
 -List deviations
@@ -1731,7 +1717,17 @@ This thesis contributes to continuous experimentation \cite{fagerholm2014buildin
 
 %Table of contributions to theory? 
 
-The contributions to .. are ..
+The contributions to .. theories .. are ..
+
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |} 
+    \hline
+    Theory & Contribution \\ \hline
+    x & y \\ \hline
+    x & y \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
 
 \subsection{Further research}
 
