@@ -397,6 +397,21 @@ Continuous deployment attempts to deliver an idea to users as fast as possible. 
 %innovation experiment system
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
 
+
+
+
+
+\cite{kohavi2013online}
+Tenets:
+Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
+"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+"Sessions per user, or repeat visits, is a much better factor in the OEC, and one that we use at Bing"
+Tenet 2: Controlled experiments can be run and their results are trustworthy
+Tenet 3: We are poor at assessing the value of ideas 
+"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
+
+
+
 \subsubsection{Components in continuous experimentation}
 Kohavi et al. investigate the practical implementations of controlled experiments on the web \cite{kohavi2007practical}, and state that the implementation of an experiment involves two components. The first component is a randomization algorithm, which is used to map users to different variants of the product in question. The second component is an assignment method which, based on the output of the randomization algorithm, determines the contents that each user are shown. The observations then need to be collected, aggregated and analyzed to validate a hypothesis. Kohavi et al. also state that most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment.
 
@@ -543,7 +558,9 @@ Crook et al. investigated the common pitfalls encountered when running controlle
 
 The software industry is growing due to increasing digitalisation, and it is especially important for new and old companies alike to identify the problems relevant to customers and to stay flexible. Identifying the customers problems allows the companies purely focus on creating value, while staying flexible means quickly diverting development efforts towards currently desired features. The importance of continuous innovation is increasingly recognized in the literature \cite{steiber2013corporate}. Companies are also increasingly interested in utilizing real-time customer usage of the software to shorthen feedback loops \cite{olsson2012climbing}. 
 
-The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his article Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
+The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his article Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation. Ron Kohavi at Microsoft wrote "Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}. Additionally, Regis Hadiaris from Quicken Loans wrote that "in the five years I've been running tests, I'm only about as correct in guessing the results as a major league baseball player is in hitting the ball. That's right - I've been doing this for 5 years, and I can only "guess" the outcome of a test about 33\% of the time!" \cite{moranmultivariate}.
+
+
 
 %flexibility 
 %no guesswork - systematic way
@@ -676,7 +693,11 @@ The logical starting point of this thesis was the need of the case company to
 \subsection{Objective} %what to achieve?
 %What does the company want to achieve
 %What are the biggest problems
-The purpose of this study is to seek ways to improve the product development process of two products within the case company, using practices known as continuous delivery and continuous experimentation. Existing documented applications of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with two applications that are not used as SaaS. 
+The purpose of this study is to seek ways to improve the product development process of two products within the case company, using practices known as continuous delivery and continuous experimentation. Existing documented implementations of continuous experimentation are primarily executed in the B2C domain, often with a SaaS product. Examples are the Microsoft EXP platform \cite{ep} and Etsy \cite{}. The focus of this study is in the B2B domain, with two applications that are not used as SaaS. 
+
+\bigskip
+\noindent \textbf{Research objective}
+To analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices.
 %As the development process greatly varies in other teams inside the company, the focus is on a single team to narrow the scope.
 
 The study is an exploratory deductive case study, which aims to explore how continuous deployment and continuous experimentation can be integrated to the development process. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strengths. Adopting both continuous deployment and continuous experimentaton also requires understanding the requirements of continuous deployment and continuous experimentation. To narrow the scope of the thesis, the focus of this thesis is in the development process of two different software products. The two different products were chosen so that cross-case analysis and therefore more generalizations can be made.
@@ -691,10 +712,8 @@ The research questions and research methods are summarize in Table 2.
     \hline
     Knowledge gap & Research question & The focus of analysis & Data \\ \hline
     a & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    %a & RQ 2: How to collect usage data and customer feedback in B2B domain, where user amounts can be very low? & Empirical case & 13 interviews, documentations of the development process, literature \\ \hline
-    a & RQ 2: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
-    %a & RQ 3: What is the Minimum Viable Process of continuous experimentation? & Conceptual analysis & Literature \\ \hline %How can the process be simplified without losing the benefits?
-    a & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Empirical case supported by conceptual analysis & 13 interviews, documentations of the development process, literature \\ \hline
+    a & RQ 2: How does continuous experimentation benefit the case company? & Empirical case supported by conceptual analysis & 13 interviews, literature \\ \hline
+    a & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Conceptual analysis of continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}, and application of the model to case company. & 13 interviews, documentations of the development process, author observations \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
     \end{table}
@@ -1651,8 +1670,20 @@ The first solution is to simply use an existing data collection tool, such as We
 
 
 
+Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
+\begin{enumerate}
+  \item A clear objective that can be evaluated. Controlled experiments require an OEC, and organizations need to agree on what to optimize. As Lewis Carroll said, "If you don’t know where you are going, any road will take you there".
+  \item Easy to collect data about the user behavior. With client software, user behavior is hard to track and usually requires consent. As more of the user experience moves online, it becomes easier to track user behavior since server-side logging and client-side JavaScript logging are commonly used in industry and accepted as reasonable practices.
+  \item Easy to change and experiment with real users. Moving from hardware devices through standalone client software and software+services to SaaS applications, iterative experimentation gets easier. In standalone client software, experiments might be limited to beta cycles. For the software+services, experimentation capability has to be properly baked into the client so that server-side changes can be made to impact the client.
+  \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
+\end{enumerate}
+
+A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
+
+
 "The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
 \begin{enumerate}
+  \item IDEA: Define OECs for both projects
   \item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
   \item The response variable(s) are selected and implemented
   \item The software is deployed to a statistically relevant number of devices, with unmodified devices being the control
