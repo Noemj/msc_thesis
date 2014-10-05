@@ -985,7 +985,8 @@ Technical aspect includes the environmental challenges, configural challenges an
 
 \subsubsection{Technical challenges}
 
-TODO: explain the list here
+The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
+%where are these from? which questions?
 
 \begin{center}s
     \begin{tabular}{ | l | p{5cm} |}
@@ -996,7 +997,7 @@ TODO: explain the list here
     Configuration & Third party application integration \\ \hline
     Configuration & External components \\ \hline
     Configuration & Different configuration per customer \\ \hline
-    Configuration & Database versioning \\ \hline
+   % Configuration & Database versioning \\ \hline
     Connection & Firewall configurations \\ \hline
     Connection & Required certifications \\ \hline
     Connection & Missing user rights \\ \hline
@@ -1012,23 +1013,28 @@ One of the main differences between B2B and B2C is the production environment. W
 The largest technical task is to set up automated testing and test environments. While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects.  
 
 %Third party application integration
-Both of the case companys software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
+Both of the case company's software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
 
 %External components
-It is common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well.
+It is common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well. In the case company, both Dialog and CDM are integrated to multiple external components. Currently upon version change these integrations are manually updated when necessary. In continuous delivery, changes that modify the API and therefore break these integrations might have to be manually updated.
 
 %Different configuration per customer
-Both of the case company's products are used in multiple different customer environments. This introduces a problem of managing different configurations per customer environment and software instance. 
+Both of the case company's products are used in multiple different customer environments. This introduces a problem of managing different configurations per customer environment and software instance. Multiple possible solutions exist for the configurations, however, such as creating custom profiles per customer with different configuration for each profile.
+
+
+%According to Jan Bosch, "In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}". 
+
 
 %Database versioning
-database needs to be versioned
+%database needs to be versioned
 
 %Firewall configurations
-Transferring the software product to a customer-owned environment instead of own environment has multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
-
 %Required certifications
 %Missing user rights
 %VPN user limit
+Transferring the software product to a customer-owned environment instead of own environment introduces multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
+
+
 
 %-automate testing
 %Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
@@ -1088,6 +1094,13 @@ The basic deployment pipeline in the case company first includes a deploy to UAT
 -in B2B, continuous deployment straight to production is very risky
 
 %Pull requests
+
+%CDM DEV
+"Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
+
+
+%"jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. "
+
 
 %Versioning
 Multiple customer environments also affect versioning of the software product. 
