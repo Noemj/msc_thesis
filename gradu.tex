@@ -975,7 +975,7 @@ This section summarises key findings of the case study. It is structured accordi
 
 %You need to release frequent security patches. Bad guys out there want to manipulate our systems to show ads, run compute-intensive algorithms, steal passwords and financial information, and view commercial and government secrets. With Chinese hackers going against the NSA, it's literally spy versus spy. We are caught in the crossfire, forced to issue frequent updates. You can think of continuous delivery as extending your security patch process to your software development activities.
 
-Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
+Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are very common. 
 
 The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
 
@@ -1168,6 +1168,14 @@ The customer validates the functionality of the software, since the customer has
 
 
 \subsection{Continuous experimentation: B2B challenges}
+
+The case company's two software products differ on how they are used by the customers. In this seciotn, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
+
+%Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
+
+The challenges regarding continuous experimentation will be analyzed in three areas: technical, customer and A/B-testing. A/B testing was picked as a subject of its own, since it is a commonly known experiment \cite{TODO: find citation}.  
+
+Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
 
 \subsubsection{Technical challenges}
 
