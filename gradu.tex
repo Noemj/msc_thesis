@@ -1364,7 +1364,7 @@ To collect data from customers, proper agreements might need to be made.
 	CDM & No users, only integrated systems \\ \hline
 	CDM & No user interface to tune \\ \hline
     Environment & UAT is the norm \\ \hline
-    Measurable metrics & - \\ \hline
+    General & Measurable metrics \\ \hline
 	User education & Users have been educated to use certain features \\
     \hline
     \end{tabular}
@@ -1389,21 +1389,24 @@ Along with low user amount, the issue with Dialog is that the customers have bee
 %UAT is the norm
 As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
 
-%No revenue
-
+%Measurable metrics
 In A/B testing, the measurable metrics greatly vary between the case company's products. In CDM, the team finds A/B testing the query machine beneath the API to be the most beneficial. These kind of A/B tests would divide the users to different queries, and the performance metric could be optimized based on the result. Another possibility found from the interview results is offering multiple query features, and then tracking which one is used more by the customer. However, as the customers clients are hard-coded, the users would also have to modify their systems accordingly. 
 
 In Dialog, the need for data-driven decisions is greater than that of CDM due to the visible parts of the software. Even though Dialog doesn't generate profit per-se, optimizing the time it takes for customers to perform certain tasks increases the benefit of Dialog for the customers. Therefore the A/B testing in Dialog could include metrics such as time spent on performing certain tasks, amount of errors encountered in certain features or amount of back-selections indicating mistakes made by the user.
 
+\begin{quote}
+"If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they could have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers that want no changes at all."
+\end{quote}
+
 %User education
 
 %Specific problem
--The customer wants a feature (A) that works just like this, and they maybe cannot be taught to use the (B) solution.
+Some features in Dialog and CDM are specified to work exactly as is, and the customers have been educated to use them in training session. This partially limits the pool of possible A/B cases, since the B way might have to be taught as well, if the change is major. 
+
+%-The customer wants a feature (A) that works just like this, and they maybe cannot be taught to use the (B) solution.
 
 %Ändi
-\begin{quote}
-"If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers, that want no changes at all."
-\end{quote}
+
 
 %CDM: performance, DQ statistics?
 %A/B testing beneath the API in the query machine
@@ -1413,7 +1416,6 @@ In Dialog, the need for data-driven decisions is greater than that of CDM due to
 %\cite{kohavi2013online}
 %Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
 %"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
-
 
 
 %On the other hand the UI of Dialog is .. %learned by customers
@@ -1432,32 +1434,19 @@ In Dialog, the need for data-driven decisions is greater than that of CDM due to
 %UI is quite complicated, needs detailed use guide
 %"In B2B we need more volume from customers, and a whole different skillset"
 
-
-
-
-
-
-
-
 %Users have been educated to use certain features
-
 
 %"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
 
-
-
-
-
-
 %Ville
-\begin{quote}
-"Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
-\end{quote}
+%\begin{quote}
+%"Sometimes the customers have ideas on how the product should be developed, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
+%\end{quote}
 %"Tilastollista dataa ei ole välttämättä paljon, mutta käyttäjiä voidaan seurata ja he tekevät samanlaisia asioita paljon, kokoajan ja toistuvasti. Tällöin tältä käyttäjältä saisi paljon dataa hänen tekemisistään. Jos tämän henkilön käyttämä aika voisiin puolittaa, voisi asiakas tehdä enemmän rahaa. Tämä ei siis välttämättä vaadi paljon ihmisiä. Joskus asiakkailla on paljon ideoita miten tuotetta pitäisi kehittää, vaikka asiakas ei välttämättä ymmärrä täysin tuotteen käyttötarkoitusta. Asiakasta pitäisi siis pystyä kuuntelemaan, mutta kaikkien asiakkaiden yhteyshenkilöiden tiedot eivät ole samantasoisia. "
 
 
 %Too few users for statistical importance
-In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
+%In the B2B domain the typical characteristics is lower user amount as compared to B2C, 
 
 
 %===============
@@ -1479,9 +1468,9 @@ The manual build process involves human error factor, which can cause multiple b
 %-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
 Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the whole configuration for build deployment, but the rest can still trigger the deployment process.  
 
-Manual changelog
+%Manual changelog
 
-Deploy to where - UAT?
+%Deploy to where - UAT?
 
 The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
 
@@ -1497,13 +1486,11 @@ Continuous delivery process solves many of the stated problems. By adopting cont
 
 Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
 
-No manual work
+The amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy.  
+%No manual work
 
 
-TODO: ehkä matskuu täältä: http://files.zeroturnaround.com/pdf/JRebelWhitePaper2014.pdf
-
-%
-
+%TODO: ehkä matskuu täältä: http://files.zeroturnaround.com/pdf/JRebelWhitePaper2014.pdf
 
 %    Problem area & Specific problem \\ \hline
 %    General & Downtime \\ \hline
@@ -1619,6 +1606,16 @@ TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALO
 "Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
 \end{quote}
 
+
+
+The list of things to consider for Dialog regarding continuous experimentation:
+\begin{itemize}
+\item  a
+\item  b
+\item  c
+\end{itemize}
+
+
 "Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
 
 
@@ -1682,6 +1679,12 @@ Minimum viable product principle is essential
 "Currently we do basically no product development, and all development is customer-oriented"
 
 
+The list of things to consider for CDM regarding continuous experimentation:
+\begin{itemize}
+\item  a
+\item  b
+\item  c
+\end{itemize}
 
 
 
@@ -1756,8 +1759,6 @@ The first solution is to simply use an existing data collection tool, such as We
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 "Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
-
-
 
 Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
 \begin{enumerate}
