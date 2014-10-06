@@ -689,7 +689,7 @@ During this research, the author was an employee at Steeri. Consequently, this c
 
 TODO: triangulation? 
 
-The logical starting point of this thesis was the need of the case company to 
+The logical starting point of this thesis was the need by the case company to find a way to validate whether a feature is succesful or not. 
 
 \subsection{Objective} %what to achieve?
 %What does the company want to achieve
@@ -988,7 +988,7 @@ Technical aspect includes the environmental challenges, configural challenges an
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
 %where are these from? which questions?
 
-\begin{center}s
+\begin{center}
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     Problem area & Specific problem \\ \hline
@@ -1079,48 +1079,39 @@ Transferring the software product to a customer-owned environment instead of own
     \hline
     Problem area & Specific problem \\ \hline
     Environmental & UAT \\ \hline
-   	Procedural & Pull requests \\ \hline
-	Procedural & Versioning \\ \hline
+   	%Procedural & Pull requests \\ \hline
 	Procedural & Feature stubs \\ \hline
 	Procedural & Multiple customer environments \\ \hline
+	Procedural & Versioning \\ \hline
 	Roles & Developer responsibility \\
     \hline
     \end{tabular}
 \end{center}
 
 %UAT
-The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. 
--UAT is often the norm and is required before anything is moved to production
--in B2B, continuous deployment straight to production is very risky
+%-UAT is often the norm and is required before anything is moved to production
+%-in B2B, continuous deployment straight to production is very risky
+The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business. 
 
 %Pull requests
-
 %CDM DEV
-"Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
-
+%"Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
 
 %"jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. "
 
-
-%Versioning
-Multiple customer environments also affect versioning of the software product. 
-
-"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}
-
 %Feature stubs
-
-
 CDM is a software component that is compiled from multiple components. Therefore the event triggering a deployment shouldn't be the merge of a pull request, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. 
 
 %Multiple customer environments
-Both of the case company's products are used in multiple different customer environments. This introduces a procedural challenges: whenever a feature is ready to be delivered, it can either be deployed to a single customer or to every customer.
+Both of the case company's products are used in multiple different customer environments. This introduces a procedural challenges: whenever a feature is ready to be delivered, it can either be deployed to a single customer or to every customer. Attention has to be paid when configuring the workflow to allow deploying to an arbitrary customer. If only certain customers accept updates on a continuous basis, it has to be possible to prohibit deploying to every customer at once. 
 
+%Versioning
+Multiple customer environments affect versioning of the software product. In the case company, each customer has a unique configuration of the product, with possibly different versions of components. However, according to Jan Bosch, in an IES environment only a single version exists: the currently deployed one. Other versions are retired and play no more \cite{bosch2012building}.
+
+%"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." 
 
 %Developer responsibility 
 Another procedural challenge is that continuous delivery drifts response towards the developer, and the developers decide what is ready to be released. If the developer can single-handedly deploy a feature, the management can quickly loose track on the features available to customers. This also requires the developers to deeply understand the details of the version control system and automated testing. 
-
-
-
 
 
 %-should the product be always deployed to every customer?
@@ -1128,7 +1119,6 @@ Another procedural challenge is that continuous delivery drifts response towards
 %jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. muutokset saattavat vaatia muiden komponenttien päivityksen, tietokanta jne. niiden koordinointi voi olla haaste. myös jos CDM on integroitu muiden asiakkaiden tuotteisiin saattaa rajapinta vaihtua. siirto voi olla haaste, sillä ympäristöt ovat asiakkaiden hallussa. yhteyden saaminen esim. windows-koneille vaatii VPN:n, eikä se ole aina yksinkertaista. esimerkiksi VPN:n käyttäjälimitit asiakkaille voivat olla täynnä.
 
 %CD costs http://www.continuousagile.com/unblock/cd_costs_benefits.html
-
 
 %Costs
 
@@ -1148,8 +1138,6 @@ Another procedural challenge is that continuous delivery drifts response towards
 
 %http://blogs.atlassian.com/2014/07/skeptics-guide-continuous-delivery-part-3-real-world-pipelines/ Pipeline
 
-
-
 %en näe että sitä saataisiin ikinä toimimaan nykyisellä kokoonpanolla. cdm koostuu niin monesta projektista, että käytännössä en tiedä miten voisimme automatisoida se. riippuen mihin projektiin on tuulut muutoksia, pitää ne releaseta ja laittaa cdm:n pääprojektiin joka ottaa muuttuneet releaset mukaan. release-numerot vaihtelee per aliprojekti, voi olla joko pieni- tai iso releasemuutos ja sen mukaan kasvatetaan releasenumeroa. jos olisi vain yksi projekti niin voitaisiin se automatisoida. yhden projektin tekemisessä ei sinäänsä ole haasteita. monen projektin idea on tällä hetkellä aika huono, sillä kun buildaamme cdm:n, buildaamme aina pääprojektin. yksikään aliprojektia ei buildata koskaan, pl. käyttöliittymä. hyöty siitä että ne on itsenäisiä projekteja on aika nolla. nyt kaikissa aliprojekteissa omat versionumerot, joka on aika huono ratkaisu. jos kaikki aliprojektit olisi kiinnitetty samaan versionumeroon koko CDM:llä, voitaisiin vain päättää että nyt ollaan tehty tällaiset muutokset CDM:ään. mietitään että meillä on githubissa kamat, jos haluttaisiin autodeployaa tuotantoversio asiakkaille, saataisiinko esimerkiksi pääsy kaikkiin asiaksympäristöihin että voisimme automaattisesti siirtää eri releasen? voisiko kantamigraatiot automatisoitua? mitä jos tuotantodataa pitäisi päivittää, saataisiinko sitä päivitettyä, tuskin. 
 
 %UAT
@@ -1162,7 +1150,6 @@ Another procedural challenge is that continuous delivery drifts response towards
     Problem area & Specific problem \\ \hline
     Training & Customers have been trained to use a certain version of the product \\ \hline
     New release & Customer reluctancy towards new versions \\ \hline
-	%New release & Every customer doesn't like new releases, since new releases occasionally contain new bugs \\ \hline
 	New release & Deployment time and downtime \\ \hline
 	New release & A customer might be doing a critical task \\
     \hline
@@ -1174,19 +1161,13 @@ Another procedural challenge is that continuous delivery drifts response towards
 Customer reluctance towards new features is common, since new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. Thus if the UI changes often, the customers initially take more time to perform the tasks. 
 
 %Customer reluctancy towards new versions
-Customers need to understand what continuous delivery is all about. While customers initially are against constant modifications, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer reluctancy towards new versions. 
-
+In the case company many of the customers have a reluctancy towards new versions, caused by the versions occasionally containing new bugs and the customers having just learned to perform certain tasks with the last version. Customers need to understand what continuous delivery is all about. While customers initially are against constant modifications, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer reluctancy towards new versions.
 
 %Deployment time and downtime
-Customer might be using the software when the version is updated, and the deployment process shouldn't interfere with ongoing usage. Therefore the most viable solution is to initially deploy the versions to the UAT environment. To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.   
-
 %A customer might be doing a critical task
-In the case company, the deployment date is often negotiated with and specified by the customer. 
+Customers might be using the software when a new version is deployed, and the deployment process shouldn't interfere with ongoing usage. Therefore the most viable solution is to initially deploy the versions to the UAT environment. To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.  
 
-The customer validates the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. 
-
-
-
+In the case company, the production deployment date is often negotiated with and specified by the customer, while the product can be deployed to UAT at will. UAT is also used by the customer to validate the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. However, the customers don't validate the versions at the UAT environment unless they are informed that new versions are available, since the UAT is not used for any other purpose than testing. 
 
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
 %Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
@@ -1232,7 +1213,7 @@ The case company's two software products differ on how they are used by the cust
 
 %Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 
-The challenges regarding continuous experimentation will be analyzed in three areas: technical, customer and A/B-testing. A/B testing was picked as a subject of its own, since it is a commonly known experiment \cite{TODO: find citation}.  
+The challenges regarding continuous experimentation will be analyzed in three areas: technical, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products mostly affects A/B testing.  
 
 Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
 
@@ -1251,7 +1232,6 @@ Technical aspect includes the data collection, measurable metrics and other chal
     \end{tabular}
 \end{center}
 
-
 %No user interface
 %Only used via API calls
 The case company's products represent two totally different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
@@ -1261,10 +1241,46 @@ The difference between the products limits the possible scope of experiments. Wh
 
 The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, generated revenue for example is not a valid measurable metric. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it harder to pick the correct measurement variables. This is what a developer has to say:
 
+\begin{quote}
+"We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
+\end{quote}
+
+A possibility is to tone the product in cooperation with the customer, using their internal measures as metrics. According to a Dialog developer:
+
+\begin{quote}
+"If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
+\end{quote}
+
+A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
+
+\begin{quote}
+"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
+\end{quote}
+
+While it is common for B2C applications, too, to fluctuate between different Overall Estimation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}.
 
 %Data collection in customer environment
-%Required permissions
 
+The case company's products are mostly installed to customer environments, with customer-owned servers. The data then has to be effectively stored and acquired from an external feature, if the analysis is to be done at the company's own servers. However, the case company's applications deal with millions of records of data, and the developers don't see storing additional experimentation-related data as a challenge:
+
+\begin{quote}
+"The data would be on the customer companies servers, where we have our own access and right to install software. If the data is collected on the server where we fetch it from, it's not a challenge. The data shouldn't encumber the system."
+\end{quote}
+
+%\begin{quote}
+%"The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
+%\end{quote}
+
+
+\begin{quote}
+"The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
+\end{quote}
+
+%Required permissions
+Data collection directly from a customer might also require permissions and negotiations with the customer. 
+\begin{quote}
+"We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
+\end{quote}
 
 
 %Hardcoded APIs integrated to other components
@@ -1273,39 +1289,10 @@ The business model for the products limits the wanted improved metrics. Since th
 
 
 
-
-\begin{quote}
-"The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
-\end{quote}
+%Another possibility is to include customers in the measurement process. According to a developer:
 
 
-\begin{quote}
-"We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
-\end{quote}
 
-Another possibility is to include customers in the measurement process. According to a developer:
-
-\begin{quote}
-"If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
-\end{quote}
-
-Data collection directly from a customer might also require permissions and negotiations with the customer. 
-
-\begin{quote}
-"We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
-\end{quote}
-
-\begin{quote}
-"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
-\end{quote}
-
-\begin{quote}
-"The data would be on the customer companies servers, where we have our own access and right to install software. If the data is collected on the server where we fetch it from, it's not a challenge. The data shouldn't encumber the system. "
-\end{quote}
-
-\begin{quote}
-"The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
-\end{quote}
 %    Tallentamisessa pitää olla sovittu asiakkaan kanssa se että sitä kerätään. Voidaan kerätä Dialogin kantaan, pitäisi sopia luku. Osille asiakkaista ei ole suoraa pääsyä verkkoon paitsi monimutkainen VPN-säätö: tänne ei välttämättä pääsisi kovinkaan helpolla. Isoimmilla firmoilla varsinkin on säädöksiä datan käyttöön ja tietoturvaan. ei ongelmia.  Jos se kerätään Dialogin sisällä, kannattaa se tallentaa Dialogin tietokantaan. Vaihtoehtona lähetys lokaaliin urliin, ja se on vähän turhan hankalaa. Helpompaa voisi olla laittaa käyttäjäryhmiin joku taulu, johon kerätään tietoa.  Pitäisi selvittää onko tuo mahdollista ja kuinka tarkkoja asiakkaat ovat mitä dataa kerätään. On myös väliä onko palvelin heillä vai meillä, eivätkä kaikki välttämättä anna meidän kerätä dataa. käyttäjät tuskin olisivat pahoillaan. Heitä motivoi se, että me yritämme parantaa heidän tekemistä. B2B puolella luultavasti asiakkaat antavat träkätä toimintoja, koska asiakas on ostanut jo tuotteen.
 
 
@@ -1353,6 +1340,13 @@ Therefore continuously updating the test environment either has to alarm custome
 The customers have been trained to perform certain tasks with the software, and if the UI constantly undergoes major changes the customers might get lost. There is already some reluctancy towards now versions, since new versions possibly introduce new bugs and certain UI elements might have their places changed. Therefore customers have to be informed for major changes, so that possible new training sessions can be arranged. For minor updates, release notes and required guides are a must.
 
 %Environment
+The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a 
+
+UAT vs PROD erot tähän!
+-UAT ei hirveästi käyttöä
+-PRODiin ei aina uskalleta viedä
+
+
 %Feedback collection
 %How is fb collected
 The customer feedback is currently continuously received but not actively collected. Product owners are in constant connection with the customers, and customers can send comments and requests via them. The customers can also insert tickets into a bug tracker. Most of the received feedback is about some functionaly not working or a bug. Weekly status meetings with the customer are also arranged. Feedback is received via e-mail as well. In the end of the project, a retrospective meet is hel with the customer, where the whole project is discussed.  
