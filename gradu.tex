@@ -1364,7 +1364,7 @@ To collect data from customers, proper agreements might need to be made.
 	CDM & No users, only integrated systems \\ \hline
 	CDM & No user interface to tune \\ \hline
     Environment & UAT is the norm \\ \hline
-    Measurable metrics & No revenue \\ \hline
+    Measurable metrics & - \\ \hline
 	User education & Users have been educated to use certain features \\
     \hline
     \end{tabular}
@@ -1380,56 +1380,67 @@ However, a product owner views the user amount from a different point of view:
 \end{quote}
 
 
-
 %No users, only integrated systems 
 %No user interface to tune
 The main difference between the case company's software products is the intended use of the software. CDM, being an integrated system, doesn't have a UI unlike Dialog. The types of A/B tests that are viable to CDM are mostly related to performance, which is seen as the only viable metric by the developers. 
 
-On the other hand the UI of Dialog is .. %learned by customers
-
-CDM: 
-No users, except for other systems
-Measurable metrics
--performance
-
-Idea: A/B test different databases and measure performance
-No user interface
-
-Dialog:
-User amount is very low, so there's no room for quantitative analysis
-Customers are very concerned about UI modifications
-UI is quite complicated, needs detailed use guide
-"In B2B we need more volume from customers, and a whole different skillset"
-
-
-
+Along with low user amount, the issue with Dialog is that the customers have been taught to use the UI to perform certain tasks. The UI of Dialog is quite complicated, and some customers are very reluctant to changes to the UI. A possible solution for this issue is a detailed use guide with each new version, where the changes are easily readable. 
 
 %UAT is the norm
-UAT is the norm:
-currently everything has to be deployed to UAT prior to production. A/B straight to prod?
-
-
+As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
 
 %No revenue
-Measurable metrics
 
-\cite{kohavi2013online}
-Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
-"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+In A/B testing, the measurable metrics greatly vary between the case company's products. In CDM, the team finds A/B testing the query machine beneath the API to be the most beneficial. These kind of A/B tests would divide the users to different queries, and the performance metric could be optimized based on the result. Another possibility found from the interview results is offering multiple query features, and then tracking which one is used more by the customer. However, as the customers clients are hard-coded, the users would also have to modify their systems accordingly. 
 
+In Dialog, the need for data-driven decisions is greater than that of CDM due to the visible parts of the software. Even though Dialog doesn't generate profit per-se, optimizing the time it takes for customers to perform certain tasks increases the benefit of Dialog for the customers. Therefore the A/B testing in Dialog could include metrics such as time spent on performing certain tasks, amount of errors encountered in certain features or amount of back-selections indicating mistakes made by the user.
 
+%User education
 
-%Users have been educated to use certain features
-User education
-
-
-Specific problem
+%Specific problem
 -The customer wants a feature (A) that works just like this, and they maybe cannot be taught to use the (B) solution.
 
 %Ändi
 \begin{quote}
 "If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers, that want no changes at all."
 \end{quote}
+
+%CDM: performance, DQ statistics?
+%A/B testing beneath the API in the query machine
+
+%Measurable metrics 
+
+%\cite{kohavi2013online}
+%Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
+%"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+
+
+
+%On the other hand the UI of Dialog is .. %learned by customers
+
+%CDM: 
+%No users, except for other systems
+%Measurable metrics
+%performance
+
+%Idea: A/B test different databases and measure performance
+%No user interface
+
+%Dialog:
+%User amount is very low, so there's no room for quantitative analysis
+%Customers are very concerned about UI modifications
+%UI is quite complicated, needs detailed use guide
+%"In B2B we need more volume from customers, and a whole different skillset"
+
+
+
+
+
+
+
+
+%Users have been educated to use certain features
+
 
 %"Jos olisi enemmän asiakkaita, esimerkiksi A/B-testausta voisi harrastaa. Muutama asiakas on todella innostuneita Dialogista, varsinkin siitä että he voivat vaikuttaa tuotteeseen. Jos heille myisi mallia että he voisivat vähän kokeilla, he voisivat innostuakin. Toisella puolella on asiakkaita, (Finpro), jotka haluavat ettei mikään muutu. Käytettävyys olisi sellainen jota haluttaisiin parantaa. Haluttaisiin että tuote on mahdollisimman helppo käyttää, ja asiakas pääsee tekemään mitä ikinä asiakkaan tärkeät toiminnot ovat. Sitä voisi testata. Voisi mitata miten helppo asiakkaan on päästä lopputulokseen johon hän on haluamassa. Kyselyn avulla voisi mitata kuinka tyytyväinen asiakas on ja miten helppokäyttöinen tuote on."
 
@@ -1629,7 +1640,7 @@ The lab website concept is less applicable for connected and embedded systems \c
 
 The experiment scenarios listed for embedded systems by Eklund and Bosch, in chapter .., 
 
-CDM:ää voi devata näin
+%CDM:ää voi devata näin
 %\begin{itemize}
 %\item  How long does it take to . . 
 %\item  Which of . . . is most often used/accessed/. . .
