@@ -401,8 +401,6 @@ Continuous delivery attempts to deliver an idea to users as fast as possible. Co
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
 
 
-
-
 \cite{kohavi2013online}
 Tenets:
 Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
@@ -411,7 +409,6 @@ Tenet 1: The Organization wants to make data-driven decisions and has formalized
 Tenet 2: Controlled experiments can be run and their results are trustworthy
 Tenet 3: We are poor at assessing the value of ideas 
 "Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
-
 
 
 \subsubsection{Components in continuous experimentation}
@@ -467,6 +464,7 @@ Another approach for the roles is introduced by Adams et al., who conducted a ca
 \subsection{Continuous delivery and continuous experimentation collaboration}
 As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
+In the organization evolution path \cite{olsson2012climbing} continuous deployment is seen as a prerequisite for the experimental system. 
 \subsection{Continuous experimentation in embedded software}
 %TODO: finish this chapter
 
@@ -514,25 +512,18 @@ The study also lists possible experiment scenarios supported by the architecture
 
 
 \subsection{Challenges regarding continuous experimentation}
-
 It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
 
 Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
 
+One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
 
 %"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
-
-"Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}
-
 %"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
-
 %"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
-
-TODO: possible challenges in Lean startup: \cite{may2012applying}
-
--Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
-
-Crook et al. investigated the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table II. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiment's objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
+%TODO: possible challenges in Lean startup: \cite{may2012applying}
+%-Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
+Crook et al. investigate the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table II. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiment's objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 \begin{center}
 \begin{table}[htb]
     \begin{tabular}{ | p{2cm} | p{10cm} |}
@@ -564,12 +555,9 @@ The software industry is growing due to increasing digitalisation, and it is esp
 
 The process of guiding product development with continuous experiments diminishes guesswork and instead provides a systematic approach. Avinash Kaushik states in his article Experimentation and Testing primer \cite{kaushik} that "80\% of the time you/we are wrong about what a customer wants". Mike Moran also found similar results in his book Do It Wrong Quickly, stating that Netflix considers 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation. Ron Kohavi at Microsoft wrote "Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}. Additionally, Regis Hadiaris from Quicken Loans wrote that "in the five years I've been running tests, I'm only about as correct in guessing the results as a major league baseball player is in hitting the ball. That's right - I've been doing this for 5 years, and I can only "guess" the outcome of a test about 33\% of the time!" \cite{moranmultivariate}.
 
-
 %flexibility 
 %no guesswork - systematic way
-
 %"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. TODO check this
-
 %"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
 
 \subsection{Existing case studies}
@@ -610,7 +598,7 @@ The pipeline team consists of the following roles: designer, developer, research
 \end{itemize}
 The study is carried out in the company with over 10,000 employees. The study states that "there is a wealth of understanding about how small companies can innovate in a low-cost way in order to make small products viable". 
 
-Kohavi et al. have widely studied online experimentation at microsoft \cite{kohavi2009online}. The experiments have been mostly performed in Microsoft's web sites with A/B testing, and the efforts have been proven succesful. This success further motivates this thesis, and applying parts of the same practice in a different domain and different software products.
+Kohavi et al. have widely studied online experimentation at microsoft \cite{kohavi2009online}. The experiments have been mostly performed in Microsoft's web sites with A/B testing, and the efforts have been proven succesful. This success further motivates the goal of this thesis of applying experiments in a different domain and different software products. However, as the study only consists of A/B testing, this thesis also inspects other kind of experiments performed in a continuous manner.
 %Motivation: %Compare to my own goals
 %  -clearly defined in the B2B context
 %  -
@@ -634,20 +622,17 @@ Data collection in case studies tend to lean towards qualitative data that provi
 \subsection{Qualitative research}
 Qualitative research attempts to answer to questions "Why?"" and "How?" instead of "What?", "Where?" and "When?" as compared to quantitative research. The most common way to collect qualitative data is via an interview. Seaman defines interviews as a way to collect historical data, opinions and impressions about something \cite{seaman1999qualitative}. The interview can be either structured, unstructured or semi-structured. In a structured interview the interviewer asks all of the questions, and the objectives are very specificed. The focus of a structured interview is to find relations between constructs, and the objective is descriptive and explanatory \cite{runeson2009guidelines}. In an unstructured interview the topic is broadly defined, and questions are asked also by the interviewee. In an unstructured interview open-ended questions are typical, and unforeseen types of information can be gained. The focus of an unstructured interview is on how the interviewee qualitatively experience the phenomenom, and the objective is exploratory \cite{runeson2009guidelines}. A semi-structure interview is a mixture of both open-ended and specific questions. Semi-structured interviews focus on how individuals qualitatively and quantitatively experience a phenomenom, and the objective is both descriptive and explanatory \cite{runeson2009guidelines}.
 
-Qualitative data analysis \cite{robson2002real}
+Seaman has explored qualitative research in software engineering context, and he defines different ways to analyse qualitative data \cite{seaman1999qualitative}. A typical way of analyziz is coding, which means extracting values for quantitative variables from qualitative data. Coding can also be used to organize the data based on themes and views. Seaman states that qualitative data is a lot richer than quantitative data, and using qualitative methods increases amount of information, diversity of information and confidence in results. 
 
-Seaman has explored qualitative research in software engineering context, and he defines different ways to analyse qualitative data. \cite{seaman1999qualitative} 
--Coding, extracting values for quantitative variables from qualitative data
--Coding subjective data, select reference points for views, evaluate relability
--Generation of Theory (GoT), extract from a set of field notes a statement or proposition supported in multiple ways by the data - – for use as hypotheses
--GoT cross-case analysis: data divided into “cases”: two groups based on some attribute and examine similarities and differences (devs / management?)
--Confirmation of Theory: target: building up “weight of evidence"; triangulation; anomalies in the data
--qualitative data is richer than quantitative data. use of qualitative methods increases
-– amount of information
-– diversity of information
-– confidence in results
-
-The basic objective of data analysis is to form conclusions and theories from the data based on a chain of evidence. Qualitative data analysis can be divided into two different parts, hypothesis generating techniques and hypothesis confirmation techniques \cite{runeson2009guidelines}. Both of these techniques can be exploratory and explanatory case studies \cite{runeson2009guidelines}.  
+%-Coding subjective data, select reference points for views, evaluate relability
+%-Generation of Theory (GoT), extract from a set of field notes a statement or proposition supported in multiple ways by the data - – for use as hypotheses
+%-GoT cross-case analysis: data divided into “cases”: two groups based on some attribute and examine similarities and differences (devs / management?) 
+%-Confirmation of Theory: target: building up “weight of evidence"; triangulation; anomalies in the data
+%-qualitative data is richer than quantitative data. use of qualitative methods increases
+%– amount of information
+%– diversity of information
+%– confidence in results
+The basic objective of data analysis is to form conclusions and theories from the data based on a chain of evidence. Qualitative data analysis can be divided into two different parts, hypothesis generating techniques and hypothesis confirmation techniques \cite{runeson2009guidelines}. Both of these techniques can be exploratory and explanatory case studies \cite{runeson2009guidelines}. In hypothesis generating techniques, a statement or proposition is extracted from the field notes that is supported in multiple ways by the data, and then used as a hypotheses \cite{seaman1999qualitative}. The data can also be divided into cases using cross-case analysis, where two groups based on some attribute are examined for similarities and differences. In the confirmation of theory, weight of evidence is built using triangulation of different data sources. 
 
 %Quasi-statistical approaches, Template approaches, Editing approaches, Immersion approaches 
 Robson introduces common features of qualitative data analysis in a sequential list \cite{robson2002real}. The first step is to code the initial set of data. Then, comments and reflections (referred to as 'memos') are added. After this the data is processed, similar phrases, patterns, themes, relationships and differences between sub-groups are identified. These identified patterns are then used to focus the next data collection phase. Gradually a set of generalizations are formed, that cover the consistencies discerned in the data. These generalizations are then linked to a formalized body of knowledge in the form of constructs or theories. 
@@ -688,7 +673,7 @@ During this research, the author was an employee at Steeri. Consequently, this c
 %Corbin, J., Strauss, A.: Basics of qualitative research, 3rd edn. Sage, Thousand Oaks (2008)
 
 
-TODO: triangulation? 
+%TODO: triangulation? 
 
 The logical starting point of this thesis was the need by the case company to find a way to validate whether a feature is succesful or not. 
 
@@ -1308,9 +1293,9 @@ Data collection directly from a customer might also require permissions and nego
 	Downtime & Customers don't want downtime \\ \hline
 	Downtime & Users perform routine tasks and have been trained for them, therefore the UI shouldn't change often \\ \hline
 	General & Customers have to be informed for major changes \\ \hline
-	Data collection & Proper agreements need to be made \\ \hline
 	Data collection & Environment \\ \hline
 	Data collection & Feedback collection \\
+	Data collection & Proper agreements need to be made \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -1352,7 +1337,7 @@ The feedback collection in B2B has multiple challenges. The feedback doesn't com
 In case of Dialog, the user is not the payer. The user has to use the software even if it was bad. It is hard to get a neutral point of view. 
 
 %Proper agreements need to be made
-To collect data from customers, proper agreements might need to be made.
+According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. 
 
 %Some customers might use the product only a few months a year
 
@@ -1380,7 +1365,6 @@ However, a product owner views the user amount from a different point of view:
 \begin{quote}
 "The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, could the customer make more money. This doesn't therefore necessarily require a large user amount."
 \end{quote}
-
 
 %No users, only integrated systems 
 %No user interface to tune
