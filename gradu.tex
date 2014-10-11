@@ -138,10 +138,6 @@ he were allowed to hit four balls each time and then choose the shot that worked
 \section{Introduction} %Motivation
 
 \subsection{Overview}
-%This thesis was motivated by the general increased interest towards innovative experimental systems \cite{olsson2012climbing}, and the lack of related studies in the B2B domain.
-
-%Currently more and more software companies are moving to lean practices, which include short delivery cycles and thus shorter feedback loops. %Moving to open innovative systems
-
 To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{cockburn2002agile} have increased the ability of software companies to cope with changing customer requirements and changing market needs \cite{dzamashvili2010impact}. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers.
 
 The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature is succesful or not?
@@ -167,8 +163,6 @@ A way to shorten the delivery cycles and to automate the delivery process is con
 
 Lean software development, which was inspired by the Toyota Production System \cite{}, is a development approach attempting to eliminate unnecessary work and to create value for the customer. The approach consists of seven principles: eliminate waste, build quality in, deliver fast, optimise the whole, create knowledge, defer commitment and respect people. Lean startup \cite{ries2011lean} is a method for developing products based on the lean software development principles. The key component of lean startup is the Build-Measure-Learn cycle, which guides the development process by defining a loop process where ideas are turned into products, which are then measured and the idea pivoted or persevered forwards.
 
-%The Build-Measure-Loop of Lean startup \cite{ries2011lean} is similar in the sense that controlled experiments drive the development. The Lean tartup methodology's experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. 
-
 Continuous experimentation attempts to validate that an idea is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the Build-Measure-Learn cycle of lean startup \cite{ries2011lean}. The process in continuous experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to validate the hypothesis.
 
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can be implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
@@ -182,13 +176,7 @@ In the context of this thesis, continuous experimentation refers to a developmen
 \item  Steer development process
 \end{itemize}
 
-%While continuous experimentation is a term loosely defined by McKinley, it poses resemblance to multiple development models, such as the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. 
-
 Bosch et al., introduce an innovation experiment system, in which the development process consists of frequently deploying new versions, using customers and customer usaged data in the development process and finally by focusing on innovation and testing ideas with customers to drive customer satisfaction and revenue growth \cite{bosch2012building}. "First, it frequently deploys new versions focusing on continuously evolving the embedded software in short cycles of 2-4 weeks" \cite{eklund2012architecture}.
-
-%Data driven development
-%Iteration of ideas in a controlled way
-%Fail fast
 
 %In this thesis we conduct a case study to analyse the adoption of continuous deployment and continuous experimentation in B2B domain. The case study consists of a literature review on applications of these practices, an interview of key members in the case company and analysis of the results. 
 
@@ -247,7 +235,7 @@ The background theory is drawn from literature focusing on continuous delivery, 
 
 The empirical research of this thesis has been carried out in the context of a medium sized information technology company, Steeri Oy. The company specializes in customer data on multiple fronts: CRM, BI, Master Data Management and data integrations, among others. The empirical research has applied case study methodology to offer deep understanding of the phenomena in their natural context. The tradeoff of a case study research is that it does not provide much room for direct generalizations outside the empirical context. 
 
-This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter. Finally, the seventh chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
+This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter, organized according to the research questions. Finally, the seventh chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
 %Structure:
 %
 %#1
@@ -266,18 +254,15 @@ This thesis is organized as follows. The first chapter is the introduction at ha
 
 \section{Literature: Continuous Delivery}
 %Agile
-Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change.
-
-%Agile implementations
-Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further define their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing.
+Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change. Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further define their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing.
 
 %Lean manufacturing & LSD
 Lean manufacturing, derived from the Toyota Production System \cite{ono1988toyota}, is a streamlined production philosophy that aims to identify the expenditure of resources not used in creating value for the end customer, and eliminate these activities. Lean software development \cite{poppendieck2003lean} has been developed based on the same idea. The purpose of lean software development is to eliminate waste, or anything that doesn't bring value to the customer, and to pursue perfection through smoothing the development flow. The principles in lean software development are eliminate waste, amplify learning, decide as late as possible, deliver as fast as possible, engage everyone, create quality and see the whole. 
 
 %Lean startup
-Lean startup \cite{ries2011lean} is a business and product development method with focus on business-hypothesis-driven experimentation and iterative product releases. A primary purpose of lean startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. This is achieveved by using a Build-Measure-Learn-loop, which is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
+The software development models have moved towards even shorter and shorter feedback loops in the recent years. Lean startup \cite{ries2011lean} is a business and product development method with focus on business-hypothesis-driven experimentation and iterative product releases. A primary purpose of lean startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. This is achieveved by using a Build-Measure-Learn-loop, which is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
 
-Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages \cite{olsson2012climbing}. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features.
+Continuous delivery is a design practice where the software delivery process is automated, and thus the software can be deployed on short notice. Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages\cite{olsson2012climbing}. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features.
 
 \begin{figure}[h]
 	\centering
@@ -285,7 +270,7 @@ Olsson et al. have investigated the evolution path of software companies, and ha
 	\caption{Organization evolution path \cite{olsson2012climbing}.}
 \end{figure}
 
-In this chapter we first introduce the general principles of continuous delivery and continuous deployment. Then we introduce the software deployment pipeline and the effects of continuous delivery on the development model.
+In this chapter we first introduce the general principles of continuous delivery and continuous deployment. Then we introduce the software deployment pipeline and the effects of continuous delivery on the development model. Finally, we list challenges faced when applying continuous delivery.
 
 %The most important idea behind continuous delivery is to deliver an idea to the customer as fast as possible.  
 
@@ -361,7 +346,9 @@ A picture of the typical development process in continuous delivery is shown in 
 
 \subsection{Challenges regarding continuous delivery}
 
-"With continuous flow, Sales and Marketing were not quite sure when anything would be released." "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
+%"With continuous flow, Sales and Marketing were not quite sure when anything would be released."\cite{neely2013continuous}
+% "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
+Neely and Stolt found out that with a continuous flow, Sales and Marketing departments lost the track of when features are released \cite{neely2013continuous}. Continuous delivery requires the company as a whole to understand the continuous flow process. Neely and Stolt solved this challenge by providing mechanisms by which the parties in need of knowledge regarding release times could track the work in real time \cite{neely2013continuous}. 
 
 %http://www.continuousagile.com/unblock/cd_costs_benefits.html
 -Technical implementation: Automate testing
@@ -399,17 +386,6 @@ Continuous delivery attempts to deliver an idea to users as fast as possible. Co
 
 %innovation experiment system
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
-
-
-\cite{kohavi2013online}
-Tenets:
-Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
-"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
-"Sessions per user, or repeat visits, is a much better factor in the OEC, and one that we use at Bing"
-Tenet 2: Controlled experiments can be run and their results are trustworthy
-Tenet 3: We are poor at assessing the value of ideas 
-"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
-
 
 \subsubsection{Components in continuous experimentation}
 Kohavi et al. investigate the practical implementations of controlled experiments on the web \cite{kohavi2007practical}, and state that the implementation of an experiment involves two components. The first component is a randomization algorithm, which is used to map users to different variants of the product in question. The second component is an assignment method which, based on the output of the randomization algorithm, determines the contents that each user are shown. The observations then need to be collected, aggregated and analyzed to validate a hypothesis. Kohavi et al. also state that most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment.
@@ -1704,44 +1680,73 @@ discussion
 
 \subsection{Implementing continuous experimentation as a development process}
 
--Requires a paradigm shift towards real-time delivery of value
--It is essential that feedback is sought during the whole process.
--Feedback sought through Prototype or demo
--Requires activation throughout the company
-
-
 As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. The continuous experimentation process is implemented by partially applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}. 
 
+\subsubsection{Applying the general concept}
+%-Requires a paradigm shift towards real-time delivery of value
+%-It is essential that feedback is sought during the whole process.
+%%-Feedback sought through Prototype or demo
+%-Requires activation throughout the company
+%%TODO: pitää tehdä joku tällainen ehk 
+%"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
+As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery of value. Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. However, due to the changes of the product development, marketing personnel and customers must be informed of the alterations. Customers might need to authorize the collection of their usage data, while the marketing team must be provided a way to track feature progress when moving towards real-time delivery from iterative model. 
+
+\subsubsection{Applying the model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
+
+
+Kohavi et al. have..
+\cite{kohavi2013online}
+Tenets:
+Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
+"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+"Sessions per user, or repeat visits, is a much better factor in the OEC, and one that we use at Bing"
+Tenet 2: Controlled experiments can be run and their results are trustworthy
+Tenet 3: We are poor at assessing the value of ideas 
+"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
+
+
+
 
 %Fagerholm model
 %"The model consists of repeated Build-Measure-Learn blocks, supported by an infrastructure, as shown in Figure 1. Conceptually, the model can also be thought to apply not only to software development, but also to design and development of software-intensive products and services. In some cases, experi- mentation using this model may require little or no development of software."
-
 %Following the Lean Startup methodology [19], this vision is fairly stable and is based on knowledge and beliefs held by the entrepreneur.
-
 %"To support conducting such experiments, an infrastructure for continuous experimentation is needed. Figure 3 sketches the roles and associated tasks, the technical infrastructure, and the information artefacts of such an infrastructure"
-
 %Five roles are defined to handle three classes of tasks. A business analyst and a product owner, or a product management team, together handle the creation and iterative updating of the strategic roadmap.
-
 %The data analyst designs, executes, and analyses experiments
-
 %The data analyst also communicates with a developer and quality assurance role. These roles handle the development of MVPs,MVFs, and the final product. They first work with the data analyst to produce proper instrumentation into the front-end system,which is the part of the software which is delivered or visible to the user.
-
 %Picture with steeri roles?
 
-Explain Fagerholm et al. model
--Build-Measure-Learn
--Hypotheses used to implement MVP or MVF
--Experiment executed with data from MVP or MVF
--Analysis, results used to support decisiong making
+Due to the very general nature of the infrastructure introduced by Fagerholm et al., no major modifications have to be made to address specific B2B needs. 
 
+
+
+%Explain Fagerholm et al. model
+%-Build-Measure-Learn
+%-Hypotheses used to implement MVP or MVF
+%-Experiment executed with data from MVP or MVF
+%-Analysis, results used to support decisiong making
+
+1)
+Limiting the amount of experiments per project 
 \begin{center}
-    \begin{tabular}{ | p{5cm} | l | l |}
+    \begin{tabular}{ | p{5cm} | l | l | p{3cm}}
     \hline
-    \textbf{Type of experiment} & \textbf{Dialog} & \textbf{CDM} \\ \hline
-	A/B testing & x & - \\ \hline
+    \textbf{Type of experiment} & \textbf{Dialog} & \textbf{CDM} & \textbf{Rationalization} \\ \hline
+	A/B testing & x & - & - \\ \hline
 	\end{tabular}
 \end{center}
+
+A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
+
+2)
+"A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
+
+%In test environments the customers may not be very active
+
+"The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
+
+
 
 
 (back-end system consists of an experiment database.. ) 
@@ -1750,10 +1755,6 @@ Explain Fagerholm et al. model
 Data collection: Kohavi et al.
 The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging. 
 
-"A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
-%In test environments the customers may not be very active
-
-"The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 "Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
 
@@ -1765,7 +1766,7 @@ Necessary ingredients for agile development with controlled experiments \cite{ko
   \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
 \end{enumerate}
 
-A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
+
 
 "The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
 \begin{enumerate}
@@ -1783,6 +1784,11 @@ A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-t
 -List deviations
 
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
+
+
+
+
+
 
 %Interesting interview questions regarding this issue:
 
