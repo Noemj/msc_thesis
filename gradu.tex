@@ -1435,7 +1435,6 @@ Since some of the manual steps are only memorized by certain developers, the dep
 %Deploy to where - UAT?
 
 The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
-
 \begin{quote}
 "If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
 \end{quote}
@@ -1505,10 +1504,7 @@ The amount of manual work can be diminished to couple of button clicks defining 
 
 %-There are customers that don't understand the benefit of continuous delivery.
 
-
-
 \subsection{Continuous experimentations benefit to case company}
-
 %GENERAL BENEFITS
 
 Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
@@ -1525,68 +1521,40 @@ Instrumenting software products and then gathering and analysing the to guide de
 
 Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive answers, effectively allowing the use of hypotheses to steer development process.
 
-
-From opinion to data-based decision making.
-The selection of ideas is based on the opinions of leaders in the organization
+%From opinion to data-based decision making.
+%The selection of ideas is based on the opinions of leaders in the organization
+In the case company, selection of the development ideas is based almost exclusively on the opinions of leaders in the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be better increased by moving towards data-based decision making. 
 
 %DIALOG SPECIFIC 
-
-Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in theproduct steering group.
-
+Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
 \begin{quote}
 "Developers can make improvement suggestions, and occasionally product owners invent feature ideas. The ideas are based on a guess that the customer might find this valuable."
 \end{quote} 
-
 While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. While the low user amount for A/B testing - 3-5 users per customer - does not suit experiments based on statistical importance, the user actions can be tracked. 
-
 \begin{quote}
 "The amount of available statistical data is not high much due to the user amount, but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, the customer would make more money. It doesn't therefore necessarily require a large user amount."
 \end{quote}
+A possibility expressed by a member of the management is to aid marketing by giving a MPV implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
 
-
-%BOSCH A/B test
-
-%Possibly the most fundamental of mechanisms is the random selection of versions of use cases, features or other “chunks” of functionality and their subsequentpresentation to customers. The versions are instrumented with data-collectionfunctionality to capture the user behavior in a way that allows the team to select thepreferred version. In online offerings, the notion of A/B testing is used extensively asa mechanism to determine the best web-page version. The metric for success differsbased on the business goal. For instance, for websites that use advertising as amonetization mechanism, the user staying longer on the page is preferred, whereas asubscription-based web property offering productivity solutions would measuresuccess in terms of the least amount of time spent on the page. Of course, a multitudeof other metrics might constitute the definition of success.
-
-
-One idea is also to aid marketing by giving a MPV implementation of the product to new customers. This it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
-
- \newline
-%New product: Labs website Several companies have a separate “labs” website where prototypes and early versions of products can be made available free of charge with the sole purpose of collecting customer feedback.
-
-
-
-
-%product is developed towards a 
-
-TODO: Dialogiin in-product survey? Dialogissa mietitty jo surveyta. \cite{bosch2012building}
-%New feature: In-Product SurveysEspecially for SaaS products, though also applicable for connected embeddedsystems, it is very easy to create pop-up surveys at strategic locations in the productthat allows for obtaining active customer feedback while the customer is in theprocess of performing a certain action. Although customers may experience this as anannoyance, when presented well, it can provide immensely valuable feedback thatcontains more semantic information than the purely passive data from productinstrumentation.
-
-TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
-
-"pidetty tuotekehtiyksen ohjausryhmää, jossa halutaan nähdä eteenpäin miten tuote kehittyy."
-
-
-%Ville
-\begin{quote}
-"Sometimes the customers have ideas on how the product should be developer, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
-\end{quote}
-
-
+Another experimental feature that is seen suitable for Dialog is an in-product survey. These surveys are then placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
 
 The list of things to consider for Dialog regarding continuous experimentation:
 \begin{itemize}
-\item  a
-\item  b
-\item  c
+\item  Amount of own tasks vs customer tasks
+\item  Types of experiments
+\item  Statistical significance
 \end{itemize}
 
+%TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
+
+%Ville
+%\begin{quote}
+%"Sometimes the customers have ideas on how the product should be developed, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
+%\end{quote}
 
 "Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
 
-
 %CDM SPECIFIC 
-
 CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
 \begin{quote}
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked."
@@ -1598,10 +1566,23 @@ The lab website concept is less applicable for connected and embedded systems \c
 %experimentation requires the production of a set of prototype systems for the explicit
 %purpose of collecting customer feedback during product development. 
 
+%Juha
+\begin{quote}
+"CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query."
+\end{quote}
 
 
+The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, has cross-case analysis be made to prevent failing to distinguish differences between users.  
+\begin{quote}
+"The software is composed of APIs, through which different components send and receive data. We could track the typos of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
+\end{quote}
 
-The experiment scenarios listed for embedded systems by Eklund and Bosch, in chapter .., 
+The list of things to consider for CDM regarding continuous experimentation:
+\begin{itemize}
+\item  "Currently we do basically no product development, and all development is customer-oriented"
+\item  b
+\item  c
+\end{itemize}
 
 %CDM:ää voi devata näin
 %\begin{itemize}
@@ -1613,9 +1594,9 @@ The experiment scenarios listed for embedded systems by Eklund and Bosch, in cha
 %\end{itemize}
 
 
-context. The
-team can be building an alternative implementation for an existing feature in the
-product, a significant new feature for an existing product  
+%context. The
+%team can be building an alternative implementation for an existing feature in the
+%product, a significant new feature for an existing product  
 
 Feature alpha \cite{bosch2012building}
 
@@ -1623,34 +1604,21 @@ Minimum viable product principle is essential
 
 %Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
 
-%Juha
-\begin{quote}
-"CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query."
-\end{quote}
 
 
 %CDM on taustajärjestelmä, ja kaikki hakuihin liittyvät suorituskyvyt ovat meille kaikkein kriittisimpiä metriikoita. mietitään kuvitteellinen tilanne, että ollaan pisteessä jossa mietitään miten joku haku kannattaa toteuttaa. käytännössä pohdimme kannattaisiko käyttää relaatiokantaa vai dokumenttikantaa. tehdään molempii implementattio, testataan tulosjoukolla ja valitaan suorituskyvyltään parempi
 
-\begin{quote}
-"The software is composed of APIs, through which different components send and receive data. We could track the typos of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
-\end{quote}
+
 
 
 %"Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. "
 
 
-"ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä."
+%"ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä."
 
 
-"Currently we do basically no product development, and all development is customer-oriented"
 
 
-The list of things to consider for CDM regarding continuous experimentation:
-\begin{itemize}
-\item  a
-\item  b
-\item  c
-\end{itemize}
 
 
 
@@ -1745,6 +1713,10 @@ A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-t
 %In test environments the customers may not be very active
 
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
+
+
+3)
+The practice of roadmapping in the case company is operated in product development steering groups, with the purpose to foresee the product development. The first step towards continuous experimentation is to inform the decision-makers of the practice and its benefits. 
 
 
 
