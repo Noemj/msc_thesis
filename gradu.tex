@@ -225,7 +225,7 @@ The broader research objective is explored here. The research questions are stru
 %-What roles are required?
 
 \subsection{Scope and limitations}
-This study focuses on the development process of the case company and its two software products in the B2B domain. Case studies only allow analytic generalisations, and the findings cannot be directly generalised to other cases. This limitation applies especially to applying continuous delivery and continuous experimentation in practice, since software products and customers inevitably differ. The background theory is drawn from literature focusing on continuous delivery, continuous experimentation, lean startup and innovation experiment systems. 
+This study focuses on the development process of the case company and its two software products in the B2B domain. Case studies only allow analytic generalisations, and the findings cannot be directly generalised to other cases. This limitation applies especially to applying continuous delivery and continuous experimentation in practice, since software products and customers inevitably differ. The background theory is drawn from literature focusing on continuous delivery, continuous experimentation, Lean Startup and innovation experiment systems. 
 
 The empirical research of this thesis has been carried out in the context of a medium sized information technology company, Steeri Oy. The company specializes in customer data on multiple fronts: CRM, BI, Master Data Management and data integrations, among others. The empirical research has applied case study methodology to offer deep understanding of the phenomena in their natural context. The tradeoff of a case study research is that it does not provide much room for direct generalizations outside the empirical context. 
 
@@ -253,12 +253,12 @@ Agile software development emerged from the iterative software development metho
 %Lean manufacturing & LSD
 Lean manufacturing, derived from the Toyota Production System \cite{ono1988toyota}, is a streamlined production philosophy that aims to identify the expenditure of resources not used in creating value for the end customer, and eliminate these activities. Lean software development \cite{poppendieck2003lean} has been developed based on the same idea. The purpose of lean software development is to eliminate waste, or anything that doesn't bring value to the customer, and to pursue perfection through smoothing the development flow. The principles in lean software development are eliminate waste, amplify learning, decide as late as possible, deliver as fast as possible, engage everyone, create quality and see the whole. 
 
-Lean software development, developed based on the lean manufacturing principles, is a development approach attempting to eliminate unnecessary work and to create value for the customer. Lean startup \cite{ries2011lean} is a method for developing products based on the lean software development principles. The key component of lean startup is the Build-Measure-Learn cycle, which guides the development process by defining a loop process where ideas are turned into products, which are then measured and the idea pivoted or persevered forwards.
+Lean software development, developed based on the lean manufacturing principles, is a development approach attempting to eliminate unnecessary work and to create value for the customer. Lean Startup \cite{ries2011lean} is a method for developing products based on the lean software development principles. The key component of Lean Startup is the Build-Measure-Learn loop, which guides the development process by defining a loop process where ideas are turned into products, which are then measured and the idea pivoted or persevered forwards.
 
 %Lean startup
-The software development models have moved towards even shorter and shorter feedback loops in the recent years. Lean startup \cite{ries2011lean} is a business and product development method with focus on business-hypothesis-driven experimentation and iterative product releases. A primary purpose of lean startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. This is achieveved by using a Build-Measure-Learn-loop, which is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
+The software development models have moved towards even shorter and shorter feedback loops in the recent years. A primary purpose of Lean Startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. The Build-Measure-Learn loop is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
 
-Continuous delivery is a design practice where the software delivery process is automated, and thus the software can be deployed on short notice. Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages\cite{olsson2012climbing}. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features.
+Continuous delivery is a design practice where the software delivery process is automated, and thus the software can be deployed on short notice. Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages \cite{olsson2012climbing} of the evolution path. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features. 
 
 \begin{figure}[h]
 	\centering
@@ -309,7 +309,7 @@ Holmström Olsson et al. have researched the transition phase from continuous in
 
 Olsson et al. define continuous deployment as a step in the typical evolution path for companies \cite{olsson2012climbing}. The way to deploy versions continuously allows for faster customer feedback, ability to learn from customer usage data and to focus on features that produce real value for the customer.  
 
-Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer. Olsson et al. also note that finding a pro-active lead customer is also essential to explore and form a new engagement model.
+Olsson et al. state that in order to shorten the internal verification loop, different parts in the organization should also be involved, especially the product management as they are the interface to the customer \cite{olsson2012climbing}. They also note that finding a pro-active lead customer is also essential to explore and form a new engagement model.
 
 \subsubsection{Deployment pipeline}
 An essential part of continuous deployment is the deployment pipeline, which is an automated implementation of an application's build, deploy, test and release process \cite{cdbook}. A deployment pipeline can be loosely defined as a consecutively executed set of validations that a software has to pass before it can be released. Common components of the deployment pipeline are a version control system and an automated test suite.
@@ -366,7 +366,7 @@ Continuous experimentation is a term created by Dane McKinley, a Principal Engin
 While continuous experimentation is only loosely defined by McKinley, it poses resemblance to multiple development models. One of such models is the Innovation Experiment System \cite{bosch2012building}. The key principles in these development models are data-driven decisions, linking product development and business aspect, reacting to customers present needs, turning hypotheses into facts, failing fast and steering the development process. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Loop of Lean startup is similar in the sense that controlled experiments drive the development.
 
 %Lean startup
-In Lean startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
+In Lean Startup methodology \cite{ries2011lean} experiments consist of Build-Measure-Learn cycles, and are tightly connected to visions and the business strategy. The purpose of a Build-Measure-Learn cycle is to turn ideas into products, measure how customers respond to the product and then to either pivot or persevere the chosen strategy. The cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Evolution path
 Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R\&D as an 'experiment system'", the entire R\&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous delivery to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatic data collection components and capability to effectively use the collected data.
@@ -378,7 +378,7 @@ Holmström Olsson et al. have researched the typical evolution path of companies
 An experiment is essentially a procedure to confirm the validity of a hypothesis. In software engineering context, experiments attempt to answer questions such as which features are necessary for a product to succeed, what should be done next and which customer opinions should be taken into account. According to Jan Bosch, "The faster the organization learns about the customer and the real world operation of the system, the more value it will provide" \cite{bosch2012building}. Most organizations have many ideas, but the return-on-investment for many may be unclear and the evaluation itself may be expensive \cite{kohavi2007practical}. 
 
 %Continuous deployment - continuous experimentation integration
-Continuous delivery attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of lean startup. The process in continuous experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to validate the hypothesis.
+Continuous delivery attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea. In continuous experimentation the organisation runs controlled experiments to guide the R\&D process. The development cycle in continuous experimentation resembles the build-measure-learn cycle of Lean Startup. The process in continuous experimentation is to first form a hypothesis based on a business goals and customer "pains" \cite{bosch2012building}. After the hypothesis has been formed, quantitative metrics to measure the hypothesis must be decided. After this a minimum viable product can be developed and deployed, while collecting the required data. Finally, the data is analyzed to validate the hypothesis.
 
 %innovation experiment system
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
@@ -1585,40 +1585,9 @@ The list of things to consider for CDM regarding continuous experimentation:
 \item  c
 \end{itemize}
 
-%CDM:ää voi devata näin
-%\begin{itemize}
-%\item  How long does it take to . . 
-%\item  Which of . . . is most often used/accessed/. . .
-%\item  Identify behaviour that is not intended, e.g. menu selection followed by "back" indicates that the user made a mistake.
-%\item  Are there any features that are not used?
-%\item  Be able to evaluate competing designs based on the answers above, i.e. A/B testing (AKA. split testing).
-%\end{itemize}
-
-
-%context. The
-%team can be building an alternative implementation for an existing feature in the
-%product, a significant new feature for an existing product  
-
 Feature alpha \cite{bosch2012building}
 
 Minimum viable product principle is essential 
-
-%Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
-
-
-
-%CDM on taustajärjestelmä, ja kaikki hakuihin liittyvät suorituskyvyt ovat meille kaikkein kriittisimpiä metriikoita. mietitään kuvitteellinen tilanne, että ollaan pisteessä jossa mietitään miten joku haku kannattaa toteuttaa. käytännössä pohdimme kannattaisiko käyttää relaatiokantaa vai dokumenttikantaa. tehdään molempii implementattio, testataan tulosjoukolla ja valitaan suorituskyvyltään parempi
-
-%"Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. "
-
-
-%"ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä."
-
-
-
-
-
-
 
 current problems in roadmapping, choosing features, product development
 
@@ -1636,11 +1605,24 @@ discussion
 
 "Asiakasfirmojen suhtautuminen heidän datan keräämiseen voi olla kysymysmerkki."
 
+%CDM:ää voi devata näin
+%\begin{itemize}
+%\item  How long does it take to . . 
+%\item  Which of . . . is most often used/accessed/. . .
+%\item  Identify behaviour that is not intended, e.g. menu selection followed by "back" indicates that the user made a mistake.
+%\item  Are there any features that are not used?
+%\item  Be able to evaluate competing designs based on the answers above, i.e. A/B testing (AKA. split testing).
+%\end{itemize}
+%context. The
+%team can be building an alternative implementation for an existing feature in the
+%product, a significant new feature for an existing product  
+%Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
+%CDM on taustajärjestelmä, ja kaikki hakuihin liittyvät suorituskyvyt ovat meille kaikkein kriittisimpiä metriikoita. mietitään kuvitteellinen tilanne, että ollaan pisteessä jossa mietitään miten joku haku kannattaa toteuttaa. käytännössä pohdimme kannattaisiko käyttää relaatiokantaa vai dokumenttikantaa. tehdään molempii implementattio, testataan tulosjoukolla ja valitaan suorituskyvyltään parempi
+%"Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. "
+%"ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä."
 %What kind of OEC can be picked?
 %Which attributes can be improved?
-
 %Data-driven decisions
-
 %\subsection{Minimum Viable Process of continuous experimentation}
 %Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
 
@@ -1656,6 +1638,8 @@ As requirements and benefits of continuous experimentation have been investigate
 %%TODO: pitää tehdä joku tällainen ehk 
 %"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery of value. Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. However, due to the changes of the product development, marketing personnel and customers must be informed of the alterations. Customers might need to authorize the collection of their usage data, while the marketing team must be provided a way to track feature progress when moving towards real-time delivery from iterative model. 
+
+One of the key factors in applying the concept is finding a pro-active lead customer that is willing to explore the new engagement model. While certain types of experiments can be performed without the consent of the customer, experiments can degrade the user experience should be informed to the customer. As the customers acknowledge that the product they have bought is being developed to better suit their needs, approval of the experiments is more likely. 
 
 \subsubsection{Applying the model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
