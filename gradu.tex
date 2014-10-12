@@ -1552,30 +1552,33 @@ The list of things to consider for Dialog regarding continuous experimentation:
 %"Sometimes the customers have ideas on how the product should be developed, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
 %\end{quote}
 
-"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
+%"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
 
 %CDM SPECIFIC 
 CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
 \begin{quote}
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked."
 \end{quote}
-Regardless of excluding A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. 
+Regardless of excluding most of A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. Most of the desired improvements are related to performance, and thus the important metrics are related to amount of queries performed in a given timeframe and the duration of a single query.
+\begin{quote}
+"CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query." 
 
-The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laboriuous process. 
+-CDM Team leader
+\end{quote}
+Another possibility is to track the typical errors and to then focus the development towards fixing the most common errors.
+\begin{quote}
+"The software is composed of APIs, through which different components send and receive data. We could track the types of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
+
+-CDM Developer
+\end{quote}
+
+The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laborious process. 
 %For connected, embedded systems this technique is less applicable. This type of
 %experimentation requires the production of a set of prototype systems for the explicit
 %purpose of collecting customer feedback during product development. 
 
 %Juha
-\begin{quote}
-"CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query."
-\end{quote}
-
-
 The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, has cross-case analysis be made to prevent failing to distinguish differences between users.  
-\begin{quote}
-"The software is composed of APIs, through which different components send and receive data. We could track the typos of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
-\end{quote}
 
 The list of things to consider for CDM regarding continuous experimentation:
 \begin{itemize}
@@ -1607,9 +1610,6 @@ Minimum viable product principle is essential
 
 
 %CDM on taustajärjestelmä, ja kaikki hakuihin liittyvät suorituskyvyt ovat meille kaikkein kriittisimpiä metriikoita. mietitään kuvitteellinen tilanne, että ollaan pisteessä jossa mietitään miten joku haku kannattaa toteuttaa. käytännössä pohdimme kannattaisiko käyttää relaatiokantaa vai dokumenttikantaa. tehdään molempii implementattio, testataan tulosjoukolla ja valitaan suorituskyvyltään parempi
-
-
-
 
 %"Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. "
 
