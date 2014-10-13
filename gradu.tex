@@ -33,7 +33,8 @@
 \usepackage[pdftex,hidelinks]{hyperref}
 \usepackage{verbatim}
 \usepackage{multicol}
-\usepackage[titletoc]{appendix}
+
+
 
 % Automatically set the PDF metadata fields
 \makeatletter
@@ -48,10 +49,11 @@
 \usepackage[fixlanguage]{babelbib}
 
 % add bibliography to the table of contents
-\usepackage[nottoc]{tocbibind}
+\usepackage[titletoc]{appendix}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
 
 % --- Theorem environment definitions ---
-
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{cor}[thm]{Corollary}
@@ -294,7 +296,7 @@ Continuous delivery is an extension to continuous integration, where the softwar
 %release cycles
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous delivery, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous delivery are shorter, but that the development is done in a way that makes the software always ready for release.
 \begin{figure}[h]
-	\centeringf
+	\centering
 	\includegraphics[width=5.0in]{rtvd.jpg}
 	\caption{Continuous integration, delivery and deployment.}
 	\label{fig1}
@@ -386,7 +388,7 @@ Kohavi et al. investigate the practical implementations of controlled experiment
 
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
 
-A different model for general experiments, not limited to A/B testing, has also been recently researched. While Fagerholm et al. state that "A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}, have they created an initial model consisting of required building blocks for a continuous experimentation system, depicted in Fig. 4. 
+A different model for general experiments, not limited to A/B testing, has also been recently researched. While Fagerholm et al. state that "A detailed framework for conducting systematic, experiment-based software development has not been elaborated" \cite{fagerholm2014building}, have they created an initial model consisting of required building blocks for a continuous experimentation system, depicted in \ref{fig4}. 
 
 \begin{figure}[h]
 	\centering
@@ -398,12 +400,12 @@ A different model for general experiments, not limited to A/B testing, has also 
 The primary components of the introduced infrastructure are experiment database, analytics tools and instrumentation. The database stores raw data collected from the instrumentation and information related to the experiments, such as the logic for conducting the experiments and the experiment results. The analytics tools are used to perform data analysis on raw data from the experiment database to produce results regarding the experiment. The instrumentation is a part of the delivered software used to gather data regarding pre-defined metrics.  
 
 \subsubsection{Experimentation stages and scopes}
-Fig. \ref{fig4} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
+Fig. \ref{fig5} introduces different stages and scopes for experimentation. For each stage and scope combination, an example technique to collect product performance data is shown. As startups often start new products and older companies instead develop new features, experiments must be applied in the correct context. Bosch states that for a new product deployment, putting a minimal viable product as rapidly as possible in the hands of customers is essential \cite{bosch2012building}. After the customers can use the product, it is often not yet monetizable but is still of value to the customer. Finally, the product is commercially deployed and collecting feedback is required to direct R\&D investments to most valuable features.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=5.0in]{scopes.jpg}
 	\caption{Scopes for experimentation \cite{bosch2012building}.}
-	\label{fig4}
+	\label{fig5}
 \end{figure}
 
 \subsubsection{Experimentation planning}
@@ -440,13 +442,13 @@ In the organization evolution path \cite{olsson2012climbing} continuous deployme
 \subsection{Continuous experimentation in embedded software}
 The purpose of analysing experimentation in embedded software in the context of this thesis is that B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. This resembles the release model found in the case company, where some customers prefer to have new versions shipped every three months. By analyzing how experiments are implemented and the data collected in embedded software, information on how long and short release cycles differ can be gained. 
 
-Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. In the study an embedded architecture for realising an innovation experiment system is presented. The study concentrates on what to evaluate in experiments in embedded software. The infrastucture for enabling the innovation experiment system is shown in Fig. IV.
+Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. In the study an embedded architecture for realising an innovation experiment system is presented. The study concentrates on what to evaluate in experiments in embedded software. The infrastucture for enabling the innovation experiment system is shown in \ref{fig6}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=5.0in]{embedded.png}
 	\caption{Continuous experimentation architecture for embedded software \cite{eklund2012architecture}.}
-	\label{fig4}
+	\label{fig6}
 \end{figure}
 
 The major difference between embedded and traditional software in terms of experimentation is the data collection phase. With embedded software, the data has to be either transferred over-the-air or on-board. With on-board measurements and analysis, the experiment manager autonomously controls when to run which experiments. 
@@ -935,7 +937,6 @@ The challenges regarding continuous delivery will be analyzed in three areas: te
 
 \subsubsection{Technical challenges}
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
-%where are these from? which questions?
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
@@ -946,7 +947,6 @@ The technical challenges for continuous delivery are derived from the interview.
     Configuration & Third party application integration \\ \hline
     Configuration & External components \\ \hline
     Configuration & Different configuration per customer \\ \hline
-   % Configuration & Database versioning \\ \hline
     Connection & Firewall configurations \\ \hline
     Connection & Required certifications \\ \hline
     Connection & Missing user rights \\ \hline
@@ -957,6 +957,14 @@ The technical challenges for continuous delivery are derived from the interview.
 
 %Environment
 One of the main differences between B2B and B2C is the production environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime, to name a few. 
+
+%Downtime
+Downtime of the case company's products can be fatal. With Dialog, downtime causes customers being unable to perform their job. Arbitrary downtime can also interrupt ongoing customer tasks, possibly losing critical data in progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent either cases. In the case of CDM, downtime must therefore be eliminated by utilizing parallel environments during deployment. In the case of Dialog, the downtime either has to be eliminated or informed to the customer beforehand. 
+
+%Automate testing
+Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in an UAT environment before the deployment to production can be made. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without necessarily requiring it to pass the UAT phase. 
+-Always deploy to UAT by the press of a button?
+-How to inform the customers of this?
 
 %-testing costs could be pushed at least partially to users
 The largest technical task is to set up automated testing and test environments. While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects.  
@@ -1181,7 +1189,7 @@ The technical challenges are analyzed based on both the product description docu
 
 %No user interface
 %Only used via API calls
-The case company's products represent two totally different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
+The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
 %TODO: jatka tätä
 
 %Measurable metrics 
