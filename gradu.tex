@@ -72,7 +72,7 @@
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
-\abstract{Delivering more value to the customer is the goal of every software company. To increase the value of a software product, a deep understanding of the customers behavior has to be achieved. Producing, testing and delivering software in real-time allows for faster reaction and shorter feedback loops. Delivering value in real-time requires a company to utizile real-time delivery, data-driven decisions and empirical evaluation of new products and features. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a design practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment to a staging environment. Continuous experimentation is a design practice where the entire R\&D process is guided by controlled experiments and feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the customer is another company instead of an individual. As a result, challenges and best practices regarding the transition towards real-time value delivery in the B2B domain are identified. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{TODO: add rest}}
+\abstract{Delivering more value to the customer is the goal of every software company. To increase the value of a software product, a deep understanding of the customers behavior has to be achieved. Producing, testing and delivering software in real-time allows for faster reaction and shorter feedback loops. Delivering value in real-time requires a company to utizile real-time delivery, data-driven decisions and empirical evaluation of new products and features. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a design practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment to a staging environment. Continuous experimentation is a design practice where the entire R\&D process is guided by controlled experiments and feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the customer is another company instead of an individual. As a result, challenges and best practices regarding the transition towards real-time value delivery in the B2B domain are identified. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
 
 % The following can be used to specify keywords and classification of the paper:
 
@@ -152,7 +152,6 @@ The logical starting point of this thesis was an open issue by the case company:
 %-Deep customer insights
 %  -data-informed solutions
 %  -a deep understanding of customers and products by gathering data continuously from the live use of the products.
-%TODO: Connect this thesis with the Lean Startup Build-Measure-Learn cycle
 %-Interesting aspects:
 %-Products with a history cannot be developed in a MVP manner, more like in a MVF (feature) manner.
 %IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
@@ -270,7 +269,6 @@ In this chapter we first introduce the general principles of continuous delivery
 
 %The most important idea behind continuous delivery is to deliver an idea to the customer as fast as possible.  
 
-%TODO:
 %-Stairway to heaven
 %-Innovation experiment system
 
@@ -371,7 +369,7 @@ In Lean Startup methodology \cite{ries2011lean} experiments consist of Build-Mea
 %Evolution path
 Holmström Olsson et al. have researched the typical evolution path of companies \cite{olsson2012climbing}. The final stage of the evolution phase is when development is driven by the real-time customer usage of software. Defined as "R\&D as an 'experiment system'", the entire R\&D system acts based on real-time customer feedback and development is seen as addressing to customers present needs. At the same time deployment of software is seen as a "starting point for 'tuning' of functionality rather than delivery of the final product". While the evolution from continuous delivery to innovation system wasn't explored, Olsson et al. anticipate that the key actions required are the automatic data collection components and capability to effectively use the collected data.
 
-%TODO: Maybe something about continuous innovation? Brown, 1997, The art of continuous change: Linking complexity theory and time-paced evolution in relentlessly shifting organizations
+%Maybe something about continuous innovation? Brown, 1997, The art of continuous change: Linking complexity theory and time-paced evolution in relentlessly shifting organizations
 %-Connect CE, IES, Microsoft stuff, Lean startup stuff
 
 %Experiment
@@ -409,22 +407,24 @@ Fig. \ref{fig4} introduces different stages and scopes for experimentation. For 
 \end{figure}
 
 \subsubsection{Experimentation planning}
-In continuous experimentation literature, the common way to plan experiments is to utilize the product strategy or roadmap \cite{ries2011lean, fagerholm2012building}. In the Lean Startup Build-Measure-Learn loop, the Learn phase is essentially a decision to whether to persevere or pivot the product strategy. However, this requires that the Measure phase is extensively planned in advance, so that a clear hypothesis exists. Essentially, the Build-Measure-Learn loop is very similar to the Plan-Do-Study-Adjust cycle \cite{TODO: find cite}. The single exception is that the Build-Measure-Learn loop is based on an assumption that the customer needs cannot be known even with planning. 
+In continuous experimentation literature, the common way to plan experiments is to utilize the product strategy or roadmap \cite{ries2011lean, fagerholm2012building}. In the Lean Startup Build-Measure-Learn loop, the Learn phase is essentially a decision to whether to persevere or pivot the product strategy. However, this requires that the Measure phase is extensively planned in advance, so that a clear hypothesis exists. Essentially, the Build-Measure-Learn loop is very similar to the scientific Plan-Do-Study-Adjust loop. The single exception is that the Build-Measure-Learn loop is based on an assumption that the customer needs cannot be known even with planning. 
 
-Fagerholm et al. emphasize the importance of analysing the data to test business hypotheses and assumptions, which have been created from the roadmap. These proven hypotheses can therefore be used to react to customers needs. 
+Fagerholm et al. emphasize the importance of analysing the data to test business hypotheses and assumptions, which have been created from the roadmap. These proven hypotheses can then be used to react to customers needs. The process for conducting experiments therefore starts from the business vision, then moves through planning and design phase to the technical implementation of the experimentation and data collection instrumentation.  
+
+The first step required for a controlled experiment according to Kohavi et al. is to define an Overall Evaluation Criteria (OEC) \cite{kohavi2009online}. This criteria is the metric that the organization agrees to optimize with the experiment. Kohavi et al. cite Lewis Carroll saying "If you don’t know where you are going, any road will take you there". Attention has also to be paid to prevent running underpowered experiments, by determining the minimum sample size required for an experiment to be statistically significant \cite{kohavi2009controlled}.
 
 \subsubsection{Data collection}
-TODO: finish this
-"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
-
 To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, so that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
-An important aspect of collecting data is to pick the correct metrics. One of the common pitfalls for experiments is to choose the wrong overall estimation criteria \cite{crook2009seven}. TODO: follow this up  
+Feedback collection can be divided into two groups, active and passive feedback \cite{bosch2012building}. Active feedback includes collection methods where the customer is aware that he or she is providing feedback. Such collection tools are for example surveys. Passive feedback is collected while the customer is using the system, without the customer being aware of the collection. Examples of such data collection includes tracking the time a user spends using a feature, the frequency of feature selections, or the path through the product the user takes to perform a certain task. Bosch states that what makes the major difference between Innovation experiment systems and tradititional software systems is the low cost and ease of data collection in the former. 
 
+An important aspect of collecting data is to pick the correct metrics. Metrics are numerical summaries used to compare variants of an experiment \cite{kohavi2009controlled}. Metrics range from simple aggregates, such as total page views, to complex measures such as customer satisfaction. One of the common pitfalls for experiments is to choose the wrong overall evaluation criteria \cite{crook2009seven}. This is especially important in the planning phase, where the wanted improved metrics are initially chosen. However, if the data collection layer is complicated, attention has to be paid that the metrics transition correctly from the planning phase to the implementation of the collection phase.  
 \subsubsection{Data analysis}
-To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance. 
+To analyze the raw data, it must first be converted into metrics which can then be compared between the variants in a given experiment. An arbitrary amount of statistical tests can then be run on the data with analytics tools in order to determine statistical significance \cite{kohavi2009controlled}. 
 
-"organisation needs a workfore to analyze qualitative + quantitative data"
+In the analysis phase, attention has to be paid to other variables that might cause deviation of the OEC. As an example, Amazon showed a 1\% sales decrease for an additional 100msec of performance \cite{kohavi2007practical}. In certain cases time could cause deviations of the OEC and complicate experiment results. Kohavi et al. suggest conducting single-factor experiments for gaining insights and making incremential changes that can be decoupled. Another suggestion is to try very different designs, or in backend applications for example completely different algorithms. Data mining can then be used to isolate areas where the new algorithm is significantly better. Finally, using factorial design when factors are suspected to interact strongly is recommended. 
+
+%"organisation needs a workfore to analyze qualitative + quantitative data"
 
 \subsubsection{Roles in continuous experimentation}
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
@@ -489,6 +489,9 @@ It is commonly found in the studies that the practiced experimentation is limite
 Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
 
 One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
+
+
+\cite{kohavi2012trustworthy}
 
 %"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
 %"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
@@ -1212,7 +1215,23 @@ A CDM developer also has an idea of surveying the customers daily routine as a b
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{quote}
 
-While it is common for B2C applications, too, to fluctuate between different Overall Estimation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}.
+While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}.
+
+
+
+TODO: add this to metrics section \cite{kohavi2013online}
+%Claim: Team X is optimizing for something that is not measurable. 
+%Here we need to differentiate between not measurable and non-economical to measure. We believe that the former is a bad way to 
+%run a business. If you can’t articulate what you’re optimizing for, how can the organization determine if you are doing a good job? 
+%If you are not improving a measurable metric, perhaps the other direction is also true: no measurable change will be observable 
+%without you in the organization! 
+%The other interpretation is more reasonable: it may be non-economical to measure the change. While this is valid at times, we 
+%would like to point to Amazon as an example of a company that did decide to measure something hard: the value of TV ads. After 
+%a 15-month-long test of TV advertising in two markets, it determined that TV ads were not a good investment and stopped them 
+%(Bezos, 2005). Is your organization avoiding experiments whose answer they would rather not know? 
+
+
+
 
 %Data collection in customer environment
 
@@ -1692,17 +1711,34 @@ A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-t
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 
-3)
+3) 
 The practice of roadmapping in the case company is operated in product development steering groups, with the purpose to foresee the product development. The first step towards continuous experimentation is to inform the decision-makers of the practice and its benefits. 
 
 
 
+4) Data collection
+
+
+
+
+5)
+Derive OECs for both products
+
+Dialog:
+
+CDM: 
+
+
+%TÄMÄ ehdottomasti
+%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
 (back-end system consists of an experiment database.. ) 
 -Customer environment?
 
 Data collection: Kohavi et al.
 The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging. 
+
+"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
 
 "Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
