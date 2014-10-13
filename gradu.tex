@@ -138,7 +138,7 @@ he were allowed to hit four balls each time and then choose the shot that worked
 \section{Introduction} %Motivation
 
 \subsection{Overview}
-To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{cockburn2002agile} have increased the ability of software companies to cope with changing customer requirements and changing market needs \cite{dzamashvili2010impact}. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers.
+To deliver value fast and to cope with the increasingly active business environment, companies have to find solutions that improve efficiency and speed. Agile practices \cite{cockburn2002agile} have increased the ability of software companies to cope with changing customer requirements and changing market needs \cite{dzamashvili2010impact}. To even further increase the efficiency, shortening the feedback cycle enables faster customer feedback. Additionally, providing software functionality to collect usage data can be used to guide the product development and to increase the value generated for customers. Eventually the company running the most and fastest experiments outcompetes others by having the data to develop products with exceptional qualities \cite{eklund2012architecture}.
 
 The requirement of developing value fast has led to the evolution of a new software development model \cite{bosch2012building}. The model is based on three principles: evolving the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction. Currently more and more software companies are transitioning towards this model, called innovation experiment systems. 
 
@@ -438,8 +438,6 @@ As the experiments are run in a regular fashion, integrating experiments to the 
 
 In the organization evolution path \cite{olsson2012climbing} continuous deployment is seen as a prerequisite for the experimental system. 
 \subsection{Continuous experimentation in embedded software}
-%TODO: finish this chapter
-
 The purpose of analysing experimentation in embedded software in the context of this thesis is that B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. This resembles the release model found in the case company, where some customers prefer to have new versions shipped every three months. By analyzing how experiments are implemented and the data collected in embedded software, information on how long and short release cycles differ can be gained. 
 
 Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. In the study an embedded architecture for realising an innovation experiment system is presented. The study concentrates on what to evaluate in experiments in embedded software. The infrastucture for enabling the innovation experiment system is shown in Fig. IV.
@@ -451,13 +449,12 @@ Eklund and Bosch have applied the innovation experiment system to embedded softw
 	\label{fig4}
 \end{figure}
 
-TODO: loppuun
+The major difference between embedded and traditional software in terms of experimentation is the data collection phase. With embedded software, the data has to be either transferred over-the-air or on-board. With on-board measurements and analysis, the experiment manager autonomously controls when to run which experiments. 
 
-"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
-"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
-"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
-"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
-
+%"Improvement occurs in individual software parts, but the underlying design concept remain mostly unchanged [3]"
+%"The experiment infrastructure allows developers to deploy new software and collect data how it behaves in areal-world settings being used by actual users. The infrastructure support deployment of software experiments and collection of data over-the-air on a scale comparable to the entire customer base". 
+%"The infrastructure supports with automated randomisation and factorial designs [6] sufficient to draw statistical conclusions from the experimental scenarios."
+%"The experiment manager architecture, seen in Figure 3, supports the deployment of multiple experimental software parts to the same device and autonomously controls when to run which experiment, even allowing for local A/B-testing. Measurements and analysis is done on-board in real-time. The experiment scenario to be answered is implemented on the embedded device (i.e. how long does it take to . . . )"
 
 The study also lists possible experiment scenarios supported by the architecture \cite{eklund2012architecture}. Possible experiment cases with the architecture are as follows:
 
@@ -480,9 +477,6 @@ The study also lists possible experiment scenarios supported by the architecture
 %• 
 %• Are there any features that are not used?
 %• 
-
-
-
 \subsection{Challenges regarding continuous experimentation}
 It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
 
@@ -491,12 +485,13 @@ Some companies use traditional metrics such as the Net Promoter Score \cite{reic
 One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
 
 
-\cite{kohavi2012trustworthy}
+%Jotain täältä?
+%\cite{kohavi2012trustworthy}
 
 %"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
 %"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
 %"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
-%TODO: possible challenges in Lean startup: \cite{may2012applying}
+%possible challenges in Lean startup: \cite{may2012applying}
 %-Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
 Crook et al. investigate the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table II. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiment's objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 \begin{center}
@@ -532,8 +527,7 @@ The process of guiding product development with continuous experiments diminishe
 
 %flexibility 
 %no guesswork - systematic way
-%"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. TODO check this
-%"The literature is increasingly recognizing the importance of continuous innovation" \cite{steiber2013corporate}
+%"Companies are increasingly transitioning their traditional research and product development functions towards continuous experiment systems" \cite{olsson2012climbing}. 
 
 \subsection{Existing case studies}
 %At the end of the state-of-the-art section you should describe the differences
@@ -619,7 +613,7 @@ Hypothesis generating techniques are for example "constant comparison method" an
 The data analysis can be conducted with multiple different approaches, with each having a varying degree of formalism. Robson lists four such approaches, from least formal to most formal: Immersion approaches, Editing approaches, Template approaches and Quasi-statistical approaches \cite{robson2002real}. Immersion approaches are the least format, relying mostly on the interpretive skills of the researcher and having a low level of structure. Editing approaches include the usage of some codes which the researcher decides based on findings during the analysis. Template approaches, also known as template analysis, use priori codes to develop a coding template, organising the data based on themes. Quasi-statistical approach is the most formal approach, including quantitative calculations, such as word frequencies. Runeson and Höst state that editing approaches and template approaches are most suitable for software engineering case studies, as a clear chain of evidence is hard to obtain in immersion approaches, and word frequencies are hard to interpret \cite{runeson2009guidelines}. 
 
 \subsubsection{Template analysis}
-
+%http://www.hud.ac.uk/hhs/research/template-analysis/what-is-template-analysis/ 
 Template analysis doesn't describe a clearly defined method, but rather refers to a related group of techniques used to thematically organise and analyse textual data \cite{king2004using}. Template analysis is a relatively structured process to analyse textual data, and has mostly been used to analyse data from individual interviews \cite{king2012doing}. The key component in template analysis is the generation of a coding template, which is initially formed on the basis of a subset of the data and then applied to further data. 
 
 King defines code as a label attached to a section of text to index it as a relating to a theme or issue in the data \cite{king2004using}. As an example, codes can be defined to identify points in the text where an interviewee mentions particular categories of presenting problems. These kind of codes can be descriptive, and require no further analysis by the researcher. However, also codes requiring more interpretation can be defined. In template analysis, a key feature is to form a hierarchical organization of codes \cite{king2004using}. This way groups of similar codes are clustered together to form higher-order codes. This way the researcher can analyse the data at different levels of specifity, with higher-order codes giving a broad view and lower-order codes a more specific view. Parallel coding, where the same text segment is categorised with two different codes, is also allowed. 
@@ -631,7 +625,6 @@ The template is then used in interpretation to provide an account. King lists va
 Another guideline is selectivity. King states that every code cannot be interpreted to equal degree of depth, and themes most relevant to understanding the phenomena under study must be identified. Prior assumptions of the researched shouldn't limit the analysis. Yet another guideline is openness, which King describes as taking themes judged as marginal into account. Themes that aren't of direct relevance to the initial research questions shouldn't be disregarded, as they can play a useful role in adding to the background of the study. Also themes lying outside the scope of the study should be included in the analysis, if they're considered to cast light on the interpretation of central themes in the study. Finally, King explains that purely linear relationships between codes, such as hierarchical relationships with subsidiary codes next to parent codes, "may not reflect the kinds of relationships a researcher may want to depict in his or her analysis". Instead, maps, matrices and other diagrams can be used to explore and display findings, and analysis doesn't have to stop when a full linear template is produced.
 
 Finally, an account of the interpreted data has to be presented. As with interpretation, King provides three common approaches to presentation \cite{king2004using}. First of the approaches is a set of individual case studies, followed by discussion of differences and similarities between cases. This approach gives a lot of perspective of individuals, but can be confusing if the amount of participants is large. The second approach is an account structured around the main themes identified, drawing illustrative examples from each transcript as required. King states that this is the approach that most readily provides a clear thematic discussion, but the dangers is in drifting towards generalizations and losing sights of individual experiences. The third approach is a thematic presentation of the findings, using a different individual case-study to illustrate each of the main themes. The main problem here lies in selecting the cases which represent the themes in the data as a whole. King also adds that no matter which approach is used, direct quotes from participants is essential.  
-%Template TODO: http://www.hud.ac.uk/hhs/research/template-analysis/what-is-template-analysis/ 
 
 \section{Research design}
 
@@ -646,9 +639,6 @@ During this research, the author was an employee at Steeri. Consequently, this c
 %the research underlying this case study is based on a participant-observer research method [1][3].
 %Adler, P.A., Adler, P.: Observational Techniques. In: Denzin, N.K., Lincoln, Y. (eds.) Handbook of Qualitative Research, pp. 377–393. Sage, Thousand Oaks (1994)
 %Corbin, J., Strauss, A.: Basics of qualitative research, 3rd edn. Sage, Thousand Oaks (2008)
-
-
-%TODO: triangulation? 
 
 The logical starting point of this thesis was the need by the case company to find a way to validate whether a feature is succesful or not. 
 
@@ -694,8 +684,8 @@ Experimental context needs the three elements: background information, discussio
 The company in question is Steeri Oy, which is a medium-sized company specializing in managing, analyzing and improving the usage of customer data. In this research, the units under the study are two teams responsible for developing two different software products. The first team is CDM, which is focusing on the respectively named software application. The other team is Dialog, also working for a respectively named software application. Both of the teams are managed by a similar structure, consisfting a team leader and a product owner, quality assurance and commercialization experts. 
 
 The organisation of Steeri Oy is of a divisional type, with each business area forming independent teams based on the products and projects. The business areas of the whole company range from IT consulting to CRM implementations and development of own software products. To scope down the thesis, only teams doing development of own software products are in the scope of this thesis.
-
-%The subteams of the first team under study have a common team leader, but different product owners and middle management. TODO: describe organisation structure %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
+%The subteams of the first team under study have a common team leader, but different product owners and middle management. 
+% describe organisation structure? %: https://docs.google.com/a/steeri.fi/spreadsheet/ccc?key=0Ai02aScOCplAdG9zQURicnlkM0ptTXhqbHN5ZE04X0E&usp=drive_web#gid=0
 
 The unit of analysis is the development process of the two teams. The whole development process consists of the development framework used, but also of the interaction with customers, tools used in the current development process and the roles of individuals in the teams. The unit of analysis is studied by focusing on interviewing individual members at different positions in the organisation. The purpose of the interview is to identify the pain points in the current development process, which are then viewed against the benefits of continuous delivery and continuous experimentation found from existing literature. Analysis of implementing continuous delivery and continuous experimentation is then done based on the interview results.  
 
@@ -710,10 +700,10 @@ The development process of the team is elaborated in detail in the chapter "Stat
   \item Product description
   \item Product environment
   \item Product architecture
-  \item Users of the software component
+  \item Usage
   \item Team composition
   \item Development practice
-  \item Business model TODO: validate if this is confidental
+  \item Business model
   \item Programming languages
   \item Development tools
   \item Version releasing
@@ -725,7 +715,7 @@ The development process of the team is elaborated in detail in the chapter "Stat
 \end{itemize}
 \end{multicols}
 
-The first three characteristics give us information on how the teams develop their software products. Testing is used to.. TODO: explain the general characteristics
+The first three characteristics give us information on how the teams develop their software products. Usage then defines how and by whom the product is used in practice. The team composition and development practice provide important information on how the teams are composed and how they operate. Business model clarifies how the product is marketed, and how the product development is navigated in order to maximize revenue. Programming languages and development tools provide insight on the technical aspect of the development. Version releasing, unit testing and acceptance testing are taken into consideration when analyzing the transition towards continuous delivery, which eventually will automatize these phases. Feedback collection, usage data collection and data usage are analyzed to provide basis for the current feedback process operated by the case company, in order to gain insight on restrictions for continuous experimentation. 
 
 \subsubsection{Dialog}
 The Dialog subteam focuses on developing a multi-channel online marketing automation, iSteer Dialog. It is a software product designed to allow effective marketing on multiple channels, such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in CRM can then be effectively used for marketing purposes. 
@@ -734,8 +724,8 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Product description.] Dialog is a multi-channel online marketing automation tool. The purpose of the product is to allow effective marketing on channels such as e-mail and websites, and to automate repetitive tasks. The product can be integrated to existing CRM solutions, and the data stored in the CRM can then be effectively used for marketing purposes. The product is primarily used through a comprehensive user interface by marketing professionals of customer companies. 
   \item[Product environment.] The product can be run on either servers provided by the case company or on the customers internal servers. Most of the customers use the product on the case companys own servers. Each customer using a provided server has an individual server and configurations, due to different integrations to the customers own systems. Customers running the product on their own servers form a minority.
   \item[Product architecture.] The product consists of a single maven-packaged project. Along with the actual product, several additional third-party or custom components are required. Such components are for example Typo3, which is an open source web content management framework, and a custom component used for SMS integration. Most of the components reside in the version control system, and the main product additionally resides in the CI system. Custom integrations to customers data sources, often based on a third party ESB tool, are individual components as well.
-  \item[Users of the software component.] Dialog is used by marketing professionals to automatize repetitive tasks. The user amount varies, but it is generally less than five human users per customer company.
-  \item[Team composition.] The team consists of 3 software developers. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
+  \item[Usage.] Dialog is used by marketing professionals to automatize repetitive tasks. The user amount varies, but it is generally less than five human users per customer company.
+  \item[Team composition.] The team consists of 3 software developers, a manager for commercialization, a product owner and a quality assurance engineer. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The product is still in the development phase, and is not sold as a ready package. The productization process is however ongoing, and the ideal situation is that the product can be sold as a ready package with only minor configurations per customer. The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
@@ -764,7 +754,7 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
   \item[Product description.] CDM is a Master Data Management \cite{loshin2010master} solution, which is used to integrate multiple customer data sources to create a simple point of reference. These data sources can include for example CRM, ERP and a billing system. The product also manages the data by removing duplicate records, matching same records and cleaning and validating the data with the help of external data such as the resident registration database. The product has an user interface that can be used for testing, but the product is primarily a background application without users. 
   \item[Product environment.] The product is installed to a customer environment, and certain custom specific configurations and rules have to be implemented for each customer. Such configurations are for example the integrations to customers systems and external identification services used. 
   \item[Product architecture.] The product consists of several maven-packaged projects, which in the build stage are added as a dependency under a single main project. The whole product can thus be packaged into a single web archive file.
-  \item[Users of the software component.] CDM is an integrated application, which is primarily only used by other applications. Therefore humans are only using CDM for debugging purposes.
+  \item[Usage.] CDM is an integrated application, which is primarily only used by other applications. Therefore humans are only using CDM for debugging purposes.
   \item[Team composition.] The team consists of 4 software developers and a team leader. The software developers don't have designated roles, and each developer is involved in every aspect of the product development process.
   \item[Development practice.] Development is based around a prioritized kanban board. Features are split into tasks by the product owner or team leader, and inserted into the kanban board. The developers then pick a single task from the sprint backlog column, complete it, and move it to the review column. From there the task undergoes quality assurance and delivery to the customer environment. The detailed development practice is introduced later in this chapter. The team is in the state of continuous integration, but the quality of automated tests isn't yet at the required level to lay confidence in builds working. 
   \item[Business model.] The nature of the product requires customer integrations to customers systems, which are currently mostly done as manual work. In the ideal situation the product contains automated integration, and could be sold as a ready product with minor configuration work. Currently the product is sold as a custom project, and requires installment to the customer environment and integration to the customers systems. After the product goes live the cooperation is continued with a support contract.
@@ -839,7 +829,7 @@ If verification for the feature fails, the Product Owner should move the feature
 \item[Prioritized lists.] The backlog owner adds tasks to prioritized lists from team backlog as soon as the tasks meet the required criterias, contain the required information and are inspected by both the stakeholders and the backlog owner.
 \end{description}
 
-\subsection{Methods} %how to collect data? TODO: what, how, why?
+\subsection{Methods} %how to collect data? 
 The primary source of information in this research are semi-structured interviews \cite{runeson2009guidelines} performed within the CDM and Dialog teams. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous delivery and continuous experimentation. Data triangulation is implemented by interviewing multiple individuals. Methodological triangulation is implemented by collecting documentary data regarding the development process from internal documents. 
 
 %miksi tutkimuskysymyksiin voidaan vastata haastattelututkimuksella?
@@ -880,14 +870,14 @@ The results are formed from the final template, and structured according to them
 %The process of template analysis is to first create an initial template based on some pre-defined codes \cite{king2004using}. Then the template is revised by working through the data systematically while identifying and coding sections of interest in the text. Based on these findings, the initial template is modified, and finally develops to its final form. Modifications can be either insertion, deletion, changing scope or changing higher-order classification \cite{king2004using}. The final template is such that no sections of text related to research questions remains uncoded. 
 
 %The template is then used in interpretation to provide an account. King lists various guidelines that can be used in the interpretation of coded data \cite{king2004using}. The first guideline is to compile a list of all codes with some indication of frequency. The distribution of codes can then help to draw attention to the aspects of data with either multiple codes or missing codes. For example, if one interview in a set of interviews is missing a certain theme, analysis for possible reasons behind that missing code can be made. However, King suggests that while patterns can be used to draw attention to certain parts of the textual data, frequencies alone cannot be to gain any meaningful information. 
-% tabulation \cite{runeson2009guidelines}, where coded data is arranged into tables to get an overview of the data. The data is organized by ..TODO.
+% tabulation \cite{runeson2009guidelines}, where coded data is arranged into tables to get an overview of the data. The data is organized by 
 
 
 %"One example of a useful technique for analysis is tabulation, where the coded data is arranged in tables, which makes it possible to get an overview of the data. The data can, for example be organized in a table where the rows represent codes of interest and the columns represent interview subjects." \cite{runeson2009guidelines} 
 
 %-roles (devs, business, PO's)
 
-%If developers and business people agree, the company is heading to right direction TODO: seek quote
+%If developers and business people agree, the company is heading to right direction 
 
 %\section{Development process of the case company}
 %an overview of the entire process, then refining the parts that are relevant for the problems 
@@ -1137,8 +1127,6 @@ In the case company, the production deployment date is often negotiated with and
 %Hyvä että he validoivat toiminnallisuuden. Downtimeä voi tulla, mutta siirrot ovat yleensä varattuja siihen aikaan kun ei ole asiakkaan työaika. Dialogia käyttää vain asiakkaan työntekijät suoraan, vain virka-aikaan eikä yöllä tai viikonloppuisin.     Ei ainakaan tavallisesti. Ei, pysyy poissa sen ajan. Jotkut halusivat itse testata sitä ja tehdä itse testicaseja. Heillä on testi- ja tuotantodialogit, muilla ei. Ei tarvitse.
 %Asiakas validoi ohjelmiston toimivuuden.   Asiakkaalla on downtime silloin kun siirretään tuotantoon. Testaavat uutta versiota testiympäristössä.  Ei muutakuin korkeintaan haluamassa versiota. Sovitaan päivä. Ei muuten kuin päättää ajat. Tuotanto on kuitenkin alhaalla kun versio siirretään. 
 
-%TODO: tärkee
-
 
 %The deployment time has to be negotiated with the customer
 
@@ -1193,33 +1181,25 @@ Technical aspect includes the data collection, measurable metrics and other chal
 %No user interface
 %Only used via API calls
 The case company's products represent two totally different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
+%TODO: jatka tätä
 
 %Measurable metrics 
 The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include for example feature alpha and usage metrics.
 
-The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, generated revenue for example is not a valid measurable metric. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it harder to pick the correct measurement variables. This is what a developer has to say:
-
+The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. This is what a developer has to say:
 \begin{quote}
 "We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
 \end{quote}
-
 A possibility is to tone the product in cooperation with the customer, using their internal measures as metrics. According to a Dialog developer:
-
 \begin{quote}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
 \end{quote}
-
 A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
-
 \begin{quote}
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{quote}
+While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. However, a clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. 
 
-While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}.
-
-
-
-TODO: add this to metrics section \cite{kohavi2013online}
 %Claim: Team X is optimizing for something that is not measurable. 
 %Here we need to differentiate between not measurable and non-economical to measure. We believe that the former is a bad way to 
 %run a business. If you can’t articulate what you’re optimizing for, how can the organization determine if you are doing a good job? 
@@ -1463,7 +1443,6 @@ The amount of manual work can be diminished to couple of button clicks defining 
 %No manual work
 
 
-%TODO: ehkä matskuu täältä: http://files.zeroturnaround.com/pdf/JRebelWhitePaper2014.pdf
 
 %    Problem area & Specific problem \\ \hline
 %    General & Downtime \\ \hline
@@ -1557,7 +1536,7 @@ The list of things to consider for Dialog regarding continuous experimentation:
 \item  Statistical significance
 \end{itemize}
 
-%TODO: prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
+%prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
 
 %Ville
 %\begin{quote}
@@ -1649,7 +1628,8 @@ As requirements and benefits of continuous experimentation have been investigate
 %-It is essential that feedback is sought during the whole process.
 %%-Feedback sought through Prototype or demo
 %-Requires activation throughout the company
-%%TODO: pitää tehdä joku tällainen ehk 
+
+
 %"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery of value. Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. However, due to the changes of the product development, marketing personnel and customers must be informed of the alterations. Customers might need to authorize the collection of their usage data, while the marketing team must be provided a way to track feature progress when moving towards real-time delivery from iterative model. 
 
