@@ -830,27 +830,29 @@ If verification for the feature fails, the Product Owner should move the feature
 \end{description}
 
 \subsection{Methods} %how to collect data? 
-The primary source of information in this research are semi-structured interviews \cite{runeson2009guidelines} performed within the CDM and Dialog teams. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) problems and strengths in the current development process, (5) software product, (6) future ways with continuous delivery and continuous experimentation. Data triangulation is implemented by interviewing multiple individuals. Methodological triangulation is implemented by collecting documentary data regarding the development process from internal documents. 
+The primary source of information in this research are semi-structured interviews \cite{runeson2009guidelines} performed within the CDM and Dialog teams. The interview consists of pre-defined themes as follows: (1) current development process, (2) current deployment process, (3) current interaction with customers, (4) software product and (5) future ways with continuous delivery and continuous experimentation. Data is also collected through the product description documents and development process documents to verifying and supplementing the interview data. Data triangulation is implemented by interviewing multiple individuals. Methodological triangulation is implemented by collecting documentary data regarding the development process from internal documents. 
 
 %miksi tutkimuskysymyksiin voidaan vastata haastattelututkimuksella?
 The interview was chosen as a data collection method because of the nature of the research questions. Since the study focuses on applying two development methods to the development process of a team, individual perceptions of members are required. As the case study doesn't include a technical implementation, quantitative measurements to properly measure the effects before and after implementation isn't an option. The research questions cannot be properly supported with quantitative data. There is also a uncertainty about how much information the interviewees are able to provide, and thus the questions are mostly open-ended. The nature of interviewees opinions on the research questions are also not known in advance, and quantifying it isn't simple. 
 
 %miksi haastattelukysymykset vastaavat tutkimuskysymyksiin?
-In order to answer the research questions, information regarding the development process, customer interaction and feedback, deployment process and technical product details are required. The interview is divided into themes to address these aspects. The interview questions address, among other things, the specific situations and action sequences of the interview rather than general opinions. 
+In order to answer the research questions, information regarding the development process, customer interaction and feedback, deployment process and technical product details are required. The interview is divided into themes to address these aspects. The interview questions address, among other things, the specific situations and action sequences of the interviewee rather than general opinions. 
 
 \subsubsection{Data collection}
 The interview is a semi-structured interview with a standardized set of open-ended questions, which allows deep exploration of studied objects \cite{runeson2009guidelines}. The interviews are performed once with every subject. Leading questions are avoided on purpose, and different probing techniques such as "What?"-questions are used. The interviews are performed in the native language of the interviewee if possible, otherwise in English, and are recorded in audio format. The audio files are then transcribed into text.
 
 %miksi olen valinnut semi-structured interview:n
-The interview begins with a set of background questions, used in coding the interview data per subject. After the introductory questions, the main interview questions make up most of the interview. The interview session is structured based on areas under study rather than based on a specific model. The interview roughly consists of four different areas: development process, deployment process, feedback and usage data, and experimentation.
+The interview begins with a set of background questions, used in coding the interview data per subject. After the introductory questions, the main interview questions make up most of the interview. The interview session is structured based on areas under study rather than based on a specific model. The interview roughly consists of five different areas: development process, deployment process, customer interaction, feedback and usage data, and experimentation.
 
 The development process questions aim to identify the current ways of working, including variances between different roles. The questions also identify the perceived problems and strengths in the development process, which are then used in analysing the potential process for continuous experimentation. 
 
 The deployment process is examined from multiple point of views. This includes the customer point and view, developer point of view and management point of view. Emphasis is based on B2B specific issues and practices, which are often caused by differences in the software environment as compared to B2C.  
 
-Feedback and usage data collection section analyse the procedure of collecting and utilising the data. The section aims to identify the manners in which feedback is received, collected and systematically used. The section also analyses how different roles interact with the customer. 
+The customer interaction section analyses customer involvement in the development and deployment process. The section identifies where the customer's presence is high, what is the role of the customer in the operational level and how the role of the customer affects the transition towards continuous delivery and continuous experimentation. 
 
-The experimentation section analysis the possibilities of conducting experiments to guide the development process in the case company. This includes technical details, such as instrumenting the software components with data collection mechanisms and external usage data collection components, and storing the data in customer environment. The section also includes more specific questions, such as possible challenges faced in A/B testing and issues in quickly deploying experiments to the customer environment.  
+Feedback and usage data collection section analyses the procedure of collecting and utilising the data. The section aims to identify the manners in which feedback is received, collected and systematically used. The section also analyses how different roles interact with the customer. 
+
+The experimentation section analyses the possibilities of conducting experiments to guide the development process in the case company. This includes technical details, such as instrumenting the software components with data collection mechanisms and external usage data collection components, and storing the data in customer environment. The section also includes more specific questions, such as possible challenges faced in A/B testing and issues in quickly deploying experiments to the customer environment.  
 
 %miksi valitsin nämä haastateltavat
 Interview data is primarily sought from the developers of the development teams and the managers of the team. As the focus of the thesis is on the development process of two different teams, all participants of the team and its management team are interviewed. Process data is sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. Data regarding the development process is also collected from the internal documents.
@@ -927,14 +929,11 @@ This section summarises key findings of the case study. It is structured accordi
 
 %You need to release frequent security patches. Bad guys out there want to manipulate our systems to show ads, run compute-intensive algorithms, steal passwords and financial information, and view commercial and government secrets. With Chinese hackers going against the NSA, it's literally spy versus spy. We are caught in the crossfire, forced to issue frequent updates. You can think of continuous delivery as extending your security patch process to your software development activities.
 
-Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are very common. 
+Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are very common. This section analyzes the problems faced with applications that are installed and operated in customer environments when transitioning towards continuous delivery.
 
-The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. 
-
-Technical aspect includes the environmental challenges, configural challenges and other challenges related to the software product and its usage. Procedural aspect includes the challenges regarding the development process of software. Customer aspect consists of the customer interaction, 
+The challenges regarding continuous delivery will be analyzed in three areas: technical, procedural and customer. Technical aspect includes the environmental challenges, configural challenges and other challenges related to the software product and its usage. Procedural aspect includes the challenges regarding the development process of software. Customer aspect consists of the customer interaction and customer commitment.
 
 \subsubsection{Technical challenges}
-
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
 %where are these from? which questions?
 
@@ -1023,6 +1022,7 @@ Transferring the software product to a customer-owned environment instead of own
 %(CDM) -Downtime -ei ihmiskäyttäjiä, olisi ihan tehtävissä. UAT:kin on, jengi varaa resurssit testaamiseen, en tiedä onko kykyä tehdä kaksi versiota ja deployata ne tuotantoon. jos asiakkaan testaajien pitää kerran viikossa mennä UAT:hen testaamaan uutta versiota, söisi se niiltä paljon resursseja. Ei uusi versio kuitenkaan huono tilanne ole, ei heidän välttämättä tarvitsisi sitä testata. UAT on käytännössä pakollinen ennen tuotantoa, Sanomilla on sitä testattu ja se on CDM:n kanssa varsin haastavaa kun pitäisi tietää mitä tulisi eksakstisti takaisin. pitää pelata ulkositen palvelijoiden (VTJ) pelisäännöillä kun ei voida tietää mitä palautuu. yhdellä datasetillä testaaminen on vähän turhaa, kun yhden datasetin toimiminen ei kerro meille käytännössä mitään.	Ei tietoa teknisistä haasteista.
 
 \subsubsection{Procedural challenges}
+The procedural challenges are analyzed based on the development process documentations of the company and the interview, in which a section was dedicated to the current development process of the case company. 
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
@@ -1092,6 +1092,7 @@ Another procedural challenge is that continuous delivery drifts response towards
 %UAT
 
 \subsubsection{Customer challenges}
+The customer challenges are analyzed based on two sections of the interview: customer interaction and the deployment process. 
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
@@ -1153,17 +1154,17 @@ In the case company, the production deployment date is often negotiated with and
 %"Plus, you want to get good at selectively hiding features from customers. That skill set is essential for gradual roll-outs and, most importantly, A/B split-testing. In traditional large batch deployment systems, split-testing a new feature seems like considerably more work than just throwing it over the wall. Continuous deployment changes that calculus, making split-tests nearly free. As a result, the amount of validated learning a continuous deployment team achieves per unit time is much higher. "
 
 
+%Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 \subsection{Continuous experimentation: B2B challenges}
 
-The case company's two software products differ on how they are used by the customers. In this seciotn, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
-
-%Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
+The case company's two software products differ on how they are used by the customers. In this section, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
 
 The challenges regarding continuous experimentation will be analyzed in three areas: technical, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products mostly affects A/B testing.  
 
 Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
 
 \subsubsection{Technical challenges}
+The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
@@ -1199,19 +1200,6 @@ A CDM developer also has an idea of surveying the customers daily routine as a b
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{quote}
 While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. However, a clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. 
-
-%Claim: Team X is optimizing for something that is not measurable. 
-%Here we need to differentiate between not measurable and non-economical to measure. We believe that the former is a bad way to 
-%run a business. If you can’t articulate what you’re optimizing for, how can the organization determine if you are doing a good job? 
-%If you are not improving a measurable metric, perhaps the other direction is also true: no measurable change will be observable 
-%without you in the organization! 
-%The other interpretation is more reasonable: it may be non-economical to measure the change. While this is valid at times, we 
-%would like to point to Amazon as an example of a company that did decide to measure something hard: the value of TV ads. After 
-%a 15-month-long test of TV advertising in two markets, it determined that TV ads were not a good investment and stopped them 
-%(Bezos, 2005). Is your organization avoiding experiments whose answer they would rather not know? 
-
-
-
 
 %Data collection in customer environment
 
@@ -1253,6 +1241,7 @@ Data collection directly from a customer might also require permissions and nego
 %    Ohjelmallinen tapa - mitä klikkaillaan, kauanko ollaan sivulla, mitä asioita käytetään paljon. Pyrittäisiin parantamaan näiden asioiden saavutettavuutta joita käytetään paljon. Voisiko ei-käytetyt asiat olla sellaisilla sijainneilla missä voisi olla käytettäviä asioita, onko asiat asetettu oikein sivuille? Klikkailujen kerääminen ei ole erityisen vaikeaa. Lupa tähän täytyy saada. Teknisesti se ei ole vaikeaa. Johtopäätöksien vetäminen datasta ei ole yksiselitteistä, mutta jo tällä voidaan arvioida onko etusivulla asioita joita ei käytetä tai onko syvällä ohjelmistossa asioita joita käytetään todella paljon. Näitä voisi parantaa. Haastatteluissa voisi saada näistä tärkeämpää tietoa.  laittaa joku plugin joka katsoo mitä on klikattu, ja seurata täten eniten käytettyjä flowta.  Loggausta voisi suunnitella sen kannalta, että logiin tulisi parhaat merkinnät käytettävyyden kohdalta. Jos tietää miten asiakas käyttää tuotetta, voisi loggausta käyttää sen perusteella mitä asiakas tekee.  On ollut puhetta että asennettaisiin analytiikkaohjelma, josta saisi käytettävyysdataa. Olisi hyvä mitata miten asiakkaat käyttävät tuotetta. On tullut usein tullut vastaan tukipyyntöjä joissa joku toinen mieltää ohjelman eri lailla ja käyttää aivan eri reittejä kuin itse. Analytiikka voisi auttaa tähän. Sitä kautta nähtäisiin että asiakas käyttää tuotetta aivan eri lailla kuin itse olemme ajatelleet. Dialogia vaikea käyttää siinä mielessä, että samoja toiminnallisuuksia voi tehdä monta eri väylää pitkin ja tuote on todella laaja. Se ei ole itsellekään ihan hanskassa.  Voisi kerätä dataa: Mitkä ovat yleisimmät toiminnallisuudet? Joskus menty koulutuksissa katsomaan miten asiakas käyttää itse tuotetta, ja tämän perusteella on tehty muutoksia. Voisi kerätä recordaamalla tai katsomalla. Pitäisi vielä tarkemmin käyttöliittymällisissä projekteissa keskittyä löytämään tärkeimmät asiat joita käytetään eniten ja missä on riippuvuutta bisnekseen, ja tehdä niistä mahdollisimman jouhevat. 
 
 \subsubsection{Customer challenges}
+The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
@@ -1308,6 +1297,7 @@ According to the interview results, the product owners state that to collect dat
 %Some customers might use the product only a few months a year
 
 \subsubsection{A/B testing}
+The A/B testing is analyzed based on the product description documents and two sections of the interview: feedback collection and experimentation.
 
 \begin{center}
     \begin{tabular}{ | l | p{5cm} |}
