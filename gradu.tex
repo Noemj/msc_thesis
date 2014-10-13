@@ -486,10 +486,8 @@ Some companies use traditional metrics such as the Net Promoter Score \cite{reic
 
 One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
 
-
 %Jotain täältä?
 %\cite{kohavi2012trustworthy}
-
 %"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
 %"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
 %"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
@@ -511,10 +509,6 @@ Crook et al. investigate the common pitfalls encountered when running controlled
     \caption{Pitfalls to avoid when running controlled experiments on the web \cite{crook2009seven}.}
     \end{table}
 \end{center}
-
--Roles
--Environment
--Deployment
 
 \subsection{Motivation}
 %However, based on the state-of-the practice section (describing 
@@ -961,13 +955,10 @@ One of the main differences between B2B and B2C is the production environment. W
 %Downtime
 Downtime of the case company's products can be fatal. With Dialog, downtime causes customers being unable to perform their job. Arbitrary downtime can also interrupt ongoing customer tasks, possibly losing critical data in progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent either cases. In the case of CDM, downtime must therefore be eliminated by utilizing parallel environments during deployment. In the case of Dialog, the downtime either has to be eliminated or informed to the customer beforehand. 
 
-%Automate testing
-Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in an UAT environment before the deployment to production can be made. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without necessarily requiring it to pass the UAT phase. 
--Always deploy to UAT by the press of a button?
--How to inform the customers of this?
-
 %-testing costs could be pushed at least partially to users
 The largest technical task is to set up automated testing and test environments. While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects.  
+%Automate testing
+Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in an UAT environment before the deployment to production can be made. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment.
 
 %Third party application integration
 Both of the case company's software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
