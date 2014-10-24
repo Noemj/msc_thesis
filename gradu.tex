@@ -64,6 +64,14 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
+\def\signed#1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil\raise-3pt\hbox{(#1)}%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quotation}}
+  {\signed{\usebox\mybox}\end{quotation}}
 
 % --- tktltiki2 options ---
 %
@@ -1186,42 +1194,42 @@ The case company's products represent two different styles of software products.
 %Measurable metrics 
 The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include for example feature alpha and usage metrics.
 
-The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. This is what a developer has to say:
-\begin{quote}
+The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. 
+\begin{aquote}{Dialog developer}
 "We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
-\end{quote}
-A possibility is to tone the product in cooperation with the customer, using their internal measures as metrics. According to a Dialog developer:
-\begin{quote}
+\end{aquote}
+A possibility is to tone the product in cooperation with the customer, using their internal measures as metrics.
+\begin{aquote}{Dialog developer}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
-\end{quote}
+\end{aquote}
 A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
-\begin{quote}
+\begin{aquote}{CDM developer}
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
-\end{quote}
+\end{aquote}
 While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. However, a clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. 
 
 %Data collection in customer environment
 
 The case company's products are mostly installed to customer environments, with customer-owned servers. The data then has to be effectively stored and acquired from an external feature, if the analysis is to be done at the company's own servers. However, the case company's applications deal with millions of records of data, and the developers don't see storing additional experimentation-related data as a challenge:
 
-\begin{quote}
+\begin{aquote}{CDM developer}
 "The data would be on the customer companies servers, where we have our own access and right to install software. If the data is collected on the server where we fetch it from, it's not a challenge. The data shouldn't encumber the system."
-\end{quote}
+\end{aquote}
 
 %\begin{quote}
 %"The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
 %\end{quote}
 
 
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
-\end{quote}
+\end{aquote}
 
 %Required permissions
 Data collection directly from a customer might also require permissions and negotiations with the customer. 
-\begin{quote}
+\begin{aquote}{Dialog developer}
 "We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
-\end{quote}
+\end{aquote}
 
 
 %Hardcoded APIs integrated to other components
@@ -1259,9 +1267,9 @@ The customer challenges are analyzed based on three sections of the interview: c
 %Customers have actual needs
 In the case company, features have been primarily created for actual customer requirements. This somewhat limits the direction of product development. In the case company, almost 100\% of the completed features have been determined by the customer. This is what a product owner has to say:
 
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "The goal ratio would be 50-50. Half would be our vision of how to perform business, the rest requirements from customers. In the current situation the ratio is 100-0, and for over a year every feature has been the result of a customers needs regarding Dialog."
-\end{quote}
+\end{aquote}
 
 The product roadmap has advanced by being led by the customer projects, since the revenue comes from the customers. The actual customer requirements are a large part of the product development stage, and customer projects often consists of only features required by the customer. As the product development is in the ideal case guided by both the customer needs and own ideas, the proportion of data-driven decisions is smaller than in B2C.
 
@@ -1270,9 +1278,9 @@ The product roadmap has advanced by being led by the customer projects, since th
 %Customers don't want downtime 
 Another issue in the customer projects is downtime. Since the customers are using the software during normal work hours, critical tasks cannot be interrupted by version changes. Currently the time slow for version deployment is negotiated with the customer, and the downtime is positioned during times that the software isn't used. A simple solution for this is to have the test environment continuous updated, while the production environment update is negotiated with the customer. However, the test environment isn't always actively used. This is what a developer has to say on the issue:
 
-\begin{quote}
+\begin{aquote}{Dialog developer}
 "Usually the customers test environment isn't in heavy use, and it might take for the customer to react to changes. In our own test server we get a lot faster feedback. The customer has also be informed if we perform major changes, since the customer needs to know how to use the software."
-\end{quote}
+\end{aquote}
 
 Therefore continuously updating the test environment either has to alarm customers that new features are to be tested, or production environments has to be fixed in such manner that continuous updates don't cause downtime.
 
@@ -1317,9 +1325,9 @@ Low user amount in both products, with Dialog ranging from 3-5 users per custome
 
 However, a product owner views the user amount from a different point of view:
 %Ville
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, could the customer make more money. This doesn't therefore necessarily require a large user amount."
-\end{quote}
+\end{aquote}
 
 %No users, only integrated systems 
 %No user interface to tune
@@ -1335,9 +1343,10 @@ In A/B testing, the measurable metrics greatly vary between the case company's p
 
 In Dialog, the need for data-driven decisions is greater than that of CDM due to the visible parts of the software. Even though Dialog doesn't generate profit per-se, optimizing the time it takes for customers to perform certain tasks increases the benefit of Dialog for the customers. Therefore the A/B testing in Dialog could include metrics such as time spent on performing certain tasks, amount of errors encountered in certain features or amount of back-selections indicating mistakes made by the user.
 
-\begin{quote}
+%Ändi
+\begin{aquote}{Dialog quality assurance engineer}
 "If we had more customers, we could for example do A/B testing. Some customers are really enthusiastic of Dialog, especially that they could have an impact on the development. If we sold them a model where they could try things out, they could really be willing to do that. On the other hand we have customers that want no changes at all."
-\end{quote}
+\end{aquote}
 
 %User education
 
@@ -1404,9 +1413,9 @@ Some features in Dialog and CDM are specified to work exactly as is, and the cus
 A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
 
 The manual build process involves human error factor, which can cause multiple bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor is also partially missing documents. Some steps of the deployment pipeline are documented, but there are still parts that some developers memorize. According to a developer:
-\begin{quote}
+\begin{aquote}{CDM developer}
 "There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
-\end{quote}
+\end{aquote}
 
 %-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
 Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the whole configuration for build deployment, but the rest can still trigger the deployment process.  
@@ -1416,13 +1425,13 @@ Since some of the manual steps are only memorized by certain developers, the dep
 %Deploy to where - UAT?
 
 The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
-\end{quote}
+\end{aquote}
 
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
-\end{quote}
+\end{aquote}
 
 Continuous delivery process solves many of the stated problems. By adopting continuous delivery, the changes can be kept small and frequent so that the customer doesn't have to train the staff with sparse, big updates. Instead, the changes can be introduced more frequently with smaller updates. Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
 
@@ -1507,13 +1516,13 @@ In the case company, selection of the development ideas is based almost exclusiv
 
 %DIALOG SPECIFIC 
 Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
-\begin{quote}
+\begin{aquote}{Dialog developer}
 "Developers can make improvement suggestions, and occasionally product owners invent feature ideas. The ideas are based on a guess that the customer might find this valuable."
-\end{quote} 
+\end{aquote} 
 While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. While the low user amount for A/B testing - 3-5 users per customer - does not suit experiments based on statistical importance, the user actions can be tracked. 
-\begin{quote}
+\begin{aquote}{Dialog product owner}
 "The amount of available statistical data is not high much due to the user amount, but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, the customer would make more money. It doesn't therefore necessarily require a large user amount."
-\end{quote}
+\end{aquote}
 A possibility expressed by a member of the management is to aid marketing by giving a MPV implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
 
 Another experimental feature that is seen suitable for Dialog is an in-product survey. These surveys are then placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
@@ -1536,21 +1545,19 @@ The list of things to consider for Dialog regarding continuous experimentation:
 
 %CDM SPECIFIC 
 CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
-\begin{quote}
+\begin{quote}{CDM team leader}
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked."
 \end{quote}
 Regardless of excluding most of A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. Most of the desired improvements are related to performance, and thus the important metrics are related to amount of queries performed in a given timeframe and the duration of a single query.
-\begin{quote}
+
+\begin{aquote}{CDM team leader}
 "CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query." 
-
--CDM Team leader
-\end{quote}
+\end{aquote}
 Another possibility is to track the typical errors and to then focus the development towards fixing the most common errors.
-\begin{quote}
-"The software is composed of APIs, through which different components send and receive data. We could track the types of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
 
--CDM Developer
-\end{quote}
+\begin{aquote}{CDM developer}
+"The software is composed of APIs, through which different components send and receive data. We could track the types of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
+\end{aquote}
 
 The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laborious process. 
 %For connected, embedded systems this technique is less applicable. This type of
