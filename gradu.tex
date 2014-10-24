@@ -863,6 +863,8 @@ Interview data is primarily sought from the developers of the development teams 
 
 During the interviews, it was soon detected that the interviewees are able to give accurate answers to certain contexts based on their positions. This eventually contributed to the template analysis, where the data was better organised based on roles. Developers were most aware of the product and project context, including technical details and project details. Team leaders were mostly aware of the process and project context. They were the persons who were most able to explain the development process in detail. The team leaders were also most proficient in feedback collection. The management was most aware of the company context, including the status of the organization and available resources in the company. 
 
+To summarize, interviews were chosen as the main data collection method based on three criteria. Firstly, the nature of the research questions required insight on the company settings and opinions of the employees. Secondly, quantitative data cannot be used to answer to the research questions, as first initial understanding of the phenomena has to be formed. Thirdly, the analysis is divided into themes based on the software products, and qualitative data provided by interviews can be readily analysed according to themes.
+
 \subsubsection{Data analysis} %http://en.wikipedia.org/wiki/Thematic_analysis#Phases_of_Thematic_Analysis
 In this case study the data analysis is based on template analysis, which is a way of thematically analysing qualitative data \cite{king1998template}. The initial template was first formed by exploring the qualitative data for three themes: development process, deployment of software and experimentation. Through multiple iterations of the data, multiple subthemes were then added to the three existing themes by further coding the data. Attention was paid to different roles of the interviewees.
 
@@ -1423,7 +1425,6 @@ Since some of the manual steps are only memorized by certain developers, the dep
 %Manual changelog
 
 %Deploy to where - UAT?
-
 The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
 \begin{aquote}{Dialog product owner}
 "If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
@@ -1634,7 +1635,6 @@ One of the key factors in applying the concept is finding a pro-active lead cust
 \subsubsection{Applying the model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
-
 Kohavi et al. have..
 \cite{kohavi2013online}
 Tenets:
@@ -1667,8 +1667,7 @@ Due to the very general nature of the infrastructure introduced by Fagerholm et 
 %-Experiment executed with data from MVP or MVF
 %-Analysis, results used to support decisiong making
 
-1)
-Limiting the amount of experiments per project 
+1) Limiting the amount of experiments per project 
 \begin{center}
     \begin{tabular}{ | p{5cm} | l | l | p{3cm}}
     \hline
@@ -1679,7 +1678,10 @@ Limiting the amount of experiments per project
 
 A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
 
-2)
+
+2)UAT environment before Prod
+
+
 "A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
 
 %In test environments the customers may not be very active
@@ -1687,26 +1689,13 @@ A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-t
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 
-3) 
+3) Adopting the practice
+
 The practice of roadmapping in the case company is operated in product development steering groups, with the purpose to foresee the product development. The first step towards continuous experimentation is to inform the decision-makers of the practice and its benefits. 
 
 
 
 4) Data collection
-
-
-
-
-5)
-Derive OECs for both products
-
-Dialog:
-
-CDM: 
-
-
-%TÄMÄ ehdottomasti
-%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
 (back-end system consists of an experiment database.. ) 
 -Customer environment?
@@ -1718,6 +1707,19 @@ The first solution is to simply use an existing data collection tool, such as We
 
 
 "Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
+
+
+"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
+
+5)
+Derive OECs for both products
+
+Dialog:
+
+CDM: 
+%TÄMÄ ehdottomasti
+%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
+
 
 Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
 \begin{enumerate}
@@ -1752,8 +1754,6 @@ Explain step 2
 %-Apply in context
 
 %-List deviations
-
-"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
 
 Trello
