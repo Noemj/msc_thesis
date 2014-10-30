@@ -1414,6 +1414,8 @@ Some features in Dialog and CDM are specified to work exactly as is, and the cus
 %Not much reliability in new versions
 A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
 
+However, without comprehensive automated testing and with the broad scale of features in both software products, in the deployment phase various features are occasionally forgotten and not tested. The features can remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, this increases the customer reluctancy towards new versions.
+
 The manual build process involves human error factor, which can cause multiple bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor is also partially missing documents. Some steps of the deployment pipeline are documented, but there are still parts that some developers memorize. According to a developer:
 \begin{aquote}{CDM developer}
 "There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
@@ -1439,6 +1441,9 @@ Continuous delivery process solves many of the stated problems. By adopting cont
 Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
 
 The amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy.  
+
+TODO: list benefits of continuous delivery here, attach them to problems
+
 %No manual work
 
 
