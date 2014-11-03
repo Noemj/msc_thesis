@@ -33,6 +33,9 @@
 \usepackage[pdftex,hidelinks]{hyperref}
 \usepackage{verbatim}
 \usepackage{multicol}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+\def\UrlBreaks{\do\/\do-}
 
 
 
@@ -82,7 +85,7 @@
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
-\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a design practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a design practice where the entire R\&D process is guided by conducting controlled experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. As a result, challenges and best practices regarding the transition towards real-time value delivery in the B2B domain are identified. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
+\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a development practice where the entire R\&D process is guided by conducting experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. As a result, challenges and best practices regarding the transition towards real-time value delivery in the B2B domain are identified. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
 
 % The following can be used to specify keywords and classification of the paper:
 
@@ -238,7 +241,7 @@ This study focuses on the development process of the case company and its two so
 
 The empirical research of this thesis has been carried out in the context of a medium sized information technology company, Steeri Oy. The company specializes in customer data on multiple fronts: CRM, BI, Master Data Management and data integrations, among others. The empirical research has applied case study methodology to offer deep understanding of the phenomena in their natural context. The tradeoff of a case study research is that it does not provide much room for direct generalizations outside the empirical context. 
 
-This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter, organized according to the research questions. Finally, the seventh chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
+This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter, organized according to the research questions. The seventh chapter summarizes and interprets the main results, and discusses the limitations of the thesis. Finally, the eight chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
 %Structure:
 %
 %#1
@@ -254,6 +257,22 @@ This thesis is organized as follows. The first chapter is the introduction at ha
 %>analyze state of the art
 %>state hypotheses
 %>derive solution idea
+
+\subsection{Contributions}
+
+This thesis contributes to continuous experimentation \cite{fagerholm2014building} and organization evolution path \cite{olsson2012climbing} discussions by analysing the theories in B2B domain. These research areas are increasingly interesting in research, but none of the existing studies focuses purely on the B2B domain. There is growing research interest in these areas, however, most of the research takes place in B2C domain. Thus, the primary contribution of this thesis is to analyze the effects of this phenomena in a new domain. 
+
+The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. However, due to the research questions 1 and 2, this research contributes to the continuous delivery theory by identifying issues found when deploying the software to an external, customer-owned environment. The study suggests that... TODO: continue
+
+\begin{center}
+    \begin{tabular}{ | l | p{5cm} |} 
+    \hline
+    Theory & Contribution \\ \hline
+    Continuous delivery & y \\ \hline
+    Continuous experimentation & y \\ \hline
+    \hline
+    \end{tabular}
+\end{center}
 
 \section{Literature: Continuous Delivery}
 %Agile
@@ -1651,8 +1670,6 @@ Tenet 3: We are poor at assessing the value of ideas
 "Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
 
 
-
-
 %Fagerholm model
 %"The model consists of repeated Build-Measure-Learn blocks, supported by an infrastructure, as shown in Figure 1. Conceptually, the model can also be thought to apply not only to software development, but also to design and development of software-intensive products and services. In some cases, experi- mentation using this model may require little or no development of software."
 %Following the Lean Startup methodology [19], this vision is fairly stable and is based on knowledge and beliefs held by the entrepreneur.
@@ -1786,43 +1803,49 @@ Trello
 %4.analysis
 %5.steer
 
-\section{Discussion}
-This thesis was motivated by the general increased interest towards innovative experimental systems \cite{olsson2012climbing}, and the lack of related studies in the B2B domain. While especially continuous delivery and partly continuous experimentation have been utilized and researched in the B2C domain, the benefits and challenges are still vague for B2B companies. Understanding the central aspects of continuous delivery and continuous experimentation will be a must for software companies willing to stay ahead of competitors in the current rapidly moving industry.
 
-This thesis applied an exploratory view on the development model of the case company, attempting to deconstruct it into smaller parts. 
+\section{Discussion}
+
+%Begin with a summary of your results using little  or no statistical jargon.
+
+%Use “the layperson test”: How would you explain your findings to a relative?
+
+%One way to organize this section is around whether findings did or did not support the study’s hypotheses or research questions.
+
+%Interpretation: This section addresses the meaning of your findings
+
+\subsection{Limitations}
+The scope was limited to the development model of two software products within the case company, and direct generalizations to other domains and products should be avoided. Since case studies only allow analytic generalisations, cannot the findings be directly generalised to other cases. This limitation applies especially to applying continuous experimentation in practice, since software products and customers inevitably differ.
+
+%• Think of limitations in four major areas (but all 
+%four need to be present):
+%– Internal Validity: unless the study is a “true 
+%experiment” one cannot claim that the IV “caused” 
+%changes in the DV
+%– External Validity: issues of the extent to which findings 
+%can be generalized must be discussed
+%– Measurement: discuss issues of reliability and validity 
+%of assessment instruments
+%– Statistical analysis: discuss issues of power, effect size, 
+%conservative or liberal statistics and statistical test 
+%chosen
+
+\section{Conclusion}
+
+\subsection{Summary}
+This thesis was motivated by the general increased interest towards innovative experimental systems \cite{olsson2012climbing}, and the lack of related studies in the B2B domain. While especially continuous delivery and partly continuous experimentation have been utilized and researched in the B2C domain, the benefits and challenges are still vague for B2B companies. Understanding the central aspects of continuous delivery and continuous experimentation will be a must for software companies willing to stay ahead of competitors in the current rapidly moving industry.
+%This thesis applied an exploratory view on the development model of the case company, deconstructing it into smaller parts. 
 
 The analysis of continuous delivery and continuous experimentation proceeded from higher-level considerations of B2B requirements to more detailed focus of applying the models in B2B context. The findings provide insights into the differences between B2C and B2B companies, the software products in these domains and the development models used. In addition to the difference in two domains, the findings also compare the development models from the viewpoint of two different software products.
 
-%The findings also show that ..
-
-\subsection{Contribution}
-This thesis contributes to continuous experimentation \cite{fagerholm2014building} and organization evolution path \cite{olsson2012climbing} discussions by analysing the theories in B2B domain. These research areas are increasingly interesting in research, but none of the existing studies focuses purely on the B2B domain. There is growing research interest in these areas, however, most of the research takes place in B2C domain. Thus, the primary contribution of this thesis is to analyze the effects of this phenomena in a new domain. 
-
+%TODO: list of main requirements?
 This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. The benefits of these approaches have been identified for the case company, and a company with similar products can use them as a basis when reasoning the applying of these approaches. 
-
-The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. However, due to the research questions 1 and 2, this research contributes to the continuous delivery theory by identifying issues found when deploying the software to an external, customer-owned environment. The study suggests that... TODO: continue
 
 The findings also indicate that shifting towards continuous experimentation is different based on the nature of the software product. By analyzing the two different products, insight on different types of experiments suitable for each product was gained.    
 
-%Table of contributions to theory? 
-%The contributions to continuous delivery theory are 
-%The contributions to continuous experimentation theory 
-
-\begin{center}
-    \begin{tabular}{ | l | p{5cm} |} 
-    \hline
-    Theory & Contribution \\ \hline
-    Continuous delivery & y \\ \hline
-    Continuous experimentation & y \\ \hline
-    \hline
-    \end{tabular}
-\end{center}
-
 \subsection{Further research}
 
-The scope was limited to the development model of two software products within the case company, and direct generalizations to other domains and products should be avoided. Since case studies only allow analytic generalisations, cannot the findings be directly generalised to other cases. This limitation applies especially to applying continuous experimentation in practice, since software products and customers inevitably differ.
-
-However, the phenomena was deeply understood through gathering large amount of qualitative data and systematically analysing it. %utilize theoretical lens? 
+Regardless of the limitations a case study has, the phenomena was deeply understood through gathering large amount of qualitative data and systematically analysing it. %utilize theoretical lens? 
 Therefore the core findings should be applicable to similar research problems outside of the empirical context of this thesis. This means that the B2B challenges and benefits of continuous delivery and continuous experimentation can be considered as a starting point for further studies in other contexts where these development models take place.
 
 %\section{Conclusions}
