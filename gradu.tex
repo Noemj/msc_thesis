@@ -1011,8 +1011,6 @@ Both of the case company's products are used in multiple different customer envi
 %VPN user limit
 Transferring the software product to a customer-owned environment instead of own environment introduces multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
 
-
-
 %-automate testing
 %Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
 
@@ -1059,7 +1057,7 @@ The procedural challenges are analyzed based on the development process document
     Environmental & UAT environment is a requisite for production release \\ \hline
 	Procedural & Feature stubs \\ \hline
 	Procedural & The software has to be deployed to multiple customer environments \\ \hline
-	Procedural & Versioning \\ \hline
+	Procedural & Versioning is affected by having different customer profiles of the product \\ \hline
 	Roles & Responsibility moves towards developers \\
     \hline
     \end{tabular}
@@ -1187,9 +1185,9 @@ In the case company, the production deployment date is often negotiated with and
 
 The case company's two software products differ on how they are used by the customers. In this section, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
 
-The challenges regarding continuous experimentation will be analyzed in three areas: technical, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products mostly affects A/B testing.  
+The challenges regarding continuous experimentation will be analyzed in four areas: technical, organizational, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products mostly affects A/B testing.  
 
-Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
+Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The organizational aspect includes challenges related to the organizational culture, financing and ways of working. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
 
 \subsubsection{Technical challenges}
 The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
@@ -1199,10 +1197,9 @@ The technical challenges are analyzed based on both the product description docu
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
     CDM & Not having a UI limits the scope of experiments \\ \hline
-	CDM & Only used via API calls \\ \hline
+	CDM & The system is only usable via API calls, which limits the scope of experiments \\ \hline
 	General & Measurable metrics \\ \hline
-	Data collection & Data has to be collected in customer environments \\ \hline
-	Data collection & Required permissions \\
+	Data collection & Data has to be collected in customer environments \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1246,27 +1243,23 @@ The case company's products are mostly installed to customer environments, with 
 "The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
 \end{aquote}
 
-%Required permissions
-Data collection directly from a customer might also require permissions and negotiations with the customer. 
-\begin{aquote}{Dialog developer}
-"We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
-\end{aquote}
 
+\subsubsection{Organizational challenges}
 
-%Hardcoded APIs integrated to other components
+The organizational challenges are analyzed based on the data collected from the experimentation section of the interview.
 
-  %  Ilman käyttöliittymää hieman vaikeaa. Rajapintoja joiden kautta ihmiset lähettävät dataa, siihen voisi liittää seurantaa minkälaisia viestejä ihmiset lähettää ja menevätkö ne läpi. Voisi katsoa minkälaisia pyyntöjä ihmiset lähettävät, ottaa tästä opiksi ja miettiä miten rajapintaa voisi kehittää. Esim. tutkia tyypillisiä virheitä. Logitusta voisi kehittää säätämällä logitusasetuksia. Toisinaan virheviestit hautautuvat logiin. Häläreitä virhetilanteista voisi automatisoida, jotkut systeemit on monitoroinnin alla. 	Virheidenkeräystä voisi hyödyntää paremmin.	ei ole sellaista joka vaikuttaisi suoraan loppukäyttäjälle. ainahan voisi optimoida sen mukaan miten järjestelmät käyttävät cdm:ää, muttei suoranaisesti sellaista mikä liittyisi cdm:ään.		nopeus, käyttöliittymän selkeys. ehkä cdm:ssä voisi kerätä minkälaisia hakuja ja minkä tyyppisiä hakuja tehdään. analysoidaan dataa mitä tulee sisään.	Sitä voisi ylipäänsä kerätä.
-
-
-
-%Another possibility is to include customers in the measurement process. According to a developer:
-
-
-
-%    Tallentamisessa pitää olla sovittu asiakkaan kanssa se että sitä kerätään. Voidaan kerätä Dialogin kantaan, pitäisi sopia luku. Osille asiakkaista ei ole suoraa pääsyä verkkoon paitsi monimutkainen VPN-säätö: tänne ei välttämättä pääsisi kovinkaan helpolla. Isoimmilla firmoilla varsinkin on säädöksiä datan käyttöön ja tietoturvaan. ei ongelmia.  Jos se kerätään Dialogin sisällä, kannattaa se tallentaa Dialogin tietokantaan. Vaihtoehtona lähetys lokaaliin urliin, ja se on vähän turhan hankalaa. Helpompaa voisi olla laittaa käyttäjäryhmiin joku taulu, johon kerätään tietoa.  Pitäisi selvittää onko tuo mahdollista ja kuinka tarkkoja asiakkaat ovat mitä dataa kerätään. On myös väliä onko palvelin heillä vai meillä, eivätkä kaikki välttämättä anna meidän kerätä dataa. käyttäjät tuskin olisivat pahoillaan. Heitä motivoi se, että me yritämme parantaa heidän tekemistä. B2B puolella luultavasti asiakkaat antavat träkätä toimintoja, koska asiakas on ostanut jo tuotteen.
-
-
-%    Ohjelmallinen tapa - mitä klikkaillaan, kauanko ollaan sivulla, mitä asioita käytetään paljon. Pyrittäisiin parantamaan näiden asioiden saavutettavuutta joita käytetään paljon. Voisiko ei-käytetyt asiat olla sellaisilla sijainneilla missä voisi olla käytettäviä asioita, onko asiat asetettu oikein sivuille? Klikkailujen kerääminen ei ole erityisen vaikeaa. Lupa tähän täytyy saada. Teknisesti se ei ole vaikeaa. Johtopäätöksien vetäminen datasta ei ole yksiselitteistä, mutta jo tällä voidaan arvioida onko etusivulla asioita joita ei käytetä tai onko syvällä ohjelmistossa asioita joita käytetään todella paljon. Näitä voisi parantaa. Haastatteluissa voisi saada näistä tärkeämpää tietoa.  laittaa joku plugin joka katsoo mitä on klikattu, ja seurata täten eniten käytettyjä flowta.  Loggausta voisi suunnitella sen kannalta, että logiin tulisi parhaat merkinnät käytettävyyden kohdalta. Jos tietää miten asiakas käyttää tuotetta, voisi loggausta käyttää sen perusteella mitä asiakas tekee.  On ollut puhetta että asennettaisiin analytiikkaohjelma, josta saisi käytettävyysdataa. Olisi hyvä mitata miten asiakkaat käyttävät tuotetta. On tullut usein tullut vastaan tukipyyntöjä joissa joku toinen mieltää ohjelman eri lailla ja käyttää aivan eri reittejä kuin itse. Analytiikka voisi auttaa tähän. Sitä kautta nähtäisiin että asiakas käyttää tuotetta aivan eri lailla kuin itse olemme ajatelleet. Dialogia vaikea käyttää siinä mielessä, että samoja toiminnallisuuksia voi tehdä monta eri väylää pitkin ja tuote on todella laaja. Se ei ole itsellekään ihan hanskassa.  Voisi kerätä dataa: Mitkä ovat yleisimmät toiminnallisuudet? Joskus menty koulutuksissa katsomaan miten asiakas käyttää itse tuotetta, ja tämän perusteella on tehty muutoksia. Voisi kerätä recordaamalla tai katsomalla. Pitäisi vielä tarkemmin käyttöliittymällisissä projekteissa keskittyä löytämään tärkeimmät asiat joita käytetään eniten ja missä on riippuvuutta bisnekseen, ja tehdä niistä mahdollisimman jouhevat. 
+\begin{center}
+    \begin{tabular}{ | l | p{9cm} |}
+    \hline
+    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
+    Funding &  \\ \hline
+    Team composition & \\ \hline
+    Culture & Transitioning towards experimentation culture affects other teams, including sales \\ \hline
+    Organizational divergency & \\ \hline
+	Time &  \\ 
+    \hline
+    \end{tabular}
+\end{center}
 
 \subsubsection{Customer challenges}
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
@@ -1279,7 +1272,7 @@ The customer challenges are analyzed based on three sections of the interview: c
 	Downtime & Customers perform routine tasks that cannot be interrupted \\ \hline
 	General & Customers have to be informed for major changes \\ \hline
 	Data collection & The software has to undergo testing in the UAT before production release \\ \hline
-	Data collection & The end-users might be customers' customers, complicating feedback collection\\
+	Data collection & The end-users might be customers' customers, complicating feedback collection \\ \hline
 	Data collection & Proper legal agreements need to be made \\ 
     \hline
     \end{tabular}
@@ -1324,6 +1317,9 @@ The feedback collection in B2B has multiple challenges. In the case of customer 
 
 %Proper agreements need to be made
 According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. 
+\begin{aquote}{Dialog developer}
+"We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
+\end{aquote}
 
 %Some customers might use the product only a few months a year
 
