@@ -753,10 +753,10 @@ The Dialog subteam focuses on developing a multi-channel online marketing automa
   \item[Business model.] The product is still in the development phase, and is not sold as a ready package. The productization process is however ongoing, and the ideal situation is that the product can be sold as a ready package with only minor configurations per customer. The product is currently sold as a custom project, and requires installment to the customer environment and integration to the customers systems. The customer has also be trained to use the product, and after the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written mainly in Java, with the front-end built using JavaScript. 
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects, and Bugzilla is used as the bugtracker. 
-  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
+  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average. The release cycle length for customers in the development phase ranges from 2 to 4 weeks. 
   \item[Unit testing.] Unit testing is done by the developers whenever a feature is written. 
   \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team whenever a version is deployed to the customer environment. 
-  \item[Feedback collection.] Feedback is collected from customers in retrospective meetings after the projects. Feedback is also received directly from customers via e-mail and meetings, but isn't collectively gathered in other ways. Feedback isn't automatically collected in any way.
+  \item[Feedback collection.] During development, acceptance testing is the main source of feedback. Some of the features are also developed for pilot customers. Feedback is also collected from customers in retrospective meetings after the projects, and received directly from customers via e-mail and meetings. Feedback isn't automatically collected in any way. The team has plans for in-product surveys and usage data analysis.
   \item[Usage data collection.] Usage data isn't collected at all.
   \item[Feedback and usage data usage.] The received feedback is discussed within the team to improve the development process or certain parts of the product. The feedback isn't systematically used,. 
 \end{description}
@@ -783,10 +783,10 @@ The CDM subteam focuses on building a Master Data Management \cite{loshin2010mas
   \item[Business model.] The nature of the product requires customer integrations to customers systems, which are currently mostly done as manual work. In the ideal situation the product contains automated integration, and could be sold as a ready product with minor configuration work. Currently the product is sold as a custom project, and requires installment to the customer environment and integration to the customers systems. After the product goes live the cooperation is continued with a support contract.
   \item[Programming languages.] The product is written in Java.
   \item[Development tools.] The team uses GitHub as the version control system, and Jenkins as the integration server. Trello is used as the kanban board to manage projects. 
-  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average.
+  \item[Version releasing.] A new version is released when a customer requires a certain feature, and that feature has been completed. Updates for other customers are then released every two to three months on average. The release cycle length for customers in the development phase ranges from 2 to 4 weeks. 
   \item[Unit testing.] Unit tests are required for new features, and are written by the developers during of after the feature implementation.
   \item[Acceptance testing.] Acceptance testing is performed by the Concepting and Management team and the team leader whenever a version is deployed to the customer environment. 
-  \item[Feedback collection.] Feedback is collected from customers in retrospective meetings after the projects. Feedback is also received directly from customers via e-mail and meetings, but isn't collectively gathered in other ways. Feedback isn't automatically collected in any way.
+  \item[Feedback collection.] During development, acceptance testing is the main source of feedback. Feedback is also collected from customers in retrospective meetings after the projects, and received directly from customers via e-mail and meetings. Feedback isn't automatically collected in any way.
   \item[Usage data collection.] Usage data isn't collected at all.
   \item[Feedback and usage data usage.] The received feedback is discussed within the team to improve the development process or certain parts of the product. The feedback isn't systematically used,. 
 \end{description}
@@ -965,7 +965,7 @@ The technical challenges for continuous delivery are derived from the interview.
     \begin{tabular}{ | l | p{5cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    General & Downtime \\ \hline
+    General & Downtime is more critical for certain customers. \\ \hline
     General & Automate testing \\ \hline
     Configuration & Third party application integration \\ \hline
     Configuration & External components \\ \hline
