@@ -962,18 +962,18 @@ The challenges regarding continuous delivery will be analyzed in three areas: te
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    General & Downtime is more critical for certain customers. \\ \hline
+    General & Downtime is more critical for certain customers \\ \hline
     General & Automate testing \\ \hline
-    Configuration & Third party application integration \\ \hline
-    Configuration & External components \\ \hline
-    Configuration & Different configuration per customer \\ \hline
-    Connection & Firewall configurations \\ \hline
-    Connection & Required certifications \\ \hline
-    Connection & Missing user rights \\ \hline
-	Connection & VPN user limit \\ \hline
+    Configuration & Software is often integrated to multiple third party applications \\ \hline
+    Configuration & Software is often accompanied by multiple external components \\ \hline
+    Configuration & There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
+    Connection & Transferring the software product to a customer-owned environment  \\ 
+    %Connection & Required certifications \\ \hline
+    %Connection & Missing user rights \\ \hline
+	%Connection & VPN user limit \\ \hline
     \hline
     \end{tabular}
 \end{center}
@@ -1053,12 +1053,12 @@ Transferring the software product to a customer-owned environment instead of own
 The procedural challenges are analyzed based on the development process documentations of the company and the interview, in which a section was dedicated to the current development process of the case company. 
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Environmental & UAT \\ \hline
+    Environmental & UAT environment is a requisite for production release \\ \hline
 	Procedural & Feature stubs \\ \hline
-	Procedural & Multiple customer environments \\ \hline
+	Procedural & The software has to be deployed to multiple customer environments \\ \hline
 	Procedural & Versioning \\ \hline
 	Roles & Responsibility moves towards developers \\
     \hline
@@ -1123,13 +1123,13 @@ Another procedural challenge is that continuous delivery drifts response towards
 The customer challenges are analyzed based on two sections of the interview: customer interaction and the deployment process. 
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Training & Customers are trained with a certain UI \\ \hline
-    New release & Customer reluctancy \\ \hline
-	New release & Deployment schedule and downtime \\ \hline
-	New release & Ongoing critical tasks by users \\
+    Training & Customers are trained to use a certain UI \\ \hline
+    New release & Customers are reluctant towards new versions \\ \hline
+	New release & Production deployment schedule has to be negotiated with the customer \\ \hline
+	New release & Ongoing critical tasks by users cannot be interrupted with downtime \\
     \hline
     \end{tabular}
 \end{center}
@@ -1195,13 +1195,13 @@ Technical aspect includes the data collection, measurable metrics and other chal
 The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    CDM & No user interface \\ \hline
+    CDM & Not having a UI limits the scope of experiments \\ \hline
 	CDM & Only used via API calls \\ \hline
 	General & Measurable metrics \\ \hline
-	Data collection & Customer environment \\ \hline
+	Data collection & Data has to be collected in customer environments \\ \hline
 	Data collection & Required permissions \\
     \hline
     \end{tabular}
@@ -1272,15 +1272,15 @@ Data collection directly from a customer might also require permissions and nego
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Origin of features & Customer requirements \\ \hline
+    Origin of features & A large part of developed features are requirements from customers \\ \hline
 	Downtime & Customers perform routine tasks that cannot be interrupted \\ \hline
 	General & Customers have to be informed for major changes \\ \hline
-	Data collection & Environment \\ \hline
-	Data collection & Feedback collection \\
-	Data collection & Proper agreements need to be made \\ \hline
+	Data collection & The software has to undergo testing in the UAT before production release \\ \hline
+	Data collection & The end-users might be customers' customers, complicating feedback collection\\
+	Data collection & Proper legal agreements need to be made \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1310,7 +1310,10 @@ Therefore continuously updating the test environment either has to alarm custome
 The customers have been trained to perform certain tasks with the software, and if the UI constantly undergoes major changes the customers might get lost. There is already some reluctancy towards now versions, since new versions possibly introduce new bugs and certain UI elements might have their places changed. Therefore customers have to be informed for major changes, so that possible new training sessions can be arranged. For minor updates, release notes and required guides are a must.
 
 %Environment
-The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company.
+The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company. Performing experiments only in the UAT environment reduces the user amount to very low, and prevents actual end-users being subjected to the experiments. Entirely skipping the UAT environment is seen as very risky by the product owners and developers.
+
+%UAT is the norm
+%As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
 
 %Feedback collection
 %How is fb collected
@@ -1328,15 +1331,15 @@ According to the interview results, the product owners state that to collect dat
 The A/B testing is analyzed based on the product description documents and two sections of the interview: feedback collection and experimentation.
 
 \begin{center}
-    \begin{tabular}{ | l | p{5cm} |}
+    \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    User amount & Low user volume \\ \hline
+    User amount & Low user volume limits the scopes of experiments \\ \hline
 	CDM & No users, only integrated systems \\ \hline
-	CDM & No user interface to tune \\ \hline
-    Environment & UAT \\ \hline
-    General & Measurable metrics \\ \hline
-	Dialog & Users have been educated to use certain features \\
+	%CDM & No user interface to tune \\ \hline
+    %Environment & UAT \\ \hline
+    General & Measurable metrics for the software products are not extensively conceived \\ \hline
+	Dialog & Users have been educated to use certain features \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1356,13 +1359,17 @@ The main difference between the case company's software products is the intended
 
 Along with low user amount, the issue with Dialog is that the customers have been taught to use the UI to perform certain tasks. The UI of Dialog is quite complicated, and some customers are very reluctant to changes to the UI. A possible solution for this issue is a detailed use guide with each new version, where the changes are easily readable. 
 
-%UAT is the norm
-As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
-
 %Measurable metrics
 In A/B testing, the measurable metrics greatly vary between the case company's products. In CDM, the team finds A/B testing the query machine beneath the API to be the most beneficial. These kind of A/B tests would divide the users to different queries, and the performance metric could be optimized based on the result. Another possibility found from the interview results is offering multiple query features, and then tracking which one is used more by the customer. However, as the customers clients are hard-coded, the users would also have to modify their systems accordingly. 
 
+%TODO: jatka tästä
+Most members of the CDM team proposed performance as the only improvable metric. 
+
 In Dialog, the need for data-driven decisions is greater than that of CDM due to the visible parts of the software. Even though Dialog doesn't generate profit per-se, optimizing the time it takes for customers to perform certain tasks increases the benefit of Dialog for the customers. Therefore the A/B testing in Dialog could include metrics such as time spent on performing certain tasks, amount of errors encountered in certain features or amount of back-selections indicating mistakes made by the user.
+
+%TODO: jatka tästä dialogin metriikkoja. Mitä haastateltavat antoivat metriikoiksi?
+Members of the Dialog team proposed ..
+
 
 %Ändi
 \begin{aquote}{Dialog quality assurance engineer}
@@ -1805,6 +1812,10 @@ Trello
 
 
 \section{Discussion}
+
+%Findings:
+%UAT: what to do?
+
 
 %Begin with a summary of your results using little  or no statistical jargon.
 
