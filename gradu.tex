@@ -970,7 +970,7 @@ The technical challenges for continuous delivery are derived from the interview.
     Configuration & Software is often integrated to multiple third party applications \\ \hline
     Configuration & Software is often accompanied by multiple external components \\ \hline
     Configuration & There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
-    Connection & Transferring the software product to a customer-owned environment  \\ 
+    Connection & Transferring the software product to diverse customer-owned environments \\ 
     %Connection & Required certifications \\ \hline
     %Connection & Missing user rights \\ \hline
 	%Connection & VPN user limit \\ \hline
@@ -1127,7 +1127,9 @@ The customer challenges are analyzed based on two sections of the interview: cus
     Training & Customers are trained to use a certain UI \\ \hline
     New release & Customers are reluctant towards new versions \\ \hline
 	New release & Production deployment schedule has to be negotiated with the customer \\ \hline
-	New release & Ongoing critical tasks by users cannot be interrupted with downtime \\
+	New release & Ongoing critical tasks by users cannot be interrupted with downtime \\ \hline
+	New release & Pilot customer is required for developing the process \\ \hline
+	New release & Changelogs are especially important, since customers depend on the software \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1143,6 +1145,15 @@ In the case company many of the customers have a reluctancy towards new versions
 Customers might be using the software when a new version is deployed, and the deployment process shouldn't interfere with ongoing usage. Therefore the most viable solution is to initially deploy the versions to the UAT environment. To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.  
 
 In the case company, the production deployment date is often negotiated with and specified by the customer, while the product can be deployed to UAT at will. UAT is also used by the customer to validate the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. However, the customers don't validate the versions at the UAT environment unless they are informed that new versions are available, since the UAT is not used for any other purpose than testing. 
+
+%Pilot customer
+Pilot customer is a company 
+
+\begin{aquote}{Dialog developer}
+"Customers need to understand what continuous delivery is all about."
+\end{aquote}
+
+Changelogs 
 
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
 %Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
@@ -1198,7 +1209,7 @@ The technical challenges are analyzed based on both the product description docu
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
     CDM & Not having a UI limits the scope of experiments \\ \hline
 	CDM & The system is only usable via API calls, which limits the scope of experiments \\ \hline
-	General & Measurable metrics \\ \hline
+	General & Measurable metrics for the software products are not extensively identified  \\ \hline
 	Data collection & Data has to be collected in customer environments \\ 
     \hline
     \end{tabular}
@@ -1252,13 +1263,15 @@ The organizational challenges are analyzed based on the data collected from the 
     \begin{tabular}{ | l | p{9cm} |}
     \hline
     \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Funding & Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
-    Team composition & \\ \hline
+    Resources & Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
+    Resources & Competence in experimentation is not high, and requires education \\ \hline
     Culture & Transitioning towards experimentation culture affects other teams, including sales \\ \hline
     Organizational divergency & \\ 
     \hline
     \end{tabular}
 \end{center}
+
+According to the interviews, transitioning towards experimental R&D is perceived as desirable but expensive. Product development has been in recession with the accelerating customer amount and increasing customer requirements. The teams under inspection have no prior experience with experimenting or data analysis, and require training in order to gain domain knowledge of experimentation. 
 
 \begin{aquote}{Dialog quality assurance engineer}
 "Currently, the product is developed based on what the customers want. We would need more resources [to guide the development with experiments]."
@@ -1274,10 +1287,10 @@ The customer challenges are analyzed based on three sections of the interview: c
     Origin of features & A large part of developed features are requirements from customers \\ \hline
 	Downtime & Customers perform routine tasks that cannot be interrupted \\ \hline
 	General & Customers have to be informed for major changes \\ \hline
+	General & Technical personnel aren't involved in customer interaction \\ \hline
 	Data collection & The software has to undergo testing in the UAT before production release \\ \hline
 	Data collection & The end-users might be customers' customers, complicating feedback collection \\ \hline
-	Data collection & Proper legal agreements need to be made \\ 
-    \hline
+	Data collection & Proper legal agreements need to be made with the customers to collect data \\ 	
     \end{tabular}
 \end{center}
 
@@ -1305,6 +1318,10 @@ Therefore continuously updating the test environment either has to alarm custome
 %Customers have to be informed for major changes 
 The customers have been trained to perform certain tasks with the software, and if the UI constantly undergoes major changes the customers might get lost. There is already some reluctancy towards now versions, since new versions possibly introduce new bugs and certain UI elements might have their places changed. Therefore customers have to be informed for major changes, so that possible new training sessions can be arranged. For minor updates, release notes and required guides are a must.
 
+%Technical personnel aren't involved
+In the case company the customer interaction is mainly done by the team leaders and product owners. This limits the developers knowledge of the customers needs, and the parties with enough knowledge to design experiments are the personnel continuously interacting with the customer. 
+
+
 %Environment
 The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company. Performing experiments only in the UAT environment reduces the user amount to very low, and prevents actual end-users being subjected to the experiments. Entirely skipping the UAT environment is seen as very risky by the product owners and developers.
 
@@ -1319,7 +1336,7 @@ The customer feedback is currently continuously received but not actively collec
 The feedback collection in B2B has multiple challenges. In the case of customer companies, feedback doesn't always come straight from the end user. Feedback relies on what the other companies representatives say, and this often includes their own opinions. Companies want the software for their own use, and they have requirements for property rights, security and others. If there are customer projects with multiple suppliers, it's hard to get feedback since maintaining communication and keeping track on up-to-date status of the project with multiple suppliers is hard. In case of Dialog, the user is not the payer. The user has to use the software even if it was bad. It is hard to get a neutral point of view. 
 
 %Proper agreements need to be made
-According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. 
+According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. Consent from the customers is therefore required to collect data related to the user actions.
 \begin{aquote}{Dialog developer}
 "We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
 \end{aquote}
@@ -1337,7 +1354,7 @@ The A/B testing is analyzed based on the product description documents and two s
 	CDM & No users, only integrated systems \\ \hline
 	%CDM & No user interface to tune \\ \hline
     %Environment & UAT \\ \hline
-    General & Measurable metrics for the software products are not extensively conceived \\ \hline
+    General & Measurable metrics for A/B testing are not extensively identified \\ \hline
 	Dialog & Users have been educated to use certain features \\ 
     \hline
     \end{tabular}
