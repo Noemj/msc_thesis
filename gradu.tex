@@ -962,15 +962,15 @@ The challenges regarding continuous delivery will be analyzed in three areas: te
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    General & Downtime is more critical for certain customers \\ \hline
-    General & Acceptance testing is performed by both the company and the customers \\ \hline
-    Configuration & Software is often integrated to multiple third party applications \\ \hline
-    Configuration & Software is often accompanied by multiple external components \\ \hline
-    Configuration & There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
-    Connection & Transferring the software product to diverse customer-owned environments requires different deployment configurations \\ 
+    \textbf{Specific problem} \\ \hline
+    Downtime is more critical for certain customers \\ \hline
+    Acceptance testing is performed by both the company and the customers \\ \hline
+    Software is often integrated to multiple third party applications \\ \hline
+    Software is often accompanied by multiple external components \\ \hline
+    There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
+    Transferring the software product to diverse customer-owned environments requires different deployment configurations \\ 
     %Connection & Required certifications \\ \hline
     %Connection & Missing user rights \\ \hline
 	%Connection & VPN user limit \\ \hline
@@ -1050,14 +1050,14 @@ One of the main differences between B2B and B2C is the production environment. W
 The procedural challenges are analyzed based on the development process documentations of the company and the interview, in which a section was dedicated to the current development process of the case company. 
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Environmental & UAT environment is a requisite for production release \\ \hline
-	Procedural & Triggering the compilation and deployment of large, modular projects \\ \hline
-	Procedural & The software has to be deployed to multiple customer environments \\ \hline
-	Procedural & Versioning is affected by having different customer profiles of the product \\ \hline
-	Roles & Responsibility moves towards developers \\
+    \textbf{Specific problem} \\ \hline
+    UAT environment is a requisite for production release \\ \hline
+	Triggering the compilation and deployment of large, modular projects \\ \hline
+	The software has to be deployed to multiple customer environments \\ \hline
+	Versioning is affected by having different customer profiles of the product \\ \hline
+	Responsibility moves towards developers \\
     \hline
     \end{tabular}
 \end{center}
@@ -1121,15 +1121,15 @@ Another procedural challenge is that continuous delivery drifts response towards
 The customer challenges are analyzed based on two sections of the interview: customer interaction and the deployment process. 
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Training & Customers are trained to use a certain UI \\ \hline
-    New release & Customers are reluctant towards new versions \\ \hline
-	New release & Production deployment schedule has to be negotiated with the customer \\ \hline
-	New release & Ongoing critical tasks by users cannot be interrupted with downtime \\ \hline
-	New release & Pilot customer is required for developing the process \\ \hline
-	New release & Changelogs are especially important, since customers depend on the software \\ 
+    \textbf{Specific problem} \\ \hline
+    Customers are trained to use a certain UI \\ \hline
+    Customers are reluctant towards new versions \\ \hline
+	Production deployment schedule has to be negotiated with the customer \\ \hline
+	Ongoing critical tasks by users cannot be interrupted with downtime \\ \hline
+	Pilot customer is required for developing the process \\ \hline
+	Changelogs are especially important, since customers depend on the software \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1210,13 +1210,13 @@ Technical aspect includes the data collection, measurable metrics and other chal
 The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    CDM & Not having a UI limits the scope of experiments \\ \hline
-	CDM & The system is only usable via API calls, which limits the scope of experiments \\ \hline
-	General & Measurable metrics for the software products are not extensively identified  \\ \hline
-	Data collection & Data has to be collected in customer environments \\ 
+    \textbf{Specific problem} \\ \hline
+    Not having a UI limits the scope of experiments in CDM \\ \hline
+	CDM is only usable via API calls, which limits the scope of experiments \\ \hline
+	Measurable metrics for the software products are not extensively identified  \\ \hline
+	Data has to be collected in customer environments \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1268,13 +1268,13 @@ The case company's products are mostly installed to customer environments, with 
 The organizational challenges are analyzed based on the data collected from the experimentation section of the interview.
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Resources & Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
-    Resources & Competence in experimentation is not high, and requires education \\ \hline
-    Culture & Transitioning towards experimentation culture affects other teams, including sales \\ \hline
-    Organizational divergency & \\ 
+    \textbf{Specific problem} \\ \hline
+    Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
+    Competence in experimentation is not high, and requires education \\ \hline
+    Transitioning towards experimentation culture affects other teams, including sales \\ \hline
+    Organizational divergency TODO: (different development culture within teams in company?) \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1289,16 +1289,17 @@ According to the interviews, transitioning towards experimental R&D is perceived
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    Origin of features & A large part of developed features are requirements from customers \\ \hline
-	Downtime & Customers perform routine tasks that cannot be interrupted \\ \hline
-	General & Customers have to be informed for major changes \\ \hline
-	General & Technical personnel aren't involved in customer interaction \\ \hline
-	Data collection & The software has to undergo testing in the UAT before production release \\ \hline
-	Data collection & The end-users might be customers' customers, complicating feedback collection \\ \hline
-	Data collection & Proper legal agreements need to be made with the customers to collect data \\ 	
+    \textbf{Specific problem} \\ \hline
+    Large part of developed features are requirements from customers \\ \hline
+	Customers perform routine tasks that cannot be interrupted \\ \hline
+	Customers have to be informed for major changes \\ \hline
+	Technical personnel aren't involved in customer interaction \\ \hline
+	The software has to undergo testing in the UAT before production release \\ \hline
+	The end-users might be customers' customers, complicating feedback collection \\ \hline
+	Proper legal agreements need to be made with the customers to collect data \\ 
+	\hline	
     \end{tabular}
 \end{center}
 
@@ -1354,15 +1355,15 @@ According to the interview results, the product owners state that to collect dat
 The A/B testing is analyzed based on the product description documents and two sections of the interview: feedback collection and experimentation.
 
 \begin{center}
-    \begin{tabular}{ | l | p{9cm} |}
+    \begin{tabular}{ | p{12cm} |}
     \hline
-    \textbf{Problem area} & \textbf{Specific problem} \\ \hline
-    User amount & Low user volume limits the scopes of experiments \\ \hline
-	CDM & No users, only integrated systems \\ \hline
+    \textbf{Specific problem} \\ \hline
+    Low user volume limits the scopes of experiments \\ \hline
+	CDM is used by integrated systems instead of human users \\ \hline
 	%CDM & No user interface to tune \\ \hline
     %Environment & UAT \\ \hline
-    General & Measurable metrics for A/B testing are not extensively identified \\ \hline
-	Dialog & Users have been educated to use certain features \\ 
+    Measurable metrics for A/B testing are not extensively identified \\ \hline
+	Users have been educated to use certain features \\ 
     \hline
     \end{tabular}
 \end{center}
