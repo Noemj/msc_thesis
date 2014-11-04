@@ -988,7 +988,7 @@ The largest technical task is to set up automated testing and test environments.
 Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in an UAT environment before the deployment to production can be made. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment.
 
 %Third party application integration
-Both of the case company's software products are integrated to various 3rd party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
+Both of the case company's software products are integrated to various third party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
 
 %External components
 It is common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well. In the case company, both Dialog and CDM are integrated to multiple external components. Currently upon version change these integrations are manually updated when necessary. In continuous delivery, changes that modify the API and therefore break these integrations might have to be manually updated.
@@ -1214,6 +1214,7 @@ The technical challenges are analyzed based on both the product description docu
     \hline
     \textbf{Specific problem} \\ \hline
     Not having a UI limits the scope of experiments in CDM \\ \hline
+    Low end-user volume limits experiments that rely on statistical significance \\ \hline 
 	CDM is only usable via API calls, which limits the scope of experiments \\ \hline
 	Measurable metrics for the software products are not extensively identified  \\ \hline
 	Data has to be collected in customer environments \\ 
@@ -1223,25 +1224,29 @@ The technical challenges are analyzed based on both the product description docu
 
 %No user interface
 %Only used via API calls
-The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. 
-%TODO: jatka tätä
+The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha and usage metrics. 
+
+%Statistical significance
+TODO: kerro tarkemmin mitä experimenttejä
 
 %Measurable metrics 
-The difference between the products limits the possible scope of experiments. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include for example feature alpha and usage metrics.
+The business model for the products affects the desired improved metrics. Since the purpose of the software components is not generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. According to the interview results, the interviewees were only able to name a few metrics that they perceived as desired improved metrics. In B2B the software development is especially focused on adding value for the customer, but eventually the features must also add value for the software product itself. 
 
-The business model for the products limits the wanted improved metrics. Since the purpose of the software components isn't to generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. 
+The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. The most popular metric in the interviews is the customer opinion of the product:
 \begin{aquote}{Dialog developer}
 "We don't aim for increase in clicks or in purchases. Instead, if we wanted to measure how Dialog could be improved, the most useful metric would be the customer opinion. A measure could also be how fast certain work tasks can be performed, but it's hard to measure it. The customer doesn't necessarily perform the task as fast as possible."
 \end{aquote}
-A possibility is to tone the product in cooperation with the customer, using their internal measures as metrics.
+
+A developer also presented the possibility to tune the product in cooperation with the customer, using their internal measures as metrics:
 \begin{aquote}{Dialog developer}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
 \end{aquote}
+
 A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
 \begin{aquote}{CDM developer}
-"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. Against these things we can develop the experimental features. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
+"We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. We can develop the experimental features against these things. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{aquote}
-While it is common for B2C applications, too, to fluctuate between different Overall Evaluation Criterias (OEC), in the B2B the possibility to co-operate with the customer should be considered. Eventually, the OEC has to be well thought. For example pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. However, a clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. 
+It is common in B2C applications to fluctuate between different Overall Evaluation Criterias (OEC), conducting multiple experiments with different metrics. In B2B domain the possibility to co-operate with the customer in order to increase or identify the possible metrics should be considered. Eventually, the OEC has to be well thought. As an example, pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. A clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}.
 
 In the case company the developers are not actively participating in customer interaction, and are therefore not as aware of the customers challenges are the team leaders and product owners. 
 
@@ -1274,16 +1279,17 @@ The organizational challenges are analyzed based on the data collected from the 
     Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
     Competence in experimentation is not high, and requires education \\ \hline
     Transitioning towards experimentation culture affects other teams, including sales \\ \hline
-    Organizational divergency TODO: (different development culture within teams in company?) \\ 
+    Creating a culture of innovation within the entire organization \\ 
     \hline
     \end{tabular}
 \end{center}
 
 According to the interviews, transitioning towards experimental R&D is perceived as desirable but expensive. Product development has been in recession with the accelerating customer amount and increasing customer requirements. The teams under inspection have no prior experience with experimenting or data analysis, and require training in order to gain domain knowledge of experimentation. 
-
 \begin{aquote}{Dialog quality assurance engineer}
 "Currently, the product is developed based on what the customers want. We would need more resources [to guide the development with experiments]."
 \end{aquote}
+
+The interviewees are also concerned about organizational divergence, especially if continuous experimentation is only adapted in two teams. Both continuous delivery and continuous experimentation affect the customer interaction process, and other teams interacting with the case teams need to understand the experimentation concept. 
 
 \subsubsection{Customer challenges}
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
@@ -1331,7 +1337,7 @@ The customers have been trained to perform certain tasks with the software, and 
 In the case company the customer interaction is mainly done by the team leaders and product owners. This limits the developers knowledge of the customers needs, and the parties with enough knowledge to design experiments are the personnel continuously interacting with the customer. 
 
 %Environment
-The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company. Performing experiments only in the UAT environment reduces the user amount to very low, and prevents actual end-users being subjected to the experiments. Entirely skipping the UAT environment is seen as very risky by the product owners and developers.
+The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company. Performing experiments only in the UAT environment reduces the user amount to very low, and prevents actual end-users being subjected to the experiments. Entirely skipping the UAT environment is seen as very risky by the product owners and developers. However, the benefit of the UAT environment is that the experiments can also be tested. The cost of the UAT environment is that the experiments cannot be tested as quickly.
 
 %UAT is the norm
 %As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
@@ -1358,9 +1364,9 @@ The A/B testing is analyzed based on the product description documents and two s
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    Low user volume limits the scopes of experiments \\ \hline
+    Low end-user volume limits the scopes of experiments \\ \hline
 	CDM is used by integrated systems instead of human users \\ \hline
-	%CDM & No user interface to tune \\ \hline
+	CDM has user interface to tune \\ \hline
     %Environment & UAT \\ \hline
     Measurable metrics for A/B testing are not extensively identified \\ \hline
 	Users have been educated to use certain features \\ 
