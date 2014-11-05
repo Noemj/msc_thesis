@@ -942,17 +942,8 @@ This section summarises key findings of the case study. It is structured accordi
 
 
 \subsection{Continuous delivery: B2B challenges}
-
 %When to use CD: http://www.continuousagile.com/unblock/cd_costs_benefits.html
 %You provide an online service: Web, SaaS, PaaS, online gaming, online big data, or mobile apps with Web service back ends. If you provide online services, you need to move to continuous delivery, or your competitors will race ahead of you.
-
-%Your release times are getting longer and longer. As your app gets more complicated, you may find that it takes longer to test and release. This is a sign that you should move to automated testing, continuous integration, and continuous delivery.
-
-%You are developing a new product and using lean startup techniques to test and evolve it.
-
-%You have a big project with a lot of contributors. Batch management will often fail in this case. Continuous delivery techniques will help you accept contributions from a large and diverse group of contributors, inside and outside of your core organization.
-
-%You need to release frequent security patches. Bad guys out there want to manipulate our systems to show ads, run compute-intensive algorithms, steal passwords and financial information, and view commercial and government secrets. With Chinese hackers going against the NSA, it's literally spy versus spy. We are caught in the crossfire, forced to issue frequent updates. You can think of continuous delivery as extending your security patch process to your software development activities.
 
 Software development practices and product characteristics vary based on the domain and delivery model. Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are very common. This section analyzes the problems faced with applications that are installed and operated in customer environments when transitioning towards continuous delivery.
 
@@ -971,31 +962,28 @@ The technical challenges for continuous delivery are derived from the interview.
     Software is often accompanied by multiple external components \\ \hline
     There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
     Transferring the software product to diverse customer-owned environments requires different deployment configurations \\ 
-    %Connection & Required certifications \\ \hline
-    %Connection & Missing user rights \\ \hline
-	%Connection & VPN user limit \\ \hline
     \hline
     \end{tabular}
 \end{center}
 
-
 %Downtime
-Downtime of the case company's products can be fatal. With Dialog, downtime causes customers being unable to perform their job. Arbitrary downtime can also interrupt ongoing customer tasks, possibly losing critical data in progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent either cases. In the case of CDM, downtime must therefore be eliminated by utilizing parallel environments during deployment. In the case of Dialog, the downtime either has to be eliminated or informed to the customer beforehand. 
+Downtime of the case company's products can be fatal. According to the Dialog product owner, downtime causes end-users being unable to perform their job. Downtime can also interrupt ongoing customer tasks, possibly losing critical data in the progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent these cases, and the version deployments are done when the system can be closed for a short period of time. In the continuous delivery process the deployment pipeline has to be designed to address the issue of downtime.
 
 %-testing costs could be pushed at least partially to users
-The largest technical task is to set up automated testing and test environments. While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects.  
+The developers perceive automated testing and test environments to be the largest technical task. Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in a UAT environment before the product can be deployed into production. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. In CDM, all of the customers perform manual acceptance testing in the UAT environment. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment. However, if the versions are deployed to UAT very often, customers might feel encumbered by the amount of UAT testing. The customers also have to be informed whenever a new version is available to the UAT environment.
+%While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects. 
 %Automate testing
-Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in an UAT environment before the deployment to production can be made. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment.
 
 %Third party application integration
 Both of the case company's software products are integrated to various third party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
 
 %External components
-It is common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well. In the case company, both Dialog and CDM are integrated to multiple external components. Currently upon version change these integrations are manually updated when necessary. In continuous delivery, changes that modify the API and therefore break these integrations might have to be manually updated.
+It is also common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well. In the case company, both Dialog and CDM are integrated to multiple external components. Currently upon version change these integrations are manually updated when necessary. In continuous delivery, changes that modify the API and therefore break these integrations might have to be manually updated.
 
 %Different configuration per customer
-Both of the case company's products are used in multiple different customer environments. This introduces a problem of managing different configurations per customer environment and software instance. Multiple possible solutions exist for the configurations, however, such as creating custom profiles per customer with different configuration for each profile.
+Both of the case company's products are used in multiple different customer environments. This introduces a problem of managing different configurations per customer environment and software instance. Multiple possible solutions exist for the configurations, however, such as creating custom profiles per customer with different configuration for each profile. In the case company the challenge is how to automatically determine which customer profile should be used for each environment.
 
+One of the main differences between B2B and B2C is the production environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. Along with the varying customer specific configurations, there exists varying customer environment specific configurations. The customer owned environment introduces multiple challenges: accessing the environment, transferring the software product to the environment and integrating the software to other components within the environment. These challenges related to transferring the software include firewall configurations, required certifications and user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
 
 %According to Jan Bosch, "In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." \cite{bosch2012building}". 
 
@@ -1008,7 +996,6 @@ Both of the case company's products are used in multiple different customer envi
 %Missing user rights
 %VPN user limit
 %Environment
-One of the main differences between B2B and B2C is the production environment. While a company focusing on B2C often owns the product environment, in B2B domain it is common to install the software on customers environment. This introduces multiple challenges: accessing the environment, integrating the software to third party components and downtime, to name a few. Transferring the software product to a customer-owned environment instead of own environment introduces multiple possible challenges. These challenges include firewall configurations, required certifications and missing user rights. The customers also have to be informed on actions performed in their servers. For certain environments, a VPN connections is required. A VPN connection often has a user limit, which can prevent automatic version deployment.
 
 %-automate testing
 %Continuous delivery requires you to set up and administer automated testing. You will need to write automated tests, and you will need to automate the configuration of test environments. In our experience, automating testing takes more time and effort than any other aspect of a continuous delivery rollout.
@@ -1054,6 +1041,7 @@ The procedural challenges are analyzed based on the development process document
     \hline
     \textbf{Specific problem} \\ \hline
     UAT environment is a requisite for production release \\ \hline
+    The development process drifts towards small feature branches from long-lived feature branches \\ \hline
 	Triggering the compilation and deployment of large, modular projects \\ \hline
 	The software has to be deployed to multiple customer environments \\ \hline
 	Versioning is affected by having different customer profiles of the product \\ \hline
@@ -1065,17 +1053,18 @@ The procedural challenges are analyzed based on the development process document
 %UAT
 %-UAT is often the norm and is required before anything is moved to production
 %-in B2B, continuous deployment straight to production is very risky
-The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business, and continuous delivery with deployments to a staging environment is seen as very beneficial. 
+The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business, and continuous delivery with deployments to a staging environment is seen as very beneficial. Therefore the deployment procedure has to be designed to allow testing the software in a UAT environment, and making it possible to manually trigger the deployment to production.
+
+Both of the case company's products are developed with a branching model, where feature branches are first thoroughly developed and then integrated to the master branch. Only the master branch is ever released to the customer. However, with continuous delivery the long-lived feature branches should be changed to short-lived and relatively small feature branches to enable faster deployment of the software. The benefit of smaller branches is that while there may still be bugs, they're introduced in a fewer number of commits, and entire large features don't need to be rollbacked. Smaller branches also enable faster feedback. While the small feature branches might be common for companies with a relatively new software products, companies that have been developing products for a long time might be more devoted to the practice of feature branches.
+%If the components are sufficiently small, it is preferable to have a single build for the whole application—giving the fastest feedback of all. \cite{cdbook}
 
 %Pull requests
-%CDM DEV
-%"Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
 
-%"jos pull requestit haluttaisiin deployata automaattisesti, eivät pullrequestit ole aina täysin toimivia sellaisenaan. riippuvuuksia niidän välissä, ja toisinaan mergetään ilman että halutaan deployauksia. nykyään tämä tieto liikkuu kehittäjien päässä. pitäisi saada tarkempi kuva jos pullrequestin triggeröinti aiheuttaisi deployauksen. yksi haaste on se että asiakkaita ja ympäristöjä on paljon. miten määritetään mille asiakkaalle deployataan? ei ole järkeä viedä asiakkaille jotka eivät ole sitä toivoneet. täysin automaattisesti vaikea tehdä, ja ihmisen pitäisi päättää mihin versio deployataan. "
-
-%Feature stubs
-
-The software applications in B2B often times are large and modular applications, as is the case in the case company. CDM is a software component that is compiled from multiple projects. Therefore the event triggering a deployment shouldn't be the merge of a pull request, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. 
+The software applications in B2B often times are large and modular applications, as is the case in the case company. CDM is a software component that is compiled from multiple projects. As the deployment process is currently manually triggered by first releasing a version, a suitable time can be chosen each time. With continuous delivery the purpose is to have the deployment process trigger automatically, and with a modular project each module has to be in the correct state in order to produce a coherent version. The point when a deployment is triggered has to be designed to maintain the integrity of the application.
+\begin{aquote}{CDM Developer}
+"Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
+\end{aquote}
+In the case company, merging a pull request is not a valid trigger of a deployment, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. However, a good CI tool will handle the dependency management \cite{cdbook}.
 
 %Multiple customer environments
 Both of the case company's products are used in multiple different customer environments. This introduces a procedural challenges: whenever a feature is ready to be delivered, it can either be deployed to a single customer or to every customer. Attention has to be paid when configuring the workflow to allow deploying to an arbitrary customer. If only certain customers accept updates on a continuous basis, it has to be possible to prohibit deploying to every customer at once. 
@@ -1126,31 +1115,33 @@ The customer challenges are analyzed based on two sections of the interview: cus
     \textbf{Specific problem} \\ \hline
     Customers are trained to use a certain UI \\ \hline
     Customers are reluctant towards new versions \\ \hline
+    Changelogs are especially important, since customers depend on the software \\ \hline
+    Pilot customer is required for developing the continuous delivery process \\ \hline
 	Production deployment schedule has to be negotiated with the customer \\ \hline
-	Ongoing critical tasks by users cannot be interrupted with downtime \\ \hline
-	Pilot customer is required for developing the continuous delivery process \\ \hline
-	Changelogs are especially important, since customers depend on the software \\ 
+	Ongoing critical tasks by users cannot be interrupted with downtime \\ 
     \hline
     \end{tabular}
 \end{center}
 
 %Customers have been trained to use a certain version of the product
-Customer reluctance towards new features is common, since new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. Thus if the UI changes often, the customers initially take more time to perform the tasks. 
-
-%Ville
-"The user interface should be easy to use. Now it's relatively hard to learn. If customers have just learned to perform a task, and we change it UI, the feedback is terrible."
+One of the main issues found in the deployment of software is that some customers are reluctant towards new releases. One of the reasons for this reluctancy is that new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. If the UI changes often, the customers feel lost and initially take more time to perform the tasks.  
+\begin{aquote}{Dialog product owner}
+"The user interface should be easy to use. Now it's relatively hard to learn. If customers have just learned to perform a task, and we change the UI, the feedback is terrible."
+\end{aquote}
 
 %Customer reluctancy towards new versions
-In the case company many of the customers have a reluctancy towards new versions, caused by the versions occasionally containing new bugs and the customers having just learned to perform certain tasks with the last version. Customers need to understand what continuous delivery is all about. While customers initially are against constant modifications, if modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions.
+While customers initially are against constant modifications, the interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term.
+
+Listing the changed features in changelog entries is especially important when releases are made more often. While the changes become smaller the faster versions are released, the customers become less aware of when the version will be updated and when features have changed. Currently the version deployments are negotiated with the customers, and necessary actions are taken to explain the changed features to the customers in meetings or in e-mails. When the deployments are made more often, discussions regarding version releases may be reduced or even ceased.  
+
+%Pilot customer
+A way to identify the best practices in continuous delivery is to develop the continuous delivery process with a pilot customer. Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy, see how the change in deployment process affects customer interaction and even test if the UAT environment is necessary.
 
 %Deployment time and downtime
 %A customer might be doing a critical task
 Customers might be using the software when a new version is deployed, and the deployment process shouldn't interfere with ongoing usage. Therefore the most viable solution is to initially deploy the versions to the UAT environment. To prevent downtime and obstructing the usage of the software, the production deployment date should be negotiated with the customer. Production deployment might cause downtime, and cannot be made during times when critical tasks are performed. The test environments can be continuously updated, and once the customer is satisfied with the software and feels a need for a new version, deployment to production can be triggered.  
 
 In the case company, the production deployment date is often negotiated with and specified by the customer, while the product can be deployed to UAT at will. UAT is also used by the customer to validate the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. However, the customers don't validate the versions at the UAT environment unless they are informed that new versions are available, since the UAT is not used for any other purpose than testing. 
-
-%Pilot customer
-Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy and even test if the UAT environment is necessary. 
 
 %-Asiakkailla asenneongelma
 
@@ -1164,7 +1155,7 @@ Pilot customer is a company willing to help the company to quickly learn what wo
 %"Customers need to understand what continuous delivery is all about."
 %\end{aquote}
 
-Changelogs 
+
 
 %Tällä hetkellä tiimin resurssit eivät riitä sen toteutukseen. Asiakkaiden pitää ymmärtää mistä on kyse. Asiakkailta pitää saada tähän lupa / sopimus.
 %Jos kokoajan julkaistaan uutta versiota, uusi versio ei tunnu uudelta versiolta koska muutokset ovat niin pieniä. Tämä voisi vähentää muutosvastarintaa. Jotkut käyttäjät ovat muutosvastaisia, jotkut nauttivat siitä. 
@@ -1507,6 +1498,11 @@ Continuous delivery allows the improvement of speed and quality. Releases can be
 The amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy.  
 
 TODO: list benefits of continuous delivery here, attach them to problems
+
+
+
+%Canary release
+In the case of CDM, downtime must therefore be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
 %No manual work
 
