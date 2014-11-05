@@ -374,6 +374,7 @@ A picture of the typical development process in continuous delivery is shown in 
 Neely and Stolt found out that with a continuous flow, Sales and Marketing departments lost the track of when features are released \cite{neely2013continuous}. Continuous delivery requires the company as a whole to understand the continuous flow process. Neely and Stolt solved this challenge by providing mechanisms by which the parties in need of knowledge regarding release times could track the work in real time \cite{neely2013continuous}. 
 
 %http://www.continuousagile.com/unblock/cd_costs_benefits.html
+TODO: finalize this
 -Technical implementation: Automate testing
 -Education on the subject: Developer training costs
 -Active participation of employees
@@ -1280,8 +1281,14 @@ According to the interviews, transitioning towards experimental R&D is perceived
 
 The interviewees are also concerned about organizational divergence, especially if continuous experimentation is only adapted in two teams. Both continuous delivery and continuous experimentation affect the customer interaction process, and other teams interacting with the case teams need to understand the experimentation concept. 
 
-The teams under study 
+TODO: finalize
+The teams under study have been working with agile and lean practices during the last couple of years, 
 %Jotain kulttuurista tähän
+%Kulttuurissa:
+%opitaan asiakkaasta
+%datapohjaisia päätöksiä -> päätöksenteko muuttuu
+%enemmän mittausta, pienten ominaisuuksien hiomista
+%tuoteideat ja design pohjautuu jo ensimmäisestä päivästä asti mahdollisuuteen testata sitä jollain experimentillä
 
 \subsubsection{Customer challenges}
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
@@ -1330,6 +1337,8 @@ In the case company the customer interaction is mainly done by the team leaders 
 
 %Environment
 The case company's products are mostly installed to customer environments, with customer-owned servers. The typical deployment flow includes a customer testing phase in the UAT environment before a production version can be deployed. The UAT environment is not actively used, and the customers perform UAT only when they are informed that a new version is available. The production environment is seen critical enough that no major bugs are allowed, and thus the UAT testing cycle is seen favorable by both the customer and the company. Performing experiments only in the UAT environment reduces the user amount to very low, and prevents actual end-users being subjected to the experiments. Entirely skipping the UAT environment is seen as very risky by the product owners and developers. However, the benefit of the UAT environment is that the experiments can also be tested. The cost of the UAT environment is that the experiments cannot be tested as quickly.
+
+If the experiments are publicized, it can bias the users and affect or even spoil the experiment's outcome.  
 
 %UAT is the norm
 %As stated earlier, new versions undergo testing in the UAT environment before a production release is made. This makes it possible to either perform A/B testing in the UAT environment, with a possibly very low amount of users, or instead only validate that the A/B testing does not cause complications and can be moved to production. Another possibility is to skip the UAT, which is however seen as very risky by the product owners and developers.
@@ -1741,7 +1750,7 @@ Due to the very general nature of the infrastructure introduced by Fagerholm et 
 
 Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
 
-A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
+A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/} http://apptimize.com/blog/2014/01/how-many-users-time/
 
 
 2)UAT environment before Prod
