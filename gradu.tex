@@ -1218,10 +1218,9 @@ The technical challenges are analyzed based on both the product description docu
 
 %No user interface
 %Only used via API calls
-The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha and usage metrics.
-
+The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
 %Statistical significance
-TODO: kerro tarkemmin mitä experimenttejä
+%TODO: kerro tarkemmin mitä experimenttejä
 
 %Measurable metrics 
 The business model for the products affects the desired improved metrics. Since the purpose of the software components is not generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. According to the interview results, the interviewees were only able to name a few metrics that they perceived as desired improved metrics. In B2B the software development is especially focused on adding value for the customer, but eventually the features must also add value for the software product itself. 
@@ -1235,8 +1234,7 @@ A developer also presented the possibility to tune the product in cooperation wi
 \begin{aquote}{Dialog developer}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
 \end{aquote}
-
-A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
+This approach is quite similar to the participatory design and collaborative innovation \cite{bosch2012building} practices. A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
 \begin{aquote}{CDM developer}
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. We can develop the experimental features against these things. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{aquote}
@@ -1724,8 +1722,6 @@ Tenet 3: We are poor at assessing the value of ideas
 
 Due to the very general nature of the infrastructure introduced by Fagerholm et al., no major modifications have to be made to address specific B2B needs. 
 
-
-
 %Explain Fagerholm et al. model
 %-Build-Measure-Learn
 %-Hypotheses used to implement MVP or MVF
@@ -1738,8 +1734,16 @@ Due to the very general nature of the infrastructure introduced by Fagerholm et 
     \hline
     \textbf{Type of experiment} & \textbf{Dialog} & \textbf{CDM} & \textbf{Rationalization} \\ \hline
 	A/B testing & x & - & - \\ \hline
+	Multi-variate testing & x & & \\ \hline
+	Feature alpha & x & & \\ \hline
+	Usage metrics & x & & \\ \hline
+	Usage behavior tracking & x & & \\ \hline
+	Participatory design & x & & \\ \hline
+	Collaborative innovation & x & & \\ \hline
 	\end{tabular}
 \end{center}
+
+Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
 
 A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/}
 
