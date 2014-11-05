@@ -1223,7 +1223,7 @@ The case company's products represent two different styles of software products.
 %TODO: kerro tarkemmin mitä experimenttejä
 
 %Measurable metrics 
-The business model for the products affects the desired improved metrics. Since the purpose of the software components is not generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. According to the interview results, the interviewees were only able to name a few metrics that they perceived as desired improved metrics. In B2B the software development is especially focused on adding value for the customer, but eventually the features must also add value for the software product itself. 
+The business model for the products affects the desired improved metrics. Since the purpose of the software components is not generate revenue per se, knowledge of how the customers benefit from the product is required before the metrics can be chosen. According to the interview results, the interviewees were only able to name a few metrics that they perceived as desired improved metrics. In B2B the software development is especially focused on adding value for the customer, but eventually the features must also add value for the software product itself. In the case company the developers are not actively participating in customer interaction, and are therefore not as aware of the customers challenges are the team leaders and product owners. 
 
 The products also have custom solutions for different customers, which means a measurable property might only apply to a single customer. This makes it somewhat harder to pick the correct measurement variables. The most popular metric in the interviews is the customer opinion of the product:
 \begin{aquote}{Dialog developer}
@@ -1234,26 +1234,23 @@ A developer also presented the possibility to tune the product in cooperation wi
 \begin{aquote}{Dialog developer}
 "If the customers had their own metrics that they have been tracking, and we could affect this trend, we could figure out whether this is caused by changes in the software. Many customers monitor their employers and measure them."
 \end{aquote}
+
 This approach is quite similar to the participatory design and collaborative innovation \cite{bosch2012building} practices. A CDM developer also has an idea of surveying the customers daily routine as a basis for building experimental features:
 \begin{aquote}{CDM developer}
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. We can develop the experimental features against these things. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{aquote}
 It is common in B2C applications to fluctuate between different Overall Evaluation Criterias (OEC), conducting multiple experiments with different metrics. In B2B domain the possibility to co-operate with the customer in order to increase or identify the possible metrics should be considered. Eventually, the OEC has to be well thought. As an example, pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. A clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. Also, a common pitfall in conducting experiments is to pick an OEC "for which it is easy to beat the control by doing something clearly “wrong” from a business perspective" \cite{crook2009seven}.
-
-In the case company the developers are not actively participating in customer interaction, and are therefore not as aware of the customers challenges are the team leaders and product owners. 
-
 %Ville L
-"With projects where a wide UI is present, we should focus more on which features get used most and which have dependencies to business, then focus on improving these."
+%"With projects where a wide UI is present, we should focus more on which features get used most and which have dependencies to business, then focus on improving these."
 
 %Experimental architecture
 The case company's software products have been developed for over three years each, and are becoming quite large and mature. To be able to collect customer or performance data, and to determine customer preference and itnerest, architectural changes of the product are required. One of the most important components is the instrumentation layer that is used to collect the data of the experiments, and it can be implemented in multiple ways. Architectural changes are however more costly for matured software, which already have a structure and many architectural dependencies. However, the interviewees view the current product architecture as very modular, with the possibility of easily adding new modules for data collection. 
 %Pointit: softa on jo olemassa, ei voi tehdä alusta alkaen
 
 %One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
+
 %Data collection in customer environment
-
-The case company's products are mostly installed to customer environments, with customer-owned servers. The data then has to be effectively stored and acquired from an external feature, if the analysis is to be done at the company's own servers. However, the case company's applications deal with millions of records of data, and the developers don't see storing additional experimentation-related data as a challenge:
-
+The case company's products are mostly installed to customer environments, with customer-owned servers. The data then has to be effectively stored and acquired from an external environment, if the analysis is to be done at the company's own servers. However, the case company's applications deal with millions of records of data, and the developers don't see storing additional experimentation-related data as a challenge:
 \begin{aquote}{CDM developer}
 "The data would be on the customer companies servers, where we have our own access and right to install software. If the data is collected on the server where we fetch it from, it's not a challenge. The data shouldn't encumber the system."
 \end{aquote}
@@ -1261,15 +1258,7 @@ The case company's products are mostly installed to customer environments, with 
 %\begin{quote}
 %"The architecture of CDM allows it. The basic functionality of the product should be stable, but new components can be attached in a manner that the product or functionality doesn't suffer. Components can be quickly added. If we came up with a new idea that would help the customers, we could have the customers test it at the UAT environment. UI changes have to be informed to the customer, and release notes need to be attached. Some customers don't want monthly changes, and they might not use the product more than several months a year. If the product has changed during this window, it's not a good thing."
 %\end{quote}
-
-
-\begin{aquote}{Dialog product owner}
-"The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
-\end{aquote}
-
-
 \subsubsection{Organizational challenges}
-
 The organizational challenges are analyzed based on the data collected from the experimentation section of the interview.
 
 \begin{center}
@@ -1290,6 +1279,9 @@ According to the interviews, transitioning towards experimental R&D is perceived
 \end{aquote}
 
 The interviewees are also concerned about organizational divergence, especially if continuous experimentation is only adapted in two teams. Both continuous delivery and continuous experimentation affect the customer interaction process, and other teams interacting with the case teams need to understand the experimentation concept. 
+
+The teams under study 
+%Jotain kulttuurista tähän
 
 \subsubsection{Customer challenges}
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
@@ -1353,6 +1345,10 @@ The feedback collection in B2B has multiple challenges. In the case of customer 
 According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. Consent from the customers is therefore required to collect data related to the user actions.
 \begin{aquote}{Dialog developer}
 "We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
+\end{aquote}
+However, the interviewees are positive that the customers are willing to allow the data collection, since the product has also been bought and the purpose of data collection is to develop the software in a way that adds value for the customer. 
+\begin{aquote}{Dialog product owner}
+"The customers are motivated that we are trying to improve their actions. In B2B customers probably let us track their actions, because they have already bought the product."
 \end{aquote}
 
 %Some customers might use the product only a few months a year
