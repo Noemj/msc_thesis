@@ -1043,7 +1043,7 @@ The procedural challenges are analyzed based on the development process document
     UAT environment is a requisite for production release \\ \hline
     The development process drifts towards small feature branches from long-lived feature branches \\ \hline
 	Triggering the compilation and deployment of large, modular projects \\ \hline
-	The software has to be deployed to multiple customer environments \\ \hline
+	The software has to be deployed to multiple customers \\ \hline
 	Versioning is affected by having different customer profiles of the product \\ \hline
 	Responsibility moves towards developers \\
     \hline
@@ -1060,23 +1060,22 @@ Both of the case company's products are developed with a branching model, where 
 
 %Pull requests
 
-The software applications in B2B often times are large and modular applications, as is the case in the case company. CDM is a software component that is compiled from multiple projects. As the deployment process is currently manually triggered by first releasing a version, a suitable time can be chosen each time. With continuous delivery the purpose is to have the deployment process trigger automatically, and with a modular project each module has to be in the correct state in order to produce a coherent version. The point when a deployment is triggered has to be designed to maintain the integrity of the application.
+The software applications in B2B often are large and modular applications, as is the case in the case company. CDM is a software component that is compiled from multiple projects. As the deployment process is currently manually triggered by first releasing a version, a suitable time can be chosen each time. With continuous delivery the deployment process is triggered automatically, and with a modular project each module has to be in the correct state in order to produce a coherent version. The point when a deployment is triggered has to be designed to maintain the integrity of the application.
 \begin{aquote}{CDM Developer}
 "Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
 \end{aquote}
 In the case company, merging a pull request is not a valid trigger of a deployment, since pull requests are project specific. Some features require changes to multiple projects, and all of the pull requests have to be merged for the feature to work as intended. However, a good CI tool will handle the dependency management \cite{cdbook}.
 
 %Multiple customer environments
-Both of the case company's products are used in multiple different customer environments. This introduces a procedural challenges: whenever a feature is ready to be delivered, it can either be deployed to a single customer or to every customer. Attention has to be paid when configuring the workflow to allow deploying to an arbitrary customer. If only certain customers accept updates on a continuous basis, it has to be possible to prohibit deploying to every customer at once. 
+Both of the case company's products are used by multiple customers, each having their own environment. As the deployments are currently done manually, the customers receiving each deployment can be manually chosen.However, with a continuous delivery process whenever a feature or a new release is ready to be delivered, it can either be deployed to a single customer or to every customer. Attention has to be paid when configuring the workflow to allow deploying to an arbitrary customer. If only certain customers accept updates on a continuous basis, it has to be possible to prohibit deploying to every customer at once. This is the case especially in the early stages, where all of the customers projects aren't yet in the state of continuous delivery.
 
 %Versioning
-Multiple customer environments affect versioning of the software product. In the case company, each customer has a unique configuration of the product, with possibly different versions of components. However, according to Jan Bosch, in an IES environment only a single version exists: the currently deployed one. Other versions are retired and play no more \cite{bosch2012building}.
+Multiple customer environments affects versioning of the software product. In the case company, each customer has a unique configuration of the product, with possibly different versions of certain components. According to Jan Bosch, in an IES environment only a single version exists: the currently deployed one. Other versions are retired and play no role \cite{bosch2012building}. However, with multiple environments, multiple different versions of the software are necessary at least in the early phase. Eventually the product may be developed in such manner that a single version is sufficient. The build script therefore has to be configured to consider the customer-specific components when compiling the builds for each customer.
 
 %"A final aspect is the avoidance of versioning of software. Traditionally, for many companies, every customer would ultimately have a unique configuration of the product with different versions of components making up the system. This adds a whole new layer of complexity to the already costly process of deploying new versions. In an IES environment, there is only one version: the currently deployed one. All other versions have been retired and play no role." 
 
 %Developer responsibility 
-Another procedural challenge is that continuous delivery drifts response towards the developer, and the developers decide what is ready to be released. If the developer can single-handedly deploy a feature, the management can quickly loose track on the features available to customers. This also requires the developers to deeply understand the details of the version control system and automated testing. 
-
+Continuous delivery also drifts response towards the developer, and the developers decide what is ready to be released. Currently in the case company the product owners and team leaders are responsible for negotiating the deployment date with the customer, and they also inform the developers that a new version is required. If the developer can single-handedly deploy a feature, the management can quickly lose track on the features available to customers. This also requires the developers to deeply understand the details of the version control system and automated testing. 
 
 %-should the product be always deployed to every customer?
 
