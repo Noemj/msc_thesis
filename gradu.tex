@@ -1194,13 +1194,11 @@ In the case company, the production deployment date is often negotiated with and
 
 %Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
 \subsection{Continuous experimentation: B2B challenges}
-
 The case company's two software products differ on how they are used by the customers. In this section, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
 
-The challenges regarding continuous experimentation will be analyzed in four areas: technical, organizational, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products mostly affects A/B testing.  
+The challenges regarding continuous experimentation are analyzed in four areas: technical, organizational, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products affect especially A/B testing.  
 
-Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The organizational aspect includes challenges related to the organizational culture, financing and ways of working. The customer aspect includes the challenges regarding the experiments from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
-
+Technical aspect includes the data collection, measurable metrics and other challenges related to the software product and its usage. The organizational aspect includes challenges related to the organizational culture, financing and ways of working. The customer aspect includes the challenges regarding the experiments in the customer interaction process and from customers point of view. A/B testing section analyses the viability of guiding the development process of both products with A/B tests.
 \subsubsection{Technical challenges}
 The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
 
@@ -1212,6 +1210,7 @@ The technical challenges are analyzed based on both the product description docu
     Low end-user volume limits experiments that rely on statistical significance \\ \hline 
 	CDM is only usable via API calls, which limits the scope of experiments \\ \hline
 	Measurable metrics for the software products are not extensively identified  \\ \hline
+	Experimental architecture has to be implemented on top of a matured project \\ \hline
 	Data has to be collected in customer environments \\ 
     \hline
     \end{tabular}
@@ -1219,7 +1218,7 @@ The technical challenges are analyzed based on both the product description docu
 
 %No user interface
 %Only used via API calls
-The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha and usage metrics. 
+The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide much input. CDM also isn't used by an user interface, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha and usage metrics.
 
 %Statistical significance
 TODO: kerro tarkemmin mitä experimenttejä
@@ -1241,14 +1240,18 @@ A CDM developer also has an idea of surveying the customers daily routine as a b
 \begin{aquote}{CDM developer}
 "We should always think what the customers status is now, what kind of features the customer is using and what is the system that CDM replaces. We can develop the experimental features against these things. In the old system the customer might have done things that they they felt was inconvenient. We could conduct the experiments customer wise by surveying the customers daily routine and build experimental features based on this."
 \end{aquote}
-It is common in B2C applications to fluctuate between different Overall Evaluation Criterias (OEC), conducting multiple experiments with different metrics. In B2B domain the possibility to co-operate with the customer in order to increase or identify the possible metrics should be considered. Eventually, the OEC has to be well thought. As an example, pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. A clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}.
+It is common in B2C applications to fluctuate between different Overall Evaluation Criterias (OEC), conducting multiple experiments with different metrics. In B2B domain the possibility to co-operate with the customer in order to increase or identify the possible metrics should be considered. Eventually, the OEC has to be well thought. As an example, pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. A clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}. Also, a common pitfall in conducting experiments is to pick an OEC "for which it is easy to beat the control by doing something clearly “wrong” from a business perspective" \cite{crook2009seven}.
 
 In the case company the developers are not actively participating in customer interaction, and are therefore not as aware of the customers challenges are the team leaders and product owners. 
 
 %Ville L
 "With projects where a wide UI is present, we should focus more on which features get used most and which have dependencies to business, then focus on improving these."
 
+%Experimental architecture
+The case company's software products have been developed for over three years each, and are becoming quite large and mature. To be able to collect customer or performance data, and to determine customer preference and itnerest, architectural changes of the product are required. One of the most important components is the instrumentation layer that is used to collect the data of the experiments, and it can be implemented in multiple ways. Architectural changes are however more costly for matured software, which already have a structure and many architectural dependencies. However, the interviewees view the current product architecture as very modular, with the possibility of easily adding new modules for data collection. 
+%Pointit: softa on jo olemassa, ei voi tehdä alusta alkaen
 
+%One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
 %Data collection in customer environment
 
 The case company's products are mostly installed to customer environments, with customer-owned servers. The data then has to be effectively stored and acquired from an external feature, if the analysis is to be done at the company's own servers. However, the case company's applications deal with millions of records of data, and the developers don't see storing additional experimentation-related data as a challenge:
