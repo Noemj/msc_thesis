@@ -1128,7 +1128,7 @@ The customer challenges are analyzed based on two sections of the interview: cus
     Customers are reluctant towards new versions \\ \hline
 	Production deployment schedule has to be negotiated with the customer \\ \hline
 	Ongoing critical tasks by users cannot be interrupted with downtime \\ \hline
-	Pilot customer is required for developing the process \\ \hline
+	Pilot customer is required for developing the continuous delivery process \\ \hline
 	Changelogs are especially important, since customers depend on the software \\ 
     \hline
     \end{tabular}
@@ -1137,8 +1137,11 @@ The customer challenges are analyzed based on two sections of the interview: cus
 %Customers have been trained to use a certain version of the product
 Customer reluctance towards new features is common, since new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. Thus if the UI changes often, the customers initially take more time to perform the tasks. 
 
+%Ville
+"The user interface should be easy to use. Now it's relatively hard to learn. If customers have just learned to perform a task, and we change it UI, the feedback is terrible."
+
 %Customer reluctancy towards new versions
-In the case company many of the customers have a reluctancy towards new versions, caused by the versions occasionally containing new bugs and the customers having just learned to perform certain tasks with the last version. Customers need to understand what continuous delivery is all about. While customers initially are against constant modifications, if modifications were made more often, it would lead to smaller modifications and it might reduce the customer reluctancy towards new versions.
+In the case company many of the customers have a reluctancy towards new versions, caused by the versions occasionally containing new bugs and the customers having just learned to perform certain tasks with the last version. Customers need to understand what continuous delivery is all about. While customers initially are against constant modifications, if modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions.
 
 %Deployment time and downtime
 %A customer might be doing a critical task
@@ -1147,17 +1150,19 @@ Customers might be using the software when a new version is deployed, and the de
 In the case company, the production deployment date is often negotiated with and specified by the customer, while the product can be deployed to UAT at will. UAT is also used by the customer to validate the functionality of the software, since the customer has ordered the product to perform certain tasks and fill certain criterias. However, the customers don't validate the versions at the UAT environment unless they are informed that new versions are available, since the UAT is not used for any other purpose than testing. 
 
 %Pilot customer
-Pilot customer is a company 
+Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy and even test if the UAT environment is necessary. 
 
-(Case-firma esittää että halutaan pilottifirma jotta mallia voidaan kokeilla)
+%-Asiakkailla asenneongelma
 
--To train customer interaction with continuous delivery
--To test if UAT is necessary
--..
+%(Case-firma esittää että halutaan pilottifirma jotta mallia voidaan kokeilla)
 
-\begin{aquote}{Dialog developer}
-"Customers need to understand what continuous delivery is all about."
-\end{aquote}
+%-To train customer interaction with continuous delivery
+%-To test if UAT is necessary
+%-..
+
+%\begin{aquote}{Dialog developer}
+%"Customers need to understand what continuous delivery is all about."
+%\end{aquote}
 
 Changelogs 
 
@@ -1249,6 +1254,10 @@ A CDM developer also has an idea of surveying the customers daily routine as a b
 It is common in B2C applications to fluctuate between different Overall Evaluation Criterias (OEC), conducting multiple experiments with different metrics. In B2B domain the possibility to co-operate with the customer in order to increase or identify the possible metrics should be considered. Eventually, the OEC has to be well thought. As an example, pure profit is not a good OEC, since raising price can increase a short-term profit but have a negative impact in the long run \cite{kohavi2013online}. A clear difference exists between metrics that are not measurable and not-economical to measure \cite{kohavi2013online}. The former is a bad way to run a business, since without being able to articulate what the purpose of the experiment is, it is impossible by the organization to determine whether the experiment is succesful \cite{kohavi2013online}.
 
 In the case company the developers are not actively participating in customer interaction, and are therefore not as aware of the customers challenges are the team leaders and product owners. 
+
+%Ville L
+"With projects where a wide UI is present, we should focus more on which features get used most and which have dependencies to business, then focus on improving these."
+
 
 %Data collection in customer environment
 
