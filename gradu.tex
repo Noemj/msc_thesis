@@ -388,6 +388,7 @@ TODO: finalize this
 Continuous experimentation is a term created by Dane McKinley, a Principal Engineer at Etsy \cite{mcfunley}. McKinley defines the key aspects of continuous experimentation as making small, measurable changes, staying honest and preventing the developers from breaking things. With staying honest, McKinley implies that the product releases are tracked and measured, so that it's possible to tell whether things went worse or better. McKinley also states that design and product process must change to accomodate experimentation, and that experimenting should be done with minimal version of the idea. When experimentations are implemented and measured, counterintuitive results can be found, and planning to be wrong should be considered \cite{mcfunley}. 
 %Prefer incremental redesigns. 
 
+TODO: finish
 "Most organizations have many ideas, but the return-on-investment (ROI) for many may be unclear and the evaluation itself may be expensive." \cite{kohavi2007practical}
 
 %Continuous experimentation intro
@@ -466,6 +467,7 @@ Another approach for the roles is introduced by Adams et al., who conducted a ca
 \subsection{Continuous delivery and continuous experimentation collaboration}
 As the experiments are run in a regular fashion, integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
+TODO: finish
 In the organization evolution path \cite{olsson2012climbing} continuous deployment is seen as a prerequisite for the experimental system. 
 \subsection{Continuous experimentation in embedded software}
 The purpose of analysing experimentation in embedded software in the context of this thesis is that B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. This resembles the release model found in the case company, where some customers prefer to have new versions shipped every three months. By analyzing how experiments are implemented and the data collected in embedded software, information on how long and short release cycles differ can be gained. 
@@ -881,7 +883,7 @@ The experimentation section analyses the possibilities of conducting experiments
 %miksi valitsin nämä haastateltavat
 Interview data is primarily sought from the developers of the development teams and the managers of the team. As the focus of the thesis is on the development process of two different teams, all participants of the team and its management team are interviewed. Process data is sought from the process documents made by the team. Quantitative data, such as the Trello ticket flow time, is sought from Trello. Data regarding the development process is also collected from the internal documents.
 
-During the interviews, it was soon detected that the interviewees are able to give accurate answers to certain contexts based on their positions. This eventually contributed to the template analysis, where the data was better organised based on roles. Developers were most aware of the product and project context, including technical details and project details. Team leaders were mostly aware of the process and project context. They were the persons who were most able to explain the development process in detail. The team leaders were also most proficient in feedback collection. The management was most aware of the company context, including the status of the organization and available resources in the company. 
+During the interviews, it was soon detected that the interviewees are able to give accurate answers to certain contexts based on their positions. This eventually contributed to the template analysis, where the data was better organised based on roles. Developers are most aware of the product and project context, including technical details and project details. Team leaders are mostly aware of the process and project context. They are the persons who are most able to explain the development process in detail. The team leaders are also most proficient in feedback collection. The management is most aware of the company context, including the status of the organization and available resources in the company. 
 
 To summarize, interviews were chosen as the main data collection method based on three criteria. Firstly, the nature of the research questions required insight on the company settings and opinions of the employees. Secondly, quantitative data cannot be used to answer to the research questions, as first initial understanding of the phenomena has to be formed. Thirdly, the analysis is divided into themes based on the software products, and qualitative data provided by interviews can be readily analysed according to themes.
 
@@ -1135,7 +1137,7 @@ While customers initially are against constant modifications, the interviewees h
 Listing the changed features in changelog entries is especially important when releases are made more often. While the changes become smaller the faster versions are released, the customers become less aware of when the version will be updated and when features have changed. Currently the version deployments are negotiated with the customers, and necessary actions are taken to explain the changed features to the customers in meetings or in e-mails. When the deployments are made more often, discussions regarding version releases may be reduced or even ceased.  
 
 %Pilot customer
-A way to identify the best practices in continuous delivery is to develop the continuous delivery process with a pilot customer. Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy, see how the change in deployment process affects customer interaction and even test if the UAT environment is necessary.
+A way to identify the best practices in continuous delivery is to develop the continuous delivery process with a pilot customer. Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner, since the engagement model inevitably differs from the current model. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy, see how the change in deployment process affects customer interaction and even test if the UAT environment is necessary.
 
 %Deployment time and downtime
 %A customer might be doing a critical task
@@ -1245,7 +1247,7 @@ It is common in B2C applications to fluctuate between different Overall Evaluati
 %"With projects where a wide UI is present, we should focus more on which features get used most and which have dependencies to business, then focus on improving these."
 
 %Experimental architecture
-The case company's software products have been developed for over three years each, and are becoming quite large and mature. To be able to collect customer or performance data, and to determine customer preference and itnerest, architectural changes of the product are required. One of the most important components is the instrumentation layer that is used to collect the data of the experiments, and it can be implemented in multiple ways. Architectural changes are however more costly for matured software, which already have a structure and many architectural dependencies. However, the interviewees view the current product architecture as very modular, with the possibility of easily adding new modules for data collection. 
+The case company's software products have been developed for over three years each, and are becoming quite large and mature. To be able to collect customer or performance data, and to determine customer preference and interest, architectural changes of the product are required. One of the most important components is the instrumentation layer that is used to collect the data of the experiments, and it can be implemented in multiple ways. Architectural changes are however more costly for matured software, which already have a structure and many architectural dependencies. However, the interviewees view the current product architecture as very modular, with the possibility of easily adding new modules for data collection. 
 %Pointit: softa on jo olemassa, ei voi tehdä alusta alkaen
 
 %One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
@@ -1269,7 +1271,7 @@ The organizational challenges are analyzed based on the data collected from the 
     Requirements by customers bring in revenue, and are prioritized over own product development \\ \hline
     Competence in experimentation is not high, and requires education \\ \hline
     Transitioning towards experimentation culture affects other teams, including sales \\ \hline
-    Creating a culture of innovation within the entire organization \\ 
+    Creating a culture of innovation within the organization \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1281,8 +1283,9 @@ According to the interviews, transitioning towards experimental R&D is perceived
 
 The interviewees are also concerned about organizational divergence, especially if continuous experimentation is only adapted in two teams. Both continuous delivery and continuous experimentation affect the customer interaction process, and other teams interacting with the case teams need to understand the experimentation concept. 
 
-TODO: finalize
-The teams under study have been working with agile and lean practices during the last couple of years, 
+The teams under study have been working with agile and lean practices for a long time, with minimal focus on innovation. Adopting continuous experimentation shifts the mindset more towards innovation and emphasizes the importance of deeply learning the customers needs. Systematically applying experiments also changes the way software products are developed. New features and product ideas are developed with keeping the possibility of confirming validations with experimentations in mind from the very early stage. This results in more measurement, tuning small details and especially making decisions based on data. The interviewees expressed an interest to shift other parts of the organization towards innovational mindset, especially the product management and sales teams, since they are working in the interface to the customer.   
+
+%Engagement model
 %Jotain kulttuurista tähän
 %Kulttuurissa:
 %opitaan asiakkaasta
@@ -1303,6 +1306,7 @@ The customer challenges are analyzed based on three sections of the interview: c
 	Technical personnel aren't involved in customer interaction \\ \hline
 	The software has to undergo testing in the UAT before production release \\ \hline
 	The end-users might be customers' customers, complicating feedback collection \\ \hline
+	A pro-active lead customer is required to develop the experimentation process \\ \hline
 	Proper legal agreements need to be made with the customers to collect data \\ 
 	\hline	
     \end{tabular}
@@ -1349,6 +1353,13 @@ The customer feedback is currently continuously received but not actively collec
 
 %B2B feedback challenges
 The feedback collection in B2B has multiple challenges. In the case of customer companies, feedback doesn't always come straight from the end user. Feedback relies on what the other companies representatives say, and this often includes their own opinions. Companies want the software for their own use, and they have requirements for property rights, security and others. If there are customer projects with multiple suppliers, it's hard to get feedback since maintaining communication and keeping track on up-to-date status of the project with multiple suppliers is hard. In case of Dialog, the user is not the payer. The user has to use the software even if it was bad. It is hard to get a neutral point of view. 
+
+Pro-active lead customer
+-firma epävarma miten asiakkaat suhtautuu
+-ei selvää kuvaa mitä asiakkaalta vaaditaan
+-ei varmuutta että experimentit ovat hyvä asia tuotekehitykseen
+-tarvitaan ehkä asiakkaalta enemmän tietoa tarpeista kuin aiemmin, jotta voidaan kehittää experimenttejä
+-voi selvittää onko asiakkailla omia metriikoita tuotteen käytöstä
 
 %Proper agreements need to be made
 According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. Consent from the customers is therefore required to collect data related to the user actions.
@@ -1700,7 +1711,17 @@ As requirements and benefits of continuous experimentation have been investigate
 %"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery of value. Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. However, due to the changes of the product development, marketing personnel and customers must be informed of the alterations. Customers might need to authorize the collection of their usage data, while the marketing team must be provided a way to track feature progress when moving towards real-time delivery from iterative model. 
 
+The company culture requires a shift towards experimentational mindset. This affects the product and new feature design from an early stage,.. %(experimentationit mielessä alusta lähtien)
+
 One of the key factors in applying the concept is finding a pro-active lead customer that is willing to explore the new engagement model. While certain types of experiments can be performed without the consent of the customer, experiments can degrade the user experience should be informed to the customer. As the customers acknowledge that the product they have bought is being developed to better suit their needs, approval of the experiments is more likely. 
+
+
+
+0)
+%requirements
+product owner: how to prioritize?
+high-level management: how to get innovation into the company? how to avoid developing things that are not so succesful in the end?
+break this down - what does it mean
 
 \subsubsection{Applying the model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
@@ -1732,6 +1753,9 @@ Due to the very general nature of the infrastructure introduced by Fagerholm et 
 %-Hypotheses used to implement MVP or MVF
 %-Experiment executed with data from MVP or MVF
 %-Analysis, results used to support decisiong making
+
+
+
 
 1) Limiting the amount of experiments per project 
 \begin{center}
@@ -1785,14 +1809,16 @@ The first solution is to simply use an existing data collection tool, such as We
 
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
+
+%TÄMÄ ehdottomasti
+%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
+
 5)
 Derive OECs for both products
 
 Dialog:
 
 CDM: 
-%TÄMÄ ehdottomasti
-%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
 
 Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
