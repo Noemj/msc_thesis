@@ -1452,13 +1452,13 @@ Some features in Dialog are specified to work exactly as is, and the customers h
 
 
 %Not much reliability in new versions
-A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
+A major problem found in the interviews was that currently the reliability towards new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amounts differ upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate. The low reliability is caused by the following reasons: features are occasionally forgotten and not tested, manual builds introduce human error factor, knowledge of the manual steps required for a succesful build is not shared and compiling modular products is hard.
 
 %Features are forgotten
-Without comprehensive automated testing and with the broad scale of features in both software products, in the deployment phase various features are occasionally forgotten and not tested. The features can remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, this increases the customer reluctancy towards new versions.
+Versions are occasionally forgotten from the UAT phase due to the lack of comprehensive automated testing and the broad scale of features in both software products. These features can then remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, the introduced bugs both increase the customer reluctancy towards new versions, and decrease the reliability of both the team and the customer. Adopting a test automation solves this issue, as long as tests are written for every feature.
 
 %Human error factor
-The manual build process involves human error factor, which can cause multiple bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor is also partially missing documents. Some steps of the deployment pipeline are documented, but there are still parts that some developers memorize. According to a developer:
+The manual build process involves human error factor, which in the case company is the root cause for majority bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor increasing the rate of human error factor is partially missing documentation and the complexity of the build process. Some steps of the deployment process are documented, but there are still parts that are memorized by developers. According to a developer:
 \begin{aquote}{CDM developer}
 "There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
 \end{aquote}
@@ -1472,6 +1472,7 @@ Since some of the manual steps are only memorized by certain developers, the dep
 %-Compiling a modular product is hard
 %-Some wrong binaries might be compiled under the new version, have to manually check these
 -Building modular products is hard, and can be made easier with total automation
+
 
 %-Many customer environments with different configurations
 
