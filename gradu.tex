@@ -1483,20 +1483,27 @@ The interviewees perceive compiling and building CDM a tricky task. CDM is a mod
 
 %-Allows for faster feedback collection
 %Haaste: nykyään joudutaan odottamaan kauan palautetta, kun versioita viedään niin vähän. Myöskään testeistä ei saada nopeasti palautetta. Devaajia motivoisi enemmän jos koodin näkisi menevän käyttöön päivittäin.
-With the current deployment model, release cycle length ranges from two to four weeks. By adopting continuous delivery, feedback can be received a lot faster from the customers. Test automation also adds a layer of feedback. The developers state that they would be more motivated if code could be deployed faster. Deploying the code makes the developers feel like they have achieved something concrete.
+With the current deployment model, release cycle length ranges from two to four weeks. By adopting continuous delivery, feedback can be received a lot faster from the customers. Test automation also adds a layer of feedback. The developers state that they would be more motivated if code could be deployed faster. Deploying the code makes the developers feel like they have achieved something concrete. %TODO: lisää tähän
 
 %-Requires less time to deploy
-Automating the deployment also reduces the time required for deploying a version. The product owners state that building and deploying a version can take up to a day, which is seen as way too long. The primary reason taking up the time is caused by having to manually compile, test and bugfix the versions. With continuous delivery, the amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy. Continuous delivery therefore allows the release of changes in time spans of hours, also allowing the most important features and fixes to be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software eventually ends up with fewer bugs. The primary reason fo
+Automating the deployment also reduces the time required for deploying a version. The product owners state that building and deploying a version can take up to a day, which is seen as way too long. The primary reason taking up the time is caused by having to manually compile, test and bugfix the versions. With continuous delivery, the amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy. Continuous delivery therefore allows the release of changes in time spans of hours, also allowing the most important features and fixes to be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software eventually ends up with fewer bugs. %The primary reason for
 
 %-Downtime can be eliminated %Canary release
-The prolonged deployment time also affects downtime, which is critical for both products. In the case of CDM, downtime must therefore be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
+The prolonged deployment time also causes more downtime. Downtime is not currently perceived as an issue in itself, as it is negotiated with the customer and happens during the hours where downtime is acceptable. With continuous delivery, the company gains more incentive to reduce or eliminate downtime. In the case of CDM, downtime can be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
 
 
 
 
+%Lyhyt loppuanalyysi tähän
+Summary
 
-Lyhyt loppuanalyysi tähän
+speed
+quality
+capacity
+
+focus: developers can completely complete a task before moving to the next task
+smaller problems are fixed quicker
 
 
 %
@@ -1544,25 +1551,35 @@ Lyhyt loppuanalyysi tähän
 %-There are customers that don't understand the benefit of continuous delivery.
 
 \subsection{Continuous experimentations benefit to case company}
+%Data-driven decisionit (organisaatiossa johtajien päätösvalta)
+
+
+
 %GENERAL BENEFITS
-
-Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
-
-Instrumenting software products and then gathering and analysing the to guide development is the main process of continuous experimentation. The general benefits of continuous experimentation lie in validating the features with customers. Generally speaking, the benefits can be categorized into five areas:
-
-\begin{itemize}
-\item  Data driven decisions
-\item  Link product development and business aspect
-\item  React to customers present needs
-\item  Turn hypotheses into facts
-\item  Steer development process into right direction
-\end{itemize}
-
-Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive answers, effectively allowing the use of hypotheses to steer development process.
-
 %From opinion to data-based decision making.
 %The selection of ideas is based on the opinions of leaders in the organization
 In the case company, selection of the development ideas is based almost exclusively on the opinions of leaders in the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be better increased by moving towards data-based decision making. 
+
+Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
+
+Instrumenting software products and then gathering and analysing the to guide development is the main process of continuous experimentation. The general benefits of continuous experimentation lie in validating the features with customers. 
+
+%Generally speaking, the benefits can be categorized into five areas:
+%\begin{itemize}
+%\item  Data driven decisions
+%\item  Link product development and business aspect
+%\item  React to customers present needs
+%\item  Turn hypotheses into facts
+%\item  Steer development process into right direction
+%\end{itemize}
+
+Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive answers, effectively allowing the use of hypotheses to steer development process.
+
+%Smaller, measurable changes (experimentation is done with minimal versions of the idea)
+The development time of features in the case company lasts from a single day up to two weeks. 
+
+%Avoid breaking the product (by measuring metrics)
+By measuring the 
 
 %DIALOG SPECIFIC 
 Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
@@ -1573,7 +1590,7 @@ While the development is therefore mainly guided by customer needs that directly
 \begin{aquote}{Dialog product owner}
 "The amount of available statistical data is not high much due to the user amount, but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, the customer would make more money. It doesn't therefore necessarily require a large user amount."
 \end{aquote}
-A possibility expressed by a member of the management is to aid marketing by giving a MPV implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
+A possibility expressed by a member of the management is to aid marketing by giving a MVP implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
 
 Another experimental feature that is seen suitable for Dialog is an in-product survey. These surveys are then placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
 
@@ -1959,7 +1976,7 @@ Therefore the core findings should be applicable to similar research problems ou
     21 & Is the customer involved in the deployment process? \\ \hline
     22 & Does the customer have to do something when a version is deployed? \\ \hline
     23 & What are the strengths in the current deployment process? \\ \hline
-    24 & What are the problems in the current deployment process? \\ \hline
+    24 & What are the problems in the current deployment process? \\ 
     \hline
     \end{tabular}
 \end{center}
@@ -1990,7 +2007,7 @@ Therefore the core findings should be applicable to similar research problems ou
     44 & Could your product be instrumented with a data collection service? If not, why? \\ \hline
     45 & In your product, could experiments be quickly deployed to the customer environment? \\ \hline
     46 & In your product, could the development process be guided by A/B testing? \\ \hline
-    47 & Does your team have a data analyst? \\ \hline
+    47 & Does your team have a data analyst? \\ 
     \hline
     \end{tabular}
 \end{center}
