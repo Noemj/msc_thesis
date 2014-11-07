@@ -923,7 +923,7 @@ The results are formed from the final template, and structured according to them
 % Suggest solutions to these major problems 
 % Recommend the best solution to be implemented 
 % Detail how this solution should be implemented 
-This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed view. First, the identified challenges in continuous delivery and continuous experimentation are listed and explained. Then, the benefits of applying continuous delivery and continuous experimentation, taking the challenges into consideration, are analyzed. Finally a continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building} is mapped to the case company context, and deviations identified.
+This section summarises key findings of the case study. It is structured according to the research questions, allowing the progress from a higher-level perspective to more detailed view. First, the identified challenges in continuous delivery and continuous experimentation are listed and explained. Then, the benefits of applying continuous delivery and continuous experimentation are analyzed based on the current state of the case company. Finally, a continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building} is mapped to the case company context, and deviations identified.
 
 %\subsection{Perceived problems}
 %What kind of problems were found?
@@ -958,6 +958,7 @@ The technical challenges for continuous delivery are derived from the interview.
     \hline
     \textbf{Specific problem} \\ \hline
     Downtime is more critical for certain customers \\ \hline
+    Automated testing has to be built on top of a matured software product \\ \hline
     Acceptance testing is performed by both the company and the customers \\ \hline
     Software is often integrated to multiple third party applications \\ \hline
     Software is often accompanied by multiple external components \\ \hline
@@ -971,7 +972,7 @@ The technical challenges for continuous delivery are derived from the interview.
 Downtime of the case company's products can be fatal. According to the Dialog product owner, downtime causes end-users being unable to perform their job. Downtime can also interrupt ongoing customer tasks, possibly losing critical data in the progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent these cases, and the version deployments are done when the system can be closed for a short period of time. In the continuous delivery process the deployment pipeline has to be designed to address the issue of downtime.
 
 %-testing costs could be pushed at least partially to users
-The developers perceive automated testing and test environments to be the largest technical task. Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in a UAT environment before the product can be deployed into production. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. In CDM, all of the customers perform manual acceptance testing in the UAT environment. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment. However, if the versions are deployed to UAT very often, customers might feel encumbered by the amount of UAT testing. The customers also have to be informed whenever a new version is available to the UAT environment.
+The developers perceive automated testing and test environments to be the largest technical task. Since both of the case company's software products have been in development for a long time, building a viable test automation has many challenges with architectural decisions and available workload. Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in a UAT environment before the product can be deployed into production. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. In CDM, all of the customers perform manual acceptance testing in the UAT environment. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment. However, if the versions are deployed to UAT very often, customers might feel encumbered by the amount of UAT testing. The customers also have to be informed whenever a new version is available to the UAT environment.
 %While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects. 
 %Automate testing
 
@@ -1131,6 +1132,13 @@ One of the main issues found in the deployment of software is that some customer
 
 %Customer reluctancy towards new versions
 While customers initially are against constant modifications, the interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term.
+\begin{aquote}{Dialog product owner}
+"If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
+\end{aquote}
+The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
+\begin{aquote}{Dialog product owner}
+"Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
+\end{aquote}
 
 Listing the changed features in changelog entries is especially important when releases are made more often. While the changes become smaller the faster versions are released, the customers become less aware of when the version will be updated and when features have changed. Currently the version deployments are negotiated with the customers, and necessary actions are taken to explain the changed features to the customers in meetings or in e-mails. When the deployments are made more often, discussions regarding version releases may be reduced or even ceased.  
 
@@ -1427,48 +1435,55 @@ Some features in Dialog are specified to work exactly as is, and the customers h
 %Current problems
 %Solutions by CD
 \subsection{Continuous deliverys benefit to case company}
+%Problems
+%-Reliability is low
+%-features are forgotten
+%-human error factor
+%-Knowledge is not shared
+%-Compiling a modular product is hard
+%-Many customer environments with different configurations
+%-Allows for faster feedback collection
+%-Requires less time to deploy
+%-Downtime can be eliminated
+
+
+%MALLI:
+%SELITÄ ONGELMA - SELITÄ CD:N RATKAISU - HUOMIOITA?
+
+
 %Not much reliability in new versions
 A major problem found in the interviews was that currently the reliability in new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amount differs upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate.
 
-However, without comprehensive automated testing and with the broad scale of features in both software products, in the deployment phase various features are occasionally forgotten and not tested. The features can remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, this increases the customer reluctancy towards new versions.
+%Features are forgotten
+Without comprehensive automated testing and with the broad scale of features in both software products, in the deployment phase various features are occasionally forgotten and not tested. The features can remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, this increases the customer reluctancy towards new versions.
 
+%Human error factor
 The manual build process involves human error factor, which can cause multiple bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting under the new versions. An important factor is also partially missing documents. Some steps of the deployment pipeline are documented, but there are still parts that some developers memorize. According to a developer:
 \begin{aquote}{CDM developer}
 "There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
 \end{aquote}
-
-
-
--Building modular products is hard, and can be made easier with total automation
-
-
-
-
-
-%-Everybody doesn't know all of the steps required for deployment, no manuals, only in memory
-Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the whole configuration for build deployment, but the rest can still trigger the deployment process.
-
-%Manual changelog
-
-%Deploy to where - UAT?
-The customers are unaware of the problems related to deployment issues unless the deployment has errors. However, if the version contains many UI changes the customer might feel frustrated by being unable to perform certain actions in the old way: 
-\begin{aquote}{Dialog product owner}
-"If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
-\end{aquote}
-
-\begin{aquote}{Dialog product owner}
-"Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
-\end{aquote}
-
-Continuous delivery process solves many of the stated problems. By adopting continuous delivery, the changes can be kept small and frequent so that the customer doesn't have to train the staff with sparse, big updates. Instead, the changes can be introduced more frequently with smaller updates. Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
-
-Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
-
 The amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy.  
 
-TODO: list benefits of continuous delivery here, attach them to problems
+%-Knowledge is not shared
+Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the whole configuration for build deployment, but the rest can still trigger the deployment process.
 
-%Canary release
+
+
+%-Compiling a modular product is hard
+%-Some wrong binaries might be compiled under the new version, have to manually check these
+-Building modular products is hard, and can be made easier with total automation
+
+%-Many customer environments with different configurations
+
+
+%-Allows for faster feedback collection
+
+
+%-Requires less time to deploy
+Continuous delivery allows the release of changes in time spans of hours to days. Therefore the most important features and fixes can be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software ends up with fewer bugs. 
+
+
+%-Downtime can be eliminated %Canary release
 In the case of CDM, downtime must therefore be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
 
@@ -1476,27 +1491,15 @@ In the case of CDM, downtime must therefore be eliminated by utilizing for examp
 
 
 
+Lyhyt loppuanalyysi tähän
 
 
+%
+%Continuous delivery process solves many of the stated problems. By adopting continuous delivery, the changes can be kept small and frequent so that the customer doesn't have to train the staff with sparse, big updates. Instead, the changes can be introduced more frequently with smaller updates. 
+
+%Continuous delivery allows the improvement of speed and quality. Releases can be quickly released, or put on hold for later release by feature switches \cite{cdbook}. Feature switches allow developers to increase the quality of certain features until they're ready for release.  
 
 
-
-%No manual work
-
-
-
-%    Problem area & Specific problem \\ \hline
-%    General & Downtime \\ \hline
-%    General & Environment \\ \hline
-%    General & Automate testing \\ \hline
-%    Configuration & Third party application integration \\ \hline
-%    Configuration & External components \\ \hline
-%    Configuration & Different configuration per customer \\ \hline
-%    Configuration & Database versioning \\ \hline
-%    Connection & Firewall configurations \\ \hline
-%    Connection & Required certifications \\ \hline
-%    Connection & Missing user rights \\ \hline
-%	Connection & VPN user limit \\ \hline
 
 
 
@@ -1506,7 +1509,7 @@ In the case of CDM, downtime must therefore be eliminated by utilizing for examp
 
 %It takes long time to build a new version
 %The duration of building a new versions is also long.
-%-Some wrong binaries might be compiled under the new version, have to manually check these
+
 
 
 %-Not sure what to test with automatised tests in Dialog
@@ -1531,7 +1534,6 @@ In the case of CDM, downtime must therefore be eliminated by utilizing for examp
 %Focus: Team members have more time to think. Developers can completely finish and release a task before they move to the next task. They do not need to switch their brains and their configurations between tasks. Product managers and QA people also get this benefit.
 
 %Clarity: Your team should experience less stress. With continuous delivery, you fix small problems quickly. Bigger changes take only as long as the work requires, because they are not delayed by stops and starts. You have fewer high-pressure spikes of release work. You can think about one thing at a time. All of these factors lower stress so that you can have a better life and work more effectively.
-
 
 
 %-There are customers that don't understand the benefit of continuous delivery.
@@ -1585,6 +1587,9 @@ The list of things to consider for Dialog regarding continuous experimentation:
 %\end{quote}
 
 %"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
+
+
+
 
 %CDM SPECIFIC 
 CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
@@ -1657,6 +1662,10 @@ discussion
 %Data-driven decisions
 %\subsection{Minimum Viable Process of continuous experimentation}
 %Break up the development process into smaller pieces, and then derive requirements for solutions from these pieces. This is called divide and conquer.
+
+
+
+Lyhyt loppyanalyysi tähän
 
 \subsection{Implementing continuous experimentation as a development process}
 
