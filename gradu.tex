@@ -1131,7 +1131,7 @@ One of the main issues found in the deployment of software is that some customer
 \end{aquote}
 
 %Customer reluctancy towards new versions
-While customers initially are against constant modifications, the interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term.
+Some customers are very reluctant against constant modifications and continuous version updates, since version updates occasionally introduce new bugs and modifications alter the user experience. While the user experience could be improved in the long run, the customers might feel frustrated when they have to learn to work with the modifications. The interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions. When customers become accustomed to the model of continuous version updates, the reluctant attitude might change. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term. 
 \begin{aquote}{Dialog product owner}
 "If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
 \end{aquote}
@@ -1691,7 +1691,7 @@ Lyhyt loppyanalyysi tähän
 
 \subsection{Implementing continuous experimentation as a development process}
 
-As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. The continuous experimentation process is implemented by partially applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}. 
+As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. The continuous experimentation process is implemented by partially applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}. %TODO: jatka tästä
 
 \subsubsection{Applying the general concept}
 %-Requires a paradigm shift towards real-time delivery of value
@@ -1723,25 +1723,33 @@ Fagerholm et al. define that a suitable experimentation system must be able to r
 %Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta?
 As a result, the simplest experiment cycle for the case company is defined in the following steps. 
 
-"The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
-\begin{enumerate}
-  \item Define an OEC for the measurable metrics
+%The desire is to collect real usage data instead of opinions inside the R&D or organisation \cite{eklund2012architecture}
+%The collected data should then be related to income revenues of the customers (or other metrics?)
+%The idea is to create a lasting value for the customer
 
-  \item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
+"The simplest experiment cycle would be" \cite{eklund2012architecture} TODO: fix this according to the findings!!
+\begin{enumerate}
+  \item Form an assumption from the business model that is thought to increase the value of the product
+  \item Form a hypothesis based on the assumption that can be subject to experimental testing 
+  \item Define a Overall Evaluation Criteria that can be collected and used to answer the hypothesis  
+  \item Define the experimental problem and produce a feature or a MVP thought to improve the quality from user perspective. The experiment is chosen so that it can be run with trustworthy results. 
+
+  \item Implement the instrumentation to collect the metrics 
+
+  %\item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
   %only experiments that can be run with trustworthy results should be considered
 
-  \item The response variable(s) are selected and implemented
-  
+%  \item The response variable(s) are selected and implemented
   \item The software is deployed to a UAT environment % statistically relevant number of devices, with unmodified devices being the control
-
   \item The software is acceptance tested in the UAT environment
   \item The software is deployed to production environment
-
-  \item The software is run for a period of time
+  \item The software is run for a period of time, while the data is collected into a database
   
   \item The data is uploaded and analysed through the infrastructure
-  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software
+  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software (persevere or pivot (change strategy))
 \end{enumerate}
+
+How this differs from the Fagerholm et al. model?
 
 
 %1) Limiting the amount of experiments per project
