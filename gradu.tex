@@ -1691,7 +1691,7 @@ Lyhyt loppyanalyysi tähän
 
 \subsection{Implementing continuous experimentation as a development process}
 
-As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. The continuous experimentation process is implemented by partially applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building}. %TODO: jatka tästä
+As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. First, the steps required for the case company to transition towards a continuous experimentation system are identified and explained. These steps have been formed based on the findings of previous research questions. Then, the continuous experimentation process is implemented by applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building} to the context of the case company. %TODO: jatka tästä
 
 \subsubsection{Applying the general concept}
 %-Requires a paradigm shift towards real-time delivery of value
@@ -1699,6 +1699,32 @@ As requirements and benefits of continuous experimentation have been investigate
 %%-Feedback sought through Prototype or demo
 %-Requires activation throughout the company
 
+Prerequisite: 
+
+find a pro-active lead customer
+-to train the customer interaction with experiments
+-to identify possible challenges
+-to better identify best practices
+-to develop the experimentation system further
+
+time and resources for product development
+-more focus on own product development
+
+implement experimentational architecture
+-service layer for data collection (Kohavi et al) (paras modulaarisiin tuotteisiin )(tästä on haastattelukyssäri, tsekkaa)
+%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
+-database for data storage
+-tools for data analysis
+
+identify the important metrics that should be improved to increase the value of the product for the customer
+-how does the customer profit from the product?
+
+legal agreements with the customer
+-investigate data collection, see if legal agreements are required
+
+training related to experiments
+-product management towards experimentational mindset
+-organizational shift towards experimentational culture
 
 %"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery of value. Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. However, due to the changes of the product development, marketing personnel and customers must be informed of the alterations. Customers might need to authorize the collection of their usage data, while the marketing team must be provided a way to track feature progress when moving towards real-time delivery from iterative model. 
@@ -1720,7 +1746,7 @@ break this down - what does it mean
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 
-%Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta?
+%Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta
 As a result, the simplest experiment cycle for the case company is defined in the following steps. 
 
 %The desire is to collect real usage data instead of opinions inside the R&D or organisation \cite{eklund2012architecture}
@@ -1741,7 +1767,7 @@ As a result, the simplest experiment cycle for the case company is defined in th
 
 %  \item The response variable(s) are selected and implemented
   \item The software is deployed to a UAT environment % statistically relevant number of devices, with unmodified devices being the control
-  \item The software is acceptance tested in the UAT environment
+  \item The software is acceptance tested in the UAT environment, production deployment is negotiated
   \item The software is deployed to production environment
   \item The software is run for a period of time, while the data is collected into a database
   
@@ -1796,6 +1822,8 @@ The practice of roadmapping in the case company is operated in product developme
 (back-end system consists of an experiment database.. ) 
 -Customer environment?
 
+
+
 Data collection: Kohavi et al.
 The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging. 
 
@@ -1808,8 +1836,6 @@ The first solution is to simply use an existing data collection tool, such as We
 "Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
 
-%TÄMÄ ehdottomasti
-%The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
 5)
 Derive OECs for both products
@@ -1943,6 +1969,17 @@ The analysis of continuous delivery and continuous experimentation proceeded fro
 This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. The benefits of these approaches have been identified for the case company, and a company with similar products can use them as a basis when reasoning the applying of these approaches. 
 
 The findings also indicate that shifting towards continuous experimentation is different based on the nature of the software product. By analyzing the two different products, insight on different types of experiments suitable for each product was gained.    
+
+
+
+
+TODO: tähän lista
+
+-identifioitu haasteet eri osa-alueissa: procedural, kulttuuri, tekniset..
+-stepit mitä vaaditaan CE siirtymiseen
+-CE-prosessi kuvattunat
+
+
 
 \subsection{Further research}
 
