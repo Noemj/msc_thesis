@@ -1707,6 +1707,7 @@ The company culture requires a shift towards experimentational mindset. This aff
 
 One of the key factors in applying the concept is finding a pro-active lead customer that is willing to explore the new engagement model. While certain types of experiments can be performed without the consent of the customer, experiments can degrade the user experience should be informed to the customer. As the customers acknowledge that the product they have bought is being developed to better suit their needs, approval of the experiments is more likely. 
 
+%The company has to want to run make data-driven decisions and have formed metrics that should be improved
 
 
 0)
@@ -1718,38 +1719,34 @@ break this down - what does it mean
 \subsubsection{Applying the model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
-Kohavi et al. have..
-\cite{kohavi2013online}
-Tenets:
-Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
-"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
-"Sessions per user, or repeat visits, is a much better factor in the OEC, and one that we use at Bing"
-Tenet 2: Controlled experiments can be run and their results are trustworthy
-Tenet 3: We are poor at assessing the value of ideas 
-"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
+
+%Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta?
+As a result, the simplest experiment cycle for the case company is defined in the following steps. 
+
+"The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
+\begin{enumerate}
+  \item Define an OEC for the measurable metrics
+
+  \item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
+  %only experiments that can be run with trustworthy results should be considered
+
+  \item The response variable(s) are selected and implemented
+  
+  \item The software is deployed to a UAT environment % statistically relevant number of devices, with unmodified devices being the control
+
+  \item The software is acceptance tested in the UAT environment
+  \item The software is deployed to production environment
+
+  \item The software is run for a period of time
+  
+  \item The data is uploaded and analysed through the infrastructure
+  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software
+\end{enumerate}
 
 
-%Fagerholm model
-%"The model consists of repeated Build-Measure-Learn blocks, supported by an infrastructure, as shown in Figure 1. Conceptually, the model can also be thought to apply not only to software development, but also to design and development of software-intensive products and services. In some cases, experi- mentation using this model may require little or no development of software."
-%Following the Lean Startup methodology [19], this vision is fairly stable and is based on knowledge and beliefs held by the entrepreneur.
-%"To support conducting such experiments, an infrastructure for continuous experimentation is needed. Figure 3 sketches the roles and associated tasks, the technical infrastructure, and the information artefacts of such an infrastructure"
-%Five roles are defined to handle three classes of tasks. A business analyst and a product owner, or a product management team, together handle the creation and iterative updating of the strategic roadmap.
-%The data analyst designs, executes, and analyses experiments
-%The data analyst also communicates with a developer and quality assurance role. These roles handle the development of MVPs,MVFs, and the final product. They first work with the data analyst to produce proper instrumentation into the front-end system,which is the part of the software which is delivered or visible to the user.
-%Picture with steeri roles?
-
-Due to the very general nature of the infrastructure introduced by Fagerholm et al., no major modifications have to be made to address specific B2B needs. 
-
-%Explain Fagerholm et al. model
-%-Build-Measure-Learn
-%-Hypotheses used to implement MVP or MVF
-%-Experiment executed with data from MVP or MVF
-%-Analysis, results used to support decisiong making
-
-
-
-
-1) Limiting the amount of experiments per project 
+%1) Limiting the amount of experiments per project
+The types of suitable experiments per product depend on multiple variables.
+ 
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm}}
     \hline
@@ -1768,14 +1765,15 @@ Such experiments include feature alpha, usage metrics, usage behavior tracking a
 
 A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/} http://apptimize.com/blog/2014/01/how-many-users-time/
 
+%2)UAT environment before Prod
+The UAT environment
 
-2)UAT environment before Prod
-
-
+%Jurgen quote
 "A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
 
 %In test environments the customers may not be very active
 
+%Jurgen quote
 "The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 
@@ -1819,23 +1817,9 @@ Necessary ingredients for agile development with controlled experiments \cite{ko
   \item Easy to collect data about the user behavior. With client software, user behavior is hard to track and usually requires consent. As more of the user experience moves online, it becomes easier to track user behavior since server-side logging and client-side JavaScript logging are commonly used in industry and accepted as reasonable practices.
   \item Easy to change and experiment with real users. Moving from hardware devices through standalone client software and software+services to SaaS applications, iterative experimentation gets easier. In standalone client software, experiments might be limited to beta cycles. For the software+services, experimentation capability has to be properly baked into the client so that server-side changes can be made to impact the client.
   \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
-\end{enumerate}
+\end{enumerates}
 
 
-
-As a result, the simplest experiment cycle for the case company is defined in the following steps. 
-
-"The simplest experiment cycle would be" \cite{bosch2012building} TODO: fix this according to the findings!!
-\begin{enumerate}
-  \item 
-  \item Define an OECs for both projects
-  \item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
-  \item The response variable(s) are selected and implemented
-  \item The software is deployed to a statistically relevant number of devices, with unmodified devices being the control
-  \item The software is run for a period of time
-  \item The data is uploaded and analysed through the infrastructure
-  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software
-\end{enumerate}
 
 Explain step 1
 
@@ -1849,6 +1833,41 @@ Explain step 2
 
 
 Trello
+
+
+
+%"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
+
+
+
+
+%Kohavi et al. have..
+%\cite{kohavi2013online}
+%Tenets:
+%Tenet 1: The Organization wants to make data-driven decisions and has formalized the Overall Evaluation Criterion (OEC)
+%"For example, profit is not a good OEC, as short-term theatrics (e.g. raising price) can increase short-term profit, but hurt it in the long run"
+%"Sessions per user, or repeat visits, is a much better factor in the OEC, and one that we use at Bing"
+%Tenet 2: Controlled experiments can be run and their results are trustworthy
+%Tenet 3: We are poor at assessing the value of ideas 
+%"Features are built because teams believe they are useful, yet in many domains most ideas fail to improve key metrics" \cite{kohavi2013online}
+
+
+%Fagerholm model
+%"The model consists of repeated Build-Measure-Learn blocks, supported by an infrastructure, as shown in Figure 1. Conceptually, the model can also be thought to apply not only to software development, but also to design and development of software-intensive products and services. In some cases, experi- mentation using this model may require little or no development of software."
+%Following the Lean Startup methodology [19], this vision is fairly stable and is based on knowledge and beliefs held by the entrepreneur.
+%"To support conducting such experiments, an infrastructure for continuous experimentation is needed. Figure 3 sketches the roles and associated tasks, the technical infrastructure, and the information artefacts of such an infrastructure"
+%Five roles are defined to handle three classes of tasks. A business analyst and a product owner, or a product management team, together handle the creation and iterative updating of the strategic roadmap.
+%The data analyst designs, executes, and analyses experiments
+%The data analyst also communicates with a developer and quality assurance role. These roles handle the development of MVPs,MVFs, and the final product. They first work with the data analyst to produce proper instrumentation into the front-end system,which is the part of the software which is delivered or visible to the user.
+%Picture with steeri roles?
+
+%Due to the very general nature of the infrastructure introduced by Fagerholm et al., no major modifications have to be made to address specific B2B needs. 
+
+%Explain Fagerholm et al. model
+%-Build-Measure-Learn
+%-Hypotheses used to implement MVP or MVF
+%-Experiment executed with data from MVP or MVF
+%-Analysis, results used to support decisiong making
 
 
 
