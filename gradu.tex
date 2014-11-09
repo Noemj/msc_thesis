@@ -83,7 +83,7 @@
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
-\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a development practice where the entire R\&D process is guided by conducting experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. As a result, challenges and best practices regarding the transition towards real-time value delivery in the B2B domain are identified. The results suggest that technical challenges are only ones part of the challenges a company encounters in this transition. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
+\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a development practice where the entire R\&D process is guided by conducting experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. As a result, challenges and best practices in the transition towards real-time value delivery in the B2B domain are identified. The results suggest that technical challenges are only one part of the challenges a company encounters in this transition. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
 
 % The following can be used to specify keywords and classification of the paper:
 
@@ -1727,8 +1727,7 @@ One of the key factors in applying the concept is finding a pro-active lead cust
 %time and resources for product development
 %-more focus on own product development
 %-customer requirements can be tested as well, but experimenting probably takes more time
-A large part of the features implemented by the teams are custom implementations requested by the customers as part of projects. To be able to gain more suitable targets for experiments, the company has to focus more of its time and resources towards product development. Often the features requested by the customers are features that must be implemented in a certain way, and experimenting with them is not necessary. An example of such a feature is the integration of a new system to the software product. 
-
+A large part of the features implemented by the teams are custom implementations requested by the customers as part of projects. To be able to gain more suitable targets for experiments, the company has to focus more of its time and resources towards product development. Often the features requested by the customers are features that must be implemented in a certain way, and experimenting with them is not necessary. An example of such a feature is the integration of a new system to the software product. To proceed with continuous experimentation, the company must want to make data-driven decisions.
 
 %implement experimentational architecture
 %-service layer for data collection (Kohavi et al) (paras modulaarisiin tuotteisiin )(tästä on haastattelukyssäri, tsekkaa)
@@ -1737,31 +1736,21 @@ A large part of the features implemented by the teams are custom implementations
 %-tools for data analysis
 The company has to implement an experimentation architecture to support experimentation. The required components from the architecture are the data collection instrumentation and an experimental database \cite{kohavi2007practical, fagerholm2014building}. The developers view a pluggable logging service as a viable solution for data collection due to the modular architecture of the software products. The company also requires tools for data analysis.
 
-
 %identify the important metrics that should be improved to increase the value of the product for the customer
 %-how does the customer profit from the product?
 Identifying which aspects of the product are valuable to the customer and the metrics to measure these attributes is also required to lead the experimentation design. Both the management and the developers were able to name few metrics that are perceived as important for the customer, but no deep knowledge of actual customer needs has been achieved. Increasing the knowledge in this area first allows the teams to improve the product strategy, and consequently helps with creating assumptions, hypotheses and experiments. 
 
-
-
 %legal agreements with the customer
 %-investigate data collection, see if legal agreements are required
-
-
+The company needs to negotiate with the lead customer about the legal aspects of data collection. Some companies have strict policies regarding data collection, and the case company must identify what kind of data can be collected and whether some data is confidental. Along with the data collection, the lead customer should approve the occasional user experience alteration that is necessary for certain experiments. 
 
 %training related to experiments
 %-product management towards experimentational mindset
 %-organizational shift towards experimentational culture
 %-The company culture requires a shift towards experimentational mindset. This affects the product and new feature design from an early stage,.. %(experimentationit mielessä alusta lähtien)
 %-As a general concept, continuous experimentation requires a paradigm shift from the teams and other essential parts of the organizations towards real-time delivery %of value. 
-
-
+As the competence in experimentation and data-driven product design is low, the company must educate key personnel in these matters. The product management must have an experimentational mindset, while also understanding the statistical and technical limitations of experiments. The product management also needs to understand the procedural, organization and customer requirements of continuous experimentation. The developers need to understand the technical challenges in order to design and experiments.
 %Prerequisite: 
-
-
-
-
-
 
 
 
