@@ -220,8 +220,17 @@ The broader research objective is explored here. The research questions are stru
 %Interview results have to be compared to literature review results
 \noindent \textbf{RQ2: How do continuous delivery and continuous experimentation benefit the case company?} %What are the problems and strengths of the current development process?
 
-\noindent To rationalize the decision to adopt continuous delivery and experimentation in a company, the actual benefits to the business have to be identified. Sections of the interview aim to identify the current perceived problems of the case company related to deployment, product development, collecting feedback and guiding the development process. This question is answered by comparing these problems to the benefits of these approaches found from the literature review, with respect to the challenges identified in RQ1.
+\noindent To rationalize the decision to adopt continuous delivery and experimentation in a company, the actual benefits to the business have to be identified. This research question aims to identify clear objectives for what should be achieved with continuous delivery and continuous experimentation. Sections of the interview aim to identify the current perceived problems of the case company related to deployment, product development, collecting feedback and guiding the development process. These problems are then compared to the benefits of these approaches found from the literature review, taking into account the challenges identified in RQ1.
 \newline
+
+%When you
+%present the vision to these stakeholders it is important to have
+%the mission clarified. What are you trying to achieve through
+%continuous delivery and why? You must set clear objectives
+%and keep progress steering toward the right direction. There
+%are many side paths, experiments and “shiny” things to distract
+%you on the journey towards continuous delivery. It is easy to
+%become distracted or waylaid by these.
 
 %\noindent \textbf{RQ 3: What is the Minimum Viable Process of continuous experimentation?}
 
@@ -355,17 +364,35 @@ A picture of the typical development process in continuous delivery is shown in 
 	\label{fig3}
 \end{figure}
 
-\subsection{Challenges regarding continuous delivery}
+TODO: jatkoa tähän?
 
+\subsection{Challenges regarding continuous delivery}
 %"With continuous flow, Sales and Marketing were not quite sure when anything would be released."\cite{neely2013continuous}
 % "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 Neely and Stolt found out that with a continuous flow, Sales and Marketing departments lost the track of when features are released \cite{neely2013continuous}. Continuous delivery requires the company as a whole to understand the continuous flow process. Neely and Stolt solved this challenge by providing mechanisms by which the parties in need of knowledge regarding release times could track the work in real time \cite{neely2013continuous}. 
 
+One of the largest technical challenges is the test automation required for rapid deploying \cite{humble2006deployment, cdbook}. The automated tests are often divided into multiple independend testing stages. Humble et al. note that automating the tests provide immediate value when implemented in the early stages of a project. It can, however, be a daunting task for larger projects in matured stages. Humble and Farley also bring up that implementing automated acceptance testing can be expensive and laborious, especially if communication inside the team is not effective \cite{cdbook}. 
+
+Implementing the deployment infrastructure also requires knowledge from the development and operations team \cite{cdbook}. If the operations team doesn't understand the deployment process, the risk of making errors increases. Along with the technical implementationg, training and educating developers and operations team on the subject might be necessary depending on the prior knowledge levels.
+
+Another challenge is to sell the vision and reasoning behind continuous delivery to the executive and management level \cite{neely2013continuous}. Neely and Stolt state that it is important to set clear objectives for what the company is trying to achieve through continuous delivery. The authors also comment that there are many "shiny" that might cause distraction on the journey towards continuous delivery. 
+
+%It is important to have the right level of sponsorship before
+%you begin. A champion trumpeting the the horn for continuous
+%delivery is a key starting point but you must garner buy-in
+%from the executive and senior management teams. When you
+%present the vision to these stakeholders it is important to have
+%the mission clarified. What are you trying to achieve through
+%continuous delivery and why? You must set clear objectives
+%and keep progress steering toward the right direction. There
+%are many side paths, experiments and “shiny” things to distract
+%you on the journey towards continuous delivery. It is easy to
+%become distracted or waylaid by these.
+
 %http://www.continuousagile.com/unblock/cd_costs_benefits.html
-TODO: finalize this
--Technical implementation: Automate testing
--Education on the subject: Developer training costs
--Active participation of employees
+%-Technical implementation: Automate testing
+%-Education on the subject: Developer training costs
+%-Active participation of employees
 
 \section{Literature: Continuous Experimentation}
 
@@ -1037,7 +1064,8 @@ The procedural challenges are analyzed based on the development process document
 	Triggering the compilation and deployment of large, modular projects \\ \hline
 	The software has to be deployed to multiple customers \\ \hline
 	Versioning is affected by having different customer profiles of the product \\ \hline
-	Responsibility moves towards developers \\
+	Responsibility moves towards developers \\ \hline
+	Management and sales loses track of versions \\
     \hline
     \end{tabular}
 \end{center}
@@ -1068,6 +1096,11 @@ Multiple customer environments affects versioning of the software product. In th
 
 %Developer responsibility 
 Continuous delivery also drifts response towards the developer, and the developers decide what is ready to be released. Currently in the case company the product owners and team leaders are responsible for negotiating the deployment date with the customer, and they also inform the developers that a new version is required. If the developer can single-handedly deploy a feature, the management can quickly lose track on the features available to customers. This also requires the developers to deeply understand the details of the version control system and automated testing. 
+
+Due to increased developer responsibility and varying interval of version updates continuous delivery causes, a team leader express concern that the delivery process complicates tracking when deployments are performed, and when features are finished. This also concerns other parties working in the customer interface, such as sales. While this is a concern for version deployments to the UAT environment, especially if developers perform these deployments at will, can production releases still be negotiated with the customer. Neely and Stolt have also found similar results \cite{neely2013continuous}, which they solved by providing mechanisms by which the parties if need of knowledge regarding release times could track the work in real time.  
+
+%Neely and Stolt found out that with a continuous flow, Sales and Marketing departments lost the track of when features are released \cite{neely2013continuous}. Continuous delivery requires the company as a whole to understand the continuous flow process. Neely and Stolt solved this challenge by providing mechanisms by which the parties in need of knowledge regarding release times could track the work in real time \cite{neely2013continuous}. 
+
 
 %-should the product be always deployed to every customer?
 
@@ -1483,6 +1516,15 @@ Automating the deployment also reduces the time required for deploying a version
 The prolonged deployment time also causes more downtime. Downtime is not currently perceived as an issue in itself, as it is negotiated with the customer and happens during the hours where downtime is acceptable. With continuous delivery, the company gains more incentive to reduce or eliminate downtime. In the case of CDM, downtime can be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
 
+Ongelma: uuden ympäristön asennus kestää erittäin kauan (useita työpäiviä)
+TODO: flexibility of deployments 
+
+%It should be a simple task to start your application in a new environment—ideally
+%just a matter of commissioning the machines or virtual images and creating some
+%configuration information that describes the environment’s unique properties.
+%Then you should be able to use your automated deployment process to prepare
+%the new environment for deployment and deploy the chosen version of your
+%application to it. \cite{cdbook}
 
 
 
