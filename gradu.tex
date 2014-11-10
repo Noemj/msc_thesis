@@ -355,7 +355,7 @@ The last principle states "Evolve your production line along with the applicatio
 
 \subsubsection{Impact on development model}
 
-A picture of the typical development process in continuous delivery is shown in Fig. \ref{fig3}. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
+A picture of the typical development process in continuous delivery is shown in Fig. \ref{fig3}. After the team pushes a change to the version control system, the project is automatically built and tests are triggered stage by stage \cite{cdbook}. If a test stage fails, feedback is given and the deployment process effectively cancelled. In a continuous delivery process, the last stages are approved and activated manually, but in a continuous deployment process the last stages are triggered automatically as well.
 
 \begin{figure}[h]
 	\centering
@@ -364,7 +364,18 @@ A picture of the typical development process in continuous delivery is shown in 
 	\label{fig3}
 \end{figure}
 
-TODO: jatkoa tähän?
+With automated deployment and production release, they become rapid, repeatable and reliable \cite{cdbook}. The releases can then be deployed more frequently, and at some point it might be possible to step back to early versions. This capability makes releasing essentially risk-free. When a critical bug is introduced, the version can be reverted to an earlier instance without the bug, which can then be fixed before a new release is made. The capability to deploy often also moves the development towards shorter features and smaller changes, which cannot cause as many integration problems as long-lasting feature branches with many commits \cite{cdbook}.
+
+%Second, when deployment and production release themselves are automated,
+%they are rapid, repeatable, and reliable. It is often so much easier to perform
+%a release once the process is automated that they become “normal”
+%events—meaning that, should you choose, you can perform releases more
+%frequently. This is particularly the case where you are able to step back to an
+%earlier version as well as move forward. When this capability is available,
+%releases are essentially without risk. The worst that can happen is that you find
+%that you have introduced a critical bug—at which point you revert to an earlier
+%version that doesn’t contain the bug while you fix the new release offline (see
+%Chapter 10, “Deploying and Releasing Applications”).
 
 \subsection{Challenges regarding continuous delivery}
 %"With continuous flow, Sales and Marketing were not quite sure when anything would be released."\cite{neely2013continuous}
@@ -1075,7 +1086,7 @@ The procedural challenges are analyzed based on the development process document
 %-in B2B, continuous deployment straight to production is very risky
 The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business, and continuous delivery with deployments to a staging environment is seen as very beneficial. Therefore the deployment procedure has to be designed to allow testing the software in a UAT environment, and making it possible to manually trigger the deployment to production.
 
-Both of the case company's products are developed with a branching model, where feature branches are first thoroughly developed and then integrated to the master branch. Only the master branch is ever released to the customer. However, with continuous delivery the long-lived feature branches should be changed to short-lived and relatively small feature branches to enable faster deployment of the software. The benefit of smaller branches is that while there may still be bugs, they're introduced in a fewer number of commits, and entire large features don't need to be rollbacked. Smaller branches also enable faster feedback. While the small feature branches might be common for companies with a relatively new software products, companies that have been developing products for a long time might be more devoted to the practice of feature branches.
+Both of the case company's products are developed with a branching model, where feature branches are first thoroughly developed and then integrated to the master branch. Only the master branch is ever released to the customer. However, with continuous delivery the long-lived feature branches should be changed to short-lived and relatively small feature branches to enable faster deployment of the software. The benefit of smaller branches is that while there may still be bugs, they're introduced in a fewer number of commits, and entire large features don't need to be rollbacked. Smaller branches also enable faster feedback. While the small feature branches might be common for companies with a relatively new software products, companies that have been developing products for a long time might be more devoted to the practice of feature branches. However, it is still possible to keep the software releasable with long-lived feature branches by hiding new functionality or by constructing it as a series of releasable small changes \cite{cdbook}.
 %If the components are sufficiently small, it is preferable to have a single build for the whole application—giving the fastest feedback of all. \cite{cdbook}
 
 %Pull requests
