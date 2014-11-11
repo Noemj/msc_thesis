@@ -1788,23 +1788,64 @@ As the competence in experimentation and data-driven product design is low, the 
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta
-In the B2B context, certain additions to the initial model have to be made. One of such additions is the deployment to a UAT environment. TODO: why?
+The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} introduce the general process of continuous experimentation. Here the model is mapped to the case company context, and elaborated based on the findings of earlier research questions. The analysis of the model is divided into three phases: design, execute and analyse. 
+
+
+%The business strategy is more flexible, and
+%it consists of multiple assumptions regarding the actions required
+%to bring a product or service to market that fulfils the vision and
+%is profitable. However, each assumption has inherent uncertainties.
+%In order to reduce the uncertainty, we propose to conduct experiments.
+%An experiment operationalises the assumption and states a
+%hypothesis that can be subjected to experimental testing in order to
+%gain knowledge regarding the assumption. Once the hypothesis is
+%formulated, two parallel activities can occur. The hypothesis is used
+%to implement and deploy a Minimum Viable Product (MVP) or Minimum
+%Viable Feature (MVF), which is used in the experiment and
+%has the necessary instrumentation. Simultaneously, an experiment
+%is designed to test the hypothesis. The experiment is then executed
+%and data from the MVP/MVF are collected in accordance with the
+%experimental design. The resulting data are analysed, concluding
+%the experimental activities.
+
+
+%Huomio 1:
+%The data analyst designs, executes, and analyses experiments. A
+%variety of tools are used for this purpose, which access raw data in
+%the back-end system. Conceptually, raw data and experiment plans
+%are retrieved, analysis performed, and results produced. The results
+%are stored back into the back-end system
+
+%Tähän pitää laittaa joku kaveri joka tietää asiakkaan tarpeista
+Design-phase
+
+In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
+
 Another addition is to explicitly define the Overall Evaluation Criteria before the feature or MVP is implemented. TODO: why?
-The simplest experiment cycle for the case company is defined in the following steps. 
 
-%The desire is to collect real usage data instead of opinions inside the R&D or organisation \cite{eklund2012architecture}
-%The collected data should then be related to income revenues of the customers (or other metrics?)
-%The idea is to create a lasting value for the customer
-
-"The simplest experiment cycle would be" \cite{eklund2012architecture} TODO: fix this according to the findings!!
 \begin{enumerate}
   \item Form an assumption from the business model that is thought to increase the value of the product
   \item Form a hypothesis based on the assumption that can be subject to experimental testing 
-  \item Define a Overall Evaluation Criteria that can be collected and used to answer the hypothesis  
-  \item Define the experimental problem and produce a feature or a MVP thought to improve the quality from user perspective. The experiment is chosen so that it can be run with trustworthy results. 
+  \item Define an Overall Evaluation Criteria that can be collected and used to provide an answer to the hypothesis  
+  \item Define the type of the experiment and the experimental problem 
+  \item Implement the MVF or MVP. The experiment is chosen so that it can be run with trustworthy results. 
+  \item Implement the instrumentation to collect the metric
+\end{enumerate}
 
-  \item Implement the instrumentation to collect the metrics 
+%Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
+%\begin{enumerate}
+%  \item A clear objective that can be evaluated. Controlled experiments require an OEC, and organizations need to agree on what to optimize. As Lewis Carroll said, "If you don’t know where you are going, any road will take you there".
+%  \item Easy to collect data about the user behavior. With client software, user behavior is hard to track and usually requires consent. As more of the user experience moves online, it becomes easier to track user behavior since server-side logging and client-side JavaScript logging are commonly used in industry and accepted as reasonable practices.
+%  \item Easy to change and experiment with real users. Moving from hardware devices through standalone client software and software+services to SaaS applications, iterative experimentation gets easier. In standalone client software, experiments might be limited to beta cycles. For the software+services, experimentation capability has to be properly baked into the client so that server-side changes can be made to impact the client.
+%  \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
+%\end{enumerates}
 
+
+
+
+In the execute phase the product is deployed to an environment with the experimental feature and instrumentation for data collection. For the case company, the deployment has to undergo testing in the UAT environment. The UAT environment is also suitable for testing the experiment and the impact of the experimental feature on the product itself.
+
+\begin{enumerate}
   %\item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
   %only experiments that can be run with trustworthy results should be considered
 
@@ -1814,11 +1855,32 @@ The simplest experiment cycle for the case company is defined in the following s
   \item The software is deployed to production environment
   \item The software is run for a period of time, while the data is collected into a database
   
-  \item The data is uploaded and analysed through the infrastructure
-  \item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software (persevere or pivot (change strategy))
 \end{enumerate}
 
-How this differs from the Fagerholm et al. model?
+Analyse
+
+\begin{enumerate}
+\item The data is uploaded from the database and analysed through the infrastructure
+\item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software (persevere or pivot (change strategy))
+
+\end{enumerate}
+
+
+
+ %One of such additions is the deployment to a UAT environment,
+
+ %which is required TODO: why?
+
+%The simplest experiment cycle for the case company is defined in the following steps. 
+
+%The desire is to collect real usage data instead of opinions inside the R&D or organisation \cite{eklund2012architecture}
+%The collected data should then be related to income revenues of the customers (or other metrics?)
+%The idea is to create a lasting value for the customer
+
+%"The simplest experiment cycle would be" \cite{eklund2012architecture} TODO: fix this according to the findings!!
+
+
+%ow this differs from the Fagerholm et al. model?
 
 
 %1) Limiting the amount of experiments per project
@@ -1888,13 +1950,7 @@ Dialog:
 CDM: 
 
 
-Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
-\begin{enumerate}
-  \item A clear objective that can be evaluated. Controlled experiments require an OEC, and organizations need to agree on what to optimize. As Lewis Carroll said, "If you don’t know where you are going, any road will take you there".
-  \item Easy to collect data about the user behavior. With client software, user behavior is hard to track and usually requires consent. As more of the user experience moves online, it becomes easier to track user behavior since server-side logging and client-side JavaScript logging are commonly used in industry and accepted as reasonable practices.
-  \item Easy to change and experiment with real users. Moving from hardware devices through standalone client software and software+services to SaaS applications, iterative experimentation gets easier. In standalone client software, experiments might be limited to beta cycles. For the software+services, experimentation capability has to be properly baked into the client so that server-side changes can be made to impact the client.
-  \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
-\end{enumerates}
+
 
 
 
@@ -1971,6 +2027,13 @@ Trello
 
 
 \section{Discussion}
+
+The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. 
+
+The results suggests that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
+
+The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation infrastructure \cite{fagerholm2014building} is mapped to the case company's context with the required deviations.
+%TODO: fix
 
 %Findings:
 %UAT: what to do?
