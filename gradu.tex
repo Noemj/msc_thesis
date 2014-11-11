@@ -153,7 +153,7 @@ To deliver value fast and to cope with the increasingly active business environm
 
 The requirement of developing value fast has led to the evolution of a new software development model \cite{bosch2012building}. The model is based on three principles: evolving the software by frequently deploying new versions, using customers and customer data throughout the development process and testing new ideas with the customers to drive the development process and increase customer satisfaction. Currently more and more software companies are transitioning towards this model, called innovation experiment systems. 
 
-The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature would be succesful or not? To provide an answer to this question, two software development models known as continuous delivery and continuous experimentation are analyzed as possible development models for the case company. 
+The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature would be succesful or not? To provide an answer to this question, two software development models known as continuous delivery and continuous experimentation are analyzed as possible development models for the case company.
 %The whole pipe between the idea and implementation isn't yet completely perceived. Some parts are visible, but the entirety is still unclear.
 
 %-this creates barriers
@@ -676,20 +676,17 @@ Another guideline is selectivity. King states that every code cannot be interpre
 Finally, an account of the interpreted data has to be presented. As with interpretation, King provides three common approaches to presentation \cite{king2004using}. First of the approaches is a set of individual case studies, followed by discussion of differences and similarities between cases. This approach gives a lot of perspective of individuals, but can be confusing if the amount of participants is large. The second approach is an account structured around the main themes identified, drawing illustrative examples from each transcript as required. King states that this is the approach that most readily provides a clear thematic discussion, but the dangers is in drifting towards generalizations and losing sights of individual experiences. The third approach is a thematic presentation of the findings, using a different individual case-study to illustrate each of the main themes. The main problem here lies in selecting the cases which represent the themes in the data as a whole. King also adds that no matter which approach is used, direct quotes from participants is essential.  
 
 \section{Research design}
-
 Research design depicts the strategic decisions that guide how research is carried out \cite{denzin2000discipline}. This includes the studied phenomena, method selection, data-gathering and analysis. Different perspectives towards the researched subjects are usually categorized into two paradigms: positivist and constructivist \cite{gephart2004qualitative}. Positivism contents that an objective reality, which can be studied, captured and understood, exists. Postpositivism argues that reality can never be fully apprehended, but only approximated. Postpositivism therefore relies on multiple methods to capture as much of reality as possible. Constructivism assumes that multiple realities exist. A critical paradigm lies somewhere between positivism and constructivism, assuming that our ability to know of this reality is imperfect. To understand as much of reality as possible, it must be subject to wide critical examination. 
 
 This thesis is based on the critical realist perspective. Critical realism studies people's perceptions to gain understanding of the reality that exists beyond these perceptions \cite{healy2000comprehensive}. Critical realism is especially suitable for case study research if the process involves thoughtful in depth research with the object of understanding why things are as they are \cite{easton2010critical}. 
 
-During this research, the author was an employee at Steeri. Consequently, this case study is based on the participant-observer research method \cite{strauss1990basics}. Data triangulation is ensured by combining the observer results and interview results. 
+During this research, the author was an employee at Steeri Oy. Consequently, this case study is based on the participant-observer research method \cite{strauss1990basics}. Data triangulation is ensured by combining the observer results and interview results. The logical starting point of this thesis was the need by the case company to find a way to validate whether a feature is succesful or not. 
 
 %Triangulation is a way to increase the reliability and validity of the findings. Triangulation means using different data collection methods or angles, and providing a wider picture of the case. Triangulation is especially important for qualitative data, but can also be used for quantitative data to compensate for measurement or modeling errors \cite{runeson2009guidelines}. Stake defines four ways to apply triangulation: Data triangulation, Observer triangulation, Methodological triangulation and Theory triangulation \cite{stake1995art}. In data triangulation, multiple data sources are used, or the data is collected at different occasions. In observer triangulation more than one observer is used in the study. In methodological triangulation different types of data collection methods are combined, such as qualitative and quantitative methods. In theory triangulation alternative theories or viewpoints are used.
 
 %the research underlying this case study is based on a participant-observer research method [1][3].
 %Adler, P.A., Adler, P.: Observational Techniques. In: Denzin, N.K., Lincoln, Y. (eds.) Handbook of Qualitative Research, pp. 377–393. Sage, Thousand Oaks (1994)
 %Corbin, J., Strauss, A.: Basics of qualitative research, 3rd edn. Sage, Thousand Oaks (2008)
-
-The logical starting point of this thesis was the need by the case company to find a way to validate whether a feature is succesful or not. 
 
 \subsection{Objective} %what to achieve?
 %What does the company want to achieve
@@ -1355,7 +1352,7 @@ The customer challenges are analyzed based on three sections of the interview: c
 	The software has to undergo testing in the UAT before production release \\ \hline
 	The end-users might be customers' customers, complicating feedback collection \\ \hline
 	A pro-active lead customer is required to develop the experimentation process \\ \hline
-	Proper legal agreements need to be made with the customers to collect data \\ 
+	Proper legal agreements need to be made with the customers to collect usage data and user behavior \\ 
 	\hline	
     \end{tabular}
 \end{center}
@@ -1404,7 +1401,7 @@ The interviewees feel that having a pro-active lead customer is required to both
 %-voi selvittää onko asiakkailla omia metriikoita tuotteen käytöstä
 
 %Proper agreements need to be made
-According to the interview results, the product owners state that to collect data from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. Consent from the customers is therefore required to collect data related to the user actions.
+According to the interview results, the product owners state that to collect usage data and user behavior from customers, proper agreements might need to be made. Some of the customer companies have strict rules for which data can be collected. Consent from the customers is therefore required to collect data related to the user actions.
 \begin{aquote}{Dialog developer}
 "We need a permission from the customer to run experiments. The customers conduct mostly routine actions. The software has to be stable, so that the customers know where everything is."
 \end{aquote}
@@ -1784,12 +1781,11 @@ As the competence in experimentation and data-driven product design is low, the 
 
 %requirements
 
-\subsubsection{Applying the model}
+\subsubsection{Applying the experimentation model}
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta
 The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} introduce the general process of continuous experimentation. Here the model is mapped to the case company context, and elaborated based on the findings of earlier research questions. The analysis of the model is divided into three phases: design, execute and analyse. 
-
 
 %The business strategy is more flexible, and
 %it consists of multiple assumptions regarding the actions required
@@ -1817,20 +1813,23 @@ The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} in
 %are stored back into the back-end system
 
 %Tähän pitää laittaa joku kaveri joka tietää asiakkaan tarpeista
-Design-phase
-
-In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
-
-Another addition is to explicitly define the Overall Evaluation Criteria before the feature or MVP is implemented. TODO: why?
 
 \begin{enumerate}
   \item Form an assumption from the business model that is thought to increase the value of the product
   \item Form a hypothesis based on the assumption that can be subject to experimental testing 
-  \item Define an Overall Evaluation Criteria that can be collected and used to provide an answer to the hypothesis  
-  \item Define the type of the experiment and the experimental problem 
-  \item Implement the MVF or MVP. The experiment is chosen so that it can be run with trustworthy results. 
+  \item Define the type of the experiment and the experimental problem so that it can be run with trustworthy results
+  \item If running a controlled experiment, define an Overall Evaluation Criteria that can be collected and used to provide an answer to the hypothesis  
+  \item Implement the MVF or MVP
   \item Implement the instrumentation to collect the metric
 \end{enumerate}
+
+In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
+
+After the hypothesis is formed, the type of experiment to test the hypothesis needs to be chosen. The experiment must be able to provide worthful results, and for experiments relying on statistical importance the user amount has to be sufficient. For experiments relying on user behavior statistical importance might not be necessary to draw results.
+
+Another addition is to explicitly define the overall evaluation criteria (OEC) before the feature or MVP is implemented if running a controlled experiment. The OEC is a metric that the company aims to improve with the experiment. One of the common pitfalls in running controlled experiments is to pick an OEC for which the control group is easy to beat by doing something "wrong" from a business perspective \cite{crook2009seven}. Picking the OEC also concretizes the experiment, making the purpose and goal of the experiment more obvious. 
+
+After the OEC has been formed and the experiment type decided, the minimum viable feature (MVF) or minimun viable product (MVP) is implemented, and the instrumentation for data collection is added to the product. The suitable data collection instrumentations for the case company's product according to the developers is a server-side service layer, which can be used to log data from multiple services. 
 
 %Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
 %\begin{enumerate}
@@ -1840,10 +1839,10 @@ Another addition is to explicitly define the Overall Evaluation Criteria before 
 %  \item Sufficient users exist. Very small sites or products with no customer base cannot use experimentation, but such sites typically have a key idea to implement and they need quick feedback after going live. Because new sites are aiming for big improvements, the number of users needed to detect the desired effects can be relatively small (e.g., thousands of users). Large sites, which are typically better optimized, benefit even from small improvements and therefore need many %Mostly for A/B testing?
 %\end{enumerates}
 
+%"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
+%"Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
 
-
-In the execute phase the product is deployed to an environment with the experimental feature and instrumentation for data collection. For the case company, the deployment has to undergo testing in the UAT environment. The UAT environment is also suitable for testing the experiment and the impact of the experimental feature on the product itself.
 
 \begin{enumerate}
   %\item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
@@ -1857,13 +1856,17 @@ In the execute phase the product is deployed to an environment with the experime
   
 \end{enumerate}
 
-Analyse
+In the execute phase the product is deployed to an environment with the experimental feature and instrumentation for data collection. For the case company, the deployment has to undergo testing in the UAT environment. The UAT environment is also suitable for testing the experiment itself and the impact of the experimental feature on the product. When the UAT phase is complete, the production deployment is negotiated and performed. With automated deployments, the production deployment should happen by a click of a button. The software is the run for a period of time, while the required data is collected into a database located in the environment.
 
 \begin{enumerate}
 \item The data is uploaded from the database and analysed through the infrastructure
-\item The development team draws conclusions about the new software and decides whether to develop the new software design further, keep it as it is, or to drop it and revert to the unmodified software (persevere or pivot (change strategy))
-
+\item The team draws conclusions from the data on whether to develop the new feature or product further, keep it as it is, or to drop it and revert to the unmodified software. 
+%leave feature or remove? continuous delivery to return versions?
 \end{enumerate}
+
+In the analyze phase the results from the experiment are collected from the database and analysed through analytics software. The business strategy is then persevered or pivoted based on whether the hypothesis is valid and supports the assumption.
+
+
 
 
 
@@ -1884,88 +1887,65 @@ Analyse
 
 
 %1) Limiting the amount of experiments per project
-The types of suitable experiments per product depend on multiple variables.
- 
-\begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm}}
-    \hline
-    \textbf{Type of experiment} & \textbf{Dialog} & \textbf{CDM} & \textbf{Rationalization} \\ \hline
-	A/B testing & x & - & - \\ \hline
-	Multi-variate testing & x & & \\ \hline
-	Feature alpha & x & & \\ \hline
-	Usage metrics & x & & \\ \hline
-	Usage behavior tracking & x & & \\ \hline
-	Participatory design & x & & \\ \hline
-	Collaborative innovation & x & & \\ \hline
-	\end{tabular}
-\end{center}
 
-Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
+%The types of suitable experiments per product depend on multiple variables. 
+%\begin{center}
+   % \begin{tabular}{ | l | l | l | p{5cm}}
+  %  \hline
+ %   \textbf{Type of experiment} & \textbf{Dialog} & \textbf{CDM} & \textbf{Rationalization} \\ \hline
+%	A/B testing & x & - & - \\ \hline
+%	Multi-variate testing & x & & \\ \hline
+%	Feature alpha & x & & \\ \hline
+%	Usage metrics & x & & \\ \hline
+%	Usage behavior tracking & x & & \\ \hline
+%	Participatory design & x & & \\ \hline
+%	Collaborative innovation & x & & \\ \hline%
+%	\end{tabular}
+%\end{center}
 
-A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/} http://apptimize.com/blog/2014/01/how-many-users-time/
+%Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
+
+%A/B testing with small sizes %{http://kylerush.net/blog/small-startups-cant-ab-test/} http://apptimize.com/blog/2014/01/how-many-users-time/
 
 %2)UAT environment before Prod
-The UAT environment
+%The UAT environment
 
 %Jurgen quote
-"A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
+%"A special test environment may be needed particularly in business-to-business markets, where the implications of feature changes are broad and there may be reluctance towards having new features at all"
 
 %In test environments the customers may not be very active
 
 %Jurgen quote
-"The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
+%"The length of the test cycle may thus have to be longer in business-to-business markets. Direct deployment could be more suitable for consumer markets, but we note that the attitude towards continuous experimentation is likely to change as both business and consumer customers become accustomed to it"
 
 
-3) Adopting the practice
+%3) Adopting the practice
 
-The practice of roadmapping in the case company is operated in product development steering groups, with the purpose to foresee the product development. The first step towards continuous experimentation is to inform the decision-makers of the practice and its benefits. 
-
-
-
-4) Data collection
-
-(back-end system consists of an experiment database.. ) 
--Customer environment?
+%The practice of roadmapping in the case company is operated in product development steering groups, with the purpose to foresee the product development. The first step towards continuous experimentation is to inform the decision-makers of the practice and its benefits. 
 
 
 
-Data collection: Kohavi et al.
-The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging. 
+%4) Data collection
 
-"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
-
-
-"Finally, experimentation may be conducted with several kinds of stakeholders. Apart from customers and end users, experiments could be directed towards investors, suppliers, sales channels, or distributors. Companies whose product is itself a development platform may want to conduct experiments with developers in their platform ecosystem. These experiments may require other kinds of experimental artefacts than the MVP/MVF. Research on the types of experimental artefacts and associated experimental designs could lead to fruitful results for such application areas."
-
-
-"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
+%(back-end system consists of an experiment database.. ) 
+%-Customer environment?
 
 
 
-5)
-Derive OECs for both products
-
-Dialog:
-
-CDM: 
+%Data collection: Kohavi et al.
+%The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging. 
 
 
 
 
 
 
-Explain step 1
-
-Explain step 2
-
-...
-
-%-Apply in context
-
-%-List deviations
+%"Active customer feedback is concerned with surveys and other mechanisms where the customer is aware that he or she is providing feedback. Passive feedback and usage data is collected while the customer is using the system. Examples include the amount of time a user spends using a feature, the relative frequency of feature selections, the path that the user takes through the product functionality, etc. The low cost and ease of data collection leads to the next major difference between IES-based and traditional software." \cite{bosch2012building}
 
 
-Trello
+
+
+
 
 
 
