@@ -248,7 +248,7 @@ This study focuses on the development process of the case company and its two so
 
 The empirical research of this thesis has been carried out in the context of a medium sized information technology company, Steeri Oy. The company specializes in customer data on multiple fronts: CRM, BI, Master Data Management and data integrations, among others. The empirical research has applied case study methodology to offer deep understanding of the phenomena in their natural context. The tradeoff of a case study research is that it does not provide much room for direct generalizations outside the empirical context. 
 
-This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter, organized according to the research questions. The seventh chapter summarizes and interprets the main results, and discusses the limitations of the thesis. Finally, the eight chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
+This thesis is organized as follows. The first chapter is the introduction at hand. The second and third chapter summarize the relevant literature and theories to position the research and to educate the reader on the body of knowledge and where the contributions are intended. The fourth chapter briefly explains the usage of case study and qualitative research as research methods, to provide background for the decision to utilize them in this particular study. The fifth chapter presents the research design: objectives, context and applied methods. The findings are then presented in the sixth chapter, organized according to the research questions. The seventh chapter summarizes and interprets the main results, and further discusses the limitations of the thesis. Finally, the eight chapter summarizes the thesis by explaining the contributions to current research and introducing further research avenues.
 %Structure:
 %
 %#1
@@ -272,7 +272,7 @@ The research objective of this thesis included the analysis of both continuous d
 
 This research contributes to continuous delivery research by identifying issues found when the software is produced for customer companies. The study suggests that the challenges faced in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
 
-The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation infrastructure \cite{fagerholm2014building} is mapped to the case company's context with the required deviations.
+The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation infrastructure \cite{fagerholm2014building} is mapped to the case company's context.
 \section{Literature: Continuous Delivery}
 %Agile
 Software development models have been moving towards shorter feedback loops since iterative software development methods. Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change. The highest agile principle is to satisfy the customer through early and continuous delivery of software. Continuous delivery therefore has its roots in agile software development. Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further define their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing.
@@ -285,7 +285,7 @@ Lean software development, developed based on the lean manufacturing principles,
 %Lean startup
 The software development models have moved towards even shorter and shorter feedback loops in the recent years. A primary purpose of Lean Startup is to assess the specific demands of consumers and to fulfill those demands with the least possible resources. The Build-Measure-Learn loop is used to learn the customers actual needs and consecutively to steer business and product strategies to the correct direction. The tight customer feedback loop ensures that the product development doesn't include features and services not wanted by the customer. 
 
-Continuous delivery is a design practice where the software delivery process is automated, and thus the software can be deployed on short notice. Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages \cite{olsson2012climbing} of the evolution path. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features. 
+Continuous delivery is a design practice where the software delivery process is automated, and thus the software can be deployed on short notice. A problem with agile software development is that no attention is paid to environments and tools used in software development, causing bottlenecks in the supply chain. In continuous delivery the technical solutions such as test automation and virtual environments are emphasized, smoothening the supply chain. Olsson et al. have investigated the evolution path of software companies, and have identified continuous delivery and "R\&D as an Experiment System" as final stages \cite{olsson2012climbing} of the evolution path. Continuous delivery is also seen as a prerequisite for continuous experimentation, as it provides a way to quickly deploy new features. 
 
 \begin{figure}[h]
 	\centering
@@ -1066,7 +1066,7 @@ The procedural challenges are analyzed based on the development process document
     \textbf{Specific problem} \\ \hline
     UAT environment is a requisite for production release \\ \hline
     The development process drifts towards small feature branches from long-lived feature branches \\ \hline
-	Triggering the compilation and deployment of large, modular projects \\ \hline
+	Triggering the compilation and deployment of a modular project to maintain integrity is hard \\ \hline
 	The software has to be deployed to multiple customers \\ \hline
 	Versioning is affected by having different customer profiles of the product \\ \hline
 	Responsibility moves towards developers \\ \hline
@@ -1084,7 +1084,7 @@ Both of the case company's products are developed with a branching model, where 
 %If the components are sufficiently small, it is preferable to have a single build for the whole application—giving the fastest feedback of all. \cite{cdbook}
 
 %Pull requests
-
+%Triggering
 The software applications in B2B often are large and modular applications, as is the case in the case company. CDM is a software component that is compiled from multiple projects. As the deployment process is currently manually triggered by first releasing a version, a suitable time can be chosen each time. With continuous delivery the deployment process is triggered automatically, and with a modular project each module has to be in the correct state in order to produce a coherent version. The point when a deployment is triggered has to be designed to maintain the integrity of the application.
 \begin{aquote}{CDM Developer}
 "Pull requests aren't always working as is, due to the nature of CDM. There are dependencies between projects, and occasionally merges are done without the will to deploy. However, if pull requests are to be deployed when merged, a better picture of this process is needed for the developers."
@@ -1475,7 +1475,7 @@ Some features in Dialog are specified to work exactly as is, and the customers h
 A major problem found in the interviews was that currently the reliability towards new versions is low. The low reliability both increases customers reluctancy towards version updates, and increases the amount of user access testing that is performed after version release. This makes the duration of building a new version relatively long and unstable, since the bug amounts differ upon each version deployment. The version releases are also often performed in a hurry, which also increases the error rate. The low reliability is caused by multiple reasons: features are occasionally forgotten and not tested, manual builds introduce human error factor, the knowledge of manual steps required for a succesful build is not shared and compiling modular products is hard.
 
 %Features are forgotten
-Versions are occasionally forgotten from the UAT phase due to the lack of comprehensive automated testing and the broad scale of features in both software products. These features can then remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, the introduced bugs both increase the customer reluctancy towards new versions, and decrease the reliability of both the team and the customer. Adopting a test automation solves this issue, as long as tests are written for every feature.
+Versions are occasionally forgotten from the UAT phase due to the lack of comprehensive automated testing and the broad scale of features in both software products. These features can then remain broken or contain bugs when the users start using the new version. Even though these features get fixed relatively fast, the introduced bugs both increase the customer reluctancy towards new versions, and decrease the reliability of both the team and the customer. This is fundamentally caused by the lack of quality assurance before the release. Adopting a test automation solves this issue, as long as tests are written for every feature.
 
 %Human error factor
 The manual build process involves human error factor, which in the case company is the primary cause for the majority of bugs in new versions. One example of such an error is using the wrong commands to compile and package the project, which causes wrong binaries getting into the new version. Combined with the lack of comprehensive automated testing, each deployment is a new error-prone experiment. Important factors increasing the rate of human error are partially missing documentation and the complexity of the build process. According to a developer:
@@ -1508,6 +1508,10 @@ Automating the deployment also reduces the time required for deploying a version
 The prolonged deployment time also causes more downtime. Downtime is not currently perceived as an issue in itself, as it is negotiated with the customer and happens during the hours where downtime is acceptable. With continuous delivery, the company gains more incentive to reduce or eliminate downtime. In the case of CDM, downtime can be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
 Both the team leaders and developers consider the duration of production deployment as a major issue. Along with the production deployment, the environment installations take relatively low with manual installation of each component. With continuous delivery, starting the application in a new environment is ideally just generating configuration information describing the environment's unique properties, and starting the automated deployment process to both prepare the new environment and to deploy the correct version \cite{cdbook}. This allows for much more flexibility of deployments, where versions can be deployed when it is convenient to do so.
+
+One of the issues is that customers are having problems tracking the status of the development process in projects. This is caused by not deploying features that are not complete, and the relatively long length of the software delivery cycles. The customer is better kept on track of the development with continuous delivery, as the process is more transparent. In projects with a set duration it is much easier for the customer to understand the status of features when they are deployed in constant intervals.
+
+%As the customer is constantly updated with newer versions, in projects with a set duration i
 
 %Ongelma: uuden ympäristön asennus kestää erittäin kauan (useita työpäiviä)
 %It should be a simple task to start your application in a new environment—ideally
@@ -1578,15 +1582,7 @@ smaller problems are fixed quicker
 %Data-driven decisionit (organisaatiossa johtajien päätösvalta)
 
 
-
-%GENERAL BENEFITS
-%From opinion to data-based decision making.
-%The selection of ideas is based on the opinions of leaders in the organization
-In the case company, selection of the development ideas is based almost exclusively on the opinions of leaders in the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be better increased by moving towards data-based decision making. 
-
-Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
-
-Instrumenting software products and then gathering and analysing the to guide development is the main process of continuous experimentation. The general benefits of continuous experimentation lie in validating the features with customers. 
+%Instrumenting software products and then gathering and analysing the to guide development is the main process of continuous experimentation. The general benefits of continuous experimentation lie in validating the features with customers. 
 
 %Generally speaking, the benefits can be categorized into five areas:
 %\begin{itemize}
@@ -1597,33 +1593,42 @@ Instrumenting software products and then gathering and analysing the to guide de
 %\item  Steer development process into right direction
 %\end{itemize}
 
+%GENERAL BENEFITS
+%From opinion to data-based decision making.
+%The selection of ideas is based on the opinions of leaders in the organization
+In the case company, selection of the development ideas is based almost exclusively on the opinions of leaders in the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be increased by moving towards data-based decision making. 
+
+Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
+
 Data driven decisions are a way to gain competitive advantage by utilizing usage data or feedback in product development. Linking product development and business aspects verifies that the product is moving towards a direction with a higher business value. The consequence of utilizing data for product development is better knowledge of customer behavior, which can be used to better react to customers needs. Conducting experiments also allows companies to quantify business hypotheses and analytically derive answers, effectively allowing the use of hypotheses to steer development process.
 
 %Smaller, measurable changes (experimentation is done with minimal versions of the idea)
-The development time of features in the case company lasts from a single day up to two weeks. 
+The development time of features in the case company lasts from a single day up to two weeks. With the software deployed in intervals of two to four weeks, the features are completed before they are deployed to the customer environment. If at this point the feature is found to provide no value for the customer, it is too late to cancel the development process. With continuous experimentation, the development is done with smaller and measurable changes, and the minimal versions of features and products are validated with customer. Then, when a feature is found to provide no value for the customer, the development resources can be directed to other features.
 
 %Avoid breaking the product (by measuring metrics)
-By measuring the 
+By constantly measuring the new features of the product, breaking the product can be avoided.  
 
 %DIALOG SPECIFIC 
 Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
 \begin{aquote}{Dialog developer}
 "Developers can make improvement suggestions, and occasionally product owners invent feature ideas. The ideas are based on a guess that the customer might find this valuable."
 \end{aquote} 
+
 While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. While the low user amount for A/B testing - 3-5 users per customer - does not suit experiments based on statistical importance, the user actions can be tracked. 
 \begin{aquote}{Dialog product owner}
 "The amount of available statistical data is not high much due to the user amount, but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, the customer would make more money. It doesn't therefore necessarily require a large user amount."
 \end{aquote}
+
 A possibility expressed by a member of the management is to aid marketing by giving a MVP implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
 
 Another experimental feature that is seen suitable for Dialog is an in-product survey. These surveys are then placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
 
-The list of things to consider for Dialog regarding continuous experimentation:
-\begin{itemize}
-\item  Amount of own tasks vs customer tasks
-\item  Types of experiments
-\item  Statistical significance
-\end{itemize}
+%The list of things to consider for Dialog regarding continuous experimentation:
+%\begin{itemize}
+%\item  Amount of own tasks vs customer tasks
+%\item  Types of experiments
+%\item  Statistical significance
+%\end{itemize}
 
 %prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
 
@@ -1635,13 +1640,12 @@ The list of things to consider for Dialog regarding continuous experimentation:
 %"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
 
 
-
-
 %CDM SPECIFIC 
 CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
 \begin{quote}{CDM team leader}
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked."
 \end{quote}
+
 Regardless of excluding most of A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. Most of the desired improvements are related to performance, and thus the important metrics are related to amount of queries performed in a given timeframe and the duration of a single query.
 
 \begin{aquote}{CDM team leader}
@@ -1661,32 +1665,32 @@ The lab website concept is less applicable for connected and embedded systems \c
 %Juha
 The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, has cross-case analysis be made to prevent failing to distinguish differences between users.  
 
-The list of things to consider for CDM regarding continuous experimentation:
-\begin{itemize}
-\item  "Currently we do basically no product development, and all development is customer-oriented"
-\item  b
-\item  c
-\end{itemize}
+%The list of things to consider for CDM regarding continuous experimentation:
+%\begin{itemize}
+%\item  "Currently we do basically no product development, and all development is customer-oriented"
+%\item  b
+%\item  c
+%\end{itemize}
 
-Feature alpha \cite{bosch2012building}
+%Feature alpha \cite{bosch2012building}
 
-Minimum viable product principle is essential 
+%Minimum viable product principle is essential 
 
-current problems in roadmapping, choosing features, product development
-
-
-"Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla."
-
-"Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. A"
-
-" Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse."
+%current problems in roadmapping, choosing features, product development
 
 
+%"Vaatimuksia asiakkailta, tulee kuitenkin myös oman tiimin sisältä. Istumme usein viikottain alas, mietimme ja voi tulla omia kehitysideoita joita tiedämme että asiakkaat tulevat hyödyntämään. Asiakkailla on kuitenkin paljon omia juttuja joita he tarvitsevat. Nämä ovat kuitenkin sellaisia, joita muutkin asiakkaat voivat hyödyntää. Dialogissa pyritään siihen, että on vain yksi Dialog-versio kaikilla asiakkailla."
 
-discussion
+%"Tavoite olisi 50/50. Puolet olisi meidän näkemystä millä voidaan tehdä bisnestä, loput asiakkailta. Nyt kuitenkin 100/0, ja yli vuoden aikana kaikki on tullut asiakkaiden tarpeista Dialogiin. Heikon palvelukuvauksen takia on tullu kiire tehdä asioita. A"
+
+%" Meillä on kuitenkin roadmappi, joka ei ole edennyt meidän johtamana vaan asiakasprojektien johtamana. Jos ajatellaan experimenttejä ja muita, pitäisi palautteen kerääminen saada tulemaan asiakkailta.  Dialogin osalta tarvitaan sellaisia käyttäjiä jotka haluavat auttaa meitä, ja heillä on motivaatiota auttaa meitä koska he hyötyvät siitä itse."
 
 
-"Asiakasfirmojen suhtautuminen heidän datan keräämiseen voi olla kysymysmerkki."
+
+%discussion
+
+
+%"Asiakasfirmojen suhtautuminen heidän datan keräämiseen voi olla kysymysmerkki."
 
 %CDM:ää voi devata näin
 %\begin{itemize}
@@ -1839,16 +1843,16 @@ The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} in
   \item Implement the instrumentation to collect the metric
 \end{enumerate}
 
-In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
--developers not as aware of customer needs
--product owners now insert tasks to trello. trello could be used with experiments too -> insert new tasks with specifications, developers then write them
--current lean model is good
+In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. Developers are only minimally involved in the customer interaction, and lack deep knowledge of the customer domain. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
 
 After the hypothesis is formed, the type of experiment to test the hypothesis needs to be chosen. The experiment must be able to provide worthful results, and for experiments relying on statistical importance the user amount has to be sufficient. For experiments relying on user behavior statistical importance might not be necessary to draw results.
 
 Another addition is to explicitly define the overall evaluation criteria (OEC) before the feature or MVP is implemented if running a controlled experiment. The OEC is a metric that the company aims to improve with the experiment. One of the common pitfalls in running controlled experiments is to pick an OEC for which the control group is easy to beat by doing something "wrong" from a business perspective \cite{crook2009seven}. Picking the OEC also concretizes the experiment, making the purpose and goal of the experiment more obvious. 
 
 After the OEC has been formed and the experiment type decided, the minimum viable feature (MVF) or minimun viable product (MVP) is implemented, and the instrumentation for data collection is added to the product. The suitable data collection instrumentations for the case company's product according to the developers is a server-side service layer, which can be used to log data from multiple services. 
+
+%-current lean model is good
+The project management tools used by the teams suit the experimentational model. A kanban board is already used to transfer tasks from the management to the developers, and can be used by to develop experiments as well. The product owners and analysts must first design the experiment, and insert a new task into the backlog with detailed specifications. A developer then checkouts the task and implements the MVF or MVP with instrumentation. 
 
 %Necessary ingredients for agile development with controlled experiments \cite{kohavi2009online}
 %\begin{enumerate}
@@ -2012,26 +2016,6 @@ In the analyze phase the results from the experiment are collected from the data
 
 
 \section{Discussion}
-
-Towards real-time value delivery with these 
-
-
-The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. 
-
-The results suggests that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
-
-
-
-Findings supported the research questions well. Many of the challenges in the current development process of the case company are in line with the benefits of continuous delivery and continuous experimentation. 
-
-
-The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation infrastructure \cite{fagerholm2014building} is mapped to the case company's context with the required deviations.
-%TODO: fix
-
-%Findings:
-%UAT: what to do?
-
-
 %Begin with a summary of your results using little  or no statistical jargon.
 
 %Use “the layperson test”: How would you explain your findings to a relative?
@@ -2040,22 +2024,49 @@ The contributions to continuous experimentation research are firstly identifying
 
 %Interpretation: This section addresses the meaning of your findings
 
-\subsection{Limitations}
-The scope was limited to the development model of two software products within the case company, and direct generalizations to other domains and products should be avoided. Since case studies only allow analytic generalisations, cannot the findings be directly generalised to other cases. This limitation applies especially to applying continuous experimentation in practice, since software products and customers inevitably differ.
+The study investigated extending the development process towards continuous delivery and continuous experimentation to advance towards real-time value delivery. 
 
-%• Think of limitations in four major areas (but all 
-%four need to be present):
-%– Internal Validity: unless the study is a “true 
-%experiment” one cannot claim that the IV “caused” 
-%changes in the DV
-%– External Validity: issues of the extent to which findings 
-%can be generalized must be discussed
-%– Measurement: discuss issues of reliability and validity 
-%of assessment instruments
-%– Statistical analysis: discuss issues of power, effect size, 
-%conservative or liberal statistics and statistical test 
-%chosen
+The results suggest that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
 
+Challenges faced in continuous experimentation are also divided into four aspects: technical, organizational, customer and A/B testing. The challenges are mostly related to the lack of experimental mindset, technical properties of the software products and importance of the software product for the customer. The importance of the software product means that the customers depend on the application, and changes should be done carefully enough not to unnecessarily complicate the usage. 
+
+Continuous experimentations benefit to the case company
+
+The experimentation infrastructure and Build-Measure-Learn model \cite{fagerholm2014building} suits the case company well. As the Build-Measure-Learn model introduced is very general, certain steps required elaboration.  
+
+
+
+
+
+Findings supported the research questions well. Many of the challenges in the current development process of the case company are in line with the benefits of continuous delivery and continuous experimentation. 
+
+
+
+The findings indicate that extending the development process with continuous delivery and continuous experimentation is an expensive but benefical transition. While the technical challenges play a major role, the company needs to resolve issues in multiple other aspects ....
+
+The findings also indicate that shifting towards continuous experimentation is different based on the nature of the software product. By analyzing the two different products, insight on different types of experiments suitable for each product was gained. 
+
+The findings indicate that technical requirements are only a single part of the TODO: jatka
+%TODO: fix
+
+%Findings:
+%UAT: what to do?
+
+%The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. 
+
+
+
+
+
+
+
+%1. tie together, integrate and synthesize the various issues raised in the discussion 
+%sections, whilst reflecting the introductory thesis statement (s) or objectives 
+%2. provide answers to the thesis research question (s) 
+%3. identify the theoretical and policy implications of the study with respect to the overall 
+%study area 
+%4. highlights the study limitations 
+%5. provide direction and areas for future research
 \section{Conclusion}
 
 This thesis didn't focus on the technical aspects, as multiple research papers already address these \cite{kohavi2007practical, eklund2012architecture}.
@@ -2071,11 +2082,13 @@ The analysis of continuous delivery and continuous experimentation proceeded fro
 %TODO: list of main requirements?
 This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. The benefits of these approaches have been identified for the case company, and a company with similar products can use them as a basis when reasoning the applying of these approaches. 
 
-The findings indicate that technical requirements are only a single part of the TODO: jatka
+%The first research question answer
 
-The findings also indicate that shifting towards continuous experimentation is different based on the nature of the software product. By analyzing the two different products, insight on different types of experiments suitable for each product was gained.    
+%The second research question answer
 
+%The third research question answer
 
+%%identify the theoretical and policy implications of the study with respect to the overall 
 
 
 TODO: tähän lista
@@ -2085,9 +2098,38 @@ TODO: tähän lista
 -CE-prosessi kuvattunat
 
 
+%• Think of limitations in four major areas (but all 
+%four need to be present):
+%– Internal Validity: unless the study is a “true 
+%experiment” one cannot claim that the IV “caused” 
+%changes in the DV
+%– External Validity: issues of the extent to which findings 
+%can be generalized must be discussed
+%– Measurement: discuss issues of reliability and validity 
+%of assessment instruments
+%– Statistical analysis: discuss issues of power, effect size, 
+%conservative or liberal statistics and statistical test 
+%chosen
+
+%HIGHLIGHT LIMITATIONS
+\subsection{Limitations}
+The scope was limited to the development model of two software products within the case company, and direct generalizations to other domains and products should be avoided. Since case studies only allow analytic generalisations, cannot the findings be directly generalised to other cases. This limitation applies especially to applying continuous experimentation in practice, since software products and customers inevitably differ.
+
+Depend on the type of the customer and software product
+
+In essence this means that the challenges and benefits of first two research questions depend on the ..
+
+
+
+In this thesis n types of triangulation were used.
+
+First, data sources (academic literature)
+Second, 
+
+
+
 
 \subsection{Further research}
-
 Regardless of the limitations a case study has, the phenomena was deeply understood through gathering large amount of qualitative data and systematically analysing it. %utilize theoretical lens? 
 Therefore the core findings should be applicable to similar research problems outside of the empirical context of this thesis. This means that the B2B challenges and benefits of continuous delivery and continuous experimentation can be considered as a starting point for further studies in other contexts where these development models take place.
 
