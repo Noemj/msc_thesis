@@ -1267,9 +1267,6 @@ The technical challenges are analyzed based on both the product description docu
     \caption{Technical challenges in continuous experimentation.}
     \end{table}
 \end{center}
-
-%No user interface
-%Only used via API calls
 The case company's products represent two different styles of software products. While Dialog is used by users via a UI, CDM is used by other systems via a REST API. As CDM is a software component which is primarily used by other systems via API's and certain calls, tracking user behavior doesn't provide as much input as with a user interface. CDM does not have a UI, which limits the possibilities for A/B testing. While it is possible to experiment with a software component that has a UI and human users by employing A/B testing, other experiments have to be conducted on software without direct user access. Such experiments include feature alpha, usage metrics, usage behavior tracking and participatory design, among others \cite{bosch2012building}.
 %Statistical significance
 
@@ -1545,17 +1542,17 @@ One of the issues is that customers are having problems tracking the status of t
 %the new environment for deployment and deploy the chosen version of your
 %application to it. \cite{cdbook}
 
-
+Continuous delivery provides an answer to many of the challenges faced in the current deployment process and product development in general, and the management considers improving the deployment process to be one of the most important improvements. 
 
 %Lyhyt loppuanalyysi tähän
-Summary
+%Summary
 
-speed
-quality
-capacity
+%speed
+%quality
+%capacity
 
-focus: developers can completely complete a task before moving to the next task
-smaller problems are fixed quicker
+%focus: developers can completely complete a task before moving to the next task
+%smaller problems are fixed quicker
 
 
 %
@@ -1620,7 +1617,8 @@ smaller problems are fixed quicker
 %GENERAL BENEFITS
 %From opinion to data-based decision making.
 %The selection of ideas is based on the opinions of leaders in the organization
-In the case company, selection of the development ideas is based almost exclusively on the opinions of leaders in the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be increased by moving towards data-based decision making. 
+%However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be increased by moving towards data-based decision making. 
+In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. Studies show that data-driven decision can be used to better guide the development by choosing features where the benefits can be measured \cite{kohavi2007practical, moran2007wrong, kaushik}. Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact.
 
 Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
 
@@ -1630,7 +1628,7 @@ Data driven decisions are a way to gain competitive advantage by utilizing usage
 The development time of features in the case company lasts from a single day up to two weeks. With the software deployed in intervals of two to four weeks, the features are completed before they are deployed to the customer environment. If at this point the feature is found to provide no value for the customer, it is too late to cancel the development process. With continuous experimentation, the development is done with smaller and measurable changes, and the minimal versions of features and products are validated with customer. Then, when a feature is found to provide no value for the customer, the development resources can be directed to other features.
 
 %Avoid breaking the product (by measuring metrics)
-By constantly measuring the new features of the product, breaking the product can be avoided. Breaking the product essentially means 
+By constantly measuring the new features of the product, breaking the product can be avoided. Breaking the product essentially means that features diminish the value of the product are implemented. Such features could for example be UI changes that are thought to increase the user experience, but fails to do so resulting from incorrect presumptions.
 
 %DIALOG SPECIFIC 
 Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
@@ -1638,56 +1636,42 @@ Dialog is seen as a suitable candidate for experiments due to the extensive user
 "Developers can make improvement suggestions, and occasionally product owners invent feature ideas. The ideas are based on a guess that the customer might find this valuable."
 \end{aquote} 
 
-While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. While the low user amount for A/B testing - 3-5 users per customer - does not suit experiments based on statistical importance, the user actions can be tracked. 
+While the development is therefore mainly guided by customer needs that directly bring in revenue, the feature development is guided by the need to generalize the product for general customer needs. However, the low user amount for A/B testing, 3-5 users per customer, does not suit experiments based on statistical importance. Experiments based on the user actions and behavior are therefore seen more suitable. 
 \begin{aquote}{Dialog product owner}
 "The amount of available statistical data is not high much due to the user amount, but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user could be halved, the customer would make more money. It doesn't therefore necessarily require a large user amount."
 \end{aquote}
 
-A possibility expressed by a member of the management is to aid marketing by giving a MVP implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. 
+A possibility expressed by a member of the management is to aid marketing by giving a MVP implementation of the product to new customers. This makes it is possible to pivot the product with customers, who can then test it in practice and make a decision whether to pay for the product or not. This strategy is similar to the lab website concept, where companies offer early versions of products free of charge for the purpose of collecting feedback \cite{bosch2012building}. One of the benefits of continuous experimentation is the increase in innovation resulting from the possibility to quickly learn from the customer.
 
-Another experimental feature that is seen suitable for Dialog is an in-product survey. These surveys are then placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
-
-%The list of things to consider for Dialog regarding continuous experimentation:
-%\begin{itemize}
-%\item  Amount of own tasks vs customer tasks
-%\item  Types of experiments
-%\item  Statistical significance
-%\end{itemize}
-
-%prosentuaalinen määrä asiakasfeatureita vs omia featureita tähä DIALOGille ja CDM:lle erikseen ois kova!!! 
-
-%Ville
-%\begin{quote}
-%"Sometimes the customers have ideas on how the product should be developed, even if the customer doesn't totally understand the use of the software. The customers should therefore be listened, but every customer representative doesn't possess the same quality of knowledge." 
-%\end{quote}
-
-%"Currently we aim that everything what we do is for the customer. Own product development cannot be billed from anyone. The idea is to only develop features that the customer has asked."
-
+Another experimental feature that is seen suitable for Dialog is an in-product survey. Surveys are placed at strategic locations in the product to obtain active customer feedback when the customer is performing a certain task. It can provide remarkably valuable information as compared to purely quantitative passive data.
 
 %CDM SPECIFIC 
-CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, the most typical experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
+CDM is perceived as a more challenging target for experiments due to the hard-coded interfaces and the nature of the application. The fact that there are no human users or a UI removes the possibilities of front-end A/B testing, a very common and well researched experiment. However, the developers aknowledge that there is a need for better understanding the customers needs.
 \begin{quote}{CDM team leader}
 "Most of the work is strived to be done in a customer-oriented way. Even with a very good product owner, hardly ever does anyone know what the customer wants if it hasn't been asked."
 \end{quote}
 
-Regardless of excluding most of A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. Most of the desired improvements are related to performance, and thus the important metrics are related to amount of queries performed in a given timeframe and the duration of a single query.
-
+Regardless of excluding most of A/B testing, continuous experimentation can be practiced with different types of experiments that can guide the development of CDM. Building alternative implementations of existing features with attached instrumentation measuring performance can be used to determine if the current implementation or alternative implementation is preferable. Instead of relying on opinions, the decision can be made based on the feedback received. Most of the desired improvements are related to performance, and thus the important metrics are related to amount of queries performed in a given timeframe and the duration of a single query.
 \begin{aquote}{CDM team leader}
 "CDM is a background system, and the performance related to queries is the most important metric for us. Imagine a situation where we're at a point analyzing how a query should be implemented, and whether to use a relational database or a document database. We can conduct an experiment where we implement both, test it with a data set and choose the more efficient query." 
 \end{aquote}
-Another possibility is to track the typical errors and to then focus the development towards fixing the most common errors.
 
+One of the main benefits of continuous experimentation in the case of CDM is increasing the knowledge of how customers are using the system. With the current development, user feedback or usage data is not systematically collected and capitalised. While the customers do provide feedback upon version releases, these happen relatively infrequently and a lot of development resources have already been spent on the features. Also a possibility is to focus the development towards important errors based on the usage data.
 \begin{aquote}{CDM developer}
 "The software is composed of APIs, through which different components send and receive data. We could track the types of messages that are received and if they succesfully pass. This data can then be used to develop the API further, and to for example track typical errors."
 \end{aquote}
 
-The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laborious process. 
+The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laborious process. The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, cross-case analysis has to be made to prevent failing to distinguish differences between users.  
+
+Continuous experimentation therefore benefits the decision making and product development of the case company, and addresses actual needs stated by both the management and developers. The teams have to address issues regarding the trustworthiness of certain types of experiments, especially those relying on statistical importance. 
+% 
+
 %For connected, embedded systems this technique is less applicable. This type of
 %experimentation requires the production of a set of prototype systems for the explicit
 %purpose of collecting customer feedback during product development. 
 
 %Juha
-The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, has cross-case analysis be made to prevent failing to distinguish differences between users.  
+
 
 %The list of things to consider for CDM regarding continuous experimentation:
 %\begin{itemize}
@@ -1753,9 +1737,6 @@ The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{e
 %	\end{tabular}
 %\end{center}
 
-
-
-Lyhyt loppyanalyysi tähän
 
 \subsection{Implementing continuous experimentation as a development process}
 As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. First, the steps required for the case company to transition towards a continuous experimentation system are identified and explained. These steps have been formed based on the findings of previous research questions. Then, the continuous experimentation process is implemented by applying the continuous experimentation infrastructure by Fagerholm et al. \cite{fagerholm2014building} to the context of the case company. 
