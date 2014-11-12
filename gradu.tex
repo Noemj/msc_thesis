@@ -127,13 +127,17 @@
 
 \tableofcontents  % table of contents
 
-% --- Main matter ---
+\newpage
+\listoffigures
+\listoftables
 
 \newpage
 
 It’s hard to argue that Tiger Woods is pretty darn good at what he does. But even he is not perfect. Imagine if
 he were allowed to hit four balls each time and then choose the shot that worked the best. Scary good.
 -- Michael Egan, Sr. Director, Content Solutions, Yahoo (Egan, 2007)
+
+% --- Main matter ---
 
 \mainmatter       % clear page, start arabic page numbering
 
@@ -976,6 +980,7 @@ The challenges regarding continuous delivery will be analyzed in three areas: te
 The technical challenges for continuous delivery are derived from the interview. A part of the interview focused on the current deployment process and customer interaction of the case company, and this process is then compared to the continuous delivery practice from literature review.
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -988,8 +993,9 @@ The technical challenges for continuous delivery are derived from the interview.
     Transferring the software product to diverse customer-owned environments requires different deployment configurations \\ 
     \hline
     \end{tabular}
+    \caption{Technical challenges in continuous delivery.}
+    \end{table}
 \end{center}
-
 %Downtime
 Downtime of the case company's products can be fatal. According to the Dialog product owner, downtime causes end-users being unable to perform their job. Downtime can also interrupt ongoing customer tasks, possibly losing critical data in the progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent these cases, and the version deployments are done when the system can be closed for a short period of time. In the continuous delivery process the deployment pipeline has to be designed to address the issue of downtime.
 
@@ -1061,6 +1067,7 @@ One of the main differences between B2B and B2C is the production environment. W
 The procedural challenges are analyzed based on the development process documentations of the company and the interview, in which a section was dedicated to the current development process of the case company. 
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1073,6 +1080,8 @@ The procedural challenges are analyzed based on the development process document
 	Management and sales loses track of versions \\
     \hline
     \end{tabular}
+    \caption{Procedural challenges in continuous delivery.}
+    \end{table}
 \end{center}
 
 %UAT
@@ -1139,6 +1148,7 @@ Due to increased developer responsibility and varying interval of version update
 The customer challenges are analyzed based on two sections of the interview: customer interaction and the deployment process. 
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1150,6 +1160,8 @@ The customer challenges are analyzed based on two sections of the interview: cus
 	Ongoing critical tasks by users cannot be interrupted with downtime \\ 
     \hline
     \end{tabular}
+    \caption{Customer challenges in continuous delivery.}
+    \end{table}
 \end{center}
 
 %Customers have been trained to use a certain version of the product
@@ -1240,6 +1252,7 @@ Technical aspect includes the data collection, measurable metrics and other chal
 The technical challenges are analyzed based on both the product description documents and sections of the interview focusing on experimentation and feedback.
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1251,6 +1264,8 @@ The technical challenges are analyzed based on both the product description docu
 	Data has to be collected in customer environments \\ 
     \hline
     \end{tabular}
+    \caption{Technical challenges in continuous experimentation.}
+    \end{table}
 \end{center}
 
 %No user interface
@@ -1310,6 +1325,7 @@ The case company's products are mostly installed to customer environments, with 
 The organizational challenges are analyzed based on the data collected from the experimentation section of the interview.
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1319,6 +1335,8 @@ The organizational challenges are analyzed based on the data collected from the 
     Creating a culture of innovation within the organization \\ 
     \hline
     \end{tabular}
+    \caption{Organizational challenges in continuous experimentation}
+    \end{table}
 \end{center}
 
 According to the interviews, transitioning towards experimental R&D is perceived as desirable but expensive. Product development has been in recession with the accelerating customer amount and increasing customer requirements. The teams under inspection have no prior experience with experimenting or data analysis, and require training in order to gain domain knowledge of experimentation. 
@@ -1342,6 +1360,7 @@ The teams under study have been working with agile and lean practices for a long
 The customer challenges are analyzed based on three sections of the interview: customer interaction, feedback collection and experimentation.
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1355,6 +1374,8 @@ The customer challenges are analyzed based on three sections of the interview: c
 	Proper legal agreements need to be made with the customers to collect usage data and user behavior \\ 
 	\hline	
     \end{tabular}
+    \caption{Customer challenges in continuous experimentation.}
+    \end{table}
 \end{center}
 
 %Customers have actual needs
@@ -1415,6 +1436,7 @@ However, the interviewees are positive that the customers are willing to allow t
 The A/B testing is analyzed based on the product description documents and two sections of the interview: feedback collection and experimentation.
 
 \begin{center}
+\begin{table}[htb]
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
@@ -1425,6 +1447,8 @@ The A/B testing is analyzed based on the product description documents and two s
 	Users have been educated to use certain features, and changing these confuses the users \\ 
     \hline
     \end{tabular}
+    \caption{A/B testing challenges.}
+    \end{table}
 \end{center}
 
 %Low user volume
@@ -1606,7 +1630,7 @@ Data driven decisions are a way to gain competitive advantage by utilizing usage
 The development time of features in the case company lasts from a single day up to two weeks. With the software deployed in intervals of two to four weeks, the features are completed before they are deployed to the customer environment. If at this point the feature is found to provide no value for the customer, it is too late to cancel the development process. With continuous experimentation, the development is done with smaller and measurable changes, and the minimal versions of features and products are validated with customer. Then, when a feature is found to provide no value for the customer, the development resources can be directed to other features.
 
 %Avoid breaking the product (by measuring metrics)
-By constantly measuring the new features of the product, breaking the product can be avoided.  
+By constantly measuring the new features of the product, breaking the product can be avoided. Breaking the product essentially means 
 
 %DIALOG SPECIFIC 
 Dialog is seen as a suitable candidate for experiments due to the extensive user interface and human users. Currently the product development is primarily guided by direct customer needs. Features planned for Dialog that are not direct customer needs are discussed in the product steering group. Especially A/B testing is useful to determine the best web-page version \cite{bosch2012building}. The metric for success differs based on the business goal. In Dialog the important metrics stated by the product owner and management include shortest path to complete a task, and amount of paths available to perform certain features. A path consists of clicks required to perform a single task, such as to create a marketing campaign for a new customer group. 
