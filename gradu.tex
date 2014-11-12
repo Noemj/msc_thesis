@@ -79,11 +79,11 @@
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
 
-\title{Extending the development process towards Continuous Delivery and Continuous Experimentation: A Case Study in the B2B Domain}
+\title{Extending the development process towards Continuous Delivery and Continuous Experimentation in the B2B Domain: A Case Study}
 \author{Olli Rissanen}
 \date{\today}
 \level{Master's thesis}
-\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a development practice where the entire R\&D process is guided by conducting experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. This paper conducts a deductive case study in a medium-sized software company to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. The research objective is to analyze the challenges, benefits and systematic organisation of continuous delivery and continuous experimentation in this domain. As a result, the challenges and best practices in the transition are identified. The results suggest that technical challenges are only one part of the challenges a company encounters in this transition. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
+\abstract{Delivering more value to the customer is the goal of many software companies. Delivering value in real-time requires a company to utizile real-time deployment of software, data-driven decisions and empirical evaluation of new products and features. Real-time deployment of software allows for faster reaction times and shorter feedback loops. Evaluating new products and features allows organizations to steer development based on quantifiable data. This thesis is an exploratory case study investigating practices known as continuous delivery and continuous experimentation to tackle real-time delivery and data-driven decisions. Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. This process includes both automated builds and automated testing, but also automated deployment. Continuous experimentation is a development practice where the entire R\&D process is guided by conducting experiments and collecting feedback. Such experiments can include deploying multiple versions of software with different properties, measuring their success based on some criteria and then selecting the best candidate for further development. As a part of this thesis, a deductive case study is conducted in a medium-sized software company. The purpose of the study is to examine the development process of two different software products, and the transition towards continuous delivery and continuous experimentation. The scope of this study is in the B2B domain, where the products are developer directly to other companies acting as customers. The research objective is to analyze the challenges, benefits and systematic organisation of continuous delivery and continuous experimentation in this domain. As a result, the challenges and best practices in the transition are identified. The results suggest that technical challenges are only one part of the challenges a company encounters in this transition. \\\newline ACM Computing Classification System (CCS): \newline \textbf{General and reference $\rightarrow$ Experimentation} \newline \textbf{General and reference $\rightarrow$ Measurement} \newline \textbf{General and reference $\rightarrow$ Validation}}
 
 % The following can be used to specify keywords and classification of the paper:
 
@@ -984,9 +984,8 @@ The technical challenges for continuous delivery are derived from the interview.
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    Downtime is more critical for certain customers \\ \hline
+    Downtime is critical for certain customers \\ \hline
     Automated testing has to be built on top of a matured software product \\ \hline
-    Acceptance testing is performed by both the company and the customers \\ \hline
     Software is often integrated to multiple third party applications \\ \hline
     Software is often accompanied by multiple external components \\ \hline
     There exists multiple different configurations due to having multiple customers with different specifications \\ \hline
@@ -1000,7 +999,7 @@ The technical challenges for continuous delivery are derived from the interview.
 Downtime of the case company's products can be fatal. According to the Dialog product owner, downtime causes end-users being unable to perform their job. Downtime can also interrupt ongoing customer tasks, possibly losing critical data in the progress. With CDM, downtime can cause other integrated systems to shut down due to too many failing requests. Currently the deployment time for both projects is negotiated with the customer to prevent these cases, and the version deployments are done when the system can be closed for a short period of time. In the continuous delivery process the deployment pipeline has to be designed to address the issue of downtime.
 
 %-testing costs could be pushed at least partially to users
-The developers perceive automated testing and test environments to be the largest technical task. Since both of the case company's software products have been in development for a long time, building a viable test automation has many challenges with architectural decisions and available workload. Along with unit and integration tests, a critical step of the deployment process is the manual acceptance testing phase. The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in a UAT environment before the product can be deployed into production. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the UAT phase. In CDM, all of the customers perform manual acceptance testing in the UAT environment. The technical implementation therefore should make it possible to continuously deploy versions to the UAT environment, and by the push of a button to the production environment. However, if the versions are deployed to UAT very often, customers might feel encumbered by the amount of UAT testing. The customers also have to be informed whenever a new version is available to the UAT environment.
+The developers perceive automated testing and test environments to be the largest technical task. Since both of the case company's software products have been in development for a long time, building a viable test automation has many challenges with architectural decisions and available workload. The developers state that building a sufficient test automation is a very laborious process due to the maturity of the software, and are concerned with the maintainability of the test suite. The management is not sure what to test with automatic acceptance testing to validate that a version is valid. Tue to the current amount of time spent on manual testing, having an automated test suite is seen as very beneficial.
 %While this task can, depending on the project and current state of tests, take up most of the resources in transition to continuous delivery, in B2B context some of the testing costs can be pushed partially to customer projects. 
 %Automate testing
 
@@ -1071,7 +1070,7 @@ The procedural challenges are analyzed based on the development process document
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    UAT environment is a requisite for production release \\ \hline
+    User acceptance testing environment is a requisite for production release \\ \hline
     The development process drifts towards small feature branches from long-lived feature branches \\ \hline
 	Triggering the compilation and deployment of a modular project to maintain integrity is hard \\ \hline
 	The software has to be deployed to multiple customers \\ \hline
@@ -1087,7 +1086,7 @@ The procedural challenges are analyzed based on the development process document
 %UAT
 %-UAT is often the norm and is required before anything is moved to production
 %-in B2B, continuous deployment straight to production is very risky
-The basic deployment pipeline in the case company first includes a deploy to UAT server, which is then tested manually by either the team or the customer. Only after the UAT version has been validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business, and continuous delivery with deployments to a staging environment is seen as very beneficial. Therefore the deployment procedure has to be designed to allow testing the software in a UAT environment, and making it possible to manually trigger the deployment to production.
+The basic deployment pipeline in the case company first includes a deploy to a user acceptance testing server, which is then tested manually by either the team or the customer. Only after the version has been acceptance tested and validated to work properly, can the production version be released. Based on the interview results, continuous deployment to production is seen very risky due to the applications playing a major role in running the customers business, and continuous delivery with deployments to a staging environment is seen as very beneficial. Therefore the deployment procedure has to be designed to allow testing the software in a user acceptance testing environment, and making it possible to manually trigger the deployment to production.
 
 Both of the case company's products are developed with a branching model, where feature branches are first thoroughly developed and then integrated to the master branch. Only the master branch is ever released to the customer. However, with continuous delivery the long-lived feature branches should be changed to short-lived and relatively small feature branches to enable faster deployment of the software. The benefit of smaller branches is that while there may still be bugs, they're introduced in a fewer number of commits, and entire large features don't need to be rollbacked. Smaller branches also enable faster feedback. While the small feature branches might be common for companies with a relatively new software products, companies that have been developing products for a long time might be more devoted to the practice of feature branches. However, it is still possible to keep the software releasable with long-lived feature branches by hiding new functionality or by constructing it as a series of releasable small changes \cite{cdbook}.
 %If the components are sufficiently small, it is preferable to have a single build for the whole application—giving the fastest feedback of all. \cite{cdbook}
@@ -1152,10 +1151,11 @@ The customer challenges are analyzed based on two sections of the interview: cus
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    Customers are trained to use a certain UI \\ \hline
+    Customers are trained to use a certain UI, and modifications confuse the users \\ \hline
     Customers are reluctant towards new versions \\ \hline
-    Changelogs are especially important, since customers depend on the software \\ \hline
+    Changelogs are especially important, since as versions are released faster the customers become less aware on what has changed  \\ \hline
     Pilot customer is required for developing the continuous delivery process \\ \hline
+    Acceptance testing is performed by both the company and the customers, and requires a lot of resources from the customers \\ \hline
 	Production deployment schedule has to be negotiated with the customer \\ \hline
 	Ongoing critical tasks by users cannot be interrupted by downtime \\ 
     \hline
@@ -1180,10 +1180,12 @@ The customers are unaware of the problems related to deployment issues unless th
 "Customers have been doing this for their living - they're getting old, they have their own working histories and they're in the working mode. These persons don't approve alterations in the software, and they're not ready for the constant changes."
 \end{aquote}
 
-Listing the changed features in changelog entries is especially important when releases are made more often. While the changes become smaller the faster versions are released, the customers become less aware of when the version will be updated and when features have changed. Currently the version deployments are negotiated with the customers, and necessary actions are taken to explain the changed features to the customers in meetings or in e-mails. When the deployments are made more often, discussions regarding version releases may be reduced or even ceased.  
+Listing the changed features in changelog entries is especially important when releases are made more often. While the changes become smaller the faster versions are released, the customers become less aware of when the version will be updated and when features have changed. Currently the version deployments are negotiated with the customers, and necessary actions are taken to explain the changed features to the customers in meetings or in e-mails. These actions can include changelogs, but also training sessions or meetings. When the deployments are made more often, discussions regarding version releases may be reduced or even ceased.  
 
 %Pilot customer
 A way to identify the best practices in continuous delivery is to develop the continuous delivery process with a pilot customer. Pilot customer is a company willing to help the company to quickly learn what works and what needs to be improved. The interviewees expressed a desire to first test the continuous delivery process with a single customer that is willing to receive updates in a continuous manner, since the engagement model inevitably differs from the current model. Therefore the company can train customer interaction with continuous delivery, find the actual reasons for version reluctancy, see how the change in deployment process affects customer interaction and even test if the UAT environment is necessary.
+
+The acceptance testing is performed in varying ways. For Dialog, some customers require to perform manual acceptance testing in a user acceptance testing environment before the product can be deployed into production. Other customers trust the developers to perform the acceptance testing, and the deployment to production can be negotiated without it necessarily requiring to pass the user acceptance testing phase. In CDM, all of the customers perform manual acceptance testing in the user acceptance testing environment. The technical implementation therefore should make it possible to continuously deploy versions to the user acceptance testing environment, and by the push of a button to the production environment. However, if the versions are deployed to user acceptance testing environment very often, customers might feel encumbered by the amount of required testing. The customers also have to be informed whenever a new version is available to the user acceptance testing environment.
 
 %Deployment time and downtime
 %A customer might be doing a critical task
@@ -1256,12 +1258,12 @@ The technical challenges are analyzed based on both the product description docu
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    Not having a UI limits the scope of experiments in CDM \\ \hline
+    Not having a UI limits the scope of experiments \\ \hline
     Low end-user volume limits experiments that rely on statistical significance \\ \hline 
-	CDM is only usable via API calls, which limits the scope of experiments \\ \hline
-	Measurable metrics for the software products are not extensively identified  \\ \hline
-	Experimental architecture has to be implemented on top of a matured project \\ \hline
-	Data has to be collected in customer environments \\ 
+	Product that is only usable via API calls has a limited scope of experiments \\ \hline
+	Measurable metrics of the software products that provide value for the customer are not extensively identified  \\ \hline
+	Experimentation infrastructure has to be implemented on top of a matured project \\ \hline
+	Data has to be collected and stored in customer environments, and transferred from the environment for analysis \\ 
     \hline
     \end{tabular}
     \caption{Technical challenges in continuous experimentation.}
