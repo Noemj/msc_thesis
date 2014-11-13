@@ -1006,7 +1006,7 @@ The developers perceive automated testing and test environments to be the larges
 %Automate testing
 
 %Third party application integration
-Both of the case company's software products are integrated to various third party applications and APIs. As CDM is a component that integrates various data source together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work seeing the results. 
+Both of the case company's software products are integrated to various third party applications and APIs. As CDM is a component that integrates various data sources together, changes to the APIs communicating with these applications must be planned and discussed in advance. Based on the interview results, automatically updating the integrations requires an unduly amount of work considering the results. 
 
 %External components
 It is also common for B2B applications to have external components that have to be configured when the software is installed or the APIs to these components changed. Therefore the configurations for these external components either have to be manually updated or automated as well. In the case company, both Dialog and CDM are integrated to multiple external components. Currently upon version change these integrations are manually updated when necessary. In continuous delivery, changes that modify the API and therefore break these integrations might have to be manually updated.
@@ -1077,7 +1077,7 @@ The procedural challenges are analyzed based on the development process document
 	Triggering the compilation and deployment of a modular project to maintain integrity is hard \\ \hline
 	The software has to be deployed to multiple customers \\ \hline
 	Versioning is affected by having different customer profiles of the product \\ \hline
-	Responsibility moves towards developers \\ \hline
+	Responsibility of deploying moves towards developers \\ \hline
 	Management and sales loses track of versions \\
     \hline
     \end{tabular}
@@ -1153,8 +1153,8 @@ The customer challenges are analyzed based on two sections of the interview: cus
     \begin{tabular}{ | p{12cm} |}
     \hline
     \textbf{Specific problem} \\ \hline
-    Customers are trained to use a certain UI, and modifications confuse the users \\ \hline
-    Customers are reluctant towards new versions \\ \hline
+    Some customers are reluctant towards new versions \\ \hline
+    Customers are trained to use a certain version, and modifications confuse the users \\ \hline
     Changelogs are especially important, since as versions are released faster the customers become less aware on what has changed  \\ \hline
     Pilot customer is required for developing the continuous delivery process \\ \hline
     Acceptance testing is performed by both the company and the customers, and requires a lot of resources from the customers \\ \hline
@@ -1167,13 +1167,13 @@ The customer challenges are analyzed based on two sections of the interview: cus
 \end{center}
 
 %Customers have been trained to use a certain version of the product
-One of the main issues found in the deployment of software is that some customers are reluctant towards new releases. One of the reasons for this reluctancy is that new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. If the UI changes often, the customers feel lost and initially take more time to perform the tasks.  
+One of the main issues found in the deployment of software is that some customers are reluctant towards new releases. One of the reasons for this reluctancy is that new releases occasionally contain new bugs. In the case company, customers using Dialog have been trained to perform certain tasks with a certain user interface. The customer might perform these tasks daily, once every two weeks or even less frequently. If the UI changes often, the customers feel lost and initially take more time to perform the tasks. This causes frustration in the users, and visible changes generally increases the reluctancy customers have towrads new versions, unless the changes are significantly improving the user experience.  
 \begin{aquote}{Dialog product owner}
 "The user interface should be easy to use. Now it's relatively hard to learn. If customers have just learned to perform a task, and we change the UI, the feedback is terrible."
 \end{aquote}
 
 %Customer reluctancy towards new versions
-Some customers are very reluctant against constant modifications and continuous version updates, since version updates occasionally introduce new bugs and modifications alter the user experience. While the user experience could be improved in the long run, the customers might feel frustrated when they have to learn to work with the modifications. The interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it would lead to smaller modifications and might reduce the customer reluctancy towards new versions. When customers become accustomed to the model of continuous version updates, the reluctant attitude might change. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term. 
+While the user experience could be improved in the long run, the customers might feel frustrated when they have to learn to work with the modifications. The interviewees have ideas on how the reluctancy can be reduced. If modifications were made more often, it leads to smaller and less notable modifications which might reduce the customer reluctancy towards new versions. When customers become accustomed to the model of continuous version updates, the reluctant attitude might change. Customers also need to understand the concept of continuous delivery, and that the features are eventually implemented to address customer needs and to improve the user experience in the long term. 
 \begin{aquote}{Dialog product owner}
 "If something changes, communication with the customer is hard. The customers feel that even if the version included very good changes, if something visible changes it gets alot of negative feedback".
 \end{aquote}
