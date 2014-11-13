@@ -2,30 +2,30 @@ CD
 
 Tech
 
-    Downtime is more critical for certain customers   
-    Acceptance testing is performed by both the company and the customers   
-    Software is often integrated to multiple third party applications   
-    Software is often accompanied by multiple external components   
-    There exists multiple different configurations due to having multiple customers with different specifications   
-    Transferring the software product to diverse customer-owned environments requires different deployment configurations   
+    Downtime is more critical for certain customers                                                                                    DOWNTIME
+    Acceptance testing is performed by both the company and the customers                                                              ACCEPTANCE TESTING
+    Software is often integrated to multiple third party applications                                                                  THIRD PARTY APPLICATIONS
+    Software is often accompanied by multiple external components                                                                      COMPONENTS
+    There exists multiple different configurations due to having multiple customers with different specifications                      CONFIGURATIONS
+    Transferring the software product to diverse customer-owned environments requires different deployment configurations              TRANSFERRING
 
 Procedure
 
-    UAT environment is a requisite for production release   
-    The development process drifts towards small feature branches from long-lived feature branches   
-	Triggering the compilation and deployment of large, modular projects   
-	The software has to be deployed to multiple customers   
-	Versioning is affected by having different customer profiles of the product   
-	Responsibility moves towards developers   
+    UAT environment is a requisite for production release                                               ACCEPTANCE TESTING
+    The development process drifts towards small feature branches from long-lived feature branches      SMALL FEATURES
+	Triggering the compilation and deployment of large, modular projects                   TRIGGERING
+	The software has to be deployed to multiple customers                                  MULTIPLE ENVIRONMENTS
+	Versioning is affected by having different customer profiles of the product            VERSIONING
+	Responsibility moves towards developers                                                RESPONSIBLITITY
 
 Customer
 
-    Customers are trained to use a certain UI   
-    Customers are reluctant towards new versions   
-    Changelogs are especially important, since customers depend on the software   
-    Pilot customer is required for developing the continuous delivery process   
-	Production deployment schedule has to be negotiated with the customer   
-	Ongoing critical tasks by users cannot be interrupted with downtime     
+    Customers are trained to use a certain UI                                              TRAINING
+    Customers are reluctant towards new versions                                           RELUCTANCY
+    Changelogs are especially important, since customers depend on the software            CHANGELOG
+    Pilot customer is required for developing the continuous delivery process              PILOT
+	Production deployment schedule has to be negotiated with the customer                  PRODUCTION DEPLOYMENT
+	Ongoing critical tasks by users cannot be interrupted with downtime                    DOWNTIME
 
 CE
 
