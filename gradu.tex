@@ -1815,7 +1815,7 @@ As the competence in experimentation and data-driven product design is low, the 
 %requirements
 
 \subsubsection{Applying the experimentation model}
-Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
+Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) or a minimum viable feature (MVF) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta
 The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} introduce the general process of continuous experimentation. Here the model is mapped to the case company context, and elaborated based on the findings of earlier research questions. The analysis of the model is divided into three phases: design, execute and analyse. 
@@ -2176,20 +2176,47 @@ The logical starting point of this thesis was an open issue by the case company:
 
 The focus of this thesis was not solely on the technical aspects of these development processes, as research already exists on these subjects \cite{kohavi2007practical, eklund2012architecture, cdbook}. Rather, the thesis focused on identifying the challenges in the transition towards these processes as a whole. The analysis of continuous delivery and continuous experimentation proceeded from higher-level considerations of B2B requirements to more detailed focus of applying continuous experimentation in B2B context. The findings provide insights into the differences between B2C and B2B companies, the software products in these domains and the development models used. In addition to the difference in two domains, the findings also compare the development models from the viewpoint of two different software products.
 
-This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. For continuous delivery, the challenges can be divided into technical challenges, procedural challenges and challenges related to the customer. 
+This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. For continuous delivery, the challenges can be divided into technical challenges, procedural challenges and challenges related to the customer. These challenges are mostly related to having multiple customers with diverse environments that rely on the software product. For continuous experimentation the challenges can be divided into technical challenges, organizational challenges and challenges related to the customer. As with continuous delivery, these challenges are related to having multiple customers that rely on the software. Additionally, moving to continuous experimentation requires an organizational culture shift towards an experimental mindset. A/B testing was examined from the viewpoint of two software products to survey challenges caused by product specific characters. Characters mostly affecting the suitability of experiments are the amount of human users and the convention by which the software is used.
 
 %The second research question answer
-The benefits of these approaches have been identified for the case company, and a company operating in similar domain with similar products can use them as a basis when reasoning the applying of these approaches. 
+The benefits of these practices matched to many problems found in the case company, and a company operating in similar domain with similar products can use them as a basis when considering applying these practices. The most important challenges in the case company were found to be related to the deployment process and guiding the development of the software products. By utilizing continuous delivery, the case company can solve problems such as long feedback cycles, low reliability in new versions and high amount of resources required for releases. Continuous experimentation on the other hand allows the case company to better guide it's product development, and rely on quantitative or qualitative data instead of opinions when choosing which features or products to develop further.
+
+The third research question identified the actual steps the company has to complete in the transition towards continuous experimentation. To apply the continuous experimentation model, the case company needs to implement the technical infrastructure, find a pro-active lead customer, allocate time and resources for product development, educate employees, investigate legal agreements related to data collection and identify metrics to determine what types of experiments can be performed. Additionally, a Build-Measure-Learn cycle \cite{fagerholm2014building} was analyzed and mapped to the context of the case company. The deviations included deployment of the software to the user acceptance environment and defining an overall evaluation criteria for controlled experiments. 
+
+
+%have been identified for the case company, 
+
+%CD benefits
+
+%Features are forgotten
+%Not much reliability in new versions
+%Human error factor
+%Some steps are memoralized
+%Compiling a modular product is hard
+%Allows for faster feedback collection
+%-Requires less time to deploy
+%-Downtime can be eliminated %Canary release
+%Duration
+%issues tracking status
+
+%CE benefits
+
+%The case company exposes features to customers only as soon as they are complete. By utilizing minimum viable features and minimum viable products, the decision to develop to feature or a product can be made from an early stage. 
+%In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization.
+%One of the main benefits of continuous experimentation in the case of CDM is increasing the knowledge of how customers are using the system. 
+%Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact.
+
+
+
 
 
 %The third research question answer
-The third research question identified the actual steps the company has to complete in the transition towards continuous experimentation. 
 
-TODO: tähän lista
+%TODO: tähän lista
 
 
--stepit mitä vaaditaan CE siirtymiseen
--CE-prosessi kuvattunat
+%-stepit mitä vaaditaan CE siirtymiseen
+%-CE-prosessi kuvattunat
 
 
 %The 
