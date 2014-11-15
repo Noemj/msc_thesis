@@ -1509,6 +1509,7 @@ The manual build process involves human error factor, which in the case company 
 "There are many components that have to be configured manually. The documents for how to execute these manual actions exist, but many things still rely on memory."
 \end{aquote}
 
+%Some steps are memoralized
 While some steps of the deployment process are documented, there are still parts that are memorized by developers. Since some of the manual steps are only memorized by certain developers, the deployment requires assistance from these persons. With continuous delivery only a handful of developers might have knowledge of the entire build deployment configuration, but everyone are able to trigger the deployment process. Automating the entire deployment process also reduces the human error factor and necessity for documentation.
 
 %-Compiling a modular product is hard
@@ -1530,11 +1531,13 @@ With the current deployment model, release cycle length ranges from two to four 
 %-Requires less time to deploy
 Automating the deployment also reduces the time required for deploying a version. The product owners state that building and deploying a version can take up to a day, which is seen as way too long. The primary reason taking up the time is caused by having to manually compile, test and bugfix the versions. With continuous delivery, the amount of manual work can be diminished to couple of button clicks defining which customer profile to deploy. Continuous delivery therefore allows the release of changes in time spans of hours, also allowing the most important features and fixes to be delivered faster. With faster problem fixing due to increases in bug discover and fixing rate, the software eventually ends up with fewer bugs. %The primary reason for
 
+%Duration
+Along with the deployment, environment installations take relatively long with manual installation of each component. With continuous delivery, starting the application in a new environment is ideally just generating configuration information describing the environment's unique properties, and starting the automated deployment process to both prepare the new environment and to deploy the correct version \cite{cdbook}. This allows for much more flexibility of deployments, where versions can be deployed when it is convenient to do so.
+
 %-Downtime can be eliminated %Canary release
 The prolonged deployment time also causes more downtime. Downtime is not currently perceived as an issue in itself, as it is negotiated with the customer and happens during the hours where downtime is acceptable. With continuous delivery, the company gains more incentive to reduce or eliminate downtime. In the case of CDM, downtime can be eliminated by utilizing for example parallel environments or canary releases \cite{cdbook}. With canary releases, a new version is rolled to a subset of the production server, and a part of the users are routed to the new version. If the new version is then deemed to work as intended, all of the users are routed to the new version.
 
-Both the team leaders and developers consider the duration of production deployment as a major issue. Along with the production deployment, the environment installations take relatively low with manual installation of each component. With continuous delivery, starting the application in a new environment is ideally just generating configuration information describing the environment's unique properties, and starting the automated deployment process to both prepare the new environment and to deploy the correct version \cite{cdbook}. This allows for much more flexibility of deployments, where versions can be deployed when it is convenient to do so.
-
+%issues tracking status
 One of the issues is that customers are having problems tracking the status of the development process in projects. This is caused by not deploying features that are not complete, and the relatively long length of the software delivery cycles. The customer is better kept on track of the development with continuous delivery, as the process is more transparent. In projects with a set duration it is much easier for the customer to understand the status of features when they are deployed in constant intervals.
 
 %As the customer is constantly updated with newer versions, in projects with a set duration i
@@ -1547,7 +1550,7 @@ One of the issues is that customers are having problems tracking the status of t
 %the new environment for deployment and deploy the chosen version of your
 %application to it. \cite{cdbook}
 
-Continuous delivery provides an answer to many of the challenges faced in the current deployment process and product development in general, and the management considers improving the deployment process to be one of the most important improvements. 
+Continuous delivery provides an answer to many of the challenges faced in the current deployment process and product development in general, and the management considers improving the deployment process to be one of the most important improvements. %TODO: fix this
 
 %Lyhyt loppuanalyysi tähän
 %Summary
@@ -1623,7 +1626,7 @@ Continuous delivery provides an answer to many of the challenges faced in the cu
 %From opinion to data-based decision making.
 %The selection of ideas is based on the opinions of leaders in the organization
 %However, based on the earlier stated conclusions that large parts of what companies do is wrong, business value can be increased by moving towards data-based decision making. 
-In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. Studies show that data-driven decision can be used to better guide the development by choosing features where the benefits can be measured \cite{kohavi2007practical, moran2007wrong, kaushik}. Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact.
+In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization. Studies report similar results in other companies as well \cite{kohavi2007practical}. Studies show that data-driven decision can be used to better guide the development by choosing features where the benefits can be measured \cite{kohavi2007practical, moran2007wrong, kaushik}. Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact. The case company exposes features to customers only as soon as they are complete. By utilizing minimum viable features and minimum viable products, the decision to develop to feature or a product can be made from an early stage. This enables conserving resources if the feature or product is found to be incompetent, or increasing the resources if the feature is seen as beneficial. 
 
 Applying continuous experimentation reduces the amount of guesswork and instead provides a systematic approach towards product development. In the case company, ideas for new features are often discussed in the steering group. However, Avinash Kaushik states in his article Experimentation and Testing primer that "80\% of the time you/we are wrong about what a customer wants" \cite{kaushik}. The company Netflix has also found similar results, considering 90\% of what they try to be wrong \cite{moran2007wrong}. A way to tackle this issue is to adopt a process of continuous experimentation.
 
@@ -1668,7 +1671,7 @@ One of the main benefits of continuous experimentation in the case of CDM is inc
 
 The lab website concept is less applicable for connected and embedded systems \cite{bosch2012building}. It would require the installation and integration of whole CDM, which is a laborious process. The experiment scenarios listed for embedded systems by Eklund and Bosch \cite{eklund2012architecture}, shown in chapter 3.4, contain cases that can be used for CDM development via experiments. Tracking the access amount of different queries in the API can be used to focus development towards most used calls. Identifying features that are not used at all is also a way to steer development into more benefical cases. However, due to different customers using the product in different ways, cross-case analysis has to be made to prevent failing to distinguish differences between users.  
 
-Continuous experimentation therefore benefits the decision making and product development of the case company, and addresses actual needs stated by both the management and developers. The teams have to address issues regarding the trustworthiness of certain types of experiments, especially those relying on statistical importance. 
+Continuous experimentation benefits the decision making and product development of the case company, and addresses actual needs stated by both the management and developers. The teams have to address issues regarding the trustworthiness of certain types of experiments, especially those relying on statistical importance. %TODO: fix this
 % 
 
 %For connected, embedded systems this technique is less applicable. This type of
@@ -2033,6 +2036,18 @@ In the analyze phase the results from the experiment are collected from the data
 
 The study investigated extending the development process towards continuous delivery and continuous experimentation to advance the company towards real-time value delivery. The research questions addressed the challenges faced in this transition, the benefits found from these practices and systematical application of continuous experimentation in the B2B domain. 
 
+
+%The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature would be succesful or not?
+%Shorten the feedback cycle to receive input faster
+%This is done by exposing features to customes as fast as possible
+%Measure the software and base data on actual metrics
+%
+
+%The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature would be succesful or not? To provide an answer to this question, two software development models known as continuous delivery and continuous experimentation are analyzed as possible development models for the case company.
+
+
+
+
 The results suggest that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. 
 
 %KUVA 1
@@ -2044,6 +2059,8 @@ The results suggest that the challenges faced in continuous delivery in the B2B 
 \end{figure}
 
 Figure \ref{fig7} visualizes the challenges the case company faces in transition towards continuous delivery. Multiple challenges are related to two or more aspects, and the problems affecting all aspects can be seen as the core challenges. Acceptance testing is related to all aspects since customers want to perform acceptance testing with new versions, automated acceptance testing has to be implemented and the user acceptance testing environment is required. Another challenge related to all aspects is the diversity of customer environments. It affects the technical implementation, as software has to be transferred to diverse environments. The procedural challenge is that the software has to be deployed multiple customers, and it has to be decided whether each version is always released to every customer. 
+
+
 
 The challenges mostly differ from the B2C domain 
 -software is developed for customers
@@ -2084,8 +2101,24 @@ Mostly differ from B2C domain:
 %CD benefits
 The study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
 
+%Features are forgotten
+%Not much reliability in new versions
+%Human error factor
+%Some steps are memoralized
+%Compiling a modular product is hard
+%Allows for faster feedback collection
+%-Requires less time to deploy
+%-Downtime can be eliminated %Canary release
+%Duration
+%issues tracking status
+
 %CE benefits
 Continuous experimentations benefit to the case company is related to choosing which features to develop and which to cancel. In the current development model, these decisions are made only after the feature has been completed and shipped to the customer. With continuous experimentation, the development is done in shorter cycles which allow for faster feedback. For each feature, the decision to either persevere or pivot with the product strategy is based on collected quantitative or qualitative data instead of opinion.
+
+%The case company exposes features to customers only as soon as they are complete. By utilizing minimum viable features and minimum viable products, the decision to develop to feature or a product can be made from an early stage. 
+%In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization.
+%One of the main benefits of continuous experimentation in the case of CDM is increasing the knowledge of how customers are using the system. 
+%Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact.
 
 
 
@@ -2095,7 +2128,18 @@ The experimentation infrastructure and Build-Measure-Learn model \cite{fagerholm
 
 The findings supported the research questions well. Many of the challenges in the current development process of the case company are in line with the benefits of continuous delivery and continuous experimentation. Extending the development process towards continuous delivery and continuous experimentation is an expensive but benefical transition. While the technical challenges play a major role, the findings indicate that the company needs to resolve issues in multiple other aspects as well. 
 
+
+
+%Difference between products
 Performing continuous experimentation differs based on the nature of the software product. The two products under inspection in this thesis provided two different viewpoints to consider when planning suitable experiments. For Dialog, a system with a wide UI and high importance of user experience, front-end A/B testing and usage behavior tracking were found as viable experiments. However, with A/B testing the user amount limits the statistical significance, and the user base has to be increased to draw trustworthy conclusions. For the intagrated background application CDM with no UI and human users, the types of suitable experiments are especially usage metrics and feature alphas. %TODO: ehkä miks?
+
+
+
+
+
+
+
+
 
 %Shifting towards continuous experimentation is different based on the nature of the software product. By analyzing the two different products, insight on different types of experiments suitable for each product was gained. 
 
@@ -2124,37 +2168,50 @@ Performing continuous experimentation differs based on the nature of the softwar
 This thesis was motivated by the general increased interest towards innovative experimental systems \cite{olsson2012climbing}, and the lack of related studies in the B2B domain. While especially continuous delivery and partly continuous experimentation have been utilized and researched in the B2C domain, the benefits and challenges are still vague for B2B companies. Understanding the central aspects of continuous delivery and continuous experimentation will be a must for software companies willing to stay ahead of competitors in the current rapidly moving industry.
 %This thesis applied an exploratory view on the development model of the case company, deconstructing it into smaller parts. 
 
-The objective of the thesis was to analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices. These practices were 
+The logical starting point of this thesis was an open issue by the case company: how do we validate whether a feature would be succesful or not? This issue is fundamental for the case company, as knowing the answer allows the case company to focus on developing features that develop real value for the customer. Both practices investigated in this thesis provide solutions to this issue. Shortening the feedback cycle by exposing features to customers as fast as possible allows the company to receive feedback faster. This is done by both automating the deployment process and utilizing minimum viable products and features. Based on the quick feedback, the product development can be steered towards the correct direction from an early stage. Additionally, measuring metrics from the features wtih experiments allows the company to make decisions based on qualitative or quantitative data instead of opinion.
+%Shorten the feedback cycle to receive input faster
+%This is done by exposing features to customes as fast as possible
+%Measure the software and base data on actual metrics
+%
 
-Focus of the 
+The focus of this thesis was not solely on the technical aspects of these development processes, as research already exists on these subjects \cite{kohavi2007practical, eklund2012architecture, cdbook}. Rather, the thesis focused on identifying the challenges in the transition towards these processes as a whole. The analysis of continuous delivery and continuous experimentation proceeded from higher-level considerations of B2B requirements to more detailed focus of applying continuous experimentation in B2B context. The findings provide insights into the differences between B2C and B2B companies, the software products in these domains and the development models used. In addition to the difference in two domains, the findings also compare the development models from the viewpoint of two different software products.
 
-%To analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices.
-
-
-This thesis didn't focus on the technical aspects, as multiple research papers already address these \cite{kohavi2007practical, eklund2012architecture}.
-
-Rather, the thesis analysed the challenges 
-
-The analysis of continuous delivery and continuous experimentation proceeded from higher-level considerations of B2B requirements to more detailed focus of applying the models in B2B context. The findings provide insights into the differences between B2C and B2B companies, the software products in these domains and the development models used. In addition to the difference in two domains, the findings also compare the development models from the viewpoint of two different software products.
-
-%TODO: list of main requirements?
-
-%The first research question answer
-This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. 
+This thesis has identified the main requirements a company operating in the B2B domain has to address when applying continuous delivery and continuous experimentation. For continuous delivery, the challenges can be divided into technical challenges, procedural challenges and challenges related to the customer. 
 
 %The second research question answer
 The benefits of these approaches have been identified for the case company, and a company operating in similar domain with similar products can use them as a basis when reasoning the applying of these approaches. 
 
+
 %The third research question answer
+The third research question identified the actual steps the company has to complete in the transition towards continuous experimentation. 
+
+TODO: tähän lista
+
+
+-stepit mitä vaaditaan CE siirtymiseen
+-CE-prosessi kuvattunat
+
+
+%The 
+%The objective of the thesis was to analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices. These practices were 
+%Focus of the 
+%To analyze the software development process transition towards shorter feedback cycle and data-driven decisions from the perspective of the case company, with respect to continuous delivery and continuous experimentation practices.
+%This thesis didn't focus on the technical aspects, as multiple research papers already address these \cite{kohavi2007practical, eklund2012architecture}.
+%Rather, the thesis analysed the challenges 
+
+
+
+%TODO: list of main requirements?
+
+%The first research question answer
+
+
+
 
 %3. identify the theoretical and policy implications of the study with respect to the overall 
 %study area 
 
-TODO: tähän lista
 
--identifioitu haasteet eri osa-alueissa: procedural, kulttuuri, tekniset..
--stepit mitä vaaditaan CE siirtymiseen
--CE-prosessi kuvattunat
 
 
 %• Think of limitations in four major areas (but all 
