@@ -1341,7 +1341,7 @@ The organizational challenges are analyzed based on the data collected from the 
     \end{table}
 \end{center}
 
-According to the interviews, transitioning towards experimental R&D is perceived as desirable but expensive. Product development has been in recession with the accelerating customer amount and increasing customer requirements. The teams under inspection have no prior experience with experimenting or data analysis, and require training in order to gain domain knowledge of experimentation. 
+According to the interviews, transitioning towards experimental R\&D is perceived as desirable but expensive. Product development has been in recession with the accelerating customer amount and increasing customer requirements. The teams under inspection have no prior experience with experimenting or data analysis, and require training in order to gain domain knowledge of experimentation. 
 \begin{aquote}{Dialog quality assurance engineer}
 "Currently, the product is developed based on what the customers want. We would need more resources [to guide the development with experiments]."
 \end{aquote}
@@ -1368,7 +1368,7 @@ The customer challenges are analyzed based on three sections of the interview: c
     \textbf{Specific problem} \\ \hline
     Large part of developed features are requirements from customers \\ \hline
 	Customers perform routine tasks that cannot be interrupted \\ \hline
-	Customers have to be informed for major changes \\ \hline
+	Customers have to be informed of major changes \\ \hline
 	Technical personnel aren't involved in customer interaction \\ \hline
 	The software has to undergo testing in the UAT before production release \\ \hline
 	The end-users might be customers' customers, complicating feedback collection \\ \hline
@@ -2027,20 +2027,69 @@ In the analyze phase the results from the experiment are collected from the data
 
 \section{Discussion}
 %Begin with a summary of your results using little  or no statistical jargon.
-
 %Use “the layperson test”: How would you explain your findings to a relative?
-
 %One way to organize this section is around whether findings did or did not support the study’s hypotheses or research questions.
-
 %Interpretation: This section addresses the meaning of your findings
 
 The study investigated extending the development process towards continuous delivery and continuous experimentation to advance the company towards real-time value delivery. The research questions addressed the challenges faced in this transition, the benefits found from these practices and systematical application of continuous experimentation in the B2B domain. 
 
-The results suggest that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
+The results suggest that the challenges faced in continuous delivery in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The primary issues causing these challenges are the customer owned environment and the importance of the software product for the customer. 
 
-Challenges faced in continuous experimentation are also divided into four aspects: technical, organizational, customer and A/B testing. The challenges are mostly related to the lack of experimental mindset, technical properties of the software products and importance of the software product for the customer. The importance of the software product means that the customers depend on the application, and changes should be done carefully enough not to unnecessarily complicate the usage. 
+%KUVA 1
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=5.0in]{cd_challenges.jpeg}
+	\caption{Case company's challenges in continuous delivery.}
+	\label{fig7}
+\end{figure}
 
+Figure \ref{fig7} visualizes the challenges the case company faces in transition towards continuous delivery. Multiple challenges are related to two or more aspects, and the problems affecting all aspects can be seen as the core challenges. Acceptance testing is related to all aspects since customers want to perform acceptance testing with new versions, automated acceptance testing has to be implemented and the user acceptance testing environment is required. Another challenge related to all aspects is the diversity of customer environments. It affects the technical implementation, as software has to be transferred to diverse environments. The procedural challenge is that the software has to be deployed multiple customers, and it has to be decided whether each version is always released to every customer. 
+
+The challenges mostly differ from the B2C domain 
+-software is developed for customers
+-customers have very different environments
+-customers rely on the software and use it for a living
+
+%, multiple challenges are related to two or more aspects 
+
+%the problems affecting all aspects can be seen as the core problems
+%-Acceptance testing is related to all aspects: customers want to perform acceptance testing, automated acceptance testing has to be implemented and the uat environment is required 
+%-multiple environments
+
+
+%-Pilot customer proc and cust
+%-multiple conf tech and proc
+%-downtime tech and cust
+
+
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=5.0in]{ce_challenges.jpeg}
+	\caption{Case company's challenges in continuous experimentation.}
+	\label{fig8}
+\end{figure}
+%KUVA 2
+
+Challenges faced in continuous experimentation are also divided into four aspects: technical, organizational, customer and A/B testing. Figure \ref{fig8} visualizes the challenges in the first three aspects. The challenges are mostly related to the lack of experimental mindset, technical properties of the software products and importance of the software product for the customer. The importance of the software product means that the customers depend on the application, and changes should be done carefully enough not to unnecessarily complicate the usage. 
+
+Mostly differ from B2C domain:
+-low user amounts
+-more value is generated for the customer
+-the product is important and has users using it for a living
+-applications are large and mature
+
+
+%CD benefits
+The study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
+
+%CE benefits
 Continuous experimentations benefit to the case company is related to choosing which features to develop and which to cancel. In the current development model, these decisions are made only after the feature has been completed and shipped to the customer. With continuous experimentation, the development is done in shorter cycles which allow for faster feedback. For each feature, the decision to either persevere or pivot with the product strategy is based on collected quantitative or qualitative data instead of opinion.
+
+
+
+
 
 The experimentation infrastructure and Build-Measure-Learn model \cite{fagerholm2014building} suit the case company well. As the Build-Measure-Learn model introduced is very general, certain steps required elaboration. Such elaborations included refining the three phases of the Build-Measure-Learn model: design, execute and analyse. For design phase, defining Overall Evaluation Criterias for controlled experiments was added as a step, since a common pitfall is to incorrectly choose the OEC \cite{crook2009seven}. For the execute phase, a deployment to the UAT environment was added as it is required by the customers to perform manual acceptance testing for each production release. 
 
@@ -2146,6 +2195,9 @@ Second,
 \subsection{Further research}
 Regardless of the limitations a case study has, the phenomena was deeply understood through gathering large amount of qualitative data and systematically analysing it. %utilize theoretical lens? 
 Therefore the core findings should be applicable to similar research problems outside of the empirical context of this thesis. This means that the B2B challenges and benefits of continuous delivery and continuous experimentation can be considered as a starting point for further studies in other contexts where these development models take place.
+
+
+To validate and add to the findings, the transition needs to be investigated in other B2B companies
 
 %\section{Conclusions}
 
