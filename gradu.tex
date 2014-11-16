@@ -75,6 +75,8 @@
   {\signed{\usebox\mybox}\end{quotation}}
 
 % --- tktltiki2 options ---
+%TODO: checkaa tää: Continuous delivery is a development practice where the software functionality is deployed continuously to customer environment. 
+%Continuous delivery is a development practice where the building, testing and deploying phases are automated, and the software is kept in a state where it can be continuously deployed.
 %
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
@@ -2059,11 +2061,8 @@ The results suggest that the challenges faced in continuous delivery in the B2B 
 
 Figure \ref{fig8} visualizes the challenges the case company faces in transition towards continuous delivery. Multiple challenges are related to two or more aspects, and the problems affecting all aspects can be seen as the core challenges. Acceptance testing is related to all aspects since customers want to perform acceptance testing with new versions, automated acceptance testing has to be implemented and the user acceptance testing environment is required. Another challenge related to all aspects is the diversity of customer environments. It affects the technical implementation, as software has to be transferred to diverse environments. The procedural challenge is that the software has to be deployed multiple customers, and it has to be decided whether each version is always released to every customer. 
 
-%to practice
-Identifying that transitioning towards continuous delivery requires a company to address issues in multiple aspects of the company aids companies in practice. 
-
 %to theory
-The findings are in align with and could be considered as extending some of the theoretical contributions by Olsson et al. \cite{olsson2012climbing}
+The findings are in align with and could be considered as extending some of the theoretical contributions by Olsson et al. \cite{olsson2012climbing}, who researched the transition towards continuous delivery and an experimentational system. Identifying that transitioning towards continuous delivery requires a company to address issues in multiple aspects of the company also benefits companies in practice. 
 
 
 %The challenges mostly differ from the B2C domain 
@@ -2084,7 +2083,6 @@ The findings are in align with and could be considered as extending some of the 
 
 
 
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=5.0in]{ce.jpeg}
@@ -2097,29 +2095,29 @@ Challenges faced in continuous experimentation are divided into four aspects: te
 
 The challenges found in continuous experimentation are not as overlapped as in continuous delivery. This could implicate that the challenges are not yet identified on a fundamental enough level required to form these connections. 
 
-Mostly differ from B2C domain:
--low user amounts
--more value is generated for the customer
--the product is important and has users using it for a living
--applications are large and mature
-
-
+%Mostly differ from B2C domain:
+%-low user amounts
+%-more value is generated for the customer
+%-the product is important and has users using it for a living
+%-applications are large and mature
 
 %Contributions to theory
 The results extend the theoretical contributions by Olsson et al. \cite{olsson2012climbing} by providing a list of requirements the case company has to resolve when it transitions towards continuous experimentation. 
+
+
 %It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
 
 %Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
 
 
 %CD benefits
-The study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions. The issues related to the deployment process are considered very important by both of the teams. The issues include low reliability in new versions, human error factors when performing version releases and deployments, and long feedback cycles. One of the main benefits of continuous delivery is that the software is developed so that it is always ready for release \cite{cdbook}, even if the releases are not made more often. 
+The study also suggests that continuous delivery corresponds to many of the case company's primary needs. The issues related to the deployment process are considered very important by both of the teams. The issues include low reliability in new versions, human error factors when performing version releases and deployments, and long feedback cycles. One of the main benefits of continuous delivery is that the software is kept in a state where it is always ready for deployment \cite{cdbook}, even if the actual deployments are not made more often. 
 
 %To theory
-
-
 %To practice
-These benefits 
+These benefits for the case company found from continuous delivery were found by researching the current deployment process and challenges faced in the deployment process. An unexpected large part of the major issues stated by the interviewees were related to deploying the software, and it was identified as one of the major challenges in the current development. The benefits found from continuous delivery, which were sought from existing literature \cite{cdbook, neely2013continuous}, matched the challenges surprisingly well. By taking the time to map the actual encountered problems to solutions, the concept of continuous delivery can be better sold to the management of companies.      
+
+%such as improving the reliability of versions and reducing the time required for deploying versions
 
 %Features are forgotten
 %Not much reliability in new versions
@@ -2133,31 +2131,25 @@ These benefits
 %issues tracking status
 
 %CE benefits
-Continuous experimentations benefit to the case company is related to choosing which features to develop and which to cancel. In the current development model, these decisions are made only after the feature has been completed and shipped to the customer. With continuous experimentation, the development is done in shorter cycles which allow for faster feedback. For each feature, the decision to either persevere or pivot with the product strategy is based on collected quantitative or qualitative data instead of opinion.
+Continuous experimentations benefit to the case company is related to choosing which features to develop and which to cancel. In the current development model, these decisions are made only after the feature has been completed and deployed to the customer. With continuous experimentation, the development is done in shorter cycles which allow for faster feedback. For each feature, the decision to either persevere or pivot with the product strategy is based on collected quantitative or qualitative data instead of opinion. Figure \ref{fig9} visalizes the three main benefits on a very general level. Shorter feedback cycle is achieved by utilizing minimum viable features and products in the development. Data-driven decisions means that the business strategy and software product is guided by relying on measured quantitative or qualitative data from experiments. Finally, the result is that the development can better and earlier be guided towards features providing actual value.
+
 
 %The case company exposes features to customers only as soon as they are complete. By utilizing minimum viable features and minimum viable products, the decision to develop to feature or a product can be made from an early stage. 
 %In the case company, selection of the development ideas is based almost exclusively on the opinions of management of the organization.
 %One of the main benefits of continuous experimentation in the case of CDM is increasing the knowledge of how customers are using the system. 
 %Consequently, the business value of the software product can be increased by focusing the development on features that have the largest impact.
 
+%Difference between products
+Performing continuous experimentation also differs based on the nature of the software product. The two products under inspection in this thesis provided two different viewpoints to consider when planning suitable experiments. For Dialog, a system with a wide UI and high importance of user experience, front-end A/B testing and usage behavior tracking were found as viable experiments. However, with A/B testing the user amount limits the statistical significance, and the user base has to be increased to draw trustworthy conclusions. For the intagrated background application CDM that has no UI and human users, the types of suitable experiments are those not relying on user behavior. Hoever, tracking usage metrics can be used to measure the distribution in API calls. Another suitable experiment is feature alpha, where a new feature or product is tested with a small proportion of customers.
 
-
-
-
+%Rq3
 The experimentation infrastructure and Build-Measure-Learn model \cite{fagerholm2014building} suit the case company well. As the Build-Measure-Learn model introduced is very general, certain steps required elaboration. Such elaborations included refining the three phases of the Build-Measure-Learn model: design, execute and analyse. For design phase, defining Overall Evaluation Criterias for controlled experiments was added as a step, since a common pitfall is to incorrectly choose the OEC \cite{crook2009seven}. For the execute phase, a deployment to the UAT environment was added as it is required by the customers to perform manual acceptance testing for each production release. 
 
+%RQ3 contrib
 This thesis contributes to existing research on continuous experimentation by Fagerholm et al. \cite{fagerholm2014building} by investigating the challenges faced by the model in the B2B domain. 
 
-
-
-
-
-The findings supported the research questions well. Many of the challenges in the current development process of the case company are in line with the benefits of continuous delivery and continuous experimentation. Extending the development process towards continuous delivery and continuous experimentation is an expensive but benefical transition. While the technical challenges play a major role, the findings indicate that the company needs to resolve issues in multiple other aspects as well. 
-
-
-
-%Difference between products
-Performing continuous experimentation differs based on the nature of the software product. The two products under inspection in this thesis provided two different viewpoints to consider when planning suitable experiments. For Dialog, a system with a wide UI and high importance of user experience, front-end A/B testing and usage behavior tracking were found as viable experiments. However, with A/B testing the user amount limits the statistical significance, and the user base has to be increased to draw trustworthy conclusions. For the intagrated background application CDM with no UI and human users, the types of suitable experiments are especially usage metrics and feature alphas. %TODO: ehkä miks?
+%Support research questions
+The findings supported the research questions well. Many of the challenges in the current development process of the case company are in line with the benefits of continuous delivery and continuous experimentation. Extending the development process towards continuous delivery and continuous experimentation is an expensive but benefical transition. Implementing the technical infrastructure requires the investment of plenty of resources, while some of the other challenges are simply a matter of decision. Another challenge requiring more resources is educating personnel, which is required especially for stakeholders designing and analyzing experiments.
 
 
 
