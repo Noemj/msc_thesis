@@ -477,7 +477,7 @@ Fagerholm et al. emphasize the importance of analysing the data to test business
 The first step required for a controlled experiment according to Kohavi et al. is to define an Overall Evaluation Criteria (OEC) \cite{kohavi2009online}. This criteria is the metric that the organization agrees to optimize with the experiment. Kohavi et al. cite Lewis Carroll saying "If you don’t know where you are going, any road will take you there". Attention has also to be paid to prevent running underpowered experiments, by determining the minimum sample size required for an experiment to be statistically significant \cite{kohavi2009controlled}.
 
 \subsubsection{Data collection} 
-To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer-feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, so that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
+To collect, aggregate and analyze the observations, raw data has to be recorded. According to Kohavi et al., some raw data could be for example page views, clicks, revenue, render time and customer feedback selections \cite{kohavi2007practical}. The data should also be annotated to an identifier, so that conclusions can be made from it. Kohavi et al. present three different ways for collecting raw data. The first solution is to simply use an existing data collection tool, such as Webmetrics. However, most data collection systems aren't designed for statistical analyses, and the data might have to be manually extracted to an analysis environment. A different approach is local data collection, in which a website records data in a local database or log files. The problem with local data collection is that each additional source of data, such as the back-end, increases the complexity of the data recording infrastructure. The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 
 Feedback collection can be divided into two groups, active and passive feedback \cite{bosch2012building}. Active feedback includes collection methods where the customer is aware that he or she is providing feedback. Such collection tools are for example surveys. Passive feedback is collected while the customer is using the system, without the customer being aware of the collection. Examples of such data collection includes tracking the time a user spends using a feature, the frequency of feature selections, or the path through the product the user takes to perform a certain task. Bosch states that what makes the major difference between Innovation experiment systems and tradititional software systems is the low cost and ease of data collection in the former. 
 
@@ -1749,15 +1749,15 @@ As requirements and benefits of continuous experimentation have been investigate
 %"We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 
 %Intro
-Based on the previous research questions, the following steps are required from the case company to transition towards a continuous experimentation system.
+Based on the previous research questions, the following steps were identified as critical requirements in the case company's transition towards continuous experimentation.
 
 \begin{itemize}
-\item Find a pro-active lead customer
-\item Allocate time and resources for product development
-\item Implement experimentational architecture
-\item Identify metrics in the software products that increase the value for customer
-\item Investigate required legal agreements associated with data collection
-\item Educate employees to increase the competence in experimentation
+\item Finding a pro-active lead customer
+\item Allocating time and resources for product development
+\item Implementing an infrastructure for experimentation
+\item Identifying metrics in the software products that increase the value for customer
+\item Investigating required legal agreements associated with data collection
+\item Educating employees to increase the competence in experimentation
 \end{itemize}
 
 %Seeking feedback through the entire development process is essential, and entirely possible utilizing the scopes of experimentations introduced by Bosch et al. \cite{bosch2012building}. 
@@ -1780,7 +1780,7 @@ A large part of the features implemented by the teams are custom implementations
 %The last model is a service-based collection, in which service calls to a logging service are placed in multiple places. This centralizes all observation data, and makes it easy to combine both back-end and front-end logging.
 %-database for data storage
 %-tools for data analysis
-The company has to implement an experimentation architecture to support experimentation. The required components from the architecture are the data collection instrumentation and an experimental database \cite{kohavi2007practical, fagerholm2014building}. The developers view a pluggable logging service as a viable solution for data collection due to the modular architecture of the software products. The company also requires tools for data analysis.
+The company has to implement the infrastructure to support experimentation. The required components for the infrastructure are the data collection instrumentation, analytics tools and an experimental database \cite{kohavi2007practical, fagerholm2014building}. The developers view a pluggable logging service as a viable solution for data collection due to the modular architecture of the software products. The infrastructure should also allow the company to manage experiments by providing functionality for quickly executing and terminating experiments. Automating the creation of experimentation plans is also an opportunity that should be considered in further research \cite{fagerholm2014building}.
 
 %identify the important metrics that should be improved to increase the value of the product for the customer
 %-how does the customer profit from the product?
@@ -1810,7 +1810,7 @@ As the competence in experimentation and data-driven product design is low, the 
 Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable products or features with suitable instrumentation for data collection. The experimentation system must also allow the design and management of experiment plans, linking experiment results with a product roadmap and managing a flexible business strategy \cite{fagerholm2014building}. The Build-Measure-Learn cycle starts with forming a hypothesis and building a minimum viable product (MVP) or a minimum viable feature (MVF) with tools for data collection. Once the MVP has been created, the data is analyzed and measured in order to validate the hypothesis. To persevere with a chosen strategy means that the experiment proved the hypothesis correct, and the full product or feature can is implemented. However, if the experiment proved the hypothesis wrong, the strategy is changed based on the implications of a false hypothesis.
 
 %Fabianin malliin tarvitaan jotain lisää: UAT, enemmän focusta OEC,... muuta
-The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} introduce the general process of continuous experimentation. Here the model is mapped to the case company context, and elaborated based on the findings of earlier research questions. The analysis of the model is divided into three phases: design, execute and analyse. 
+The infrastructure and Build-Measure-Learn model \cite{fagerholm2014building} introduce the general process of continuous experimentation. Here the model is mapped to the case company context, and elaborated based on the findings of earlier research questions. The analysis of the model is divided into three phases: design, execute and analyse. 
 
 %The business strategy is more flexible, and
 %it consists of multiple assumptions regarding the actions required
@@ -1837,7 +1837,8 @@ The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} in
 %are retrieved, analysis performed, and results produced. The results
 %are stored back into the back-end system
 
-%Tähän pitää laittaa joku kaveri joka tietää asiakkaan tarpeista
+
+In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. Developers are only minimally involved in the customer interaction, and lack deep knowledge of the customer domain. The teams also have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
 
 \begin{enumerate}
   \item Form an assumption from the business model that is thought to increase the value of the product
@@ -1848,13 +1849,11 @@ The infrastructure and Build-Measure-Learn block \cite{fagerholm2014building} in
   \item Implement the instrumentation to collect the metric
 \end{enumerate}
 
-In the design phase the roadmap is created and iterated by the business analyst and product owner, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. Developers are only minimally involved in the customer interaction, and lack deep knowledge of the customer domain. The teams then have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
+The process of designing an experiments starts by forming an assumption from the business strategy, which is perceived as increasing the value of the product for the customer. After the hypothesis is formed, the type of experiment to test the hypothesis needs to be chosen. The experiment must be able to provide worthful results, and for experiments relying on statistical importance, the user amount has to be sufficient. For experiments relying on user behavior, statistical importance might not be necessary to draw results.
 
-After the hypothesis is formed, the type of experiment to test the hypothesis needs to be chosen. The experiment must be able to provide worthful results, and for experiments relying on statistical importance the user amount has to be sufficient. For experiments relying on user behavior statistical importance might not be necessary to draw results.
+Then, if running a controlled experiment, the overall evaluation criteria (OEC) is explicitly defined before the feature or MVP is implemented. The OEC is a metric that the company aims to improve with the experiment. One of the common pitfalls in running controlled experiments is to pick an OEC for which the control group is easy to beat by doing something "wrong" from a business perspective \cite{crook2009seven}. Picking the OEC also concretizes the experiment, making the purpose and goal of the experiment more obvious. 
 
-Another addition is to explicitly define the overall evaluation criteria (OEC) before the feature or MVP is implemented if running a controlled experiment. The OEC is a metric that the company aims to improve with the experiment. One of the common pitfalls in running controlled experiments is to pick an OEC for which the control group is easy to beat by doing something "wrong" from a business perspective \cite{crook2009seven}. Picking the OEC also concretizes the experiment, making the purpose and goal of the experiment more obvious. 
-
-After the OEC has been formed and the experiment type decided, the minimum viable feature (MVF) or minimun viable product (MVP) is implemented, and the instrumentation for data collection is added to the product. The suitable data collection instrumentations for the case company's product according to the developers is a server-side service layer, which can be used to log data from multiple services. 
+After the OEC has been formed and the experiment type decided, the minimum viable feature (MVF) or minimum viable product (MVP) is implemented, and the instrumentation for data collection is added to the product. The suitable data collection instrumentations for the case company's product according to the developers is a server-side service layer, which can be used to log data from multiple services. For this phase, the technical infrastructure has to be built that supports quickly designing, executing and analysing experiments. 
 
 %-current lean model is good
 The project management tools used by the teams suit the experimentational model. A kanban board is already used to transfer tasks from the management to the developers, and can be used by to develop experiments as well. The product owners and analysts must first design the experiment, and insert a new task into the backlog with detailed specifications. A developer then checkouts the task and implements the MVF or MVP with instrumentation. 
@@ -1875,7 +1874,6 @@ The project management tools used by the teams suit the experimentational model.
 \begin{enumerate}
   %\item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
   %only experiments that can be run with trustworthy results should be considered
-
 %  \item The response variable(s) are selected and implemented
   \item The software is deployed to a UAT environment % statistically relevant number of devices, with unmodified devices being the control
   \item The software is acceptance tested in the UAT environment, production deployment is negotiated
@@ -1887,9 +1885,8 @@ The project management tools used by the teams suit the experimentational model.
 In the execute phase the product is deployed to an environment with the experimental feature and instrumentation for data collection. For the case company, the deployment has to undergo testing in the UAT environment. The UAT environment is also suitable for testing the experiment itself and the impact of the experimental feature on the product. When the UAT phase is complete, the production deployment is negotiated and performed. With automated deployments, the production deployment should happen by a click of a button. The software is the run for a period of time, while the required data is collected into a database located in the environment.
 
 \begin{enumerate}
-\item The data is uploaded from the database and analysed through the infrastructure
-\item The team draws conclusions from the data on whether to develop the new feature or product further, keep it as it is, or to drop it and revert to the unmodified software. 
-%leave feature or remove? continuous delivery to return versions?
+  \item The data is uploaded from the database and analysed through the infrastructure
+  \item The team draws conclusions from the data on whether to develop the new feature or product further, keep it as it is, or to cease it and revert back to the unmodified software. 
 \end{enumerate}
 
 In the analyze phase the results from the experiment are collected from the database and analysed through analytics software. The business strategy is then persevered or pivoted based on whether the hypothesis is valid and supports the assumption.
