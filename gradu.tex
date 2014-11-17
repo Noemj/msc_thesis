@@ -266,13 +266,13 @@ This thesis is organized as follows. The first chapter is the introduction at ha
 %>derive solution idea
 
 \subsection{Contributions}
-This thesis contributes to continuous experimentation \cite{fagerholm2014building} and organization evolution path \cite{olsson2012climbing} discussions by analysing the theories in B2B domain. These research areas are increasingly interesting in research, but none of the existing studies focuses purely on the B2B domain. There is growing research interest in these areas, however, most of the research takes place in B2C domain. Thus, the primary contribution of this thesis is to analyze the effects of this phenomena in a new domain. 
-
 The research objective of this thesis included the analysis of both continuous delivery and continuous experimentation. The third research question focuses only on continuous experimentation, as the attempt to study both approaches simultaneously would have required the analysis of too many variables at once. 
 
 This research contributes to continuous delivery research by identifying issues found when the software is produced for customer companies. The study suggests that the challenges faced in the B2B context are multidimensional, and related to the technical, procedural and customer aspects. The findings are in align with and could be considered as extending some of the theoretical contributions by Olsson et al. \cite{olsson2012climbing}, who researched the transition towards continuous delivery and an experimentational system. However, the study also suggests that continuous delivery corresponds to many of the case company's primary needs, such as improving the reliability of versions and reducing the time required for deploying versions.
 
-The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation infrastructure \cite{fagerholm2014building} is mapped to the case company's context.
+This thesis also contributes to continuous experimentation \cite{fagerholm2014building} and organization evolution path \cite{olsson2012climbing} discussions by analysing the theories in B2B domain. These research areas are increasingly interesting in research, but none of the existing studies focuses purely on the B2B domain. There is growing research interest in these areas, however, most of the research takes place in B2C domain. Thus, the primary contribution of this thesis is to analyze the effects of this phenomena in a new domain. 
+
+The contributions to continuous experimentation research are firstly identifying the challenges a company faces in the transition towards an experimental system. These challenges are examined by utilizing two different software products, to provide two different perspectives. Secondly, the benefits of continuous experimentation are mapped to actual needs by the case company. Thirdly, an initial continuous experimentation model \cite{fagerholm2014building} is mapped to the case company's context.
 \section{Literature: Continuous Delivery}
 %Agile
 Software development models have been moving towards shorter feedback loops since iterative software development methods. Agile software development emerged from the iterative software development methods, with early implementations being development in the 1990's \cite{dybaa2008empirical}. The general principles of agile software development are breaking the development to short iterations, maintaining a short feedback loop with the customer by having a customer representative, valuing working software over documentation and responding to change. The highest agile principle is to satisfy the customer through early and continuous delivery of software. Continuous delivery therefore has its roots in agile software development. Many agile models, such as Scrum \cite{schwaber2002gile}, Extreme Programming \cite{beck2000extreme} and Feature-Driven Development \cite{palmer2001practical} further define their own strategies based on the agile principles. Scrum, for example, defines a framework for managing product development, without much focus on technical tools. Extreme Programming, on the other hand, includes many technical features, such as always programming in pairs, doing extensive code review and unit testing.
@@ -303,7 +303,7 @@ In this chapter we first introduce the general principles of continuous delivery
 
 %\subsection{Development pipeline}
 
-\subsection{Continuous delivery}
+\subsection{Continuous Delivery}
 To be able to react to customers changing requests and manage multiple customer environments, the software product has to be deployed frequently and with different configurations. As the case company is working in an agile manner, requests change and adjust often. To improve the software product, the case company has a need for a deployment approach that has the following benefits:
 
 \begin{itemize}
@@ -377,7 +377,7 @@ With automated deployment and production release, they become rapid, repeatable 
 %version that doesn’t contain the bug while you fix the new release offline (see
 %Chapter 10, “Deploying and Releasing Applications”).
 
-\subsection{Challenges regarding continuous delivery}
+\subsection{Challenges regarding Continuous Delivery}
 %"With continuous flow, Sales and Marketing were not quite sure when anything would be released."\cite{neely2013continuous}
 % "We had to provide mechanisms where they could track the status of work in real time, so they can plan accordingly." \cite{neely2013continuous}
 Neely and Stolt found out that with a continuous flow, Sales and Marketing departments lost the track of when features are released \cite{neely2013continuous}. Continuous delivery requires the company as a whole to understand the continuous flow process. Neely and Stolt solved this challenge by providing mechanisms by which the parties in need of knowledge regarding release times could track the work in real time \cite{neely2013continuous}. 
@@ -407,7 +407,7 @@ Another challenge is to sell the vision and reasoning behind continuous delivery
 
 \section{Literature: Continuous Experimentation}
 
-\subsection{Continuous experimentation}
+\subsection{Continuous Experimentation}
 %-for a method: what, how, when, who
 
 %Continuous experimentation term
@@ -435,7 +435,7 @@ Continuous delivery attempts to deliver an idea to users as fast as possible. Co
 %innovation experiment system
 Jan Bosch has widely studied continuous experimentation, or innovation experiment systems, as a basis for development. The primary issue he found is that "experimentation in online software is often limited to optimizing narrow aspects of the front-end of the website through A/B testing and inconnected, software-intensive systems experimentation, if applied at all, is ad-hoc and not systematically applied" \cite{bosch2012building}. The author realized that for different development stages, different techniques to implement experiments and collect customer feedback exist. Bosch also introduces a case study in which a company, Intuit, adopted continuous experimentation and has increased both the performance of the product and customer satisfaction.
 
-\subsubsection{Components in continuous experimentation}
+\subsubsection{Components in Continuous Experimentation}
 Kohavi et al. investigate the practical implementations of controlled experiments on the web \cite{kohavi2007practical}, and state that the implementation of an experiment involves two components. The first component is a randomization algorithm, which is used to map users to different variants of the product in question. The second component is an assignment method which, based on the output of the randomization algorithm, determines the contents that each user are shown. The observations then need to be collected, aggregated and analyzed to validate a hypothesis. Kohavi et al. also state that most existing data collection systems are not designed for the statistical analyses that are required to correctly analyze the results of a controlled experiment.
 
 The components introduced by Kohavi et al. are aimed primarily for A/B testing on websites. Three ways to implement the assignment methods are shown. The first one is traffic splitting, which directs users to different fleet of servers. An alternative methods is server-side selection, in which API calls invoke the randomization algorithm and branch the logic based on the return value. Last alternative is a client-side selection, in which the front-end system dynamically modifies the page to change the contents. Kohavi et al. state that the client-side selection is easier to implement, but it severely limits the features that may be subject to experimentation. Experiments on back-end are nearly impossible to implement in such manner.
@@ -480,7 +480,7 @@ In the analysis phase, attention has to be paid to other variables that might ca
 
 %"organisation needs a workfore to analyze qualitative + quantitative data"
 
-\subsubsection{Roles in continuous experimentation}
+\subsubsection{Roles in Continuous Experimentation}
 Fagerholm et al. define five different roles in continuous experimentation: Business Analyst, Product Owner, Data Analyst, Software Developer and Quality Assurance \cite{fagerholm2014building}. The business analyst along with the product owner are responsible for creating and updating the strategic roadmap, which is the basis of the hypotheses. The basis for decisions are the existing experimental plans and results stored in a database. A data analyst is used to analyze the existing experiments and results and to create assumptions from the roadmap. The analyst is also responsible for the design and execution of experiments. The data analyst is in tight collaboration with the software developer and quality assurance, who are reponsible for the development of MVPs and MVFs. The software designers create the necessary instrumentations used to collect the data required by the analyst.
 
 %question: what if there are no existing experimental plans, and this is the first experiment? how should the roadmap be created?
@@ -493,7 +493,7 @@ Another approach for the roles is introduced by Adams et al., who conducted a ca
 %integrating experiments to the deployment pipeline should be considered. This requires changing the development process in such fashion that functionality is developed based on some actual data. The components required to support continuous experimentation include tools to assign users to treatment and control groups, tools for data logging and storing, and analytics tool for conducting statistical analyses.
 
 
-\subsection{Continuous experimentation in embedded software}
+\subsection{Continuous Experimentation in embedded software}
 The purpose of analysing experimentation in embedded software in the context of this thesis is that B2B applications and embedded applications share similarities in the release cycle. The innovation ideas for embedded software are prioritized as a part of the yearly release cycle. This resembles the release model found in the case company, where some customers prefer to have new versions shipped every three months. By analyzing how experiments are implemented and the data collected in embedded software, information on how long and short release cycles differ can be gained. 
 
 Eklund and Bosch have applied the innovation experiment system to embedded software \cite{eklund2012architecture}. In the study an embedded architecture for realising an innovation experiment system is presented. The study concentrates on what to evaluate in experiments in embedded software. The infrastucture for enabling the innovation experiment system is shown in \ref{fig6}.
@@ -533,7 +533,7 @@ The study also lists possible experiment scenarios supported by the architecture
 %• 
 %• Are there any features that are not used?
 %• 
-\subsection{Challenges regarding continuous experimentation}
+\subsection{Challenges regarding Continuous Experimentation}
 It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
 
 Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
@@ -953,7 +953,7 @@ This section summarises key findings of the case study. It is structured accordi
 %=============================
 
 
-\subsection{Continuous delivery: B2B challenges}
+\subsection{Continuous Delivery: B2B challenges}
 %When to use CD: http://www.continuousagile.com/unblock/cd_costs_benefits.html
 %You provide an online service: Web, SaaS, PaaS, online gaming, online big data, or mobile apps with Web service back ends. If you provide online services, you need to move to continuous delivery, or your competitors will race ahead of you.
 
@@ -1229,7 +1229,7 @@ In the case company, the production deployment date is often negotiated with and
 
 
 %Typical B2C applications are hosted as SaaS applications, and accessed by users via a web browser. In the B2B domain, applications installed to customer environments are more common. 
-\subsection{Continuous experimentation: B2B challenges}
+\subsection{Continuous Experimentation: B2B challenges}
 The case company's two software products differ on how they are used by the customers. In this section, continuous experimentation challenges are analyzed for general cases encountered in both products, and special cases encountered in a single product due to a specific product characteristic. 
 
 The challenges regarding continuous experimentation are analyzed in four areas: technical, organizational, customer and A/B-testing. A/B testing was chosen as an examined subject of its own, since it is a commonly known experiment, and the difference between the case company's products affect especially A/B testing.  
@@ -1469,7 +1469,7 @@ Some features in Dialog are specified to work exactly as is, and the customers h
 
 %Current problems
 %Solutions by CD
-\subsection{Continuous deliverys benefits for the case company}
+\subsection{Continuous Delivery's benefits for the case company}
 %Problems
 %-Reliability is low
 %-features are forgotten
@@ -1590,7 +1590,7 @@ To sum up the findings, continuous delivery provides an answer to many of the ch
 
 %-There are customers that don't understand the benefit of continuous delivery.
 
-\subsection{Continuous experimentations benefits for the case company}
+\subsection{Continuous Experimentation's benefits for the case company}
 %Data-driven decisionit (organisaatiossa johtajien päätösvalta)
 
 
@@ -1729,7 +1729,7 @@ Continuous experimentation benefits the decision making and product development 
 %\end{center}
 
 
-\subsection{Implementing continuous experimentation as a development process}
+\subsection{Implementing Continuous Experimentation as a development process}
 As requirements and benefits of continuous experimentation have been investigated in the previous sections, a plan to implement the practice in the case company is presented here. First, the steps required for the case company to transition towards a continuous experimentation system are identified and explained. These steps have been formed based on the findings of previous research questions. Then, the continuous experimentation process is implemented by applying the continuous experimentation model by Fagerholm et al. \cite{fagerholm2014building} to the context of the case company. 
 \subsubsection{Applying the general concept}
 %-Requires a paradigm shift towards real-time delivery of value
