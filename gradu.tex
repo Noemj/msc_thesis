@@ -1837,7 +1837,7 @@ The infrastructure and Build-Measure-Learn model \cite{fagerholm2014building} in
 In the Fagerholm et al. model, the roadmap is created and iterated by the business analyst and product owner in the design phase, while experiments are designed, executed and analyzed by a data analyst. In the case company the teams lack a data analyst, and team leaders and management are the personnel in constant interaction with the customer. As both product owners and team leaders are in constant customer interaction, they are the personnel with most knowledge of the business strategy to form assumptions from the it. Developers are only minimally involved in the customer interaction and product strategy, and lack deep knowledge of the customer domain. The teams also have to educate themselves on data analytics, hire a data-analyst or use other personnel in the company to assist in turning the hypotheses into experiments. 
 
 \begin{enumerate}
-  \item Form an assumption from the business model that is thought to increase the value of the product
+  \item Form an assumption from the business strategy that is thought to increase the value of the product
   \item Form a hypothesis based on the assumption that can be subject to experimental testing 
   \item Define the type of the experiment and the experimental problem so that it can be run with trustworthy results
   \item If running a controlled experiment, define an Overall Evaluation Criteria that can be collected and used to provide an answer to the hypothesis  
@@ -1871,21 +1871,21 @@ The project management tools used by the teams suit the experimentational model.
   %\item The team(s) defines the experimental problem and produces new software which implements a feature thought to improve a user perceived quality. In this case there is just one factor with two levels, present and new implementation
   %only experiments that can be run with trustworthy results should be considered
 %  \item The response variable(s) are selected and implemented
-  \item The software is deployed to a UAT environment % statistically relevant number of devices, with unmodified devices being the control
-  \item The software is acceptance tested in the UAT environment, production deployment is negotiated
-  \item The software is deployed to production environment
-  \item The software is run for a period of time, while the data is collected into a database
+  \item Deploy the version to user acceptance testing environment % statistically relevant number of devices, with unmodified devices being the control
+  \item Perform acceptance testing in the user acceptance testing environment if necessary, and negotiate the production deployment
+  \item Deploy the version to production environment
+  \item Run the version for a period of time, and collect the data into a database
   
 \end{enumerate}
 
 In the execute phase the product is deployed to an environment with the experimental feature and instrumentation for data collection. For the case company, the deployment has to undergo testing in the UAT environment. The UAT environment is also suitable for testing the experiment itself and the impact of the experimental feature on the product. When the UAT phase is complete, the production deployment is negotiated and performed. With automated deployments, the production deployment should happen by a click of a button. The software is the run for a period of time, while the required data is collected into a database located in the environment. 
 
 \begin{enumerate}
-  \item The data is uploaded from the database and analysed through the infrastructure
-  \item The team draws conclusions from the data on whether to develop the new feature or product further, keep it as it is, or to cease it and revert back to the unmodified software. 
+  \item Upload the data from the database and analyse it through the infrastructure
+  \item Draw conclusions from the data to validate the hypothesis. Based on the validity of the initial assumption, make a decision whether to develop the new feature or product further, keep it as it is, or to cease it and revert back to the unmodified version. 
 \end{enumerate}
 
-In the analyze phase the results from the experiment are collected from the database and analysed through analytics software. The business strategy is then persevered or pivoted based on whether the hypothesis is valid and supports the assumption.
+In the analyze phase the results from the experiment are collected from the database and analysed through analytics software. The business strategy is then persevered or pivoted based on whether the hypothesis is valid and supports the assumption. For this phase, the only deviation is that the data has to be uploaded from the customer's environment into the analyze environment.
 
 
 
