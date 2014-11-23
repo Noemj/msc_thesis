@@ -2,7 +2,7 @@
 % 
 % last updated 2013/02/15 for tkltiki2 v1.02
 
-\documentclass[english]{tktltiki2}
+\documentclass[english, grading]{tktltiki2}
 
 % tktltiki2 automatically loads babel, so you can simply
 % give the language parameter (e.g. finnish, swedish, english, british) as
@@ -178,7 +178,7 @@ The logical starting point of this thesis was an open issue by the case company:
 %IEEE divides the quality of a software component into two components: how well the software meets software requirements specifications, and how useful the software is to the end user.
 %CMMI 5th stage 
 
-Continuous delivery is a development model aiming to shorten the delivery cycles and by automating the deployment process. It is an extension to continuous integration, where the software functionality is deployed frequently to customer environment, and the software is developed in a way that it is always ready for release. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, continuous delivery adds automated acceptance testing and automated deployment. Continuous delivery therefore attempts to deliver an idea to users as fast as possible.
+Continuous delivery is a development model aiming to shorten the delivery cycles and by automating the deployment process. It is an extension to continuous integration, where the software functionality is deployed frequently to customer environment, and the software is developed in a way that it is always ready for release. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{duvall2007continuous}, continuous delivery adds automated acceptance testing and automated deployment. Continuous delivery therefore attempts to deliver an idea to users as fast as possible.
 
 In continuous experimentation model the organisation continuously executes experiments to guide the R\&D process. The process of guiding R\&D through experiments is used to validate whether an idea is, in fact, a good idea. Fagerholm et al. define that a suitable experimentation system must be able to release minimum viable feature (MVF) or products (MVP) with suitable instrumentation for data collection, design and manage experiment plans, link experiment results with a product roadmap and manage a flexible business strategy \cite{fagerholm2014building}. The development cycle in continuous experimentation resembles the Build-Measure-Learn cycle of Lean Startup \cite{ries2011lean}. 
 
@@ -318,7 +318,7 @@ To be able to react to customers changing requests and manage multiple customer 
 Fast feedback is used to validate the functionality of the software and to ensure that quality requirements are met. Automation of repetitive actions ensures that the actions are performed exactly as instructed, without room for manual error. Reducing the amount of manual work also improves efficiency. With traceable history records, troubleshooting process can be shortened. With changelogs, the customer can be kept informed of the changes in new versions. A design practice that fills the aforementioned benefits is continuous delivery.
 
 %what is it
-Continuous delivery is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{fowler2006continuous}, often multiple times a day, continuous delivery adds automated acceptance testing and deployment to a staging environment. The purpose of continuous delivery is that as the deployment process is automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. Continuous delivery solves the problem of how to deliver an idea to users as quickly as possible.
+Continuous delivery is an extension to continuous integration, where the software functionality is deployed frequently at customer environment. While continuous integration defines a process where the work is automatically built, tested and frequently integrated to mainline \cite{duvall2007continuous}, often multiple times a day, continuous delivery adds automated acceptance testing and deployment to a staging environment. The purpose of continuous delivery is that as the deployment process is automated, it reduces human error, documents required for the build and increases confidence that the build works \cite{cdbook}. Continuous delivery solves the problem of how to deliver an idea to users as quickly as possible.
 
 %release cycles
 In an agile process software release is done in periodic intervals \cite{cockburn2002agile}. Compared to waterfall model it introduces multiple releases throughout the development. Continuous delivery, on the other hand, attemps to keep the software ready for release at all times during development process \cite{cdbook}. Instead of stopping the development process and creating a build as in an agile process, the software is continuously deployed to customer environment. This doesn't mean that the development cycles in continuous delivery are shorter, but that the development is done in a way that makes the software always ready for release.
@@ -922,8 +922,6 @@ The results are formed from the final template, and structured according to them
 %\section{Development process of the case company}
 %an overview of the entire process, then refining the parts that are relevant for the problems 
 %Steeri is a mid-sized company of 80 employees, focusing in managing and improving customer data usage. This includes CRM systems, business intelligence solutions, customer dialog and data %integration. Steeri has created Customer data management (CDM) and Customer dialog (Dialog) products, which are developed by two different teams. 
-
-%These two teams develop in an agile manner, but the continuous integration process \cite{fowler2006continuous} and short feedback cycles aren't achieved yet. 
 
 %The development isn't at all distributed, and no external party affects the development process. 
 
