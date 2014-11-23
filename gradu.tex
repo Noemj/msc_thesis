@@ -535,22 +535,15 @@ The study also lists possible experiment scenarios supported by the architecture
 %• Are there any features that are not used?
 %• 
 \subsection{Challenges regarding Continuous Experimentation}
+
 It is commonly found in the studies that the practiced experimentation is limited to optimizing narrow aspects of the front-end through A/B testing \cite{bosch2012building}. Additionally, experimentation is not often systematically applied \cite{bosch2012building}. Typically the imbalance between number of ideas that exist in the organization and the number of concepts that are tested with customers is enormous \cite{bosch2012building}. 
 
 Some companies use traditional metrics such as the Net Promoter Score \cite{reichheld2003one} to gather feedback. These metrics however fail to guide the development process by providing timely feedback, and instead are backward looking and focusing on the whole product \cite{bosch2012building}.
 
 One of the biggest challenges is also the architectural requirements set by the product to allow experimentation. According to Jan Bosch: "Collecting customer or performance data early in the innovation process requires changes to the R\&D processes, as customers need to be involved much earlier and deeper in the process. This also requires architectural changes of the product and platform to determine customer preference and interest." \cite{bosch2012building}.
 
-%Jotain täältä?
-%\cite{kohavi2012trustworthy}
-%"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
-%"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
-%"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
-%possible challenges in Lean startup: \cite{may2012applying}
-%-Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
-Crook et al. investigate the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table II. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiments objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 \begin{center}
-\begin{table}[htb]
+\begin{table}[!h]
     \begin{tabular}{ | p{2cm} | p{10cm} |}
     \hline
 	Pitfall 1 & Picking an OEC for which it is easy to beat the control by doing something clearly “wrong” from a business perspective \\ \hline
@@ -564,6 +557,16 @@ Crook et al. investigate the common pitfalls encountered when running controlled
     \caption{Pitfalls to avoid when running controlled experiments on the web \cite{crook2009seven}.}
     \end{table}
 \end{center}
+
+%Jotain täältä?
+%\cite{kohavi2012trustworthy}
+%"Experimentation in practice is often limited to optimizing narrow aspecs of the front-end through A/B testing, and is not systematically applied" \cite{bosch2012building} 
+%"Innovation in large organization is often characterized by an enormous imbalance between the number of ideas that, informally or formally, exist in the organization and the number of concepts that are in fact tested with customers." \cite{bosch2012building}
+%"Traditional metrics such as the Net Promoter Score[Reichheld, F.F.: The One Number You Need to Grow] have been used for the last decade or more, but often fail to provide timely feedback during the development process as these are backward looking and focus on the entire product." \cite{bosch2012building}
+%possible challenges in Lean startup: \cite{may2012applying}
+%-Randomization algorithm and assignment method, data collection, storage, analysis \cite{kohavi2007practical}
+
+Crook et al. investigate the common pitfalls encountered when running controlled experiments on the web \cite{crook2009seven}, which are listed in Table 1. The Overall Evaluation Criteria (OEC) used in the first pitfall is a quantitative measure of the experiments objective. In experimental design, Control is a term used for the existing feature or a process, while a Treatment is used to describe a modified feature or a process. As a motivator for the first pitfall, Crook et al. introduce an experiment where the OEC was set to the time spent on a page which contains articles. The OEC increased in the experiment implementation, satisfying the objective. However, it was soon realized that the longer time spent on a page might have been caused by confusion of the users, as a newly introduced widget was used less often than a previous version of it. Aside from picking a correct OEC, common pitfalls deal with the correct use of statistical analysis, robot users such as search engine crawlers, and the importance of audits and control.
 
 \subsection{Motivation}
 %However, based on the state-of-the practice section (describing 
@@ -696,22 +699,20 @@ To analyze the software development process transition towards shorter feedback 
 
 The study is an exploratory deductive case study, which aims to explore how continuous delivery and continuous experimentation can be implemented in the case company. The study specifically aims to identify the main requirements, problems and key success factors with regards to these approaches in the context of the case company. Integrating these approaches to the development process requires a deep analysis of the current development process, seeking the current problems and strengths. Adopting both continuous delivery and continuous experimentaton also requires understanding the requirements of continuous delivery and continuous experimentation. To narrow the scope of the thesis, the focus of this thesis is in the development process of two different software products. The two different products were chosen so that cross-case analysis and therefore more generalizations can be made.
 
-The research process starts by reviewing literature on both continuous delivery and continuous experimentation. In the literature review, main goals are to identify existing requirements and success factors in these approaches. The interview and documentation of the development process is then used to analyze and identify the pain points the company currently has in its development process. Then continuous delivery and continuous experimentation processes are viewed from the viewpoint of the case company, comparing the previously found benefits to the pain points in the case company's development process. As a result of viewing the practices from case company's viewpoint, necessary restrictions and requirements encountered in the B2B domain are obtained. Finally, the continuous experimentation model \cite{fagerholm2014building} is applied to the case company, and deviations listed. 
-
-The research questions and research methods are summarize in Table 2.
-
 \begin{center}
-\begin{table}[htb]
-    \begin{tabular}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} |}
+\begin{table}[!h]
+    \begin{tabular}{ | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
     \hline
     \textbf{Knowledge gap} & \textbf{Research question} & \textbf{The focus of analysis} & \textbf{Data} \\ \hline
-    B2B specific challenges in the practices & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Template analysis of the interview results & 12 interviews, documentations of the development process, literature \\ \hline
-    Benefits of the practices after reviewing the challenges & RQ 2: How do continuous delivery and continuous experimentation benefit the case company? & Template analysis of the interview results & 12 interviews, literature \\ \hline
-    What deviations are there to existing models & RQ 3: How can continuous experimentation be systematically organised in the B2B domain & Conceptual analysis of continuous experimentation model by Fagerholm et al. \cite{fagerholm2014building}, and application of the model to case company. & 12 interviews, documentations of the development process, author observations \\ \hline
+    Challenges of applying the practices in the B2B domain & RQ 1: What are the B2B specific challenges of continuous delivery and continuous experimentation? & Template analysis of the interview results & 12 interviews, documentations of the development process, literature \\ \hline
+    Benefits of the practices for the case company & RQ 2: How do continuous delivery and continuous experimentation benefit the case company? & Template analysis of the interview results & 12 interviews, literature \\ \hline
+    Deviations of an existing model in a new domain & RQ 3: How can continuous experimentation be systematically organised in the B2B domain? & Conceptual analysis of continuous experimentation model by Fagerholm et al. \cite{fagerholm2014building}, and application of the model to case company & 12 interviews, documentations of the development process, author observations \\ \hline
     \end{tabular}
     \caption{Research questions and research methods.}
     \end{table}
 \end{center}
+
+The research questions and research methods are summarized in Table 2. The research process starts by reviewing literature on both continuous delivery and continuous experimentation. In the literature review, main goals are to identify existing requirements and success factors in these approaches. The interview and documentation of the development process is then used to analyze and identify the pain points the company currently has in its development process. Then continuous delivery and continuous experimentation processes are viewed from the viewpoint of the case company, comparing the previously found benefits to the pain points in the case company's development process. As a result of viewing the practices from case company's viewpoint, necessary restrictions and requirements encountered in the B2B domain are obtained. Finally, the continuous experimentation model \cite{fagerholm2014building} is applied to the case company, and deviations listed. 
 
 In this thesis along with confirming existing theories, we do aim to generate new concepts and theories. The theory and case analysis are continuously matched to gain insights coherent with both theory and empirical observations.
 
@@ -1263,7 +1264,7 @@ The case company's products represent two different styles of software products.
 %Low user amount
 The lower user amount also affects the types of suitable experiments. Dialog has averagely five users per customer, while CDM has no human users at all. Experiments relying on statistical significance, such as A/B testing and multi-variate testing, lose most of their value with a low user volume. To be able to confirm validations with such experiments requires a varying amount of users depending on the conversion rate of the experiment. The company then either has to work with a lower confidence interval, or have a very high conversion rate to reduce the amount of subjects needed for statistical importance. However, many experiments rely on tracking and improving the usage behavior and not relying purely on statistics. A product owner views experiments relying on tracking the user behavior suitable for developing Dialog:
 \begin{aquote}{Dialog product owner}
-"The amount of statistical data isn't much (due to the user amount), but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user is halved, could the customer make more money. Experimentation doesn't therefore necessarily require a large user amount."
+"The amount of statistical data isn't much [due to the user amount], but the users actions can be tracked, and they continuously perform repetitive tasks. This customer would then provide a lot of usage data. If the time spent by this user is halved, could the customer make more money. Experimentation doesn't therefore necessarily require a large user amount."
 \end{aquote}
 %The lower a sample size, harder it is to draw meaningful conclusions from it. For a company operating in business with low user amounts, due to either new market or the type of the product, attention has to be paid on when statistical significance is reached. The company either has to work with a lower confidence interval, or majorly increase the conversion rate to decrease the amount of subjects needed for statistical importance.
 %However, a product owner views the user amount from a different point of view:
