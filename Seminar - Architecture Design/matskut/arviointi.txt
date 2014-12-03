@@ -1,7 +1,0 @@
-Arviointi:
-
-Tulosten validiteetti, väitteiden uskottavuus
-Miten tutkimus tehty
-Ovatko johtopäätökset uskottavia ja seuraavat datasta, vai esitetäänkö tuloksia tai sekoitetaanko tuloksiin omia mielipiteitä tai näkökantoja
-Ohjelmistotuotannossa lopullisia totuuksia kovin harvassa, ja väitteiden todistaminen harvoin mahdollista
-

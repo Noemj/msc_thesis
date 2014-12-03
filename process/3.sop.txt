@@ -1,2 +1,0 @@
-3. Analysis of the “state of the practice (SoP)” and the “state of the art (SoA)” (What are current practices, needs, requirements, and challenges wrt continuous deployment and continuous experimentation in the B2B domain and other domains? What are the specifics of the B2B domain? What are the current practices at the case company? What are existing concepts and approaches reported in literature, how do the approaches address the needs and requirements?).
-Result: Documentation of SoP and SoA

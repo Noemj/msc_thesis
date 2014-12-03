@@ -1,3 +1,0 @@
-1. Elicit the needs, problems, and challenges with respect to continuous deployment and continuous experimentation from the viewpoint of the case company.
-Result: Documentation of relevant needs
-

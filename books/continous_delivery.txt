@@ -1,7 +1,0 @@
-Continuous delivery attempts to deliver an idea to users as fast as possible. Continuous experimentation instead attempts to validate that it is, in fact, a good idea.
-
-"A deployment pipeline is an automated implementation of your application's build, deploy, test and release process"
-
-When deployments aren’t fully automated, errors will occur every time they
-are performed.
-

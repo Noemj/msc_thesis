@@ -1,2 +1,0 @@
-4. Creation of a solution approach (select, adapt, or create an approach that addresses continuous deployment and continuous experimentation so that it fits to the context of the case company, implement (parts of) the approach) 
-Result: Approach and technical implementation

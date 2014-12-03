@@ -1,6 +1,0 @@
-18.8
-
-In the building blocks article, your research approach is design science research. However, in my thesis I'm not attempting to apply a practice but to instead identify the issues and best practices in applying the practice. 
-
-I could either a) analytically formulate my own development model or b) use a pre-defined development model or c) not use any development model at all, and instead just focus on the issues and best practices in continuous delivery and experimentation in general.
-
